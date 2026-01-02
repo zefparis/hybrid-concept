@@ -215,6 +215,158 @@
         "primary": "Discuter de Vos Opérations",
         "secondary": "Explorer Toutes les Capacités"
       }
+    },
+
+    "governmentPrograms": {
+      "hero": {
+        "title": "Gouvernement et Programmes Nationaux",
+        "subtitle": "Protection des Infrastructures Souveraines",
+        "lead": "HC-1 sécurise les infrastructures nationales, protège les données souveraines et assure la continuité des opérations gouvernementales grâce à une architecture zéro-confiance et une intégration de systèmes mission-critique."
+      },
+      "stats": {
+        "systems": {
+          "value": "24/7",
+          "label": "assurance opérationnelle"
+        },
+        "sovereignty": {
+          "value": "100%",
+          "label": "souveraineté des données"
+        },
+        "compliance": {
+          "value": "Multi-niveaux",
+          "label": "habilitations de sécurité"
+        }
+      },
+      "overview": {
+        "heading": "Le Défi",
+        "intro": "Les gouvernements et programmes nationaux exigent une continuité absolue, une souveraineté des données et une sécurité multi-niveaux. Les perturbations impactent les services publics, la sécurité nationale et la confiance citoyenne.",
+        "sovereignty": {
+          "title": "Exigences de Souveraineté",
+          "points": [
+            "Les données doivent rester sous juridiction nationale",
+            "Les dépendances aux fournisseurs étrangers créent des risques stratégiques",
+            "Conformité réglementaire à travers agences et ministères"
+          ]
+        },
+        "continuity": {
+          "title": "Impératifs de Continuité",
+          "points": [
+            "Tolérance zéro aux temps d'arrêt pour services critiques",
+            "Opérations d'urgence nécessitent disponibilité garantie",
+            "Coordination inter-agences durant événements de crise"
+          ]
+        },
+        "threats": {
+          "title": "Paysage des Menaces",
+          "points": [
+            "Campagnes cyber parrainées par États ciblant infrastructures",
+            "Vulnérabilités de chaîne d'approvisionnement dans acquisitions",
+            "Menaces internes et abus d'accès privilégié"
+          ]
+        }
+      },
+      "risks": {
+        "heading": "Vulnérabilités Critiques",
+        "security": {
+          "title": "Lacunes de Sécurité",
+          "items": [
+            {
+              "label": "Intégration systèmes hérités",
+              "details": "Infrastructures décennales incompatibles avec sécurité moderne; Contournement d'air-gap via réseaux contractants"
+            },
+            {
+              "label": "Fragmentation multi-fournisseurs",
+              "details": "Outils de sécurité cloisonnés; Aucune visibilité unifiée des menaces inter-agences"
+            },
+            {
+              "label": "Risques d'accès privilégié",
+              "details": "Accès contractant souvent excessif; Pistes d'audit incomplètes ou retardées"
+            }
+          ]
+        },
+        "operational": {
+          "title": "Risques Opérationnels",
+          "items": [
+            {
+              "label": "Points de défaillance uniques",
+              "details": "Services critiques manquent de redondance; Systèmes de basculement non testés ou manuels"
+            },
+            {
+              "label": "Violations de souveraineté des données",
+              "details": "Services cloud stockent données en juridictions étrangères; Accès fournisseur crée exposition à la conformité"
+            },
+            {
+              "label": "Lacunes de réponse d'urgence",
+              "details": "Systèmes de communication échouent durant désastres; Infrastructure de commandement coordonné absente"
+            }
+          ]
+        }
+      },
+      "approach": {
+        "heading": "Approche HC-1: Souverain par Conception",
+        "intro": "HC-1 conçoit l'infrastructure gouvernementale avec souveraineté des données, principes zéro-confiance et continuité assurée dès la fondation—pas après coup.",
+        "architecture": {
+          "title": "Architecture Souveraine",
+          "description": "Concevoir systèmes avec contrôles de résidence des données, éliminer dépendances étrangères, établir bases de sécurité nationales.",
+          "outcome": "Infrastructure répondant aux plus hautes exigences de classification tout en maintenant efficacité opérationnelle."
+        },
+        "integration": {
+          "title": "Intégration Zéro-Confiance",
+          "description": "Intégrer systèmes hérités et modernes avec micro-segmentation, authentification continue, pistes d'audit complètes.",
+          "outcome": "Posture de sécurité unifiée à travers toutes agences sans perturber opérations existantes."
+        },
+        "assurance": {
+          "title": "Assurance de Mission",
+          "description": "Surveillance SOC/NOC 24/7, basculement automatisé, coordination d'incidents, suivi de conformité.",
+          "outcome": "Services gouvernementaux restent disponibles durant événements de crise avec responsabilité complète."
+        }
+      },
+      "value": {
+        "heading": "Impact Mesurable",
+        "uptime": {
+          "metric": "99.99%",
+          "label": "Disponibilité des Services",
+          "impact": "Services critiques restent opérationnels",
+          "method": "Redondance + basculement automatisé"
+        },
+        "sovereignty": {
+          "metric": "100%",
+          "label": "Souveraineté des Données",
+          "impact": "Juridiction nationale complète sur données",
+          "method": "Infrastructure domestique + cloud souverain"
+        },
+        "response": {
+          "metric": "<15min",
+          "label": "Réponse aux Incidents",
+          "impact": "Confinement rapide des menaces",
+          "method": "SOC 24/7 + playbooks pré-autorisés"
+        }
+      },
+      "useCases": {
+        "heading": "Scénarios Opérationnels",
+        "election": {
+          "title": "Infrastructure Électorale Nationale",
+          "description": "Systèmes électoraux face à campagne cyber coordonnée. Architecture zéro-confiance de HC-1 empêche mouvement latéral, maintient intégrité base de données électeurs, assure sécurité transmission résultats. Processus démocratique protégé."
+        },
+        "emergency": {
+          "title": "Coordination Services d'Urgence",
+          "description": "Catastrophe naturelle perturbe communications régionales. Infrastructure de commandement redondante de HC-1 maintient coordination inter-agences, permet allocation de ressources, suit réponse d'urgence. Vies sauvées."
+        },
+        "border": {
+          "title": "Opérations de Sécurité Frontalière",
+          "description": "Systèmes de contrôle frontalier détectent opération de contrebande. Surveillance intégrée et fusion d'intelligence de HC-1 permettent coordination temps réel entre douanes, immigration et forces de l'ordre. Menace interdite."
+        }
+      },
+      "capabilities": {
+        "heading": "Capacités Intégrées",
+        "intro": "HC-1 fournit des solutions gouvernementales via le déploiement coordonné de capacités spécialisées:"
+      },
+      "cta": {
+        "heading": "Protéger les Infrastructures Nationales",
+        "description": "HC-1 travaille avec gouvernements, agences de défense et organisations de sécurité nationale pour concevoir infrastructures souveraines, sécurisées et assurées.",
+        "primary": "Discuter de Vos Exigences",
+        "secondary": "Explorer Toutes les Capacités"
+      }
     }
   },
 
