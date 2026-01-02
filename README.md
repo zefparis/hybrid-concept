@@ -76,12 +76,12 @@ src/
 
 | Section | Component | Description |
 |---------|-----------|-------------|
-| **Hero** | `Hero.tsx` | Full-screen with gradient background, core statement, CTA |
-| **What We Do** | `WhatWeDo.tsx` | 3 pillars: Plan, Integrate, Assure with geometric icons |
-| **Sectors** | `SectorGrid.tsx` | 6 sector cards with hover effects and navigation |
-| **Operating Model** | `OperatingModel.tsx` | Flow diagram: Anticipate → Assure → Continuity → Revenue |
-| **Trust Signals** | `TrustSignals.tsx` | 5 governance items: sovereignty, zero-trust, SLA, traceability, compliance |
-| **CTA** | `CTASection.tsx` | Final call-to-action |
+| **Hero** | `Hero.tsx` | Full-screen with background image, gradient overlays, core statement, CTA |
+| **What We Do** | `WhatWeDo.tsx` | 3 pillars: Plan, Integrate, Assure with geometric icons (translated) |
+| **Sectors** | `SectorGrid.tsx` | 6 sector cards with hover effects and navigation (translated) |
+| **Operating Model** | `OperatingModel.tsx` | Flow diagram: Anticipate → Assure → Continuity → Revenue (translated) |
+| **Trust Signals** | `TrustSignals.tsx` | 5 governance items: sovereignty, zero-trust, SLA, traceability, compliance (translated) |
+| **CTA** | `CTASection.tsx` | Final call-to-action (translated) |
 
 ## Design System
 
@@ -191,8 +191,10 @@ npm run lint     # Run ESLint
 
 ## Site Structure
 
+All routes are prefixed with locale (`/en`, `/fr`, `/pt`):
+
 ```
-/                           # Homepage
+/[locale]                   # Homepage (57 static pages generated)
 ├── /about                  # About HC-1
 ├── /sectors                # Sectors index
 │   ├── /government-national-programs
@@ -211,6 +213,11 @@ npm run lint     # Run ESLint
 ├── /insights               # Thought leadership
 └── /contact                # Contact form
 ```
+
+**Example URLs:**
+- `/en` or `/` → English homepage (default)
+- `/fr/about` → French about page
+- `/pt/sectors/energy-mining` → Portuguese energy sector page
 
 ## Data Constants
 
@@ -352,15 +359,25 @@ The `LanguageSwitcher` component in the Header allows users to switch languages 
 - [x] next-intl integration with App Router
 - [x] 3 languages: English, French, Portuguese
 - [x] Locale-based routing (`/en`, `/fr`, `/pt`)
-- [x] LanguageSwitcher component in Header
+- [x] LanguageSwitcher component in Header (desktop + mobile)
 - [x] All homepage sections use translations
+- [x] Header and Footer navigation translated
 - [x] SEO metadata per locale with hreflang
+- [x] All pages migrated to `[locale]` folder structure
+- [x] Static generation for 57 pages (3 locales × 19 routes)
 
-### Phase 4 (Planned)
-- [ ] Sector detail pages content
-- [ ] Capabilities detail pages content
-- [ ] About page content
-- [ ] Contact form functionality
+### Phase 4 ✅ Complete — Visual Enhancements
+- [x] Hero background image with overlay system
+- [x] Optimized overlay opacity for image visibility
+- [x] Mobile-responsive language switcher
+- [x] Translated CTASection component
+
+### Phase 5 (In Progress)
+- [ ] Sector detail pages content translation
+- [ ] Capabilities detail pages content translation
+- [ ] About page content translation
+- [ ] Contact page content translation
+- [ ] Insights page content translation
 
 ### Future Enhancements
 - [ ] Sanity CMS integration for Insights
