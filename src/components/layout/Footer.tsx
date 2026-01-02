@@ -1,34 +1,52 @@
+'use client';
+
 import Link from 'next/link';
-import { NAVIGATION, SITE_METADATA } from '@/lib/constants';
+import { useLocale, useTranslations } from 'next-intl';
 
 /**
  * Site footer with navigation sections and legal links
  */
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const locale = useLocale();
+  const t = useTranslations('footer');
+  const tNav = useTranslations('nav');
+
+  const companyLinks = [
+    { href: `/${locale}/about`, label: tNav('about') },
+    { href: `/${locale}/sectors`, label: tNav('sectors') },
+    { href: `/${locale}/capabilities`, label: tNav('capabilities') },
+    { href: `/${locale}/insights`, label: tNav('insights') },
+    { href: `/${locale}/contact`, label: tNav('contact') },
+  ];
+
+  const legalLinks = [
+    { href: `/${locale}/privacy`, label: t('privacy') },
+    { href: `/${locale}/terms`, label: t('terms') },
+    { href: `/${locale}/security`, label: t('security') },
+  ];
 
   return (
-    <footer className="border-t border-[var(--border)] bg-[var(--surface)]">
+    <footer className="border-t border-border bg-surface">
       <div className="container py-16">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-block">
-              <span className="text-xl font-semibold text-[var(--text-primary)]">
-                <span className="text-[var(--accent)]">HC-1</span> | Hybrid Concepts
+            <Link href={`/${locale}`} className="inline-block">
+              <span className="text-xl font-semibold text-foreground">
+                <span className="text-accent">HC-1</span> | Hybrid Concepts
               </span>
             </Link>
-            <p className="mt-4 text-sm text-[var(--text-secondary)] max-w-sm">
-              Strategic Command & Integration Authority. Delivering sovereign security,
-              systems integration, and operational continuity worldwide.
+            <p className="mt-4 text-sm text-foreground-secondary max-w-sm">
+              {t('tagline')}
             </p>
             <div className="mt-6 flex items-center gap-4">
               <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
+                className="text-foreground-muted hover:text-accent transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -38,45 +56,51 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Navigation Sections */}
-          {NAVIGATION.footer.sections.map((section) => (
-            <div key={section.title}>
-              <h3 className="text-sm font-semibold text-[var(--text-primary)] uppercase tracking-wider">
-                {section.title}
-              </h3>
-              <ul className="mt-4 space-y-3">
-                {section.links.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {/* Company Links */}
+          <div>
+            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">
+              {t('company')}
+            </h3>
+            <ul className="mt-4 space-y-3">
+              {companyLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-foreground-secondary hover:text-foreground transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal Links */}
+          <div>
+            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">
+              {t('legal')}
+            </h3>
+            <ul className="mt-4 space-y-3">
+              {legalLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-foreground-secondary hover:text-foreground transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-[var(--border)]">
+        <div className="mt-16 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-[var(--text-muted)]">
-              © {currentYear} {SITE_METADATA.siteName}. All rights reserved.
+            <p className="text-sm text-foreground-muted">
+              {t('copyright')}
             </p>
-            <div className="flex items-center gap-6">
-              {NAVIGATION.footer.legal.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm text-[var(--text-muted)] hover:text-[var(--text-secondary)] transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
           </div>
         </div>
       </div>
