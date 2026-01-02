@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { setRequestLocale } from 'next-intl/server';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { Hero } from '@/components/sections';
 import { Button } from '@/components/ui';
-import { CAPABILITIES, SECTORS } from '@/lib/constants';
+import { CAPABILITIES } from '@/lib/constants';
+import { getTranslatedCapabilities } from '@/lib/get-translated-capabilities';
 
 interface PageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -35,15 +36,19 @@ export default async function CapabilityPage({ params }: PageProps) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
   
-  const capability = CAPABILITIES.find((c) => c.slug === slug);
+  const capabilities = await getTranslatedCapabilities(locale);
+  const capability = capabilities.find((c) => c.slug === slug);
+  const capabilityData = CAPABILITIES.find((c) => c.slug === slug);
 
-  if (!capability) {
+  if (!capability || !capabilityData) {
     notFound();
   }
 
-  const relatedCapabilities = CAPABILITIES.filter(
-    (c) => capability.integrations.includes(c.slug) && c.slug !== capability.slug
+  const relatedCapabilities = capabilities.filter(
+    (c) => capabilityData.integrations.includes(c.slug) && c.slug !== capability.slug
   );
+  
+  const t = await getTranslations({ locale, namespace: 'capabilityDetail' });
 
   return (
     <>
@@ -58,7 +63,7 @@ export default async function CapabilityPage({ params }: PageProps) {
       <section className="py-20 md:py-32">
         <div className="container">
           <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-12">
-            Key Features
+            {t('keyFeatures')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {capability.features.map((feature) => (
@@ -92,15 +97,15 @@ export default async function CapabilityPage({ params }: PageProps) {
       </section>
 
       {/* Use Cases Section */}
-      {capability.useCases.length > 0 && (
+      {capabilityData.useCases.length > 0 && (
         <section className="py-20 md:py-32 bg-surface">
           <div className="container">
             <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-12">
-              Use Cases
+              {t('useCases')}
             </h2>
             <div className="space-y-6">
-              {capability.useCases.map((useCase) => {
-                const sector = SECTORS.find((s) => s.slug === useCase.sector);
+              {capabilityData.useCases.map((useCase) => {
+                const sector = null;
                 return (
                   <div
                     key={useCase.title}
@@ -111,11 +116,6 @@ export default async function CapabilityPage({ params }: PageProps) {
                         <h3 className="text-xl font-semibold text-foreground">
                           {useCase.title}
                         </h3>
-                        {sector && (
-                          <p className="text-sm text-accent mt-1">
-                            {sector.shortTitle}
-                          </p>
-                        )}
                       </div>
                     </div>
                     <p className="text-foreground-secondary mb-4">
@@ -140,10 +140,10 @@ export default async function CapabilityPage({ params }: PageProps) {
         <section className="py-20 md:py-32">
           <div className="container">
             <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
-              Integrates With
+              {t('integratesWith')}
             </h2>
             <p className="text-lg text-foreground-secondary mb-12 max-w-2xl">
-              {capability.name} seamlessly integrates with other HC-1 capabilities to deliver comprehensive solutions.
+              {capability.name} {t('integratesDescription')}
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedCapabilities.map((related) => (
@@ -167,13 +167,13 @@ export default async function CapabilityPage({ params }: PageProps) {
       <section className="py-20 md:py-32 bg-surface">
         <div className="container text-center">
           <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
-            Learn More About {capability.name}
+            {t('learnMore')} {capability.name}
           </h2>
           <p className="text-lg text-foreground-secondary mb-8 max-w-2xl mx-auto">
-            Connect with our team to discuss how this capability can address your specific requirements.
+            {t('learnMoreDescription')}
           </p>
           <Button href={`/${locale}/contact`} size="lg">
-            Request Information
+            {t('requestInfo')}
           </Button>
         </div>
       </section>

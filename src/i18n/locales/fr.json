@@ -1028,6 +1028,222 @@
     "button": "Nous Contacter"
   },
 
+  "sectorsPage": {
+    "hero": {
+      "title": "Secteurs que Nous Servons",
+      "tagline": "Expertise Sectorielle",
+      "description": "Nous apportons une connaissance sectorielle approfondie à chaque engagement, comprenant les défis uniques, les réglementations et les exigences opérationnelles de chaque domaine."
+    },
+    "gridTitle": "Nos Domaines d'Intervention"
+  },
+
+  "capabilitiesPage": {
+    "hero": {
+      "title": "Nos Capacités",
+      "tagline": "Technologie et Expertise",
+      "description": "HC-1 fournit une suite complète de capacités conçues pour répondre à l'ensemble du spectre des défis de sécurité, d'intégration et opérationnels."
+    }
+  },
+
+  "capabilityDetail": {
+    "keyFeatures": "Fonctionnalités Clés",
+    "useCases": "Cas d'Usage",
+    "integratesWith": "S'Intègre Avec",
+    "integratesDescription": "s'intègre parfaitement avec d'autres capacités HC-1 pour fournir des solutions complètes.",
+    "learnMore": "En Savoir Plus Sur",
+    "learnMoreDescription": "Contactez notre équipe pour discuter de la manière dont cette capacité peut répondre à vos besoins spécifiques.",
+    "requestInfo": "Demander des Informations"
+  },
+
+  "insightsPage": {
+    "hero": {
+      "title": "Analyses",
+      "tagline": "Leadership Éclairé",
+      "description": "Perspectives stratégiques sur la sécurité, la technologie et la résilience opérationnelle de notre équipe d'experts."
+    },
+    "featured": "En Vedette",
+    "minRead": "min de lecture",
+    "comingSoon": "Plus d'analyses à venir. Contactez-nous pour recevoir les mises à jour.",
+    "sampleInsights": {
+      "infrastructure": {
+        "title": "L'Évolution de la Protection des Infrastructures Critiques",
+        "excerpt": "Comment les menaces convergentes remodèlent les stratégies de sécurité pour les services essentiels.",
+        "category": "Analyse Stratégique"
+      },
+      "aiSecurity": {
+        "title": "L'IA dans la Sécurité Nationale : Opportunités et Gouvernance",
+        "excerpt": "Équilibrer l'innovation avec un déploiement responsable dans des environnements sensibles.",
+        "category": "Technologie"
+      },
+      "cyberResilience": {
+        "title": "Construire la Résilience Cyber dans le Secteur Énergétique",
+        "excerpt": "Leçons tirées de la sécurisation de la technologie opérationnelle dans des environnements complexes.",
+        "category": "Étude de Cas"
+      }
+    }
+  },
+
+  "capabilities": {
+    "hybridVector": {
+      "name": "HC-1 | Hybrid Vector",
+      "tagline": "Évaluation Stratégique des Menaces",
+      "description": "Hybrid Vector offre des capacités complètes de modélisation des menaces et d'évaluation des risques, permettant aux organisations d'anticiper et de se préparer aux menaces émergentes.",
+      "features": {
+        "threatModeling": {
+          "title": "Modélisation des Menaces",
+          "description": "Analyse avancée du paysage des menaces et planification de scénarios"
+        },
+        "riskQuantification": {
+          "title": "Quantification des Risques",
+          "description": "Notation et priorisation des risques basées sur les données"
+        },
+        "strategicForecasting": {
+          "title": "Prévision Stratégique",
+          "description": "Intelligence prédictive pour la planification à long terme"
+        }
+      }
+    },
+    "hybridNexus": {
+      "name": "HC-1 | Hybrid Nexus",
+      "tagline": "Plateforme d'Intégration de Systèmes",
+      "description": "Hybrid Nexus est notre plateforme d'intégration d'entreprise, connectant des systèmes disparates en un tissu opérationnel unifié.",
+      "features": {
+        "apiGateway": {
+          "title": "Passerelle API",
+          "description": "Gestion et orchestration d'API sécurisées et évolutives"
+        },
+        "dataFabric": {
+          "title": "Tissu de Données",
+          "description": "Couche de données unifiée entre systèmes hérités et modernes"
+        },
+        "workflowEngine": {
+          "title": "Moteur de Workflow",
+          "description": "Orchestration automatisée des processus et gestion des événements"
+        }
+      }
+    },
+    "hybridAxis": {
+      "name": "HC-1 | Hybrid Axis",
+      "tagline": "Infrastructure de Commandement et Contrôle",
+      "description": "Hybrid Axis fournit l'épine dorsale de commandement et contrôle pour des opérations coordonnées dans des environnements distribués.",
+      "features": {
+        "operationalDashboard": {
+          "title": "Tableau de Bord Opérationnel",
+          "description": "Conscience situationnelle en temps réel et interface de commandement"
+        },
+        "resourceOrchestration": {
+          "title": "Orchestration des Ressources",
+          "description": "Allocation dynamique et coordination des actifs"
+        },
+        "communicationHub": {
+          "title": "Hub de Communication",
+          "description": "Infrastructure de communications sécurisée et résiliente"
+        }
+      }
+    },
+    "hybridCyber": {
+      "name": "HC-1 | Hybrid Cyber",
+      "tagline": "Plateforme de Défense Cyber",
+      "description": "Hybrid Cyber offre des capacités complètes de défense cyber, de la détection des menaces à la réponse aux incidents.",
+      "features": {
+        "threatDetection": {
+          "title": "Détection des Menaces",
+          "description": "Détection et analyse des menaces alimentées par l'IA"
+        },
+        "incidentResponse": {
+          "title": "Réponse aux Incidents",
+          "description": "Gestion automatisée et orchestrée des incidents"
+        },
+        "threatIntelligence": {
+          "title": "Renseignement sur les Menaces",
+          "description": "Flux et analyse de renseignement sur les menaces mondiales"
+        }
+      }
+    },
+    "hybridIris": {
+      "name": "HC-1 | Hybrid Iris",
+      "tagline": "Surveillance et Conscience Situationnelle",
+      "description": "Hybrid Iris fournit des capacités complètes de surveillance et de conscience situationnelle dans les domaines physiques et numériques.",
+      "features": {
+        "sensorFusion": {
+          "title": "Fusion de Capteurs",
+          "description": "Intégration et corrélation de capteurs multi-sources"
+        },
+        "patternRecognition": {
+          "title": "Reconnaissance de Motifs",
+          "description": "Détection d'anomalies et de motifs pilotée par l'IA"
+        },
+        "geospatialIntelligence": {
+          "title": "Renseignement Géospatial",
+          "description": "Renseignement et cartographie basés sur la localisation"
+        }
+      }
+    },
+    "centersOfExcellence": {
+      "name": "Centres d'Excellence",
+      "tagline": "Expertise Régionale et Formation",
+      "description": "Nos Centres d'Excellence fournissent une expertise régionale, une formation et un support pour assurer le déploiement et l'exploitation réussis des solutions HC-1.",
+      "features": {
+        "trainingPrograms": {
+          "title": "Programmes de Formation",
+          "description": "Programmes de certification et de formation complets"
+        },
+        "regionalSupport": {
+          "title": "Support Régional",
+          "description": "Expertise locale et capacités de support 24/7"
+        },
+        "researchDevelopment": {
+          "title": "Recherche et Développement",
+          "description": "Innovation continue et développement de capacités"
+        }
+      }
+    }
+  },
+
+  "about": {
+    "hero": {
+      "title": "À Propos de HC-1",
+      "tagline": "Autorité de Commandement Stratégique et d'Intégration",
+      "description": "Nous sommes le partenaire de confiance des gouvernements et entreprises naviguant dans des paysages de sécurité complexes. Notre mission est de concevoir des systèmes résilients qui protègent les nations et permettent le progrès."
+    },
+    "mission": {
+      "heading": "Notre Mission",
+      "intro": "HC-1 existe pour protéger les systèmes dont dépendent les sociétés. Nous combinons une expertise approfondie avec une technologie avancée pour fournir des solutions de sécurité à la fois complètes et pragmatiques.",
+      "approach": "Notre approche est enracinée dans la compréhension—comprendre les menaces auxquelles nos clients font face, les contraintes sous lesquelles ils opèrent, et les résultats qu'ils doivent atteindre.",
+      "sovereign": {
+        "title": "Souverain par Conception",
+        "description": "Nous construisons des solutions qui respectent la souveraineté nationale et les exigences de résidence des données, garantissant à nos clients un contrôle total."
+      },
+      "integration": {
+        "title": "Excellence d'Intégration",
+        "description": "Nous connectons des systèmes disparates en tissus opérationnels unifiés, éliminant les silos et permettant une réponse coordonnée."
+      },
+      "continuity": {
+        "title": "Continuité Opérationnelle",
+        "description": "Nous garantissons que nos clients peuvent opérer efficacement dans toutes les conditions, des opérations de routine à la réponse de crise."
+      }
+    },
+    "values": {
+      "heading": "Nos Valeurs",
+      "integrity": {
+        "title": "Intégrité",
+        "description": "Nous opérons selon les normes éthiques les plus élevées, gagnant la confiance par la transparence et la responsabilité."
+      },
+      "excellence": {
+        "title": "Excellence",
+        "description": "Nous poursuivons l'excellence dans tout ce que nous faisons, de la planification stratégique à l'exécution technique."
+      },
+      "partnership": {
+        "title": "Partenariat",
+        "description": "Nous travaillons aux côtés de nos clients en tant que véritables partenaires, partageant leur mission et leur engagement."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "Nous faisons progresser continuellement nos capacités pour rester en avance sur les menaces et défis évolutifs."
+      }
+    }
+  },
+
   "footer": {
     "tagline": "Conçu avec précision pour ceux qui protègent ce qui compte.",
     "copyright": "© 2025 HC-1 | Hybrid Concepts. Tous droits réservés.",

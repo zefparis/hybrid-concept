@@ -1,42 +1,17 @@
 import type { Metadata } from 'next';
-import { setRequestLocale } from 'next-intl/server';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { Hero } from '@/components/sections';
 
-export const metadata: Metadata = {
-  title: 'Insights',
-  description:
-    'Strategic analysis, technology perspectives, and thought leadership from HC-1 experts.',
-};
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'insightsPage.hero' });
+  
+  return {
+    title: t('title'),
+    description: t('description'),
+  };
+}
 
-const SAMPLE_INSIGHTS = [
-  {
-    id: '1',
-    title: 'The Evolution of Critical Infrastructure Protection',
-    excerpt:
-      'How converging threats are reshaping security strategies for essential services.',
-    category: 'Strategic Analysis',
-    date: '2024-12-15',
-    readingTime: 8,
-  },
-  {
-    id: '2',
-    title: 'AI in National Security: Opportunities and Governance',
-    excerpt:
-      'Balancing innovation with responsible deployment in sensitive environments.',
-    category: 'Technology',
-    date: '2024-12-01',
-    readingTime: 12,
-  },
-  {
-    id: '3',
-    title: 'Building Cyber Resilience in the Energy Sector',
-    excerpt:
-      'Lessons learned from securing operational technology in complex environments.',
-    category: 'Case Study',
-    date: '2024-11-20',
-    readingTime: 10,
-  },
-];
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -45,13 +20,44 @@ type Props = {
 export default async function InsightsPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+  
+  const tHero = await getTranslations({ locale, namespace: 'insightsPage.hero' });
+  const t = await getTranslations({ locale, namespace: 'insightsPage' });
+  const tInsights = await getTranslations({ locale, namespace: 'insightsPage.sampleInsights' });
+  
+  const sampleInsights = [
+    {
+      id: '1',
+      title: tInsights('infrastructure.title'),
+      excerpt: tInsights('infrastructure.excerpt'),
+      category: tInsights('infrastructure.category'),
+      date: '2024-12-15',
+      readingTime: 8,
+    },
+    {
+      id: '2',
+      title: tInsights('aiSecurity.title'),
+      excerpt: tInsights('aiSecurity.excerpt'),
+      category: tInsights('aiSecurity.category'),
+      date: '2024-12-01',
+      readingTime: 12,
+    },
+    {
+      id: '3',
+      title: tInsights('cyberResilience.title'),
+      excerpt: tInsights('cyberResilience.excerpt'),
+      category: tInsights('cyberResilience.category'),
+      date: '2024-11-20',
+      readingTime: 10,
+    },
+  ];
 
   return (
     <>
       <Hero
-        title="Insights"
-        tagline="Thought Leadership"
-        description="Strategic perspectives on security, technology, and operational resilience from our team of experts."
+        title={tHero('title')}
+        tagline={tHero('tagline')}
+        description={tHero('description')}
         variant="page"
       />
 
@@ -61,25 +67,25 @@ export default async function InsightsPage({ params }: Props) {
           <div className="mb-16">
             <div className="p-8 md:p-12 rounded-3xl bg-surface border border-border">
               <span className="inline-block px-3 py-1 text-xs font-medium text-accent bg-accent-muted rounded-full mb-4">
-                Featured
+                {t('featured')}
               </span>
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
-                {SAMPLE_INSIGHTS[0].title}
+                {sampleInsights[0].title}
               </h2>
               <p className="text-lg text-foreground-secondary mb-6 max-w-2xl">
-                {SAMPLE_INSIGHTS[0].excerpt}
+                {sampleInsights[0].excerpt}
               </p>
               <div className="flex items-center gap-4 text-sm text-foreground-muted">
-                <span>{SAMPLE_INSIGHTS[0].category}</span>
+                <span>{sampleInsights[0].category}</span>
                 <span>•</span>
-                <span>{SAMPLE_INSIGHTS[0].readingTime} min read</span>
+                <span>{sampleInsights[0].readingTime} {t('minRead')}</span>
               </div>
             </div>
           </div>
 
           {/* Article Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {SAMPLE_INSIGHTS.map((insight) => (
+            {sampleInsights.map((insight) => (
               <article
                 key={insight.id}
                 className="group p-6 rounded-2xl bg-surface border border-border hover:border-accent transition-colors cursor-pointer"
@@ -95,7 +101,7 @@ export default async function InsightsPage({ params }: Props) {
                 </p>
                 <div className="flex items-center justify-between text-xs text-foreground-muted">
                   <span>{insight.date}</span>
-                  <span>{insight.readingTime} min read</span>
+                  <span>{insight.readingTime} {t('minRead')}</span>
                 </div>
               </article>
             ))}
@@ -104,7 +110,7 @@ export default async function InsightsPage({ params }: Props) {
           {/* Coming Soon Notice */}
           <div className="mt-16 text-center">
             <p className="text-foreground-muted">
-              More insights coming soon. Connect with us to receive updates.
+              {t('comingSoon')}
             </p>
           </div>
         </div>

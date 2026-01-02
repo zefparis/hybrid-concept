@@ -1,14 +1,18 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { setRequestLocale } from 'next-intl/server';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { Hero } from '@/components/sections';
-import { CAPABILITIES } from '@/lib/constants';
+import { getTranslatedCapabilities } from '@/lib/get-translated-capabilities';
 
-export const metadata: Metadata = {
-  title: 'Capabilities',
-  description:
-    'Explore HC-1 capabilities: Hybrid Vector, Hybrid Nexus, Hybrid Axis, Hybrid Cyber, Hybrid Iris, and Centers of Excellence.',
-};
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'capabilitiesPage.hero' });
+  
+  return {
+    title: t('title'),
+    description: t('description'),
+  };
+}
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -17,20 +21,23 @@ type Props = {
 export default async function CapabilitiesPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+  
+  const tHero = await getTranslations({ locale, namespace: 'capabilitiesPage.hero' });
+  const capabilities = await getTranslatedCapabilities(locale);
 
   return (
     <>
       <Hero
-        title="Our Capabilities"
-        tagline="Technology & Expertise"
-        description="HC-1 delivers a comprehensive suite of capabilities designed to address the full spectrum of security, integration, and operational challenges."
+        title={tHero('title')}
+        tagline={tHero('tagline')}
+        description={tHero('description')}
         variant="page"
       />
 
       <section className="py-20 md:py-32">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {CAPABILITIES.map((capability) => (
+            {capabilities.map((capability) => (
               <Link
                 key={capability.id}
                 href={`/${locale}/capabilities/${capability.slug}`}

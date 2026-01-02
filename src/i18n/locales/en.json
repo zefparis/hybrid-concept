@@ -1028,6 +1028,222 @@
     "button": "Get in Touch"
   },
 
+  "sectorsPage": {
+    "hero": {
+      "title": "Sectors We Serve",
+      "tagline": "Domain Expertise",
+      "description": "We bring deep sector knowledge to every engagement, understanding the unique challenges, regulations, and operational requirements of each domain."
+    },
+    "gridTitle": "Our Focus Areas"
+  },
+
+  "capabilitiesPage": {
+    "hero": {
+      "title": "Our Capabilities",
+      "tagline": "Technology & Expertise",
+      "description": "HC-1 delivers a comprehensive suite of capabilities designed to address the full spectrum of security, integration, and operational challenges."
+    }
+  },
+
+  "capabilityDetail": {
+    "keyFeatures": "Key Features",
+    "useCases": "Use Cases",
+    "integratesWith": "Integrates With",
+    "integratesDescription": "seamlessly integrates with other HC-1 capabilities to deliver comprehensive solutions.",
+    "learnMore": "Learn More About",
+    "learnMoreDescription": "Connect with our team to discuss how this capability can address your specific requirements.",
+    "requestInfo": "Request Information"
+  },
+
+  "insightsPage": {
+    "hero": {
+      "title": "Insights",
+      "tagline": "Thought Leadership",
+      "description": "Strategic perspectives on security, technology, and operational resilience from our team of experts."
+    },
+    "featured": "Featured",
+    "minRead": "min read",
+    "comingSoon": "More insights coming soon. Connect with us to receive updates.",
+    "sampleInsights": {
+      "infrastructure": {
+        "title": "The Evolution of Critical Infrastructure Protection",
+        "excerpt": "How converging threats are reshaping security strategies for essential services.",
+        "category": "Strategic Analysis"
+      },
+      "aiSecurity": {
+        "title": "AI in National Security: Opportunities and Governance",
+        "excerpt": "Balancing innovation with responsible deployment in sensitive environments.",
+        "category": "Technology"
+      },
+      "cyberResilience": {
+        "title": "Building Cyber Resilience in the Energy Sector",
+        "excerpt": "Lessons learned from securing operational technology in complex environments.",
+        "category": "Case Study"
+      }
+    }
+  },
+
+  "capabilities": {
+    "hybridVector": {
+      "name": "HC-1 | Hybrid Vector",
+      "tagline": "Strategic Threat Assessment",
+      "description": "Hybrid Vector delivers comprehensive threat modeling and risk assessment capabilities, enabling organizations to anticipate and prepare for emerging threats.",
+      "features": {
+        "threatModeling": {
+          "title": "Threat Modeling",
+          "description": "Advanced threat landscape analysis and scenario planning"
+        },
+        "riskQuantification": {
+          "title": "Risk Quantification",
+          "description": "Data-driven risk scoring and prioritization"
+        },
+        "strategicForecasting": {
+          "title": "Strategic Forecasting",
+          "description": "Predictive intelligence for long-term planning"
+        }
+      }
+    },
+    "hybridNexus": {
+      "name": "HC-1 | Hybrid Nexus",
+      "tagline": "Systems Integration Platform",
+      "description": "Hybrid Nexus is our enterprise integration platform, connecting disparate systems into a unified operational fabric.",
+      "features": {
+        "apiGateway": {
+          "title": "API Gateway",
+          "description": "Secure, scalable API management and orchestration"
+        },
+        "dataFabric": {
+          "title": "Data Fabric",
+          "description": "Unified data layer across legacy and modern systems"
+        },
+        "workflowEngine": {
+          "title": "Workflow Engine",
+          "description": "Automated process orchestration and event handling"
+        }
+      }
+    },
+    "hybridAxis": {
+      "name": "HC-1 | Hybrid Axis",
+      "tagline": "Command & Control Infrastructure",
+      "description": "Hybrid Axis provides the command and control backbone for coordinated operations across distributed environments.",
+      "features": {
+        "operationalDashboard": {
+          "title": "Operational Dashboard",
+          "description": "Real-time situational awareness and command interface"
+        },
+        "resourceOrchestration": {
+          "title": "Resource Orchestration",
+          "description": "Dynamic allocation and coordination of assets"
+        },
+        "communicationHub": {
+          "title": "Communication Hub",
+          "description": "Secure, resilient communications infrastructure"
+        }
+      }
+    },
+    "hybridCyber": {
+      "name": "HC-1 | Hybrid Cyber",
+      "tagline": "Cyber Defense Platform",
+      "description": "Hybrid Cyber delivers comprehensive cyber defense capabilities, from threat detection to incident response.",
+      "features": {
+        "threatDetection": {
+          "title": "Threat Detection",
+          "description": "AI-powered threat detection and analysis"
+        },
+        "incidentResponse": {
+          "title": "Incident Response",
+          "description": "Automated and orchestrated incident handling"
+        },
+        "threatIntelligence": {
+          "title": "Threat Intelligence",
+          "description": "Global threat intelligence feeds and analysis"
+        }
+      }
+    },
+    "hybridIris": {
+      "name": "HC-1 | Hybrid Iris",
+      "tagline": "Surveillance & Awareness",
+      "description": "Hybrid Iris provides comprehensive surveillance and situational awareness capabilities across physical and digital domains.",
+      "features": {
+        "sensorFusion": {
+          "title": "Sensor Fusion",
+          "description": "Multi-source sensor integration and correlation"
+        },
+        "patternRecognition": {
+          "title": "Pattern Recognition",
+          "description": "AI-driven anomaly and pattern detection"
+        },
+        "geospatialIntelligence": {
+          "title": "Geospatial Intelligence",
+          "description": "Location-based intelligence and mapping"
+        }
+      }
+    },
+    "centersOfExcellence": {
+      "name": "Centers of Excellence",
+      "tagline": "Regional Expertise & Training",
+      "description": "Our Centers of Excellence provide regional expertise, training, and support to ensure successful deployment and operation of HC-1 solutions.",
+      "features": {
+        "trainingPrograms": {
+          "title": "Training Programs",
+          "description": "Comprehensive certification and training curricula"
+        },
+        "regionalSupport": {
+          "title": "Regional Support",
+          "description": "Local expertise and 24/7 support capabilities"
+        },
+        "researchDevelopment": {
+          "title": "Research & Development",
+          "description": "Continuous innovation and capability development"
+        }
+      }
+    }
+  },
+
+  "about": {
+    "hero": {
+      "title": "About HC-1",
+      "tagline": "Strategic Command & Integration Authority",
+      "description": "We are the trusted partner for governments and enterprises navigating complex security landscapes. Our mission is to architect resilient systems that protect nations and enable progress."
+    },
+    "mission": {
+      "heading": "Our Mission",
+      "intro": "HC-1 exists to protect the systems that societies depend on. We combine deep domain expertise with advanced technology to deliver security solutions that are both comprehensive and pragmatic.",
+      "approach": "Our approach is rooted in understanding—understanding the threats our clients face, the constraints they operate under, and the outcomes they need to achieve.",
+      "sovereign": {
+        "title": "Sovereign by Design",
+        "description": "We build solutions that respect national sovereignty and data residency requirements, ensuring our clients maintain full control."
+      },
+      "integration": {
+        "title": "Integration Excellence",
+        "description": "We connect disparate systems into unified operational fabrics, eliminating silos and enabling coordinated response."
+      },
+      "continuity": {
+        "title": "Operational Continuity",
+        "description": "We ensure our clients can operate effectively under any conditions, from routine operations to crisis response."
+      }
+    },
+    "values": {
+      "heading": "Our Values",
+      "integrity": {
+        "title": "Integrity",
+        "description": "We operate with the highest ethical standards, earning trust through transparency and accountability."
+      },
+      "excellence": {
+        "title": "Excellence",
+        "description": "We pursue excellence in everything we do, from strategic planning to technical execution."
+      },
+      "partnership": {
+        "title": "Partnership",
+        "description": "We work alongside our clients as true partners, sharing their mission and commitment."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "We continuously advance our capabilities to stay ahead of evolving threats and challenges."
+      }
+    }
+  },
+
   "footer": {
     "tagline": "Built with precision for those who protect what matters.",
     "copyright": "© 2025 HC-1 | Hybrid Concepts. All rights reserved.",
