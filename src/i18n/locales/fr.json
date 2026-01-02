@@ -1,0 +1,137 @@
+{
+  "common": {
+    "companyName": "HC-1 | Hybrid Concepts",
+    "tagline": "Autorité de Commandement Stratégique et d'Intégration",
+    "exploreCTA": "Découvrir nos Capacités",
+    "learnMore": "En savoir plus",
+    "contactUs": "Nous contacter",
+    "scroll": "Défiler"
+  },
+
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "sectors": "Secteurs",
+    "capabilities": "Capacités",
+    "insights": "Analyses",
+    "contact": "Contact"
+  },
+
+  "hero": {
+    "title": "HC-1 | Hybrid Concepts",
+    "subtitle": "Autorité de Commandement Stratégique et d'Intégration",
+    "coreStatement": "HC-1 anticipe et sécurise les systèmes en amont pour prévenir les perturbations, réduire les risques opérationnels, éliminer le coût et l'inefficacité des réponses réactives, et protéger et maximiser les revenus grâce à une continuité assurée et une efficacité opérationnelle."
+  },
+
+  "whatWeDo": {
+    "heading": "Notre Mission",
+    "plan": {
+      "title": "Planifier",
+      "description": "Architecture stratégique et anticipation des risques en amont pour prévenir les perturbations opérationnelles."
+    },
+    "integrate": {
+      "title": "Intégrer",
+      "description": "Intégration de systèmes souverains avec architecture zéro-confiance et traçabilité complète."
+    },
+    "assure": {
+      "title": "Assurer",
+      "description": "Surveillance continue, gouvernance basée sur les SLA et continuité mission-critique."
+    }
+  },
+
+  "sectors": {
+    "heading": "Secteurs",
+    "government": {
+      "title": "Gouvernement et Programmes Nationaux",
+      "description": "Infrastructures souveraines et systèmes de sécurité nationale."
+    },
+    "infrastructure": {
+      "title": "Infrastructures Critiques",
+      "description": "Protection des services essentiels et des actifs nationaux."
+    },
+    "energy": {
+      "title": "Énergie et Mines",
+      "description": "Continuité de production et protection des revenus."
+    },
+    "ports": {
+      "title": "Ports, Frontières et Logistique",
+      "description": "Corridors sécurisés et intégrité de la chaîne d'approvisionnement."
+    },
+    "cyber": {
+      "title": "Résilience Cyber",
+      "description": "Architecture zéro-confiance et prévention des menaces."
+    },
+    "ai": {
+      "title": "Fusion IA et Intelligence",
+      "description": "Intelligence décisionnelle et systèmes prédictifs."
+    }
+  },
+
+  "operatingModel": {
+    "heading": "Modèle Opérationnel",
+    "anticipate": {
+      "label": "Anticiper",
+      "description": "Identifier et modéliser les risques en amont"
+    },
+    "assure": {
+      "label": "Assurer",
+      "description": "Concevoir et intégrer des systèmes sécurisés"
+    },
+    "continuity": {
+      "label": "Continuité",
+      "description": "Surveiller et maintenir la disponibilité opérationnelle"
+    },
+    "revenue": {
+      "label": "Revenus",
+      "description": "Protéger et maximiser les résultats financiers"
+    }
+  },
+
+  "trustSignals": {
+    "heading": "Gouvernance et Confiance",
+    "sovereignty": {
+      "title": "Souveraineté des Données",
+      "description": "Contrôle total sur la localisation et la gouvernance des données"
+    },
+    "zeroTrust": {
+      "title": "Architecture Zéro-Confiance",
+      "description": "Sécurité par conception, jamais par hypothèse"
+    },
+    "sla": {
+      "title": "Assurance Basée sur les SLA",
+      "description": "Garanties contractuelles pour la disponibilité mission-critique"
+    },
+    "traceability": {
+      "title": "Traçabilité Complète",
+      "description": "Pistes d'audit complètes et responsabilité"
+    },
+    "compliance": {
+      "title": "Conformité Réglementaire",
+      "description": "Respect des normes de sécurité internationales"
+    }
+  },
+
+  "cta": {
+    "heading": "Prêt à Sécuriser Vos Opérations ?",
+    "description": "Discutons de la manière dont HC-1 peut protéger et optimiser vos systèmes critiques.",
+    "button": "Nous Contacter"
+  },
+
+  "footer": {
+    "tagline": "Conçu avec précision pour ceux qui protègent ce qui compte.",
+    "copyright": "© 2025 HC-1 | Hybrid Concepts. Tous droits réservés.",
+    "company": "Entreprise",
+    "legal": "Légal",
+    "aboutUs": "À propos",
+    "careers": "Carrières",
+    "press": "Presse",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation",
+    "security": "Sécurité"
+  },
+
+  "metadata": {
+    "title": "HC-1 | Autorité de Commandement Stratégique et d'Intégration",
+    "description": "HC-1 anticipe et sécurise les systèmes en amont pour prévenir les perturbations, réduire les risques opérationnels et protéger les revenus."
+  }
+}

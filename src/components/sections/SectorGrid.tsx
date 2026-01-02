@@ -2,9 +2,8 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
-import { SECTORS } from '@/lib/constants';
-import type { Sector } from '@/types';
 
 const ICONS: Record<string, React.ReactNode> = {
   government: (
@@ -39,78 +38,26 @@ const ICONS: Record<string, React.ReactNode> = {
   ),
 };
 
-interface SectorCardProps {
-  sector: Sector;
-  index: number;
-}
-
-function SectorCard({ sector, index }: SectorCardProps) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] as const }}
-    >
-      <Link
-        href={`/sectors/${sector.slug}`}
-        className={cn(
-          'group block h-full p-6 md:p-8 rounded-2xl',
-          'bg-[var(--surface)] border border-[var(--border)]',
-          'hover:bg-[var(--surface-elevated)] hover:border-[var(--border-accent)]',
-          'transition-all duration-300'
-        )}
-      >
-        {/* Icon */}
-        <div className="mb-4 text-[var(--accent)]">
-          {ICONS[sector.icon] || ICONS.government}
-        </div>
-
-        {/* Title */}
-        <h3 className="text-lg md:text-xl font-semibold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors">
-          {sector.shortTitle}
-        </h3>
-
-        {/* Description */}
-        <p className="mt-2 text-sm text-[var(--text-secondary)] line-clamp-2">
-          {sector.description}
-        </p>
-
-        {/* Arrow */}
-        <div className="mt-4 flex items-center text-[var(--text-muted)] group-hover:text-[var(--accent)] transition-colors">
-          <span className="text-sm font-medium">Learn more</span>
-          <svg
-            className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </div>
-      </Link>
-    </motion.div>
-  );
-}
+const SECTOR_DATA = [
+  { key: 'government', slug: 'government-national-programs', icon: 'government' },
+  { key: 'infrastructure', slug: 'critical-infrastructure', icon: 'infrastructure' },
+  { key: 'energy', slug: 'energy-mining', icon: 'energy' },
+  { key: 'ports', slug: 'ports-borders-logistics', icon: 'logistics' },
+  { key: 'cyber', slug: 'cyber-resilience', icon: 'cyber' },
+  { key: 'ai', slug: 'ai-fusion-intelligence', icon: 'ai' },
+] as const;
 
 interface SectorGridProps {
   title?: string;
-  description?: string;
-  showAll?: boolean;
-  limit?: number;
 }
 
 /**
  * Grid display of sector cards
  * Used on homepage and sectors index page
  */
-export function SectorGrid({
-  title = 'Sectors We Serve',
-  description,
-  showAll = true,
-  limit = 6,
-}: SectorGridProps) {
-  const sectors = showAll ? SECTORS : SECTORS.slice(0, limit);
+export function SectorGrid({ title }: SectorGridProps) {
+  const t = useTranslations('sectors');
+  const tCommon = useTranslations('common');
 
   return (
     <section className="py-20 md:py-32">
@@ -123,20 +70,59 @@ export function SectorGrid({
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] as const }}
           className="max-w-2xl mb-12 md:mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-semibold text-[var(--text-primary)]">
-            {title}
+          <h2 className="text-display-sm md:text-display-md font-bold text-foreground">
+            {title || t('heading')}
           </h2>
-          {description && (
-            <p className="mt-4 text-lg text-[var(--text-secondary)]">
-              {description}
-            </p>
-          )}
         </motion.div>
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {sectors.map((sector, index) => (
-            <SectorCard key={sector.id} sector={sector} index={index} />
+          {SECTOR_DATA.map((sector, index) => (
+            <motion.div
+              key={sector.key}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] as const }}
+            >
+              <Link
+                href={`/sectors/${sector.slug}`}
+                className={cn(
+                  'group block h-full p-6 md:p-8 rounded-2xl',
+                  'bg-surface border border-border',
+                  'hover:bg-surface-elevated hover:border-accent',
+                  'transition-all duration-300'
+                )}
+              >
+                {/* Icon */}
+                <div className="mb-4 text-accent">
+                  {ICONS[sector.icon] || ICONS.government}
+                </div>
+
+                {/* Title */}
+                <h3 className="text-lg md:text-xl font-semibold text-foreground group-hover:text-accent transition-colors">
+                  {t(`${sector.key}.title`)}
+                </h3>
+
+                {/* Description */}
+                <p className="mt-2 text-sm text-foreground-secondary line-clamp-2">
+                  {t(`${sector.key}.description`)}
+                </p>
+
+                {/* Arrow */}
+                <div className="mt-4 flex items-center text-foreground-muted group-hover:text-accent transition-colors">
+                  <span className="text-sm font-medium">{tCommon('learnMore')}</span>
+                  <svg
+                    className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </div>

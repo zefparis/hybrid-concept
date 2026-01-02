@@ -16,10 +16,7 @@ export default function SectorsPage() {
         description="We bring deep sector knowledge to every engagement, understanding the unique challenges, regulations, and operational requirements of each domain."
         variant="page"
       />
-      <SectorGrid
-        title="Our Focus Areas"
-        description="From national security to critical infrastructure, we deliver solutions tailored to sector-specific needs."
-      />
+      <SectorGrid title="Our Focus Areas" />
     </>
   );
 }

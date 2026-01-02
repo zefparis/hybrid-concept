@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui';
 import { cn } from '@/lib/utils';
 import type { HeroProps } from '@/types';
@@ -42,7 +43,9 @@ export function Hero({
   cta,
   secondaryCta,
   variant = 'home',
-}: HeroProps) {
+}: Partial<HeroProps> & { variant?: 'home' | 'page' | 'minimal' } = {}) {
+  const t = useTranslations('hero');
+  const tCommon = useTranslations('common');
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true });
   const prefersReducedMotion = useReducedMotion();
@@ -50,10 +53,11 @@ export function Hero({
   const isHome = variant === 'home';
   const isMinimal = variant === 'minimal';
 
-  const displaySubtitle = subtitle || tagline;
-  const displayDescription = coreStatement || description;
-  const displayCtaText = ctaText || cta?.label;
-  const displayCtaHref = ctaHref || cta?.href;
+  const displayTitle = title || t('title');
+  const displaySubtitle = subtitle || tagline || t('subtitle');
+  const displayDescription = coreStatement || description || t('coreStatement');
+  const displayCtaText = ctaText || cta?.label || tCommon('exploreCTA');
+  const displayCtaHref = ctaHref || cta?.href || '/capabilities';
 
   return (
     <section
@@ -114,7 +118,7 @@ export function Hero({
             !isHome && 'text-display-sm md:text-display-md'
           )}
         >
-          {title}
+          {displayTitle}
         </motion.h1>
         
         {/* Core statement */}

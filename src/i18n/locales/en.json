@@ -1,0 +1,137 @@
+{
+  "common": {
+    "companyName": "HC-1 | Hybrid Concepts",
+    "tagline": "Strategic Command & Integration Authority",
+    "exploreCTA": "Explore Capabilities",
+    "learnMore": "Learn More",
+    "contactUs": "Contact Us",
+    "scroll": "Scroll"
+  },
+
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "sectors": "Sectors",
+    "capabilities": "Capabilities",
+    "insights": "Insights",
+    "contact": "Contact"
+  },
+
+  "hero": {
+    "title": "HC-1 | Hybrid Concepts",
+    "subtitle": "Strategic Command & Integration Authority",
+    "coreStatement": "HC-1 anticipates and secures systems upstream to prevent disruption, reduce operational risk, eliminate the cost and inefficiency of reactive response, and protect and maximize revenue through assured continuity and operational efficiency."
+  },
+
+  "whatWeDo": {
+    "heading": "What We Do",
+    "plan": {
+      "title": "Plan",
+      "description": "Strategic architecture and risk anticipation upstream to prevent operational disruption."
+    },
+    "integrate": {
+      "title": "Integrate",
+      "description": "Sovereign systems integration with zero-trust architecture and full traceability."
+    },
+    "assure": {
+      "title": "Assure",
+      "description": "Continuous monitoring, SLA-based governance, and mission-critical continuity."
+    }
+  },
+
+  "sectors": {
+    "heading": "Sectors",
+    "government": {
+      "title": "Government & National Programs",
+      "description": "Sovereign infrastructure and national security systems."
+    },
+    "infrastructure": {
+      "title": "Critical Infrastructure",
+      "description": "Protection of essential services and national assets."
+    },
+    "energy": {
+      "title": "Energy & Mining",
+      "description": "Production continuity and revenue protection."
+    },
+    "ports": {
+      "title": "Ports, Borders & Logistics",
+      "description": "Secure corridors and supply chain integrity."
+    },
+    "cyber": {
+      "title": "Cyber Resilience",
+      "description": "Zero-trust architecture and threat prevention."
+    },
+    "ai": {
+      "title": "AI Fusion & Intelligence",
+      "description": "Decision intelligence and predictive systems."
+    }
+  },
+
+  "operatingModel": {
+    "heading": "Operating Model",
+    "anticipate": {
+      "label": "Anticipate",
+      "description": "Identify and model risk upstream"
+    },
+    "assure": {
+      "label": "Assure",
+      "description": "Architect and integrate secure systems"
+    },
+    "continuity": {
+      "label": "Continuity",
+      "description": "Monitor and maintain operational uptime"
+    },
+    "revenue": {
+      "label": "Revenue",
+      "description": "Protect and maximize financial outcomes"
+    }
+  },
+
+  "trustSignals": {
+    "heading": "Governance & Trust",
+    "sovereignty": {
+      "title": "Data Sovereignty",
+      "description": "Full control over data location and governance"
+    },
+    "zeroTrust": {
+      "title": "Zero-Trust Architecture",
+      "description": "Security by design, never by assumption"
+    },
+    "sla": {
+      "title": "SLA-Based Assurance",
+      "description": "Contractual guarantees for mission-critical uptime"
+    },
+    "traceability": {
+      "title": "Full Traceability",
+      "description": "Complete audit trails and accountability"
+    },
+    "compliance": {
+      "title": "Regulatory Compliance",
+      "description": "Adherence to international security standards"
+    }
+  },
+
+  "cta": {
+    "heading": "Ready to Secure Your Operations?",
+    "description": "Let's discuss how HC-1 can help protect and optimize your critical systems.",
+    "button": "Get in Touch"
+  },
+
+  "footer": {
+    "tagline": "Built with precision for those who protect what matters.",
+    "copyright": "© 2025 HC-1 | Hybrid Concepts. All rights reserved.",
+    "company": "Company",
+    "legal": "Legal",
+    "aboutUs": "About Us",
+    "careers": "Careers",
+    "press": "Press",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "security": "Security"
+  },
+
+  "metadata": {
+    "title": "HC-1 | Strategic Command & Integration Authority",
+    "description": "HC-1 anticipates and secures systems upstream to prevent disruption, reduce operational risk, and protect revenue through assured continuity."
+  }
+}

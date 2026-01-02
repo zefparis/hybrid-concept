@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { NAVIGATION } from '@/lib/constants';
-import { Button } from '@/components/ui';
+import { Button, LanguageSwitcher } from '@/components/ui';
 
 /**
  * Main site header with navigation
@@ -93,8 +93,9 @@ export function Header() {
             ))}
           </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden lg:block">
+          {/* Desktop CTA + Language */}
+          <div className="hidden lg:flex items-center gap-4">
+            <LanguageSwitcher />
             <Button href="/contact" size="sm">
               Contact
             </Button>

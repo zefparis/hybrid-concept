@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
-import { SERVICES } from '@/lib/constants';
+import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
 
 const ICONS: Record<string, React.ReactNode> = {
@@ -32,10 +32,6 @@ const ICONS: Record<string, React.ReactNode> = {
   ),
 };
 
-interface WhatWeDoProps {
-  heading?: string;
-}
-
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -55,10 +51,13 @@ const itemVariants = {
   },
 };
 
+const SERVICE_KEYS = ['plan', 'integrate', 'assure'] as const;
+
 /**
  * What We Do section - 3 pillars: Plan, Integrate, Assure
  */
-export function WhatWeDo({ heading = 'What We Do' }: WhatWeDoProps) {
+export function WhatWeDo() {
+  const t = useTranslations('whatWeDo');
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
   const prefersReducedMotion = useReducedMotion();
@@ -77,7 +76,7 @@ export function WhatWeDo({ heading = 'What We Do' }: WhatWeDoProps) {
           className="text-center mb-16"
         >
           <h2 className="text-display-sm md:text-display-md font-bold text-foreground">
-            {heading}
+            {t('heading')}
           </h2>
         </motion.div>
 
@@ -88,9 +87,9 @@ export function WhatWeDo({ heading = 'What We Do' }: WhatWeDoProps) {
           animate={isInView ? 'visible' : 'hidden'}
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
-          {SERVICES.map((service) => (
+          {SERVICE_KEYS.map((key) => (
             <motion.div
-              key={service.id}
+              key={key}
               variants={prefersReducedMotion ? {} : itemVariants}
               className={cn(
                 'group relative p-8 rounded-xl overflow-hidden',
@@ -106,17 +105,17 @@ export function WhatWeDo({ heading = 'What We Do' }: WhatWeDoProps) {
               <div className="relative z-10">
                 {/* Icon */}
                 <div className="mb-6 text-foreground-secondary group-hover:text-accent transition-colors duration-300">
-                  {service.icon && ICONS[service.icon] ? ICONS[service.icon] : ICONS.plan}
+                  {ICONS[key]}
                 </div>
 
                 {/* Title */}
                 <h3 className="text-heading-lg font-semibold text-foreground mb-4">
-                  {service.title}
+                  {t(`${key}.title`)}
                 </h3>
 
                 {/* Description */}
                 <p className="text-body text-foreground-secondary leading-relaxed">
-                  {service.description}
+                  {t(`${key}.description`)}
                 </p>
               </div>
             </motion.div>

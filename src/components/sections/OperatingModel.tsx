@@ -3,16 +3,15 @@
 import { useRef } from 'react';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { ArrowRight, ArrowDown } from 'lucide-react';
-import { OPERATING_STEPS } from '@/lib/constants';
+import { useTranslations } from 'next-intl';
 
-interface OperatingModelProps {
-  heading?: string;
-}
+const STEP_KEYS = ['anticipate', 'assure', 'continuity', 'revenue'] as const;
 
 /**
  * Operating Model section - Flow diagram: Anticipate → Assure → Continuity → Revenue
  */
-export function OperatingModel({ heading = 'Operating Model' }: OperatingModelProps) {
+export function OperatingModel() {
+  const t = useTranslations('operatingModel');
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
   const prefersReducedMotion = useReducedMotion();
@@ -28,7 +27,7 @@ export function OperatingModel({ heading = 'Operating Model' }: OperatingModelPr
           className="text-center mb-16"
         >
           <h2 className="text-display-sm md:text-display-md font-bold text-foreground">
-            {heading}
+            {t('heading')}
           </h2>
         </motion.div>
 
@@ -42,9 +41,9 @@ export function OperatingModel({ heading = 'Operating Model' }: OperatingModelPr
 
           {/* Steps */}
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-4 relative z-10">
-            {OPERATING_STEPS.map((step, index) => (
+            {STEP_KEYS.map((key, index) => (
               <motion.div
-                key={step.id}
+                key={key}
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ 
@@ -58,17 +57,17 @@ export function OperatingModel({ heading = 'Operating Model' }: OperatingModelPr
                 <div className="w-full p-6 rounded-xl bg-surface border border-border text-center hover:border-accent transition-colors duration-300">
                   {/* Label */}
                   <h3 className="text-heading-md font-semibold uppercase tracking-wide text-foreground mb-2">
-                    {step.label}
+                    {t(`${key}.label`)}
                   </h3>
 
                   {/* Description */}
                   <p className="text-body-sm text-foreground-secondary">
-                    {step.description}
+                    {t(`${key}.description`)}
                   </p>
                 </div>
 
                 {/* Arrow (Desktop, not on last item) */}
-                {index < OPERATING_STEPS.length - 1 && (
+                {index < STEP_KEYS.length - 1 && (
                   <motion.div 
                     className="hidden lg:flex absolute top-1/2 -right-2 -translate-y-1/2 z-20"
                     initial={{ opacity: 0 }}
@@ -80,7 +79,7 @@ export function OperatingModel({ heading = 'Operating Model' }: OperatingModelPr
                 )}
 
                 {/* Arrow (Mobile, not on last item) */}
-                {index < OPERATING_STEPS.length - 1 && (
+                {index < STEP_KEYS.length - 1 && (
                   <motion.div 
                     className="lg:hidden flex justify-center py-4"
                     initial={{ opacity: 0 }}

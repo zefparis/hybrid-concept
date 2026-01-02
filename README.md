@@ -4,14 +4,19 @@
 
 > HC-1 anticipates and secures systems upstream to prevent disruption, reduce operational risk, eliminate the cost and inefficiency of reactive response, and protect and maximize revenue through assured continuity and operational efficiency.
 
-Enterprise-grade institutional website built with Next.js 14+, delivering sovereign security, systems integration, and operational continuity solutions. Design inspired by Palantir — calm authority, dark minimalism.
+Enterprise-grade institutional website built with Next.js 14+, delivering sovereign security, systems integration, and operational continuity solutions.
+
+**Design inspiration:** Palantir, Stripe, Linear — calm authority, dark minimalism, premium visual effects.
 
 ## Tech Stack
 
-- **Framework:** Next.js 14+ (App Router)
+- **Framework:** Next.js 16+ (App Router)
 - **Language:** TypeScript (strict mode)
-- **Styling:** Tailwind CSS + CSS Custom Properties
+- **Styling:** Tailwind CSS v4 + CSS Custom Properties
 - **Animations:** Framer Motion (subtle, scroll-triggered)
+- **i18n:** next-intl (EN, FR, PT)
+- **Icons:** Lucide React
+- **Utilities:** class-variance-authority (CVA)
 - **Fonts:** Geist Sans & Geist Mono (next/font)
 - **Deployment:** Vercel (recommended)
 
@@ -42,24 +47,29 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 
 ```
 src/
-├── app/                    # Next.js App Router pages
-│   ├── about/             # About page
-│   ├── capabilities/      # Capabilities index + [slug]
-│   ├── contact/           # Contact page
-│   ├── insights/          # Insights/blog page
-│   ├── sectors/           # Sectors index + [slug]
-│   ├── globals.css        # Global styles + design tokens
-│   ├── layout.tsx         # Root layout with Header/Footer
-│   └── page.tsx           # Homepage
+├── app/
+│   ├── [locale]/           # i18n dynamic routing
+│   │   ├── layout.tsx      # Locale layout with NextIntlClientProvider
+│   │   └── page.tsx        # Homepage
+│   ├── globals.css         # Global styles + design tokens
+│   └── layout.tsx          # Root layout (fonts, html/body)
 ├── components/
-│   ├── layout/            # Header, Footer
-│   ├── sections/          # Hero, SectorGrid, WhatWeDo, OperatingModel, TrustSignals, CTASection
-│   └── ui/                # Button, and other primitives
+│   ├── layout/             # Header, Footer
+│   ├── sections/           # Hero, SectorGrid, WhatWeDo, OperatingModel, TrustSignals, CTASection
+│   └── ui/                 # Button, LanguageSwitcher
+├── i18n/
+│   ├── config.ts           # Locale configuration (en, fr, pt)
+│   ├── request.ts          # Server-side i18n setup
+│   └── locales/
+│       ├── en.json         # English translations
+│       ├── fr.json         # French translations
+│       └── pt.json         # Portuguese translations
 ├── lib/
-│   ├── constants.ts       # Navigation, sectors, capabilities, services, operating model data
-│   └── utils.ts           # Utility functions (cn, formatDate, etc.)
+│   ├── constants.ts        # Navigation, sectors, capabilities data
+│   └── utils.ts            # Utility functions (cn, formatDate, etc.)
+├── middleware.ts           # i18n routing middleware
 └── types/
-    └── index.ts           # TypeScript interfaces
+    └── index.ts            # TypeScript interfaces
 ```
 
 ## Homepage Sections
@@ -78,47 +88,90 @@ src/
 ### Colors (Dark Theme)
 
 ```css
+/* Base */
 --background: #0a0a0a;
 --surface: #141414;
 --surface-elevated: #1a1a1a;
+--surface-hover: #1f1f1f;
+
+/* Accent */
 --accent: #2563eb;
 --accent-hover: #3b82f6;
---text-primary: #f5f5f5;
---text-secondary: #a3a3a3;
---text-muted: #737373;
+--accent-muted: #1e40af;
+
+/* Foreground (text) */
+--foreground: #f5f5f5;
+--foreground-secondary: #a3a3a3;
+--foreground-muted: #737373;
+
+/* Borders */
 --border: rgba(255, 255, 255, 0.1);
+--border-strong: rgba(255, 255, 255, 0.15);
+
+/* Shadows */
+--shadow-glow-sm: 0 0 20px rgba(37, 99, 235, 0.3);
+--shadow-glow-md: 0 0 40px rgba(37, 99, 235, 0.4);
+--shadow-elevated: 0 4px 20px rgba(0, 0, 0, 0.7);
 ```
 
 ### Typography Scale
 
-- **xs:** 12px
-- **sm:** 14px
-- **base:** 16px
-- **lg:** 20px
-- **xl:** 28px
-- **2xl:** 36px
-- **3xl:** 48px
-- **4xl:** 64px
+| Token | Size | Usage |
+|-------|------|-------|
+| `display-lg` | 4rem (64px) | Hero title desktop |
+| `display-md` | 3rem (48px) | Hero title mobile, section headings |
+| `display-sm` | 2.25rem (36px) | Section headings mobile |
+| `heading-lg` | 1.75rem (28px) | Card titles |
+| `heading-md` | 1.25rem (20px) | Subheadings |
+| `body-lg` | 1.125rem (18px) | Lead paragraphs |
+| `body` | 1rem (16px) | Body text |
+| `body-sm` | 0.875rem (14px) | Small text |
+| `caption` | 0.75rem (12px) | Labels, captions |
+
+### Premium CSS Utilities
+
+```css
+/* Glass morphism */
+.glass { background: rgba(20, 20, 20, 0.8); backdrop-filter: blur(8px); }
+.glass-elevated { background: rgba(26, 26, 26, 0.9); backdrop-filter: blur(12px); }
+
+/* Hover effects */
+.hover-lift { transition: all 0.3s; }
+.hover-lift:hover { transform: translateY(-4px); box-shadow: var(--shadow-elevated); }
+
+/* Grid pattern background */
+.grid-pattern { background-image: linear-gradient(...); background-size: 50px 50px; }
+
+/* Animated border (gradient on hover) */
+.border-animated::before { /* gradient border effect */ }
+
+/* Accent line (bottom border animation) */
+.accent-line-bottom::after { /* animated bottom line */ }
+
+/* Text gradients */
+.text-gradient { /* foreground gradient */ }
+.text-gradient-accent { /* accent gradient */ }
+```
 
 ### Animation Patterns
 
 ```typescript
-// Fade in + slide up (reusable)
-const fadeInUp = {
+// Container with stagger
+const container = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15, delayChildren: 0.2 }
+  }
+};
+
+// Item fade in + slide up
+const item = {
   hidden: { opacity: 0, y: 20 },
   visible: { 
     opacity: 1, 
     y: 0,
-    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] }
-  }
-};
-
-// Stagger container
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 }
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
   }
 };
 ```
@@ -245,16 +298,65 @@ vercel
 NEXT_PUBLIC_SITE_URL=https://hc-1.com
 ```
 
+## Internationalization (i18n)
+
+The site supports 3 languages with automatic routing:
+
+| Locale | Language | URL |
+|--------|----------|-----|
+| `en` | English (default) | `/en` |
+| `fr` | Français | `/fr` |
+| `pt` | Português | `/pt` |
+
+### Translation Files
+
+Located in `src/i18n/locales/`:
+- `en.json` — English translations
+- `fr.json` — French translations  
+- `pt.json` — Portuguese translations
+
+### Using Translations in Components
+
+```tsx
+'use client';
+import { useTranslations } from 'next-intl';
+
+export function MyComponent() {
+  const t = useTranslations('hero');
+  return <h1>{t('title')}</h1>;
+}
+```
+
+### Language Switcher
+
+The `LanguageSwitcher` component in the Header allows users to switch languages without page reload.
+
 ## Development Status
 
-### Phase 1 ✅ Complete
+### Phase 1 ✅ Complete — Homepage Structure
 - [x] Hero section with core statement
 - [x] What We Do section (Plan, Integrate, Assure)
 - [x] Sector Grid with 6 sectors
 - [x] Operating Model flow diagram
 - [x] Trust Signals section
 
-### Phase 2 (Planned)
+### Phase 2 ✅ Complete — Premium Visual Transformation
+- [x] Tailwind v4 theme configuration (colors, typography, shadows)
+- [x] Premium CSS utilities (glass, grid-pattern, hover-lift, accent-line-bottom)
+- [x] Button component with CVA variants and glow effects
+- [x] Hero with grid-pattern background, glow orb, text-gradient
+- [x] Cards with hover-lift, gradient overlays, animated borders
+- [x] Lucide icons integration
+
+### Phase 3 ✅ Complete — Internationalization (i18n)
+- [x] next-intl integration with App Router
+- [x] 3 languages: English, French, Portuguese
+- [x] Locale-based routing (`/en`, `/fr`, `/pt`)
+- [x] LanguageSwitcher component in Header
+- [x] All homepage sections use translations
+- [x] SEO metadata per locale with hreflang
+
+### Phase 4 (Planned)
 - [ ] Sector detail pages content
 - [ ] Capabilities detail pages content
 - [ ] About page content
@@ -262,7 +364,6 @@ NEXT_PUBLIC_SITE_URL=https://hc-1.com
 
 ### Future Enhancements
 - [ ] Sanity CMS integration for Insights
-- [ ] i18n support (FR/EN)
 - [ ] Plausible Analytics
 - [ ] Contact form backend
 - [ ] Search functionality

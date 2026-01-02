@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
-import { TRUST_SIGNALS } from '@/lib/constants';
+import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
 
 const ICONS: Record<string, React.ReactNode> = {
@@ -42,14 +42,20 @@ const ICONS: Record<string, React.ReactNode> = {
   ),
 };
 
-interface TrustSignalsProps {
-  heading?: string;
-}
+const SIGNAL_KEYS = ['sovereignty', 'zeroTrust', 'sla', 'traceability', 'compliance'] as const;
+const SIGNAL_ICONS: Record<string, string> = {
+  sovereignty: 'shield',
+  zeroTrust: 'lock',
+  sla: 'check',
+  traceability: 'document',
+  compliance: 'certificate',
+};
 
 /**
  * Trust Signals section - Governance, compliance, sovereignty
  */
-export function TrustSignals({ heading = 'Governance & Trust' }: TrustSignalsProps) {
+export function TrustSignals() {
+  const t = useTranslations('trustSignals');
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
   const prefersReducedMotion = useReducedMotion();
@@ -60,6 +66,9 @@ export function TrustSignals({ heading = 'Governance & Trust' }: TrustSignalsPro
     'transition-all duration-500',
     'hover:border-accent hover-lift'
   );
+
+  const firstThree = SIGNAL_KEYS.slice(0, 3);
+  const lastTwo = SIGNAL_KEYS.slice(3);
 
   return (
     <section ref={sectionRef} className="py-20 md:py-32 bg-surface">
@@ -72,15 +81,15 @@ export function TrustSignals({ heading = 'Governance & Trust' }: TrustSignalsPro
           className="text-center mb-16"
         >
           <h2 className="text-display-sm md:text-display-md font-bold text-foreground">
-            {heading}
+            {t('heading')}
           </h2>
         </motion.div>
 
         {/* Trust Items - 3 columns desktop, 1 column mobile */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {TRUST_SIGNALS.slice(0, 3).map((signal, index) => (
+          {firstThree.map((key, index) => (
             <motion.div
-              key={signal.id}
+              key={key}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ 
@@ -97,17 +106,17 @@ export function TrustSignals({ heading = 'Governance & Trust' }: TrustSignalsPro
               <div className="relative z-10">
                 {/* Icon */}
                 <div className="mb-6 text-foreground-secondary group-hover:text-accent transition-colors duration-300">
-                  {signal.icon && ICONS[signal.icon] ? ICONS[signal.icon] : ICONS.shield}
+                  {ICONS[SIGNAL_ICONS[key]] || ICONS.shield}
                 </div>
 
                 {/* Title */}
                 <h3 className="text-heading-md font-semibold text-foreground mb-3">
-                  {signal.title}
+                  {t(`${key}.title`)}
                 </h3>
 
                 {/* Description */}
                 <p className="text-body-sm text-foreground-secondary">
-                  {signal.description}
+                  {t(`${key}.description`)}
                 </p>
               </div>
             </motion.div>
@@ -115,11 +124,11 @@ export function TrustSignals({ heading = 'Governance & Trust' }: TrustSignalsPro
         </div>
 
         {/* Additional Trust Items (2 remaining) */}
-        {TRUST_SIGNALS.length > 3 && (
+        {lastTwo.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 max-w-2xl mx-auto">
-            {TRUST_SIGNALS.slice(3).map((signal, index) => (
+            {lastTwo.map((key, index) => (
               <motion.div
-                key={signal.id}
+                key={key}
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ 
@@ -136,17 +145,17 @@ export function TrustSignals({ heading = 'Governance & Trust' }: TrustSignalsPro
                 <div className="relative z-10">
                   {/* Icon */}
                   <div className="mb-6 text-foreground-secondary group-hover:text-accent transition-colors duration-300">
-                    {signal.icon && ICONS[signal.icon] ? ICONS[signal.icon] : ICONS.shield}
+                    {ICONS[SIGNAL_ICONS[key]] || ICONS.shield}
                   </div>
 
                   {/* Title */}
                   <h3 className="text-heading-md font-semibold text-foreground mb-3">
-                    {signal.title}
+                    {t(`${key}.title`)}
                   </h3>
 
                   {/* Description */}
                   <p className="text-body-sm text-foreground-secondary">
-                    {signal.description}
+                    {t(`${key}.description`)}
                   </p>
                 </div>
               </motion.div>
