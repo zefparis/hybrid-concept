@@ -1,48 +1,81 @@
 'use client';
 
+import * as React from 'react';
 import { forwardRef } from 'react';
 import Link from 'next/link';
+import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
-type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'outline';
-type ButtonSize = 'sm' | 'md' | 'lg';
+const buttonVariants = cva(
+  [
+    'inline-flex items-center justify-center gap-2',
+    'font-medium rounded-lg whitespace-nowrap',
+    'transition-all duration-300',
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+    'disabled:pointer-events-none disabled:opacity-50',
+  ],
+  {
+    variants: {
+      variant: {
+        default: [
+          'bg-accent text-white',
+          'hover:bg-accent-hover',
+          'shadow-glow-sm hover:shadow-glow-md',
+        ],
+        outline: [
+          'border-2 border-border bg-transparent',
+          'text-foreground',
+          'hover:border-accent hover:bg-accent/5',
+        ],
+        ghost: [
+          'bg-transparent',
+          'text-foreground-secondary',
+          'hover:text-foreground hover:bg-surface-hover',
+        ],
+        link: [
+          'text-accent underline-offset-4',
+          'hover:underline',
+        ],
+        glow: [
+          'bg-accent text-white',
+          'hover:bg-accent-hover',
+          'shadow-glow-md hover:shadow-glow-md',
+          'border border-accent-hover',
+        ],
+      },
+      size: {
+        default: 'h-12 px-6 py-3 text-base',
+        sm: 'h-10 px-4 py-2 text-sm',
+        lg: 'h-14 px-8 py-4 text-lg',
+        icon: 'h-12 w-12',
+      },
+    },
+    defaultVariants: {
+      variant: 'default',
+      size: 'default',
+    },
+  }
+);
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: ButtonVariant;
-  size?: ButtonSize;
+interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
   href?: string;
   isLoading?: boolean;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
 }
 
-const variantStyles: Record<ButtonVariant, string> = {
-  primary:
-    'bg-[var(--accent)] text-white hover:bg-[var(--accent-hover)] active:bg-[var(--accent)]',
-  secondary:
-    'bg-[var(--surface-elevated)] text-[var(--text-primary)] hover:bg-[var(--surface-hover)] border border-[var(--border)]',
-  ghost:
-    'bg-transparent text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--surface)]',
-  outline:
-    'bg-transparent text-[var(--text-primary)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--accent)]',
-};
-
-const sizeStyles: Record<ButtonSize, string> = {
-  sm: 'px-3 py-1.5 text-sm',
-  md: 'px-5 py-2.5 text-base',
-  lg: 'px-7 py-3.5 text-lg',
-};
-
 /**
- * Button component with multiple variants and sizes
+ * Premium Button component with multiple variants and sizes
  * Supports both button and link modes
  */
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       className,
-      variant = 'primary',
-      size = 'md',
+      variant,
+      size,
       href,
       isLoading,
       leftIcon,
@@ -53,17 +86,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
-    const baseStyles = cn(
-      'inline-flex items-center justify-center gap-2',
-      'font-medium rounded-lg',
-      'transition-all duration-[var(--duration-fast)] ease-[var(--easing-default)]',
-      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]',
-      'disabled:opacity-50 disabled:cursor-not-allowed',
-      variantStyles[variant],
-      sizeStyles[size],
-      className
-    );
-
     const content = (
       <>
         {isLoading ? (
@@ -78,7 +100,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     if (href && !disabled) {
       return (
-        <Link href={href} className={baseStyles}>
+        <Link 
+          href={href} 
+          className={cn(buttonVariants({ variant, size, className }))}
+        >
           {content}
         </Link>
       );
@@ -87,7 +112,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         ref={ref}
-        className={baseStyles}
+        className={cn(buttonVariants({ variant, size, className }))}
         disabled={disabled || isLoading}
         {...props}
       >
@@ -98,3 +123,5 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 );
 
 Button.displayName = 'Button';
+
+export { buttonVariants };

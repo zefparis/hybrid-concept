@@ -1,30 +1,33 @@
 @import "tailwindcss";
 
 /* ============================================================================
-   HC-1 Design System - CSS Custom Properties
+   HC-1 Design System - Premium Visual Configuration
+   Inspired by: Palantir, Stripe, Linear
    ============================================================================ */
 
 :root {
-  /* Colors - Dark Theme (Default) */
+  /* Colors - Dark Theme */
   --background: #0a0a0a;
   --surface: #141414;
   --surface-elevated: #1a1a1a;
-  --surface-hover: #242424;
+  --surface-hover: #1f1f1f;
   
-  /* Accent */
+  /* Accent system */
   --accent: #2563eb;
   --accent-hover: #3b82f6;
-  --accent-muted: rgba(37, 99, 235, 0.15);
+  --accent-muted: #1e40af;
+  --accent-glow: rgba(37, 99, 235, 0.4);
   
-  /* Text */
-  --text-primary: #f5f5f5;
-  --text-secondary: #a3a3a3;
-  --text-muted: #737373;
+  /* Foreground (text hierarchy) */
+  --foreground: #f5f5f5;
+  --foreground-secondary: #a3a3a3;
+  --foreground-muted: #737373;
+  --foreground-disabled: #525252;
   
-  /* Borders */
+  /* Borders & dividers */
   --border: rgba(255, 255, 255, 0.1);
-  --border-subtle: rgba(255, 255, 255, 0.05);
-  --border-accent: rgba(37, 99, 235, 0.5);
+  --border-strong: rgba(255, 255, 255, 0.15);
+  --border-accent: #2563eb;
   
   /* Status */
   --success: #22c55e;
@@ -32,10 +35,10 @@
   --error: #ef4444;
   
   /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
-  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.5);
+  --shadow-glow-sm: 0 0 20px rgba(37, 99, 235, 0.3);
+  --shadow-glow-md: 0 0 40px rgba(37, 99, 235, 0.4);
+  --shadow-surface: 0 1px 3px rgba(0, 0, 0, 0.5);
+  --shadow-elevated: 0 4px 20px rgba(0, 0, 0, 0.7);
   
   /* Animation */
   --duration-fast: 150ms;
@@ -44,53 +47,69 @@
   --easing-default: cubic-bezier(0.4, 0, 0.2, 1);
   --easing-smooth: cubic-bezier(0.16, 1, 0.3, 1);
   
-  /* Typography Scale */
-  --font-size-xs: 0.75rem;    /* 12px */
-  --font-size-sm: 0.875rem;   /* 14px */
-  --font-size-base: 1rem;     /* 16px */
-  --font-size-lg: 1.25rem;    /* 20px */
-  --font-size-xl: 1.75rem;    /* 28px */
-  --font-size-2xl: 2.25rem;   /* 36px */
-  --font-size-3xl: 3rem;      /* 48px */
-  --font-size-4xl: 4rem;      /* 64px */
-  
-  /* Line Heights */
-  --leading-tight: 1.1;
-  --leading-snug: 1.25;
-  --leading-normal: 1.5;
-  --leading-relaxed: 1.625;
-  
-  /* Spacing Scale (8px base) */
-  --space-1: 0.25rem;   /* 4px */
-  --space-2: 0.5rem;    /* 8px */
-  --space-3: 0.75rem;   /* 12px */
-  --space-4: 1rem;      /* 16px */
-  --space-5: 1.5rem;    /* 24px */
-  --space-6: 2rem;      /* 32px */
-  --space-8: 3rem;      /* 48px */
-  --space-10: 4rem;     /* 64px */
-  --space-12: 5rem;     /* 80px */
-  --space-16: 6rem;     /* 96px */
-  --space-20: 8rem;     /* 128px */
-  
   /* Container */
   --container-max: 1280px;
   --container-padding: 1.5rem;
+  
+  /* Radius */
+  --radius: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
 }
 
+/* ============================================================================
+   Tailwind v4 Theme Configuration
+   ============================================================================ */
+
 @theme inline {
+  /* Colors */
   --color-background: var(--background);
   --color-surface: var(--surface);
   --color-surface-elevated: var(--surface-elevated);
+  --color-surface-hover: var(--surface-hover);
+  
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
-  --color-text-primary: var(--text-primary);
-  --color-text-secondary: var(--text-secondary);
-  --color-text-muted: var(--text-muted);
+  --color-accent-muted: var(--accent-muted);
+  
+  --color-foreground: var(--foreground);
+  --color-foreground-secondary: var(--foreground-secondary);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-foreground-disabled: var(--foreground-disabled);
+  
   --color-border: var(--border);
-  --color-border-subtle: var(--border-subtle);
+  --color-border-strong: var(--border-strong);
+  --color-border-accent: var(--border-accent);
+  
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  
+  /* Fonts */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /* Custom font sizes with line-height and letter-spacing */
+  --font-size-display-lg: 4rem;
+  --font-size-display-md: 3rem;
+  --font-size-display-sm: 2.25rem;
+  --font-size-heading-lg: 1.75rem;
+  --font-size-heading-md: 1.25rem;
+  --font-size-body-lg: 1.125rem;
+  --font-size-body: 1rem;
+  --font-size-body-sm: 0.875rem;
+  --font-size-caption: 0.75rem;
+  
+  /* Shadows */
+  --shadow-glow-sm: var(--shadow-glow-sm);
+  --shadow-glow-md: var(--shadow-glow-md);
+  --shadow-surface: var(--shadow-surface);
+  --shadow-elevated: var(--shadow-elevated);
+  
+  /* Animations */
+  --animate-fade-in: fadeIn 0.6s ease-out;
+  --animate-slide-up: slideUp 0.6s ease-out;
+  --animate-glow: glow 2s ease-in-out infinite;
 }
 
 /* ============================================================================
@@ -99,6 +118,7 @@
 
 * {
   box-sizing: border-box;
+  border-color: var(--border);
 }
 
 html {
@@ -109,11 +129,12 @@ html {
 
 body {
   background: var(--background);
-  color: var(--text-primary);
+  color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
-  font-size: var(--font-size-base);
-  line-height: var(--leading-normal);
+  font-size: 1rem;
+  line-height: 1.6;
   min-height: 100vh;
+  font-feature-settings: "rlig" 1, "calt" 1;
 }
 
 /* ============================================================================
@@ -121,27 +142,28 @@ body {
    ============================================================================ */
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  line-height: var(--leading-tight);
+  font-weight: 700;
+  line-height: 1.1;
   letter-spacing: -0.02em;
+  color: var(--foreground);
 }
 
-h1 { font-size: var(--font-size-3xl); }
-h2 { font-size: var(--font-size-2xl); }
-h3 { font-size: var(--font-size-xl); }
-h4 { font-size: var(--font-size-lg); }
-h5 { font-size: var(--font-size-base); }
-h6 { font-size: var(--font-size-sm); }
+h1 { font-size: 3rem; }
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.875rem; }
 
 @media (min-width: 768px) {
-  h1 { font-size: var(--font-size-4xl); }
-  h2 { font-size: var(--font-size-3xl); }
-  h3 { font-size: var(--font-size-2xl); }
+  h1 { font-size: 4rem; }
+  h2 { font-size: 3rem; }
+  h3 { font-size: 2.25rem; }
 }
 
 p {
-  color: var(--text-secondary);
-  line-height: var(--leading-relaxed);
+  color: var(--foreground-secondary);
+  line-height: 1.7;
 }
 
 a {
@@ -155,17 +177,13 @@ a:hover {
 }
 
 /* ============================================================================
-   Selection
+   Selection & Scrollbar
    ============================================================================ */
 
 ::selection {
   background: var(--accent);
   color: white;
 }
-
-/* ============================================================================
-   Scrollbar (Webkit)
-   ============================================================================ */
 
 ::-webkit-scrollbar {
   width: 8px;
@@ -177,12 +195,12 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
+  background: var(--foreground-muted);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--text-muted);
+  background: var(--foreground-secondary);
 }
 
 /* ============================================================================
@@ -195,7 +213,7 @@ a:hover {
 }
 
 /* ============================================================================
-   Utility Classes
+   Container
    ============================================================================ */
 
 .container {
@@ -207,21 +225,126 @@ a:hover {
   padding-right: var(--container-padding);
 }
 
+/* ============================================================================
+   Text Utilities
+   ============================================================================ */
+
 .text-gradient {
-  background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+  background: linear-gradient(135deg, var(--foreground) 0%, var(--foreground-secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.glass {
-  background: rgba(20, 20, 20, 0.8);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+.text-gradient-accent {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* ============================================================================
-   Animation Utilities
+   Glass Morphism
+   ============================================================================ */
+
+.glass {
+  background: rgba(20, 20, 20, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+}
+
+.glass-elevated {
+  background: rgba(26, 26, 26, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-strong);
+}
+
+/* ============================================================================
+   Hover Effects
+   ============================================================================ */
+
+.hover-lift {
+  transition: all 0.3s var(--easing-smooth);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-elevated);
+}
+
+.hover-glow {
+  transition: all 0.3s var(--easing-smooth);
+}
+
+.hover-glow:hover {
+  box-shadow: var(--shadow-glow-sm);
+}
+
+/* ============================================================================
+   Grid Pattern Background
+   ============================================================================ */
+
+.grid-pattern {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* ============================================================================
+   Animated Border
+   ============================================================================ */
+
+.border-animated {
+  position: relative;
+  overflow: hidden;
+}
+
+.border-animated::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover), var(--accent));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.border-animated:hover::before {
+  opacity: 1;
+}
+
+/* ============================================================================
+   Accent Line (bottom border animation)
+   ============================================================================ */
+
+.accent-line-bottom {
+  position: relative;
+}
+
+.accent-line-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  transition: width 0.5s var(--easing-smooth);
+}
+
+.accent-line-bottom:hover::after {
+  width: 100%;
+}
+
+/* ============================================================================
+   Keyframe Animations
    ============================================================================ */
 
 @keyframes fadeIn {
@@ -229,7 +352,7 @@ a:hover {
   to { opacity: 1; }
 }
 
-@keyframes fadeInUp {
+@keyframes slideUp {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -240,15 +363,38 @@ a:hover {
   }
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+@keyframes glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes draw {
+  from { stroke-dashoffset: 1000; }
+  to { stroke-dashoffset: 0; }
 }
 
 .animate-fade-in {
-  animation: fadeIn var(--duration-normal) var(--easing-smooth);
+  animation: fadeIn 0.6s var(--easing-smooth);
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp var(--duration-slow) var(--easing-smooth);
+.animate-slide-up {
+  animation: slideUp 0.6s var(--easing-smooth);
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* ============================================================================
+   Reduced Motion
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

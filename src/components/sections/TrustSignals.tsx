@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { TRUST_SIGNALS } from '@/lib/constants';
+import { cn } from '@/lib/utils';
 
 const ICONS: Record<string, React.ReactNode> = {
   shield: (
@@ -53,8 +54,15 @@ export function TrustSignals({ heading = 'Governance & Trust' }: TrustSignalsPro
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
   const prefersReducedMotion = useReducedMotion();
 
+  const cardClasses = cn(
+    'group relative p-8 rounded-xl overflow-hidden',
+    'bg-surface-elevated border border-border',
+    'transition-all duration-500',
+    'hover:border-accent hover-lift'
+  );
+
   return (
-    <section ref={sectionRef} className="py-20 md:py-32 bg-[var(--surface)]">
+    <section ref={sectionRef} className="py-20 md:py-32 bg-surface">
       <div className="container">
         {/* Section Header */}
         <motion.div
@@ -63,7 +71,7 @@ export function TrustSignals({ heading = 'Governance & Trust' }: TrustSignalsPro
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] as const }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-semibold text-[var(--text-primary)]">
+          <h2 className="text-display-sm md:text-display-md font-bold text-foreground">
             {heading}
           </h2>
         </motion.div>
@@ -80,22 +88,28 @@ export function TrustSignals({ heading = 'Governance & Trust' }: TrustSignalsPro
                 delay: prefersReducedMotion ? 0 : index * 0.1, 
                 ease: [0.16, 1, 0.3, 1] as const 
               }}
-              className="group p-8 rounded-xl border border-[var(--border)] bg-[var(--surface-elevated)] transition-colors duration-300 hover:border-[var(--accent)]"
+              className={cardClasses}
             >
-              {/* Icon */}
-              <div className="mb-6 text-[var(--text-secondary)] group-hover:text-[var(--accent)] transition-colors duration-300">
-                {signal.icon && ICONS[signal.icon] ? ICONS[signal.icon] : ICONS.shield}
+              {/* Hover gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              {/* Content */}
+              <div className="relative z-10">
+                {/* Icon */}
+                <div className="mb-6 text-foreground-secondary group-hover:text-accent transition-colors duration-300">
+                  {signal.icon && ICONS[signal.icon] ? ICONS[signal.icon] : ICONS.shield}
+                </div>
+
+                {/* Title */}
+                <h3 className="text-heading-md font-semibold text-foreground mb-3">
+                  {signal.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-body-sm text-foreground-secondary">
+                  {signal.description}
+                </p>
               </div>
-
-              {/* Title */}
-              <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
-                {signal.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-[var(--text-secondary)]">
-                {signal.description}
-              </p>
             </motion.div>
           ))}
         </div>
@@ -113,22 +127,28 @@ export function TrustSignals({ heading = 'Governance & Trust' }: TrustSignalsPro
                   delay: prefersReducedMotion ? 0 : (3 + index) * 0.1, 
                   ease: [0.16, 1, 0.3, 1] as const 
                 }}
-                className="group p-8 rounded-xl border border-[var(--border)] bg-[var(--surface-elevated)] transition-colors duration-300 hover:border-[var(--accent)]"
+                className={cardClasses}
               >
-                {/* Icon */}
-                <div className="mb-6 text-[var(--text-secondary)] group-hover:text-[var(--accent)] transition-colors duration-300">
-                  {signal.icon && ICONS[signal.icon] ? ICONS[signal.icon] : ICONS.shield}
+                {/* Hover gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {/* Content */}
+                <div className="relative z-10">
+                  {/* Icon */}
+                  <div className="mb-6 text-foreground-secondary group-hover:text-accent transition-colors duration-300">
+                    {signal.icon && ICONS[signal.icon] ? ICONS[signal.icon] : ICONS.shield}
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-heading-md font-semibold text-foreground mb-3">
+                    {signal.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-body-sm text-foreground-secondary">
+                    {signal.description}
+                  </p>
                 </div>
-
-                {/* Title */}
-                <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
-                  {signal.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-[var(--text-secondary)]">
-                  {signal.description}
-                </p>
               </motion.div>
             ))}
           </div>

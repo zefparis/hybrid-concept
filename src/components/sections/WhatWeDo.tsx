@@ -36,6 +36,25 @@ interface WhatWeDoProps {
   heading?: string;
 }
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
+  },
+};
+
 /**
  * What We Do section - 3 pillars: Plan, Integrate, Assure
  */
@@ -44,29 +63,10 @@ export function WhatWeDo({ heading = 'What We Do' }: WhatWeDoProps) {
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
   const prefersReducedMotion = useReducedMotion();
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const },
-    },
-  };
-
   return (
     <section 
       ref={sectionRef}
-      className="px-6 py-12 md:px-12 md:py-20 bg-[var(--surface)]"
+      className="relative py-20 md:py-32 bg-surface"
     >
       <div className="container">
         {/* Section Header */}
@@ -76,7 +76,7 @@ export function WhatWeDo({ heading = 'What We Do' }: WhatWeDoProps) {
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] as const }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-semibold text-[var(--text-primary)]">
+          <h2 className="text-display-sm md:text-display-md font-bold text-foreground">
             {heading}
           </h2>
         </motion.div>
@@ -93,26 +93,32 @@ export function WhatWeDo({ heading = 'What We Do' }: WhatWeDoProps) {
               key={service.id}
               variants={prefersReducedMotion ? {} : itemVariants}
               className={cn(
-                'group p-8 rounded-xl',
-                'bg-[var(--surface-elevated)] border border-[var(--border)]',
-                'transition-all duration-300',
-                'hover:border-[var(--accent)] hover:scale-[1.02]'
+                'group relative p-8 rounded-xl overflow-hidden',
+                'bg-surface-elevated border border-border',
+                'transition-all duration-500',
+                'hover:border-accent hover-lift accent-line-bottom'
               )}
             >
-              {/* Icon */}
-              <div className="mb-6 text-[var(--text-secondary)] group-hover:text-[var(--accent)] transition-colors duration-300">
-                {service.icon && ICONS[service.icon] ? ICONS[service.icon] : ICONS.plan}
+              {/* Hover gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              {/* Content */}
+              <div className="relative z-10">
+                {/* Icon */}
+                <div className="mb-6 text-foreground-secondary group-hover:text-accent transition-colors duration-300">
+                  {service.icon && ICONS[service.icon] ? ICONS[service.icon] : ICONS.plan}
+                </div>
+
+                {/* Title */}
+                <h3 className="text-heading-lg font-semibold text-foreground mb-4">
+                  {service.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-body text-foreground-secondary leading-relaxed">
+                  {service.description}
+                </p>
               </div>
-
-              {/* Title */}
-              <h3 className="text-2xl font-semibold text-[var(--text-primary)] mb-4">
-                {service.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-base text-[var(--text-secondary)] leading-relaxed">
-                {service.description}
-              </p>
             </motion.div>
           ))}
         </motion.div>
