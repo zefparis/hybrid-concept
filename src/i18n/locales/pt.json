@@ -215,6 +215,766 @@
         "primary": "Discutir Suas Operações",
         "secondary": "Explorar Todas as Capacidades"
       }
+    },
+
+    "governmentPrograms": {
+      "hero": {
+        "title": "Governo e Programas Nacionais",
+        "subtitle": "Proteção de Infraestruturas Soberanas",
+        "lead": "A HC-1 protege infraestruturas nacionais, protege dados soberanos e assegura continuidade de operações governamentais através de arquitetura zero-trust e integração de sistemas mission-critical."
+      },
+      "stats": {
+        "systems": {
+          "value": "24/7",
+          "label": "garantia operacional"
+        },
+        "sovereignty": {
+          "value": "100%",
+          "label": "soberania de dados"
+        },
+        "compliance": {
+          "value": "Multi-nível",
+          "label": "autorizações de segurança"
+        }
+      },
+      "overview": {
+        "heading": "O Desafio",
+        "intro": "Governos e programas nacionais exigem continuidade absoluta, soberania de dados e segurança multi-nível. Perturbações impactam serviços públicos, segurança nacional e confiança dos cidadãos.",
+        "sovereignty": {
+          "title": "Requisitos de Soberania",
+          "points": [
+            "Dados devem permanecer sob jurisdição nacional",
+            "Dependências de fornecedores estrangeiros criam risco estratégico",
+            "Conformidade regulamentar através de agências e ministérios"
+          ]
+        },
+        "continuity": {
+          "title": "Imperativos de Continuidade",
+          "points": [
+            "Tolerância zero a tempo de inatividade em serviços críticos",
+            "Operações de emergência requerem disponibilidade garantida",
+            "Coordenação inter-agências durante eventos de crise"
+          ]
+        },
+        "threats": {
+          "title": "Panorama de Ameaças",
+          "points": [
+            "Campanhas cibernéticas patrocinadas por Estados visando infraestruturas",
+            "Vulnerabilidades da cadeia de abastecimento em aquisições",
+            "Ameaças internas e abuso de acesso privilegiado"
+          ]
+        }
+      },
+      "risks": {
+        "heading": "Vulnerabilidades Críticas",
+        "security": {
+          "title": "Lacunas de Segurança",
+          "items": [
+            {
+              "label": "Integração de sistemas legados",
+              "details": "Infraestruturas com décadas incompatíveis com segurança moderna; Contorno de air-gap via redes de contratantes"
+            },
+            {
+              "label": "Fragmentação multi-fornecedor",
+              "details": "Ferramentas de segurança isoladas; Sem visibilidade unificada de ameaças entre agências"
+            },
+            {
+              "label": "Riscos de acesso privilegiado",
+              "details": "Acesso de contratantes frequentemente excessivo; Trilhas de auditoria incompletas ou atrasadas"
+            }
+          ]
+        },
+        "operational": {
+          "title": "Riscos Operacionais",
+          "items": [
+            {
+              "label": "Pontos únicos de falha",
+              "details": "Serviços críticos carecem de redundância; Sistemas de failover não testados ou manuais"
+            },
+            {
+              "label": "Violações de soberania de dados",
+              "details": "Serviços cloud armazenam dados em jurisdições estrangeiras; Acesso de fornecedor cria exposição de conformidade"
+            },
+            {
+              "label": "Lacunas de resposta a emergências",
+              "details": "Sistemas de comunicação falham durante desastres; Sem infraestrutura de comando coordenado"
+            }
+          ]
+        }
+      },
+      "approach": {
+        "heading": "Abordagem HC-1: Soberano por Design",
+        "intro": "A HC-1 arquiteta infraestrutura governamental com soberania de dados, princípios zero-trust e continuidade assegurada na fundação—não como reflexão tardia.",
+        "architecture": {
+          "title": "Arquitetura Soberana",
+          "description": "Projetar sistemas com controlos de residência de dados, eliminar dependências estrangeiras, estabelecer linhas de base de segurança nacional.",
+          "outcome": "Infraestrutura que atende aos mais altos requisitos de classificação mantendo eficiência operacional."
+        },
+        "integration": {
+          "title": "Integração Zero-Trust",
+          "description": "Integrar sistemas legados e modernos com micro-segmentação, autenticação contínua, trilhas de auditoria completas.",
+          "outcome": "Postura de segurança unificada em todas as agências sem perturbar operações existentes."
+        },
+        "assurance": {
+          "title": "Garantia de Missão",
+          "description": "Monitorização SOC/NOC 24/7, failover automatizado, coordenação de incidentes, rastreamento de conformidade.",
+          "outcome": "Serviços governamentais permanecem disponíveis durante eventos de crise com responsabilidade total."
+        }
+      },
+      "value": {
+        "heading": "Impacto Mensurável",
+        "uptime": {
+          "metric": "99.99%",
+          "label": "Disponibilidade de Serviços",
+          "impact": "Serviços críticos permanecem operacionais",
+          "method": "Redundância + failover automatizado"
+        },
+        "sovereignty": {
+          "metric": "100%",
+          "label": "Soberania de Dados",
+          "impact": "Jurisdição nacional completa sobre dados",
+          "method": "Infraestrutura doméstica + cloud soberana"
+        },
+        "response": {
+          "metric": "<15min",
+          "label": "Resposta a Incidentes",
+          "impact": "Contenção rápida de ameaças",
+          "method": "SOC 24/7 + playbooks pré-autorizados"
+        }
+      },
+      "useCases": {
+        "heading": "Cenários Operacionais",
+        "election": {
+          "title": "Infraestrutura Eleitoral Nacional",
+          "description": "Sistemas eleitorais enfrentam campanha cibernética coordenada. Arquitetura zero-trust da HC-1 previne movimento lateral, mantém integridade da base de dados de eleitores, assegura segurança de transmissão de resultados. Processo democrático protegido."
+        },
+        "emergency": {
+          "title": "Coordenação de Serviços de Emergência",
+          "description": "Desastre natural perturba comunicações regionais. Infraestrutura de comando redundante da HC-1 mantém coordenação inter-agências, permite alocação de recursos, rastreia resposta de emergência. Vidas salvas."
+        },
+        "border": {
+          "title": "Operações de Segurança Fronteiriça",
+          "description": "Sistemas de controlo fronteiriço detetam operação de contrabando. Vigilância integrada e fusão de inteligência da HC-1 permitem coordenação em tempo real entre alfândegas, imigração e forças da ordem. Ameaça interditada."
+        }
+      },
+      "capabilities": {
+        "heading": "Capacidades Integradas",
+        "intro": "A HC-1 fornece soluções governamentais através da implementação coordenada de capacidades especializadas:"
+      },
+      "cta": {
+        "heading": "Proteger Infraestruturas Nacionais",
+        "description": "A HC-1 trabalha com governos, agências de defesa e organizações de segurança nacional para arquitetar infraestruturas soberanas, seguras e asseguradas.",
+        "primary": "Discutir os Seus Requisitos",
+        "secondary": "Explorar Todas as Capacidades"
+      }
+    },
+
+    "criticalInfra": {
+      "hero": {
+        "title": "Infraestruturas Críticas",
+        "subtitle": "Proteção de Serviços Essenciais",
+        "lead": "A HC-1 protege infraestruturas de água, energia, telecomunicações, saúde e transporte através de modelação de risco upstream, integração de sistemas e garantia operacional."
+      },
+      "stats": {
+        "services": {
+          "value": "Milhões",
+          "label": "de cidadãos dependentes"
+        },
+        "downtime": {
+          "value": "$10M+",
+          "label": "impacto horário de paragem"
+        },
+        "cascades": {
+          "value": "Multi-setor",
+          "label": "cascatas de falha"
+        }
+      },
+      "overview": {
+        "heading": "O Desafio",
+        "intro": "Perturbações de infraestruturas críticas cascateiam através de setores, impactando milhões de cidadãos e criando risco sistémico. Modelos de segurança tradicionais são reativos—HC-1 previne perturbações upstream.",
+        "dependency": {
+          "title": "Interdependências",
+          "points": [
+            "Falha da rede elétrica desativa tratamento de água",
+            "Paragem de telecomunicações impede coordenação de serviços de emergência",
+            "Falha única de infraestrutura pode cascatear nacionalmente"
+          ]
+        },
+        "exposure": {
+          "title": "Superfície de Ataque",
+          "points": [
+            "Sistemas de controlo industrial vulneráveis a intrusão cibernética",
+            "Infraestrutura física acessível em locais remotos",
+            "Dependências da cadeia de abastecimento introduzem risco de terceiros"
+          ]
+        },
+        "regulation": {
+          "title": "Pressão Regulamentar",
+          "points": [
+            "Requisitos de conformidade crescentes (NIS2, CER)",
+            "Relatório de incidentes obrigatório com prazos apertados",
+            "Responsabilidade por perturbações de serviço"
+          ]
+        }
+      },
+      "risks": {
+        "heading": "Vulnerabilidades Críticas",
+        "operational": {
+          "title": "Riscos Operacionais",
+          "items": [
+            {
+              "label": "Vulnerabilidades SCADA/ICS",
+              "details": "Sistemas legados carecem de segurança moderna; Acesso remoto cria pontos de entrada"
+            },
+            {
+              "label": "Pontos únicos de falha",
+              "details": "Sem redundância geográfica; Processos de failover manuais"
+            },
+            {
+              "label": "Monitorização inadequada",
+              "details": "Deteção de ameaças após compromisso; Sem deteção de anomalias em tempo real"
+            }
+          ]
+        },
+        "strategic": {
+          "title": "Riscos Estratégicos",
+          "items": [
+            {
+              "label": "Falhas em cascata",
+              "details": "Interdependências não mapeadas; Sem coordenação inter-setorial"
+            },
+            {
+              "label": "Exposição da cadeia de abastecimento",
+              "details": "Equipamento estrangeiro em caminhos críticos; Mecanismos de atualização não verificados"
+            },
+            {
+              "label": "Não conformidade regulamentar",
+              "details": "Lacunas em trilhas de auditoria; Planos de resposta a incidentes não testados"
+            }
+          ]
+        }
+      },
+      "approach": {
+        "heading": "Abordagem HC-1: Resiliência por Arquitetura",
+        "intro": "A HC-1 projeta infraestruturas críticas para resiliência—antecipando modos de falha, eliminando pontos únicos de falha e assegurando continuidade através de redundância e monitorização em tempo real.",
+        "modeling": {
+          "title": "Mapeamento de Dependências",
+          "description": "Modelar interdependências inter-setoriais, identificar caminhos de falha em cascata, quantificar impacto de perturbação.",
+          "outcome": "Alocação de capital informada por risco e investimentos de resiliência baseados em evidências."
+        },
+        "hardening": {
+          "title": "Endurecimento de Infraestrutura",
+          "description": "Proteger SCADA/ICS, estabelecer redundância geográfica, implementar segmentação zero-trust.",
+          "outcome": "Superfície de ataque reduzida, sistemas críticos isolados, failover automatizado."
+        },
+        "monitoring": {
+          "title": "Garantia Contínua",
+          "description": "Deteção de anomalias em tempo real, resposta automatizada a ameaças, coordenação inter-setorial.",
+          "outcome": "Ameaças detetadas antes do impacto, disponibilidade de serviço mantida."
+        }
+      },
+      "value": {
+        "heading": "Impacto Mensurável",
+        "availability": {
+          "metric": "99.95%+",
+          "label": "Disponibilidade de Serviços",
+          "impact": "Serviços essenciais permanecem operacionais",
+          "method": "Redundância + manutenção preditiva"
+        },
+        "mttr": {
+          "metric": "80%",
+          "label": "Recuperação Mais Rápida",
+          "impact": "Tempo médio de recuperação reduzido",
+          "method": "Failover automatizado + runbooks"
+        },
+        "compliance": {
+          "metric": "Completa",
+          "label": "Conformidade Regulamentar",
+          "impact": "NIS2, CER, normas específicas do setor",
+          "method": "Monitorização contínua + trilhas de auditoria"
+        }
+      },
+      "useCases": {
+        "heading": "Cenários Operacionais",
+        "power": {
+          "title": "Rede Elétrica — Intrusão Cibernética",
+          "description": "SCADA de subestação visado por APT. Micro-segmentação da HC-1 isola sistema comprometido, mantém estabilidade da rede, coordena resposta de emergência. 2.5M residentes protegidos de apagão."
+        },
+        "water": {
+          "title": "Tratamento de Água — Segurança Química",
+          "description": "Sistema de controlo industrial manipulado para alterar dosagem química. Deteção de anomalias da HC-1 aciona alerta, override de segurança automatizado previne contaminação. Crise de saúde pública evitada."
+        },
+        "telecom": {
+          "title": "Telecomunicações — Falha de Infraestrutura",
+          "description": "Corte de fibra perturba conectividade regional. Roteamento redundante da HC-1 redireciona automaticamente tráfego, mantém acesso a serviços de emergência. Zero perturbação de serviço para hospitais, polícia."
+        }
+      },
+      "capabilities": {
+        "heading": "Capacidades Integradas",
+        "intro": "A HC-1 fornece soluções de infraestruturas críticas através da implementação coordenada de capacidades especializadas:"
+      },
+      "cta": {
+        "heading": "Proteger Serviços Essenciais",
+        "description": "A HC-1 trabalha com operadores de infraestruturas, reguladores e serviços de emergência para antecipar perturbações e assegurar continuidade de serviços essenciais.",
+        "primary": "Discutir a Sua Infraestrutura",
+        "secondary": "Explorar Todas as Capacidades"
+      }
+    },
+
+    "cyberResilience": {
+      "hero": {
+        "title": "Resiliência Cibernética",
+        "subtitle": "Arquitetura de Segurança Zero-Trust",
+        "lead": "A HC-1 previne perturbações cibernéticas através de arquitetura zero-trust, deteção contínua de ameaças e resposta coordenada a incidentes—não limpeza reativa."
+      },
+      "stats": {
+        "threats": {
+          "value": "10,000+",
+          "label": "ameaças bloqueadas diariamente"
+        },
+        "detection": {
+          "value": "<5min",
+          "label": "tempo médio de deteção"
+        },
+        "containment": {
+          "value": "<15min",
+          "label": "tempo médio de contenção"
+        }
+      },
+      "overview": {
+        "heading": "O Desafio",
+        "intro": "Ameaças cibernéticas evoluem mais rápido que capacidades defensivas. Segurança de perímetro falhou. A HC-1 implementa princípios zero-trust, assumindo compromisso e prevenindo movimento lateral.",
+        "landscape": {
+          "title": "Panorama de Ameaças",
+          "points": [
+            "APTs patrocinados por Estados visando infraestruturas críticas",
+            "Ransomware visando tecnologia operacional",
+            "Compromissos de cadeia de abastecimento (padrões SolarWinds, Kaseya)"
+          ]
+        },
+        "gaps": {
+          "title": "Lacunas de Segurança",
+          "points": [
+            "Modelos de segurança legados baseados em perímetro",
+            "Convergência OT/IT cria pontos cegos",
+            "Resposta a incidentes depende de processos manuais"
+          ]
+        },
+        "impact": {
+          "title": "Impacto Empresarial",
+          "points": [
+            "Tempo de inatividade ransomware: 15-30 dias em média",
+            "Custos de violação de dados: $4.5M em média",
+            "Danos reputacionais estendem-se além do incidente"
+          ]
+        }
+      },
+      "risks": {
+        "heading": "Vulnerabilidades Críticas",
+        "technical": {
+          "title": "Riscos Técnicos",
+          "items": [
+            {
+              "label": "Movimento lateral",
+              "details": "Redes planas permitem atacantes pivotarem; Escalada de privilégios trivial"
+            },
+            {
+              "label": "Exposição OT",
+              "details": "Sistemas industriais acessíveis de IT; Protocolos legados carecem de autenticação"
+            },
+            {
+              "label": "Pontos cegos",
+              "details": "Tráfego encriptado não inspecionado; Ativos cloud não monitorizados"
+            }
+          ]
+        },
+        "operational": {
+          "title": "Riscos Operacionais",
+          "items": [
+            {
+              "label": "Fadiga de alertas",
+              "details": "SOC sobrecarregado por falsos positivos; Ameaças reais perdidas no ruído"
+            },
+            {
+              "label": "Resposta manual",
+              "details": "Playbooks de incidentes não automatizados; Tempo de resposta medido em horas"
+            },
+            {
+              "label": "Escassez de competências",
+              "details": "Impossível contratar/reter talento de segurança; Dependência de consultores externos"
+            }
+          ]
+        }
+      },
+      "approach": {
+        "heading": "Abordagem HC-1: Assumir Compromisso",
+        "intro": "A HC-1 implementa princípios zero-trust: verificar explicitamente, acesso de menor privilégio e assumir compromisso. Prevenção, deteção e resposta são arquitetadas como sistema unificado.",
+        "zerotrust": {
+          "title": "Arquitetura Zero-Trust",
+          "description": "Micro-segmentação, autenticação contínua, acesso de menor privilégio, tudo encriptado.",
+          "outcome": "Movimento lateral prevenido. Compromisso contido a ativo único."
+        },
+        "soc": {
+          "title": "SOC/NOC 24/7",
+          "description": "Deteção de ameaças em tempo real, deteção de anomalias impulsionada por IA, playbooks de resposta automatizados.",
+          "outcome": "Ameaças detetadas em minutos, contidas em <15 minutos."
+        },
+        "intelligence": {
+          "title": "Inteligência de Ameaças",
+          "description": "Integração de feeds OSINT, SIGINT e ameaças proprietárias. Modelação preditiva de ameaças.",
+          "outcome": "Ataques antecipados antes do lançamento. Postura defensiva proativa."
+        }
+      },
+      "value": {
+        "heading": "Impacto Mensurável",
+        "detection": {
+          "metric": "<5min",
+          "label": "Tempo Médio de Deteção",
+          "impact": "Ameaças identificadas antes do impacto",
+          "method": "Deteção de anomalias impulsionada por IA"
+        },
+        "containment": {
+          "metric": "<15min",
+          "label": "Tempo Médio de Contenção",
+          "impact": "Compromisso isolado imediatamente",
+          "method": "Playbooks de resposta automatizados"
+        },
+        "prevented": {
+          "metric": "10,000+",
+          "label": "Ameaças Diárias Bloqueadas",
+          "impact": "Ataques parados no perímetro",
+          "method": "Defesa em camadas + inteligência de ameaças"
+        }
+      },
+      "useCases": {
+        "heading": "Cenários Operacionais",
+        "ransomware": {
+          "title": "Ataque Ransomware — Serviços Financeiros",
+          "description": "Infraestrutura bancária visada por ransomware. Segmentação zero-trust da HC-1 previne propagação, SOC isola endpoints comprometidos, recuperação de backups imutáveis completada em 4 horas. Perda de $50M+ evitada."
+        },
+        "apt": {
+          "title": "Campanha APT — Contratante de Defesa",
+          "description": "APT de Estado-nação estabelece persistência em rede de engenharia. Analytics comportamentais da HC-1 detetam exfiltração de dados anómala, equipa de resposta a incidentes expulsa atacante, forense identifica sistemas comprometidos. IP protegida."
+        },
+        "supply": {
+          "title": "Compromisso de Cadeia de Abastecimento — Atualização de Software",
+          "description": "Atualização de software de fornecedor contém backdoor. Verificações de integridade de código da HC-1 sinalizam anomalia, atualização bloqueada, fornecedor notificado. Zero-day prevenido de implementação."
+        }
+      },
+      "capabilities": {
+        "heading": "Capacidades Integradas",
+        "intro": "A HC-1 fornece resiliência cibernética através da implementação coordenada de capacidades especializadas:"
+      },
+      "cta": {
+        "heading": "Construir Resiliência Zero-Trust",
+        "description": "A HC-1 trabalha com empresas, operadores de infraestruturas críticas e organizações de defesa para implementar arquiteturas zero-trust e segurança operacional.",
+        "primary": "Avaliar a Sua Postura de Segurança",
+        "secondary": "Explorar Todas as Capacidades"
+      }
+    },
+
+    "portsLogistics": {
+      "hero": {
+        "title": "Portos, Fronteiras e Logística",
+        "subtitle": "Corredores Seguros e Integridade da Cadeia de Abastecimento",
+        "lead": "A HC-1 protege corredores comerciais, operações portuárias e logística transfronteiriça através de vigilância integrada, fusão de inteligência e resposta coordenada."
+      },
+      "stats": {
+        "cargo": {
+          "value": "$Biliões",
+          "label": "valor comercial anual"
+        },
+        "disruption": {
+          "value": "$10M+",
+          "label": "custo diário por fecho portuário"
+        },
+        "threats": {
+          "value": "Multi-vetor",
+          "label": "contrabando, ciber, físico"
+        }
+      },
+      "overview": {
+        "heading": "O Desafio",
+        "intro": "Portos e corredores logísticos são infraestrutura económica crítica. Perturbações param comércio, impactam PIB e criam falhas em cascata da cadeia de abastecimento. Segurança requer integração física, cibernética e de inteligência.",
+        "economic": {
+          "title": "Criticidade Económica",
+          "points": [
+            "80% do comércio global move-se por mar",
+            "Fechos portuários custam $10M+ por dia",
+            "Perturbações de cadeia de abastecimento levam 6-12 meses a resolver"
+          ]
+        },
+        "threats": {
+          "title": "Vetores de Ameaças",
+          "points": [
+            "Contrabando (narcóticos, armas, contrabando)",
+            "Ataques cibernéticos em sistemas portuários (operações de gruas, alfândegas)",
+            "Sabotagem física de infraestrutura"
+          ]
+        },
+        "complexity": {
+          "title": "Complexidade Operacional",
+          "points": [
+            "Coordenação multi-jurisdicional necessária",
+            "Operações 24/7 com alto débito",
+            "Sistemas legados e processos manuais"
+          ]
+        }
+      },
+      "risks": {
+        "heading": "Vulnerabilidades Críticas",
+        "security": {
+          "title": "Lacunas de Segurança",
+          "items": [
+            {
+              "label": "Vulnerabilidades de perímetro",
+              "details": "Grandes áreas com vigilância limitada; Acesso não autorizado via veículos de fornecedores"
+            },
+            {
+              "label": "Lacunas de inspeção de carga",
+              "details": "Inspeções manuais perdem 95%+ da carga; Sistemas de raios-X/scan desatualizados"
+            },
+            {
+              "label": "Exposição cibernética",
+              "details": "Sistemas de gestão portuária vulneráveis; Operações de gruas podem ser perturbadas remotamente"
+            }
+          ]
+        },
+        "operational": {
+          "title": "Riscos Operacionais",
+          "items": [
+            {
+              "label": "Falhas de coordenação",
+              "details": "Alfândegas, imigração, autoridade portuária operam em silos; Sem imagem de inteligência unificada"
+            },
+            {
+              "label": "Fragmentação de dados",
+              "details": "Sistemas de rastreamento de carga incompatíveis; Sem visibilidade em tempo real através do corredor"
+            },
+            {
+              "label": "Ameaças internas",
+              "details": "Alta rotatividade de funcionários/contratantes; Verificações de antecedentes incompletas"
+            }
+          ]
+        }
+      },
+      "approach": {
+        "heading": "Abordagem HC-1: Corredores Integrados",
+        "intro": "A HC-1 integra segurança física, defesa cibernética e fusão de inteligência para criar corredores comerciais seguros, visíveis e eficientes.",
+        "surveillance": {
+          "title": "Vigilância Integrada",
+          "description": "Analytics de vídeo impulsionadas por IA, fusão de sensores, deteção automatizada de ameaças através de perímetro e zonas de carga.",
+          "outcome": "Deteção de ameaças em tempo real. Redução de 95%+ em falsos positivos."
+        },
+        "intelligence": {
+          "title": "Fusão de Inteligência",
+          "description": "Combinar dados alfandegários, manifestos de carga, OSINT e analytics comportamentais. Pontuação de risco preditiva.",
+          "outcome": "Carregamentos de alto risco sinalizados automaticamente. Recursos de inspeção otimizados."
+        },
+        "coordination": {
+          "title": "Coordenação Multi-Agências",
+          "description": "Plataforma de comando unificada para alfândegas, imigração, segurança portuária e forças da ordem.",
+          "outcome": "Resposta coordenada a ameaças. Cadeia de evidências mantida para processos."
+        }
+      },
+      "value": {
+        "heading": "Impacto Mensurável",
+        "interdiction": {
+          "metric": "300%",
+          "label": "Taxa de Interdição Aumentada",
+          "impact": "Mais contrabando detetado",
+          "method": "Fusão de inteligência + inspeção direcionada"
+        },
+        "throughput": {
+          "metric": "25%",
+          "label": "Processamento de Carga Mais Rápido",
+          "impact": "Tempo de permanência reduzido",
+          "method": "Inspeção baseada em risco + automatização"
+        },
+        "incidents": {
+          "metric": "70%",
+          "label": "Incidentes de Segurança Reduzidos",
+          "impact": "Menos violações, menos roubo",
+          "method": "Segurança de perímetro + deteção de ameaça interna"
+        }
+      },
+      "useCases": {
+        "heading": "Cenários Operacionais",
+        "narcotics": {
+          "title": "Contrabando de Narcóticos — Porto de Contentores",
+          "description": "Fusão de inteligência sinaliza contentor de alto risco baseado em histórico de expedidor e anomalias de rota. Scan de raios-X confirma contrabando. Apreensão coordenada alfândegas/forças da ordem. 500kg cocaína interditada."
+        },
+        "weapons": {
+          "title": "Tráfico de Armas — Passagem Fronteiriça",
+          "description": "Veículo sinalizado por analytics comportamentais em posto de controlo fronteiriço. Fusão de sensores deteta compartimento oculto. Cache de armas apreendida, rede de tráfico perturbada."
+        },
+        "cyber": {
+          "title": "Ataque Cibernético — Operações Portuárias",
+          "description": "Sistema de gestão portuária visado por ransomware. Defesa cibernética da HC-1 isola ataque, mantém operações de gruas via sistemas de backup, restaura primário em 6 horas. Zero atraso de carga."
+        }
+      },
+      "capabilities": {
+        "heading": "Capacidades Integradas",
+        "intro": "A HC-1 fornece soluções de portos e logística através da implementação coordenada de capacidades especializadas:"
+      },
+      "cta": {
+        "heading": "Proteger Corredores Comerciais",
+        "description": "A HC-1 trabalha com autoridades portuárias, agências alfandegárias e operadores logísticos para proteger corredores comerciais e manter integridade da cadeia de abastecimento.",
+        "primary": "Discutir o Seu Corredor",
+        "secondary": "Explorar Todas as Capacidades"
+      }
+    },
+
+    "aiFusion": {
+      "hero": {
+        "title": "Fusão IA e Inteligência",
+        "subtitle": "Inteligência Decisional e Sistemas Preditivos",
+        "lead": "A HC-1 fornece inteligência de qualidade decisional através de fusão IA, analytics preditiva e sistemas autónomos—transformando dados em vantagem operacional."
+      },
+      "stats": {
+        "data": {
+          "value": "Petabytes",
+          "label": "de dados processados diariamente"
+        },
+        "accuracy": {
+          "value": "95%+",
+          "label": "precisão de previsão"
+        },
+        "latency": {
+          "value": "<100ms",
+          "label": "latência decisional"
+        }
+      },
+      "overview": {
+        "heading": "O Desafio",
+        "intro": "Organizações afogam-se em dados mas carecem de inteligência acionável. Analytics tradicional é retrospetiva. A HC-1 funde dados multi-fonte com IA para fornecer inteligência preditiva de qualidade decisional em tempo real.",
+        "dataVolume": {
+          "title": "Desafio do Volume de Dados",
+          "points": [
+            "Petabytes gerados diariamente de sensores, redes, sistemas",
+            "Analistas humanos não conseguem processar volume a velocidade",
+            "Rácio sinal-ruído torna análise manual impossível"
+          ]
+        },
+        "latency": {
+          "title": "Latência Decisional",
+          "points": [
+            "Ameaças evoluem mais rápido que ciclos de análise tradicionais",
+            "Sistemas autónomos requerem tomada de decisão sub-segundo",
+            "Vantagem competitiva vai para decisão precisa mais rápida"
+          ]
+        },
+        "integration": {
+          "title": "Complexidade de Integração",
+          "points": [
+            "Silos de dados através de organizações e domínios",
+            "Formatos e esquemas incompatíveis",
+            "Sistemas legados carecem de APIs ou saída estruturada"
+          ]
+        }
+      },
+      "risks": {
+        "heading": "Vulnerabilidades Críticas",
+        "analytical": {
+          "title": "Lacunas Analíticas",
+          "items": [
+            {
+              "label": "Análise retrospetiva",
+              "details": "Dashboards mostram o que aconteceu, não o que vai acontecer; Decisões baseadas em dados desatualizados"
+            },
+            {
+              "label": "Gargalo humano",
+              "details": "Analistas sobrecarregados por alertas e dados; Conhecimento especializado não escalável"
+            },
+            {
+              "label": "Viés e erro",
+              "details": "Análise humana sujeita a viés cognitivo; Qualidade inconsistente entre analistas"
+            }
+          ]
+        },
+        "technical": {
+          "title": "Riscos Técnicos",
+          "items": [
+            {
+              "label": "Deriva de modelo IA",
+              "details": "Modelos degradam-se com evolução de táticas adversárias; Sem pipeline de retreino contínuo"
+            },
+            {
+              "label": "IA caixa-preta",
+              "details": "Decisões não explicáveis; Reguladores e operadores carecem de confiança"
+            },
+            {
+              "label": "Qualidade de dados",
+              "details": "Dados de entrada medíocres, saída medíocre; Dados de treino incompletos ou corrompidos"
+            }
+          ]
+        }
+      },
+      "approach": {
+        "heading": "Abordagem HC-1: Fusão IA Explicável",
+        "intro": "A HC-1 funde dados estruturados e não estruturados de múltiplas fontes, aplica modelos IA explicáveis e fornece inteligência acionável com pontuações de confiança e raciocínio.",
+        "fusion": {
+          "title": "Fusão Multi-Fonte",
+          "description": "Ingerir dados de sensores, telemetria de rede, OSINT, SIGINT, bases de dados estruturadas. Normalizar, correlacionar, enriquecer.",
+          "outcome": "Imagem de inteligência unificada com contexto temporal e espacial."
+        },
+        "prediction": {
+          "title": "Analytics Preditiva",
+          "description": "Modelos de machine learning treinados em padrões históricos, táticas adversárias e contexto operacional. Retreino contínuo.",
+          "outcome": "Ameaças previstas antes da execução. Defesa proativa e alocação de recursos."
+        },
+        "autonomy": {
+          "title": "Suporte Decisional Autónomo",
+          "description": "IA recomenda cursos de ação com pontuações de confiança e explicações. Humano no ciclo para decisões de alto risco.",
+          "outcome": "Decisões mais rápidas, mais precisas. Operadores aumentados, não substituídos."
+        }
+      },
+      "value": {
+        "heading": "Impacto Mensurável",
+        "prediction": {
+          "metric": "95%+",
+          "label": "Precisão de Previsão",
+          "impact": "Ameaças antecipadas antes da execução",
+          "method": "Modelos ML + retreino contínuo"
+        },
+        "latency": {
+          "metric": "<100ms",
+          "label": "Latência Decisional",
+          "impact": "Suporte decisional em tempo real",
+          "method": "Edge computing + modelos otimizados"
+        },
+        "efficiency": {
+          "metric": "10x",
+          "label": "Eficiência de Analista",
+          "impact": "Analistas focam-se em tarefas de alto valor",
+          "method": "Triagem automatizada + IA explicável"
+        }
+      },
+      "useCases": {
+        "heading": "Cenários Operacionais",
+        "threat": {
+          "title": "Previsão de Ameaça — Segurança Nacional",
+          "description": "Fusão IA combina SIGINT, OSINT e padrões comportamentais para prever operação adversária 72 horas antes da execução. Ativos defensivos reposicionados. Ataque dissuadido."
+        },
+        "maintenance": {
+          "title": "Manutenção Preditiva — Setor Energético",
+          "description": "Fusão de sensores e modelos ML preveem falha de turbina 14 dias antes da ocorrência. Manutenção agendada durante tempo de inatividade planeado. Paragem não planeada de $5M evitada."
+        },
+        "autonomous": {
+          "title": "Navegação Autónoma — Sem GPS",
+          "description": "Enxame de drones perde GPS em ambiente contestado. CORTEX-U7 da HC-1 usa posicionamento astronómico e fusão de sensores para manter navegação. Missão completada com sucesso."
+        }
+      },
+      "capabilities": {
+        "heading": "Capacidades Integradas",
+        "intro": "A HC-1 fornece fusão IA e inteligência através da implementação coordenada de capacidades especializadas:"
+      },
+      "cta": {
+        "heading": "Transformar Dados em Inteligência",
+        "description": "A HC-1 trabalha com agências de defesa, organizações de inteligência e empresas para implementar fusão IA e analytics preditiva para vantagem operacional.",
+        "primary": "Discutir as Suas Necessidades de Inteligência",
+        "secondary": "Explorar Todas as Capacidades"
+      }
     }
   },
 
