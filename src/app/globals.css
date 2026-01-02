@@ -29,11 +29,17 @@
   --accent-quaternary: #fbbf24;
   --accent-quaternary-hover: #fcd34d;
   
-  /* Foreground (text hierarchy) */
-  --foreground: #ffffff;
-  --foreground-secondary: #c7d2fe;
-  --foreground-muted: #94a3b8;
+  /* Foreground (text hierarchy) - Vibrant modern colors */
+  --foreground: #e0f2fe;
+  --foreground-secondary: #bae6fd;
+  --foreground-muted: #7dd3fc;
   --foreground-disabled: #64748b;
+  
+  /* Accent text colors */
+  --text-cyan: #67e8f9;
+  --text-purple: #c4b5fd;
+  --text-pink: #f9a8d4;
+  --text-yellow: #fde047;
   
   /* Borders & dividers */
   --border: rgba(0, 212, 255, 0.2);
@@ -183,6 +189,21 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--foreground);
 }
 
+h1 {
+  background: linear-gradient(135deg, #67e8f9 0%, #c4b5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2 {
+  color: #e0f2fe;
+}
+
+h3 {
+  color: #a5b4fc;
+}
+
 h1 { font-size: 3rem; }
 h2 { font-size: 2.25rem; }
 h3 { font-size: 1.75rem; }
@@ -197,8 +218,36 @@ h6 { font-size: 0.875rem; }
 }
 
 p {
-  color: var(--foreground-secondary);
+  color: #bae6fd;
   line-height: 1.7;
+}
+
+/* Small text and labels */
+.text-body-sm,
+.text-caption {
+  color: #7dd3fc;
+}
+
+/* Text color utilities */
+.text-cyan-glow {
+  color: var(--text-cyan);
+  text-shadow: 0 0 20px rgba(103, 232, 249, 0.3);
+}
+
+.text-purple-glow {
+  color: var(--text-purple);
+  text-shadow: 0 0 20px rgba(196, 181, 253, 0.3);
+}
+
+.text-pink-glow {
+  color: var(--text-pink);
+  text-shadow: 0 0 20px rgba(249, 168, 212, 0.3);
+}
+
+/* Bright cyan for descriptions */
+.text-description {
+  color: #7dd3fc;
+  font-weight: 400;
 }
 
 a {
