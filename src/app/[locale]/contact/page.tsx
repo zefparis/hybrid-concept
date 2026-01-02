@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 import { Hero } from '@/components/sections';
 
 export const metadata: Metadata = {
@@ -7,7 +8,14 @@ export const metadata: Metadata = {
     'Connect with HC-1 to discuss your security, integration, and operational continuity requirements.',
 };
 
-export default function ContactPage() {
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export default async function ContactPage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <>
       <Hero
@@ -22,7 +30,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
             <div>
-              <h2 className="text-2xl font-semibold text-[var(--text-primary)] mb-6">
+              <h2 className="text-2xl font-semibold text-foreground mb-6">
                 Send Us a Message
               </h2>
               <form className="space-y-6">
@@ -30,7 +38,7 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-medium text-[var(--text-secondary)] mb-2"
+                      className="block text-sm font-medium text-foreground-secondary mb-2"
                     >
                       Name *
                     </label>
@@ -39,14 +47,14 @@ export default function ContactPage() {
                       id="name"
                       name="name"
                       required
-                      className="w-full px-4 py-3 rounded-lg bg-[var(--surface)] border border-[var(--border)] text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:border-[var(--accent)] transition-colors"
+                      className="w-full px-4 py-3 rounded-lg bg-surface border border-border text-foreground placeholder-foreground-muted focus:outline-none focus:border-accent transition-colors"
                       placeholder="Your name"
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium text-[var(--text-secondary)] mb-2"
+                      className="block text-sm font-medium text-foreground-secondary mb-2"
                     >
                       Email *
                     </label>
@@ -55,7 +63,7 @@ export default function ContactPage() {
                       id="email"
                       name="email"
                       required
-                      className="w-full px-4 py-3 rounded-lg bg-[var(--surface)] border border-[var(--border)] text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:border-[var(--accent)] transition-colors"
+                      className="w-full px-4 py-3 rounded-lg bg-surface border border-border text-foreground placeholder-foreground-muted focus:outline-none focus:border-accent transition-colors"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -64,7 +72,7 @@ export default function ContactPage() {
                 <div>
                   <label
                     htmlFor="organization"
-                    className="block text-sm font-medium text-[var(--text-secondary)] mb-2"
+                    className="block text-sm font-medium text-foreground-secondary mb-2"
                   >
                     Organization
                   </label>
@@ -72,7 +80,7 @@ export default function ContactPage() {
                     type="text"
                     id="organization"
                     name="organization"
-                    className="w-full px-4 py-3 rounded-lg bg-[var(--surface)] border border-[var(--border)] text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:border-[var(--accent)] transition-colors"
+                    className="w-full px-4 py-3 rounded-lg bg-surface border border-border text-foreground placeholder-foreground-muted focus:outline-none focus:border-accent transition-colors"
                     placeholder="Your organization"
                   />
                 </div>
@@ -80,7 +88,7 @@ export default function ContactPage() {
                 <div>
                   <label
                     htmlFor="inquiry"
-                    className="block text-sm font-medium text-[var(--text-secondary)] mb-2"
+                    className="block text-sm font-medium text-foreground-secondary mb-2"
                   >
                     Inquiry Type *
                   </label>
@@ -88,7 +96,7 @@ export default function ContactPage() {
                     id="inquiry"
                     name="inquiry"
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-[var(--surface)] border border-[var(--border)] text-[var(--text-primary)] focus:outline-none focus:border-[var(--accent)] transition-colors"
+                    className="w-full px-4 py-3 rounded-lg bg-surface border border-border text-foreground focus:outline-none focus:border-accent transition-colors"
                   >
                     <option value="">Select an option</option>
                     <option value="general">General Inquiry</option>
@@ -102,7 +110,7 @@ export default function ContactPage() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-[var(--text-secondary)] mb-2"
+                    className="block text-sm font-medium text-foreground-secondary mb-2"
                   >
                     Message *
                   </label>
@@ -111,7 +119,7 @@ export default function ContactPage() {
                     name="message"
                     rows={5}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-[var(--surface)] border border-[var(--border)] text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:border-[var(--accent)] transition-colors resize-none"
+                    className="w-full px-4 py-3 rounded-lg bg-surface border border-border text-foreground placeholder-foreground-muted focus:outline-none focus:border-accent transition-colors resize-none"
                     placeholder="How can we help you?"
                   />
                 </div>
@@ -122,11 +130,11 @@ export default function ContactPage() {
                     id="consent"
                     name="consent"
                     required
-                    className="mt-1 w-4 h-4 rounded border-[var(--border)] bg-[var(--surface)] text-[var(--accent)] focus:ring-[var(--accent)]"
+                    className="mt-1 w-4 h-4 rounded border-border bg-surface text-accent focus:ring-accent"
                   />
                   <label
                     htmlFor="consent"
-                    className="text-sm text-[var(--text-muted)]"
+                    className="text-sm text-foreground-muted"
                   >
                     I consent to HC-1 processing my data in accordance with the
                     Privacy Policy.
@@ -135,7 +143,7 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full px-6 py-3 rounded-lg bg-[var(--accent)] text-white font-medium hover:bg-[var(--accent-hover)] transition-colors"
+                  className="w-full px-6 py-3 rounded-lg bg-accent text-white font-medium hover:bg-accent-hover transition-colors"
                 >
                   Send Message
                 </button>
@@ -144,49 +152,49 @@ export default function ContactPage() {
 
             {/* Contact Information */}
             <div>
-              <h2 className="text-2xl font-semibold text-[var(--text-primary)] mb-6">
+              <h2 className="text-2xl font-semibold text-foreground mb-6">
                 Other Ways to Reach Us
               </h2>
 
               <div className="space-y-8">
-                <div className="p-6 rounded-2xl bg-[var(--surface)] border border-[var(--border)]">
-                  <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2">
+                <div className="p-6 rounded-2xl bg-surface border border-border">
+                  <h3 className="text-lg font-semibold text-foreground mb-2">
                     General Inquiries
                   </h3>
-                  <p className="text-[var(--text-secondary)]">
+                  <p className="text-foreground-secondary">
                     info@hc-1.com
                   </p>
                 </div>
 
-                <div className="p-6 rounded-2xl bg-[var(--surface)] border border-[var(--border)]">
-                  <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2">
+                <div className="p-6 rounded-2xl bg-surface border border-border">
+                  <h3 className="text-lg font-semibold text-foreground mb-2">
                     Media Relations
                   </h3>
-                  <p className="text-[var(--text-secondary)]">
+                  <p className="text-foreground-secondary">
                     media@hc-1.com
                   </p>
                 </div>
 
-                <div className="p-6 rounded-2xl bg-[var(--surface)] border border-[var(--border)]">
-                  <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2">
+                <div className="p-6 rounded-2xl bg-surface border border-border">
+                  <h3 className="text-lg font-semibold text-foreground mb-2">
                     Security Concerns
                   </h3>
-                  <p className="text-[var(--text-secondary)]">
+                  <p className="text-foreground-secondary">
                     security@hc-1.com
                   </p>
-                  <p className="text-sm text-[var(--text-muted)] mt-2">
+                  <p className="text-sm text-foreground-muted mt-2">
                     For responsible disclosure of security vulnerabilities.
                   </p>
                 </div>
 
-                <div className="p-6 rounded-2xl bg-[var(--surface)] border border-[var(--border)]">
-                  <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2">
+                <div className="p-6 rounded-2xl bg-surface border border-border">
+                  <h3 className="text-lg font-semibold text-foreground mb-2">
                     Headquarters
                   </h3>
-                  <p className="text-[var(--text-secondary)]">
+                  <p className="text-foreground-secondary">
                     Location disclosed upon engagement
                   </p>
-                  <p className="text-sm text-[var(--text-muted)] mt-2">
+                  <p className="text-sm text-foreground-muted mt-2">
                     We maintain a global presence with regional offices.
                   </p>
                 </div>

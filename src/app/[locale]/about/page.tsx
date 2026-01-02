@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 import { Hero } from '@/components/sections';
 
 export const metadata: Metadata = {
@@ -7,7 +8,14 @@ export const metadata: Metadata = {
     'Learn about HC-1, the Strategic Command & Integration Authority delivering sovereign security and operational continuity worldwide.',
 };
 
-export default function AboutPage() {
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export default async function AboutPage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <>
       <Hero
@@ -22,38 +30,38 @@ export default function AboutPage() {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
-              <h2 className="text-3xl md:text-4xl font-semibold text-[var(--text-primary)] mb-6">
+              <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-6">
                 Our Mission
               </h2>
-              <p className="text-lg text-[var(--text-secondary)] leading-relaxed mb-6">
+              <p className="text-lg text-foreground-secondary leading-relaxed mb-6">
                 HC-1 exists to protect the systems that societies depend on. We combine deep domain expertise with advanced technology to deliver security solutions that are both comprehensive and pragmatic.
               </p>
-              <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
+              <p className="text-lg text-foreground-secondary leading-relaxed">
                 Our approach is rooted in understanding—understanding the threats our clients face, the constraints they operate under, and the outcomes they need to achieve.
               </p>
             </div>
             <div className="space-y-8">
-              <div className="p-6 rounded-2xl bg-[var(--surface)] border border-[var(--border)]">
-                <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
+              <div className="p-6 rounded-2xl bg-surface border border-border">
+                <h3 className="text-xl font-semibold text-foreground mb-3">
                   Sovereign by Design
                 </h3>
-                <p className="text-[var(--text-secondary)]">
+                <p className="text-foreground-secondary">
                   We build solutions that respect national sovereignty and data residency requirements, ensuring our clients maintain full control.
                 </p>
               </div>
-              <div className="p-6 rounded-2xl bg-[var(--surface)] border border-[var(--border)]">
-                <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
+              <div className="p-6 rounded-2xl bg-surface border border-border">
+                <h3 className="text-xl font-semibold text-foreground mb-3">
                   Integration Excellence
                 </h3>
-                <p className="text-[var(--text-secondary)]">
+                <p className="text-foreground-secondary">
                   We connect disparate systems into unified operational fabrics, eliminating silos and enabling coordinated response.
                 </p>
               </div>
-              <div className="p-6 rounded-2xl bg-[var(--surface)] border border-[var(--border)]">
-                <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
+              <div className="p-6 rounded-2xl bg-surface border border-border">
+                <h3 className="text-xl font-semibold text-foreground mb-3">
                   Operational Continuity
                 </h3>
-                <p className="text-[var(--text-secondary)]">
+                <p className="text-foreground-secondary">
                   We ensure our clients can operate effectively under any conditions, from routine operations to crisis response.
                 </p>
               </div>
@@ -63,9 +71,9 @@ export default function AboutPage() {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 md:py-32 bg-[var(--surface)]">
+      <section className="py-20 md:py-32 bg-surface">
         <div className="container">
-          <h2 className="text-3xl md:text-4xl font-semibold text-[var(--text-primary)] mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-12 text-center">
             Our Values
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -88,10 +96,10 @@ export default function AboutPage() {
               },
             ].map((value) => (
               <div key={value.title} className="text-center">
-                <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
+                <h3 className="text-xl font-semibold text-foreground mb-3">
                   {value.title}
                 </h3>
-                <p className="text-[var(--text-secondary)]">{value.description}</p>
+                <p className="text-foreground-secondary">{value.description}</p>
               </div>
             ))}
           </div>
