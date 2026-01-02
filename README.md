@@ -372,8 +372,23 @@ The `LanguageSwitcher` component in the Header allows users to switch languages 
 - [x] Mobile-responsive language switcher
 - [x] Translated CTASection component
 
-### Phase 5 (In Progress)
-- [ ] Sector detail pages content translation
+### Phase 5 ✅ Complete — Energy & Mining Sector Page
+- [x] Complete sector page architecture with 8 reusable components
+- [x] SectorHero: 60vh hero with stats, breadcrumb, background image
+- [x] SectorOverview: 3-column challenge overview with icons
+- [x] RiskLandscape: 2-column risk analysis (production + revenue)
+- [x] ApproachSection: Tabbed HC-1 approach with outcomes
+- [x] ValueProposition: 3 metric cards with hover effects
+- [x] UseCases: 3 operational scenarios with revenue impact
+- [x] CapabilitiesIntegration: Grid of 6 capabilities with links
+- [x] SectorCTA: Final call-to-action with 2 buttons
+- [x] Full translations (EN, FR, PT) for all sections
+- [x] Institutional tone with quantified metrics
+- [x] Premium animations and responsive design
+- [x] Accessible at `/[locale]/sectors/energy-mining`
+
+### Phase 6 (In Progress)
+- [ ] Replicate sector page for remaining 5 sectors
 - [ ] Capabilities detail pages content translation
 - [ ] About page content translation
 - [ ] Contact page content translation
