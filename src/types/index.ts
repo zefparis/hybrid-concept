@@ -177,8 +177,12 @@ export interface ContactFormData {
 
 export interface HeroProps {
   title: string;
+  subtitle?: string;
   tagline?: string;
+  coreStatement?: string;
   description?: string;
+  ctaText?: string;
+  ctaHref?: string;
   cta?: {
     label: string;
     href: string;

@@ -15,17 +15,14 @@ export default function Home() {
     <>
       <Hero
         title={hero.title}
-        tagline={hero.tagline}
-        description={hero.description}
-        cta={hero.cta}
-        secondaryCta={hero.secondaryCta}
+        subtitle={hero.subtitle}
+        coreStatement={hero.coreStatement}
+        ctaText={hero.cta.label}
+        ctaHref={hero.cta.href}
         variant="home"
       />
       <WhatWeDo />
-      <SectorGrid
-        title="Sectors We Serve"
-        description="HC-1 delivers specialized solutions across critical sectors where security, integration, and continuity are paramount."
-      />
+      <SectorGrid title="Sectors" />
       <OperatingModel />
       <TrustSignals />
       <CTASection />

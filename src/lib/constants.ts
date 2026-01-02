@@ -541,15 +541,124 @@ export const CAPABILITIES: Capability[] = [
 ];
 
 // ============================================================================
+// SERVICES (What We Do)
+// ============================================================================
+
+export interface ServiceStep {
+  id: string;
+  title: string;
+  description: string;
+  icon?: string;
+}
+
+export const SERVICES: ServiceStep[] = [
+  {
+    id: 'plan',
+    title: 'Plan',
+    description: 'Strategic architecture and risk anticipation upstream to prevent operational disruption.',
+    icon: 'plan',
+  },
+  {
+    id: 'integrate',
+    title: 'Integrate',
+    description: 'Sovereign systems integration with zero-trust architecture and full traceability.',
+    icon: 'integrate',
+  },
+  {
+    id: 'assure',
+    title: 'Assure',
+    description: 'Continuous monitoring, SLA-based governance, and mission-critical continuity.',
+    icon: 'assure',
+  },
+];
+
+// ============================================================================
+// OPERATING MODEL STEPS
+// ============================================================================
+
+export interface ModelStep {
+  id: string;
+  label: string;
+  description: string;
+}
+
+export const OPERATING_STEPS: ModelStep[] = [
+  {
+    id: 'anticipate',
+    label: 'Anticipate',
+    description: 'Identify and model risk upstream',
+  },
+  {
+    id: 'assure',
+    label: 'Assure',
+    description: 'Architect and integrate secure systems',
+  },
+  {
+    id: 'continuity',
+    label: 'Continuity',
+    description: 'Monitor and maintain operational uptime',
+  },
+  {
+    id: 'revenue',
+    label: 'Revenue',
+    description: 'Protect and maximize financial outcomes',
+  },
+];
+
+// ============================================================================
+// TRUST SIGNALS
+// ============================================================================
+
+export interface TrustSignal {
+  id: string;
+  title: string;
+  description: string;
+  icon?: string;
+}
+
+export const TRUST_SIGNALS: TrustSignal[] = [
+  {
+    id: 'sovereignty',
+    title: 'Data Sovereignty',
+    description: 'Full control over data residency and operational sovereignty.',
+    icon: 'shield',
+  },
+  {
+    id: 'zero-trust',
+    title: 'Zero-Trust Architecture',
+    description: 'Every access verified, every transaction authenticated.',
+    icon: 'lock',
+  },
+  {
+    id: 'sla',
+    title: 'SLA-Based Assurance',
+    description: 'Guaranteed uptime and performance commitments.',
+    icon: 'check',
+  },
+  {
+    id: 'traceability',
+    title: 'Full Traceability',
+    description: 'Complete audit trails and accountability.',
+    icon: 'document',
+  },
+  {
+    id: 'compliance',
+    title: 'Regulatory Compliance',
+    description: 'ISO 27001, SOC 2, and sector-specific certifications.',
+    icon: 'certificate',
+  },
+];
+
+// ============================================================================
 // HOMEPAGE CONTENT
 // ============================================================================
 
 export const HOMEPAGE_CONTENT = {
   hero: {
     title: 'HC-1 | Hybrid Concepts',
-    tagline: 'Strategic Command & Integration Authority',
-    description:
-      'We architect sovereign security, integrate critical systems, and ensure operational continuity for nations and enterprises that cannot afford to fail.',
+    subtitle: 'Strategic Command & Integration Authority',
+    coreStatement:
+      'HC-1 anticipates and secures systems upstream to prevent disruption, reduce operational risk, eliminate the cost and inefficiency of reactive response, and protect and maximize revenue through assured continuity and operational efficiency.',
     cta: {
       label: 'Explore Capabilities',
       href: '/capabilities',
@@ -561,41 +670,16 @@ export const HOMEPAGE_CONTENT = {
   },
   whatWeDo: {
     title: 'What We Do',
-    pillars: [
-      {
-        title: 'Plan',
-        description: 'Strategic assessment and architecture for complex security environments',
-        icon: 'plan',
-      },
-      {
-        title: 'Integrate',
-        description: 'Unified systems that connect legacy infrastructure with modern capabilities',
-        icon: 'integrate',
-      },
-      {
-        title: 'Assure',
-        description: 'Continuous monitoring and response to maintain operational resilience',
-        icon: 'assure',
-      },
-    ],
+    services: SERVICES,
   },
   operatingModel: {
     title: 'Operating Model',
     description: 'From threat anticipation to revenue protection',
-    stages: [
-      { title: 'Anticipate', description: 'Proactive threat intelligence and risk modeling' },
-      { title: 'Assure', description: 'Continuous security posture management' },
-      { title: 'Continuity', description: 'Resilient operations under any conditions' },
-      { title: 'Revenue', description: 'Protected business outcomes and value creation' },
-    ],
+    steps: OPERATING_STEPS,
   },
   trustSignals: {
-    title: 'Trust & Governance',
-    items: [
-      { title: 'Sovereign Operations', description: 'Data residency and operational sovereignty guaranteed' },
-      { title: 'Compliance Ready', description: 'ISO 27001, SOC 2, and sector-specific certifications' },
-      { title: 'Ethical AI', description: 'Responsible AI principles embedded in all solutions' },
-    ],
+    title: 'Governance & Trust',
+    signals: TRUST_SIGNALS,
   },
   cta: {
     title: 'Ready to Secure Your Future?',
