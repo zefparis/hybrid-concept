@@ -4,6 +4,16 @@ import { useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 
+// Use case keys per sector
+const SECTOR_CASES: Record<string, string[]> = {
+  energyMining: ['offshore', 'mining', 'pipeline'],
+  governmentPrograms: ['election', 'emergency', 'border'],
+  criticalInfra: ['power', 'water', 'telecom'],
+  cyberResilience: ['ransomware', 'apt', 'supply'],
+  portsLogistics: ['narcotics', 'weapons', 'cyber'],
+  aiFusion: ['threat', 'maintenance', 'autonomous'],
+};
+
 interface UseCasesProps {
   sector: string;
 }
@@ -14,7 +24,7 @@ export function UseCases({ sector }: UseCasesProps) {
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
   const prefersReducedMotion = useReducedMotion();
 
-  const cases = ['offshore', 'mining', 'pipeline'];
+  const cases = SECTOR_CASES[sector] || ['offshore', 'mining', 'pipeline'];
 
   return (
     <section ref={sectionRef} className="py-20 md:py-32 px-6 md:px-12">

@@ -9,6 +9,16 @@ interface SectorHeroProps {
   sector: string;
 }
 
+// Stats keys per sector
+const SECTOR_STATS: Record<string, string[]> = {
+  energyMining: ['gdp', 'downtime', 'threats'],
+  governmentPrograms: ['systems', 'sovereignty', 'compliance'],
+  criticalInfra: ['services', 'downtime', 'cascades'],
+  cyberResilience: ['threats', 'detection', 'containment'],
+  portsLogistics: ['cargo', 'disruption', 'threats'],
+  aiFusion: ['data', 'accuracy', 'latency'],
+};
+
 export function SectorHero({ sector }: SectorHeroProps) {
   const t = useTranslations(`sectors.${sector}.hero`);
   const tStats = useTranslations(`sectors.${sector}.stats`);
@@ -16,6 +26,8 @@ export function SectorHero({ sector }: SectorHeroProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true });
   const prefersReducedMotion = useReducedMotion();
+  
+  const statKeys = SECTOR_STATS[sector] || ['gdp', 'downtime', 'threats'];
 
   return (
     <section
@@ -79,30 +91,16 @@ export function SectorHero({ sector }: SectorHeroProps) {
           animate={isInView && !prefersReducedMotion ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          <div className="glass p-6 rounded-lg border border-border">
-            <p className="text-4xl md:text-5xl font-bold text-accent mb-2">
-              {tStats('gdp.value')}
-            </p>
-            <p className="text-body-sm text-foreground-secondary">
-              {tStats('gdp.label')}
-            </p>
-          </div>
-          <div className="glass p-6 rounded-lg border border-border">
-            <p className="text-4xl md:text-5xl font-bold text-accent mb-2">
-              {tStats('downtime.value')}
-            </p>
-            <p className="text-body-sm text-foreground-secondary">
-              {tStats('downtime.label')}
-            </p>
-          </div>
-          <div className="glass p-6 rounded-lg border border-border">
-            <p className="text-4xl md:text-5xl font-bold text-accent mb-2">
-              {tStats('threats.value')}
-            </p>
-            <p className="text-body-sm text-foreground-secondary">
-              {tStats('threats.label')}
-            </p>
-          </div>
+          {statKeys.map((key) => (
+            <div key={key} className="glass p-6 rounded-lg border border-border">
+              <p className="text-4xl md:text-5xl font-bold text-accent mb-2">
+                {tStats(`${key}.value`)}
+              </p>
+              <p className="text-body-sm text-foreground-secondary">
+                {tStats(`${key}.label`)}
+              </p>
+            </div>
+          ))}
         </motion.div>
       </div>
     </section>

@@ -9,6 +9,30 @@ const icons = {
   uptime: TrendingUp,
   downtime: DollarSign,
   confidence: Award,
+  sovereignty: Award,
+  response: TrendingUp,
+  availability: TrendingUp,
+  mttr: DollarSign,
+  compliance: Award,
+  detection: TrendingUp,
+  containment: DollarSign,
+  prevented: Award,
+  interdiction: TrendingUp,
+  throughput: DollarSign,
+  incidents: Award,
+  prediction: TrendingUp,
+  latency: DollarSign,
+  efficiency: Award,
+};
+
+// Metric keys per sector
+const SECTOR_METRICS: Record<string, string[]> = {
+  energyMining: ['uptime', 'downtime', 'confidence'],
+  governmentPrograms: ['uptime', 'sovereignty', 'response'],
+  criticalInfra: ['availability', 'mttr', 'compliance'],
+  cyberResilience: ['detection', 'containment', 'prevented'],
+  portsLogistics: ['interdiction', 'throughput', 'incidents'],
+  aiFusion: ['prediction', 'latency', 'efficiency'],
 };
 
 interface ValuePropositionProps {
@@ -21,7 +45,7 @@ export function ValueProposition({ sector }: ValuePropositionProps) {
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
   const prefersReducedMotion = useReducedMotion();
 
-  const metrics = ['uptime', 'downtime', 'confidence'];
+  const metrics = SECTOR_METRICS[sector] || ['uptime', 'downtime', 'confidence'];
 
   return (
     <section ref={sectionRef} className="py-20 md:py-32 px-6 md:px-12">
