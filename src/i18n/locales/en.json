@@ -215,6 +215,766 @@
         "primary": "Discuss Your Operations",
         "secondary": "Explore All Capabilities"
       }
+    },
+
+    "governmentPrograms": {
+      "hero": {
+        "title": "Government & National Programs",
+        "subtitle": "Sovereign Infrastructure Protection",
+        "lead": "HC-1 secures national infrastructure, protects sovereign data, and assures continuity of government operations through zero-trust architecture and mission-critical systems integration."
+      },
+      "stats": {
+        "systems": {
+          "value": "24/7",
+          "label": "operational assurance"
+        },
+        "sovereignty": {
+          "value": "100%",
+          "label": "data sovereignty"
+        },
+        "compliance": {
+          "value": "Multi-tier",
+          "label": "security clearance"
+        }
+      },
+      "overview": {
+        "heading": "The Challenge",
+        "intro": "Government and national programs require absolute continuity, data sovereignty, and multi-layered security. Disruptions impact public services, national security, and citizen confidence.",
+        "sovereignty": {
+          "title": "Sovereignty Requirements",
+          "points": [
+            "Data must remain under national jurisdiction",
+            "Foreign vendor dependencies create strategic risk",
+            "Regulatory compliance across agencies and ministries"
+          ]
+        },
+        "continuity": {
+          "title": "Continuity Imperatives",
+          "points": [
+            "Zero tolerance for downtime in critical services",
+            "Emergency operations require guaranteed availability",
+            "Inter-agency coordination during crisis events"
+          ]
+        },
+        "threats": {
+          "title": "Threat Landscape",
+          "points": [
+            "State-sponsored cyber campaigns targeting infrastructure",
+            "Supply chain vulnerabilities in procurement",
+            "Insider threats and privileged access abuse"
+          ]
+        }
+      },
+      "risks": {
+        "heading": "Critical Vulnerabilities",
+        "security": {
+          "title": "Security Gaps",
+          "items": [
+            {
+              "label": "Legacy systems integration",
+              "details": "Decades-old infrastructure incompatible with modern security; Air-gap bypass via contractor networks"
+            },
+            {
+              "label": "Multi-vendor fragmentation",
+              "details": "Siloed security tools; No unified threat visibility across agencies"
+            },
+            {
+              "label": "Privileged access risks",
+              "details": "Contractor access often excessive; Audit trails incomplete or delayed"
+            }
+          ]
+        },
+        "operational": {
+          "title": "Operational Risks",
+          "items": [
+            {
+              "label": "Single points of failure",
+              "details": "Critical services lack redundancy; Failover systems untested or manual"
+            },
+            {
+              "label": "Data sovereignty breaches",
+              "details": "Cloud services store data in foreign jurisdictions; Vendor access creates compliance exposure"
+            },
+            {
+              "label": "Emergency response gaps",
+              "details": "Communication systems fail during disasters; No coordinated command infrastructure"
+            }
+          ]
+        }
+      },
+      "approach": {
+        "heading": "HC-1 Approach: Sovereign by Design",
+        "intro": "HC-1 architects government infrastructure with data sovereignty, zero-trust principles, and assured continuity at the foundation—not as afterthoughts.",
+        "architecture": {
+          "title": "Sovereign Architecture",
+          "description": "Design systems with data residency controls, eliminate foreign dependencies, establish national security baselines.",
+          "outcome": "Infrastructure that meets highest classification requirements while maintaining operational efficiency."
+        },
+        "integration": {
+          "title": "Zero-Trust Integration",
+          "description": "Integrate legacy and modern systems with micro-segmentation, continuous authentication, full audit trails.",
+          "outcome": "Unified security posture across all agencies without disrupting existing operations."
+        },
+        "assurance": {
+          "title": "Mission Assurance",
+          "description": "24/7 SOC/NOC monitoring, automated failover, incident coordination, compliance tracking.",
+          "outcome": "Government services remain available during crisis events with full accountability."
+        }
+      },
+      "value": {
+        "heading": "Measurable Impact",
+        "uptime": {
+          "metric": "99.99%",
+          "label": "Service Availability",
+          "impact": "Critical services remain operational",
+          "method": "Redundancy + automated failover"
+        },
+        "sovereignty": {
+          "metric": "100%",
+          "label": "Data Sovereignty",
+          "impact": "Full national jurisdiction over data",
+          "method": "Domestic infrastructure + sovereign cloud"
+        },
+        "response": {
+          "metric": "<15min",
+          "label": "Incident Response",
+          "impact": "Rapid threat containment",
+          "method": "24/7 SOC + pre-authorized playbooks"
+        }
+      },
+      "useCases": {
+        "heading": "Operational Scenarios",
+        "election": {
+          "title": "National Election Infrastructure",
+          "description": "Election systems face coordinated cyber campaign. HC-1's zero-trust architecture prevents lateral movement, maintains voter database integrity, ensures result transmission security. Democratic process protected."
+        },
+        "emergency": {
+          "title": "Emergency Services Coordination",
+          "description": "Natural disaster disrupts regional communications. HC-1's redundant command infrastructure maintains inter-agency coordination, enables resource allocation, tracks emergency response. Lives saved."
+        },
+        "border": {
+          "title": "Border Security Operations",
+          "description": "Border control systems detect smuggling operation. HC-1's integrated surveillance and intelligence fusion enables real-time coordination between customs, immigration, and law enforcement. Threat interdicted."
+        }
+      },
+      "capabilities": {
+        "heading": "Integrated Capabilities",
+        "intro": "HC-1 delivers government solutions through coordinated deployment of specialized capabilities:"
+      },
+      "cta": {
+        "heading": "Protect National Infrastructure",
+        "description": "HC-1 works with governments, defense agencies, and national security organizations to architect sovereign, secure, and assured infrastructure.",
+        "primary": "Discuss Your Requirements",
+        "secondary": "Explore All Capabilities"
+      }
+    },
+
+    "criticalInfra": {
+      "hero": {
+        "title": "Critical Infrastructure",
+        "subtitle": "Essential Services Protection",
+        "lead": "HC-1 protects water, power, telecommunications, healthcare, and transportation infrastructure through upstream risk modeling, systems integration, and operational assurance."
+      },
+      "stats": {
+        "services": {
+          "value": "Millions",
+          "label": "citizens dependent"
+        },
+        "downtime": {
+          "value": "$10M+",
+          "label": "hourly impact of outage"
+        },
+        "cascades": {
+          "value": "Multi-sector",
+          "label": "failure cascades"
+        }
+      },
+      "overview": {
+        "heading": "The Challenge",
+        "intro": "Critical infrastructure disruptions cascade across sectors, impacting millions of citizens and creating systemic risk. Traditional security models are reactive—HC-1 prevents disruption upstream.",
+        "dependency": {
+          "title": "Interdependencies",
+          "points": [
+            "Power grid failure disables water treatment",
+            "Telecom outage prevents emergency services coordination",
+            "Single infrastructure failure can cascade nationally"
+          ]
+        },
+        "exposure": {
+          "title": "Attack Surface",
+          "points": [
+            "Industrial control systems vulnerable to cyber intrusion",
+            "Physical infrastructure accessible in remote locations",
+            "Supply chain dependencies introduce third-party risk"
+          ]
+        },
+        "regulation": {
+          "title": "Regulatory Pressure",
+          "points": [
+            "Increasing compliance requirements (NIS2, CER)",
+            "Mandatory incident reporting with tight timelines",
+            "Liability for service disruptions"
+          ]
+        }
+      },
+      "risks": {
+        "heading": "Critical Vulnerabilities",
+        "operational": {
+          "title": "Operational Risks",
+          "items": [
+            {
+              "label": "SCADA/ICS vulnerabilities",
+              "details": "Legacy systems lack modern security; Remote access creates entry points"
+            },
+            {
+              "label": "Single points of failure",
+              "details": "No geographic redundancy; Manual failover processes"
+            },
+            {
+              "label": "Inadequate monitoring",
+              "details": "Threat detection after compromise; No real-time anomaly detection"
+            }
+          ]
+        },
+        "strategic": {
+          "title": "Strategic Risks",
+          "items": [
+            {
+              "label": "Cascading failures",
+              "details": "Interdependencies not mapped; No cross-sector coordination"
+            },
+            {
+              "label": "Supply chain exposure",
+              "details": "Foreign equipment in critical paths; Update mechanisms unvetted"
+            },
+            {
+              "label": "Regulatory non-compliance",
+              "details": "Gaps in audit trails; Incident response plans untested"
+            }
+          ]
+        }
+      },
+      "approach": {
+        "heading": "HC-1 Approach: Resilience by Architecture",
+        "intro": "HC-1 designs critical infrastructure for resilience—anticipating failure modes, eliminating single points of failure, and assuring continuity through redundancy and real-time monitoring.",
+        "modeling": {
+          "title": "Dependency Mapping",
+          "description": "Model interdependencies across sectors, identify cascading failure paths, quantify disruption impact.",
+          "outcome": "Risk-informed capital allocation and evidence-based resilience investments."
+        },
+        "hardening": {
+          "title": "Infrastructure Hardening",
+          "description": "Secure SCADA/ICS, establish geographic redundancy, deploy zero-trust segmentation.",
+          "outcome": "Attack surface reduced, critical systems isolated, failover automated."
+        },
+        "monitoring": {
+          "title": "Continuous Assurance",
+          "description": "Real-time anomaly detection, automated threat response, cross-sector coordination.",
+          "outcome": "Threats detected before impact, service availability maintained."
+        }
+      },
+      "value": {
+        "heading": "Measurable Impact",
+        "availability": {
+          "metric": "99.95%+",
+          "label": "Service Availability",
+          "impact": "Essential services remain operational",
+          "method": "Redundancy + predictive maintenance"
+        },
+        "mttr": {
+          "metric": "80%",
+          "label": "Faster Recovery",
+          "impact": "Mean time to recovery reduced",
+          "method": "Automated failover + runbooks"
+        },
+        "compliance": {
+          "metric": "Full",
+          "label": "Regulatory Compliance",
+          "impact": "NIS2, CER, sector-specific standards",
+          "method": "Continuous monitoring + audit trails"
+        }
+      },
+      "useCases": {
+        "heading": "Operational Scenarios",
+        "power": {
+          "title": "Power Grid — Cyber Intrusion",
+          "description": "Substation SCADA targeted by APT. HC-1's micro-segmentation isolates compromised system, maintains grid stability, coordinates emergency response. 2.5M residents protected from blackout."
+        },
+        "water": {
+          "title": "Water Treatment — Chemical Safety",
+          "description": "Industrial control system manipulated to alter chemical dosing. HC-1's anomaly detection triggers alert, automated safety override prevents contamination. Public health crisis averted."
+        },
+        "telecom": {
+          "title": "Telecommunications — Infrastructure Failure",
+          "description": "Fiber cut disrupts regional connectivity. HC-1's redundant routing automatically reroutes traffic, maintains emergency services access. Zero service disruption to hospitals, police."
+        }
+      },
+      "capabilities": {
+        "heading": "Integrated Capabilities",
+        "intro": "HC-1 delivers critical infrastructure solutions through coordinated deployment of specialized capabilities:"
+      },
+      "cta": {
+        "heading": "Protect Essential Services",
+        "description": "HC-1 works with infrastructure operators, regulators, and emergency services to anticipate disruption and assure continuity of essential services.",
+        "primary": "Discuss Your Infrastructure",
+        "secondary": "Explore All Capabilities"
+      }
+    },
+
+    "cyberResilience": {
+      "hero": {
+        "title": "Cyber Resilience",
+        "subtitle": "Zero-Trust Security Architecture",
+        "lead": "HC-1 prevents cyber disruption through zero-trust architecture, continuous threat detection, and coordinated incident response—not reactive cleanup."
+      },
+      "stats": {
+        "threats": {
+          "value": "10,000+",
+          "label": "threats blocked daily"
+        },
+        "detection": {
+          "value": "<5min",
+          "label": "mean time to detect"
+        },
+        "containment": {
+          "value": "<15min",
+          "label": "mean time to contain"
+        }
+      },
+      "overview": {
+        "heading": "The Challenge",
+        "intro": "Cyber threats evolve faster than defensive capabilities. Perimeter security has failed. HC-1 implements zero-trust principles, assuming breach and preventing lateral movement.",
+        "landscape": {
+          "title": "Threat Landscape",
+          "points": [
+            "State-sponsored APTs targeting critical infrastructure",
+            "Ransomware targeting operational technology",
+            "Supply chain compromises (SolarWinds, Kaseya patterns)"
+          ]
+        },
+        "gaps": {
+          "title": "Security Gaps",
+          "points": [
+            "Legacy perimeter-based security models",
+            "OT/IT convergence creates blind spots",
+            "Incident response relies on manual processes"
+          ]
+        },
+        "impact": {
+          "title": "Business Impact",
+          "points": [
+            "Ransomware downtime: 15-30 days average",
+            "Data breach costs: $4.5M average",
+            "Reputational damage extends beyond incident"
+          ]
+        }
+      },
+      "risks": {
+        "heading": "Critical Vulnerabilities",
+        "technical": {
+          "title": "Technical Risks",
+          "items": [
+            {
+              "label": "Lateral movement",
+              "details": "Flat networks allow attackers to pivot; Privilege escalation trivial"
+            },
+            {
+              "label": "OT exposure",
+              "details": "Industrial systems accessible from IT; Legacy protocols lack authentication"
+            },
+            {
+              "label": "Blind spots",
+              "details": "Encrypted traffic not inspected; Cloud assets unmonitored"
+            }
+          ]
+        },
+        "operational": {
+          "title": "Operational Risks",
+          "items": [
+            {
+              "label": "Alert fatigue",
+              "details": "SOC overwhelmed by false positives; Real threats missed in noise"
+            },
+            {
+              "label": "Manual response",
+              "details": "Incident playbooks not automated; Response time measured in hours"
+            },
+            {
+              "label": "Skills shortage",
+              "details": "Cannot hire/retain security talent; Reliance on external consultants"
+            }
+          ]
+        }
+      },
+      "approach": {
+        "heading": "HC-1 Approach: Assume Breach",
+        "intro": "HC-1 implements zero-trust principles: verify explicitly, least privilege access, and assume breach. Prevention, detection, and response are architected as a unified system.",
+        "zerotrust": {
+          "title": "Zero-Trust Architecture",
+          "description": "Micro-segmentation, continuous authentication, least privilege access, encrypted everything.",
+          "outcome": "Lateral movement prevented. Breach contained to single asset."
+        },
+        "soc": {
+          "title": "24/7 SOC/NOC",
+          "description": "Real-time threat detection, AI-driven anomaly detection, automated response playbooks.",
+          "outcome": "Threats detected in minutes, contained in <15 minutes."
+        },
+        "intelligence": {
+          "title": "Threat Intelligence",
+          "description": "Integration of OSINT, SIGINT, and proprietary threat feeds. Predictive threat modeling.",
+          "outcome": "Attacks anticipated before launch. Proactive defense posture."
+        }
+      },
+      "value": {
+        "heading": "Measurable Impact",
+        "detection": {
+          "metric": "<5min",
+          "label": "Mean Time to Detect",
+          "impact": "Threats identified before impact",
+          "method": "AI-driven anomaly detection"
+        },
+        "containment": {
+          "metric": "<15min",
+          "label": "Mean Time to Contain",
+          "impact": "Breach isolated immediately",
+          "method": "Automated response playbooks"
+        },
+        "prevented": {
+          "metric": "10,000+",
+          "label": "Daily Threats Blocked",
+          "impact": "Attacks stopped at perimeter",
+          "method": "Layered defense + threat intelligence"
+        }
+      },
+      "useCases": {
+        "heading": "Operational Scenarios",
+        "ransomware": {
+          "title": "Ransomware Attack — Financial Services",
+          "description": "Banking infrastructure targeted by ransomware. HC-1's zero-trust segmentation prevents spread, SOC isolates compromised endpoints, recovery from immutable backups completed in 4 hours. $50M+ loss avoided."
+        },
+        "apt": {
+          "title": "APT Campaign — Defense Contractor",
+          "description": "Nation-state APT establishes persistence in engineering network. HC-1's behavior analytics detect anomalous data exfiltration, incident response team ejects attacker, forensics identify compromised systems. IP protected."
+        },
+        "supply": {
+          "title": "Supply Chain Compromise — Software Update",
+          "description": "Vendor software update contains backdoor. HC-1's code integrity checks flag anomaly, update blocked, vendor notified. Zero-day prevented from deployment."
+        }
+      },
+      "capabilities": {
+        "heading": "Integrated Capabilities",
+        "intro": "HC-1 delivers cyber resilience through coordinated deployment of specialized capabilities:"
+      },
+      "cta": {
+        "heading": "Build Zero-Trust Resilience",
+        "description": "HC-1 works with enterprises, critical infrastructure operators, and defense organizations to implement zero-trust architectures and operational security.",
+        "primary": "Assess Your Security Posture",
+        "secondary": "Explore All Capabilities"
+      }
+    },
+
+    "portsLogistics": {
+      "hero": {
+        "title": "Ports, Borders & Logistics",
+        "subtitle": "Secure Corridors & Supply Chain Integrity",
+        "lead": "HC-1 secures trade corridors, port operations, and cross-border logistics through integrated surveillance, intelligence fusion, and coordinated response."
+      },
+      "stats": {
+        "cargo": {
+          "value": "$Trillions",
+          "label": "annual trade value"
+        },
+        "disruption": {
+          "value": "$10M+",
+          "label": "daily cost per port closure"
+        },
+        "threats": {
+          "value": "Multi-vector",
+          "label": "smuggling, cyber, physical"
+        }
+      },
+      "overview": {
+        "heading": "The Challenge",
+        "intro": "Ports and logistics corridors are critical economic infrastructure. Disruptions halt trade, impact GDP, and create cascading supply chain failures. Security requires physical, cyber, and intelligence integration.",
+        "economic": {
+          "title": "Economic Criticality",
+          "points": [
+            "80% of global trade moves by sea",
+            "Port closures cost $10M+ per day",
+            "Supply chain disruptions take 6-12 months to resolve"
+          ]
+        },
+        "threats": {
+          "title": "Threat Vectors",
+          "points": [
+            "Smuggling (narcotics, weapons, contraband)",
+            "Cyber attacks on port systems (crane operations, customs)",
+            "Physical sabotage of infrastructure"
+          ]
+        },
+        "complexity": {
+          "title": "Operational Complexity",
+          "points": [
+            "Multi-jurisdictional coordination required",
+            "24/7 operations with high throughput",
+            "Legacy systems and manual processes"
+          ]
+        }
+      },
+      "risks": {
+        "heading": "Critical Vulnerabilities",
+        "security": {
+          "title": "Security Gaps",
+          "items": [
+            {
+              "label": "Perimeter vulnerabilities",
+              "details": "Large areas with limited surveillance; Unauthorized access via vendor vehicles"
+            },
+            {
+              "label": "Cargo inspection gaps",
+              "details": "Manual inspections miss 95%+ of cargo; X-ray/scan systems outdated"
+            },
+            {
+              "label": "Cyber exposure",
+              "details": "Port management systems vulnerable; Crane operations can be remotely disrupted"
+            }
+          ]
+        },
+        "operational": {
+          "title": "Operational Risks",
+          "items": [
+            {
+              "label": "Coordination failures",
+              "details": "Customs, immigration, port authority operate in silos; No unified intelligence picture"
+            },
+            {
+              "label": "Data fragmentation",
+              "details": "Cargo tracking systems incompatible; No real-time visibility across corridor"
+            },
+            {
+              "label": "Insider threats",
+              "details": "High employee/contractor turnover; Background checks incomplete"
+            }
+          ]
+        }
+      },
+      "approach": {
+        "heading": "HC-1 Approach: Integrated Corridors",
+        "intro": "HC-1 integrates physical security, cyber defense, and intelligence fusion to create secure, visible, and efficient trade corridors.",
+        "surveillance": {
+          "title": "Integrated Surveillance",
+          "description": "AI-driven video analytics, sensor fusion, automated threat detection across perimeter and cargo zones.",
+          "outcome": "Real-time threat detection. 95%+ reduction in false positives."
+        },
+        "intelligence": {
+          "title": "Intelligence Fusion",
+          "description": "Combine customs data, cargo manifests, OSINT, and behavioral analytics. Predictive risk scoring.",
+          "outcome": "High-risk shipments flagged automatically. Inspection resources optimized."
+        },
+        "coordination": {
+          "title": "Multi-Agency Coordination",
+          "description": "Unified command platform for customs, immigration, port security, and law enforcement.",
+          "outcome": "Coordinated response to threats. Evidence chain maintained for prosecution."
+        }
+      },
+      "value": {
+        "heading": "Measurable Impact",
+        "interdiction": {
+          "metric": "300%",
+          "label": "Increased Interdiction Rate",
+          "impact": "More contraband detected",
+          "method": "Intelligence fusion + targeted inspection"
+        },
+        "throughput": {
+          "metric": "25%",
+          "label": "Faster Cargo Processing",
+          "impact": "Reduced dwell time",
+          "method": "Risk-based inspection + automation"
+        },
+        "incidents": {
+          "metric": "70%",
+          "label": "Reduced Security Incidents",
+          "impact": "Fewer breaches, less theft",
+          "method": "Perimeter security + insider threat detection"
+        }
+      },
+      "useCases": {
+        "heading": "Operational Scenarios",
+        "narcotics": {
+          "title": "Narcotics Smuggling — Container Port",
+          "description": "Intelligence fusion flags high-risk container based on shipper history and route anomalies. X-ray scan confirms contraband. Coordinated customs/law enforcement seizure. 500kg cocaine interdicted."
+        },
+        "weapons": {
+          "title": "Weapons Trafficking — Border Crossing",
+          "description": "Vehicle flagged by behavioral analytics at border checkpoint. Sensor fusion detects concealed compartment. Weapons cache seized, trafficking network disrupted."
+        },
+        "cyber": {
+          "title": "Cyber Attack — Port Operations",
+          "description": "Port management system targeted by ransomware. HC-1's cyber defense isolates attack, maintains crane operations via backup systems, restores primary within 6 hours. Zero cargo delay."
+        }
+      },
+      "capabilities": {
+        "heading": "Integrated Capabilities",
+        "intro": "HC-1 delivers ports and logistics solutions through coordinated deployment of specialized capabilities:"
+      },
+      "cta": {
+        "heading": "Secure Trade Corridors",
+        "description": "HC-1 works with port authorities, customs agencies, and logistics operators to secure trade corridors and maintain supply chain integrity.",
+        "primary": "Discuss Your Corridor",
+        "secondary": "Explore All Capabilities"
+      }
+    },
+
+    "aiFusion": {
+      "hero": {
+        "title": "AI Fusion & Intelligence",
+        "subtitle": "Decision Intelligence & Predictive Systems",
+        "lead": "HC-1 delivers decision-grade intelligence through AI fusion, predictive analytics, and autonomous systems—transforming data into operational advantage."
+      },
+      "stats": {
+        "data": {
+          "value": "Petabytes",
+          "label": "data processed daily"
+        },
+        "accuracy": {
+          "value": "95%+",
+          "label": "prediction accuracy"
+        },
+        "latency": {
+          "value": "<100ms",
+          "label": "decision latency"
+        }
+      },
+      "overview": {
+        "heading": "The Challenge",
+        "intro": "Organizations drown in data but lack actionable intelligence. Traditional analytics are retrospective. HC-1 fuses multi-source data with AI to deliver predictive, decision-grade intelligence in real time.",
+        "dataVolume": {
+          "title": "Data Volume Challenge",
+          "points": [
+            "Petabytes generated daily from sensors, networks, systems",
+            "Human analysts cannot process volume at speed",
+            "Signal-to-noise ratio makes manual analysis impossible"
+          ]
+        },
+        "latency": {
+          "title": "Decision Latency",
+          "points": [
+            "Threats evolve faster than traditional analysis cycles",
+            "Autonomous systems require sub-second decision-making",
+            "Competitive advantage goes to fastest accurate decision"
+          ]
+        },
+        "integration": {
+          "title": "Integration Complexity",
+          "points": [
+            "Data silos across organizations and domains",
+            "Incompatible formats and schemas",
+            "Legacy systems lack APIs or structured output"
+          ]
+        }
+      },
+      "risks": {
+        "heading": "Critical Vulnerabilities",
+        "analytical": {
+          "title": "Analytical Gaps",
+          "items": [
+            {
+              "label": "Retrospective analysis",
+              "details": "Dashboards show what happened, not what will happen; Decisions based on outdated data"
+            },
+            {
+              "label": "Human bottleneck",
+              "details": "Analysts overwhelmed by alerts and data; Expert knowledge not scalable"
+            },
+            {
+              "label": "Bias and error",
+              "details": "Human analysis subject to cognitive bias; Inconsistent quality across analysts"
+            }
+          ]
+        },
+        "technical": {
+          "title": "Technical Risks",
+          "items": [
+            {
+              "label": "AI model drift",
+              "details": "Models degrade as adversary tactics evolve; No continuous retraining pipeline"
+            },
+            {
+              "label": "Black-box AI",
+              "details": "Decisions not explainable; Regulators and operators lack trust"
+            },
+            {
+              "label": "Data quality",
+              "details": "Garbage in, garbage out; Incomplete or corrupted training data"
+            }
+          ]
+        }
+      },
+      "approach": {
+        "heading": "HC-1 Approach: Explainable AI Fusion",
+        "intro": "HC-1 fuses structured and unstructured data from multiple sources, applies explainable AI models, and delivers actionable intelligence with confidence scores and reasoning.",
+        "fusion": {
+          "title": "Multi-Source Fusion",
+          "description": "Ingest sensor data, network telemetry, OSINT, SIGINT, structured databases. Normalize, correlate, enrich.",
+          "outcome": "Unified intelligence picture with temporal and spatial context."
+        },
+        "prediction": {
+          "title": "Predictive Analytics",
+          "description": "Machine learning models trained on historical patterns, adversary tactics, and operational context. Continuous retraining.",
+          "outcome": "Threats predicted before execution. Proactive defense and resource allocation."
+        },
+        "autonomy": {
+          "title": "Autonomous Decision Support",
+          "description": "AI recommends courses of action with confidence scores and explanations. Human-in-the-loop for high-stakes decisions.",
+          "outcome": "Faster, more accurate decisions. Operators augmented, not replaced."
+        }
+      },
+      "value": {
+        "heading": "Measurable Impact",
+        "prediction": {
+          "metric": "95%+",
+          "label": "Prediction Accuracy",
+          "impact": "Threats anticipated before execution",
+          "method": "ML models + continuous retraining"
+        },
+        "latency": {
+          "metric": "<100ms",
+          "label": "Decision Latency",
+          "impact": "Real-time decision support",
+          "method": "Edge computing + optimized models"
+        },
+        "efficiency": {
+          "metric": "10x",
+          "label": "Analyst Efficiency",
+          "impact": "Analysts focus on high-value tasks",
+          "method": "Automated triage + explainable AI"
+        }
+      },
+      "useCases": {
+        "heading": "Operational Scenarios",
+        "threat": {
+          "title": "Threat Prediction — National Security",
+          "description": "AI fusion combines SIGINT, OSINT, and behavioral patterns to predict adversary operation 72 hours before execution. Defense assets repositioned. Attack deterred."
+        },
+        "maintenance": {
+          "title": "Predictive Maintenance — Energy Sector",
+          "description": "Sensor fusion and ML models predict turbine failure 14 days before occurrence. Maintenance scheduled during planned downtime. $5M unplanned outage avoided."
+        },
+        "autonomous": {
+          "title": "Autonomous Navigation — GPS-Denied",
+          "description": "Drone swarm loses GPS in contested environment. HC-1's CORTEX-U7 uses astronomical positioning and sensor fusion to maintain navigation. Mission completed successfully."
+        }
+      },
+      "capabilities": {
+        "heading": "Integrated Capabilities",
+        "intro": "HC-1 delivers AI fusion and intelligence through coordinated deployment of specialized capabilities:"
+      },
+      "cta": {
+        "heading": "Transform Data into Intelligence",
+        "description": "HC-1 works with defense agencies, intelligence organizations, and enterprises to deploy AI fusion and predictive analytics for operational advantage.",
+        "primary": "Discuss Your Intelligence Needs",
+        "secondary": "Explore All Capabilities"
+      }
     }
   },
 
