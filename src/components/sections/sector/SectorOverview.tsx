@@ -3,12 +3,35 @@
 import { useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
-import { Shield, TrendingDown, Globe } from 'lucide-react';
+import { Shield, TrendingDown, Globe, Link as LinkIcon, AlertTriangle, FileText } from 'lucide-react';
 
 const icons = {
   revenue: Shield,
   risks: TrendingDown,
   exposure: Globe,
+  sovereignty: Shield,
+  continuity: LinkIcon,
+  threats: AlertTriangle,
+  dependency: LinkIcon,
+  regulation: FileText,
+  landscape: Globe,
+  gaps: AlertTriangle,
+  impact: TrendingDown,
+  economic: Shield,
+  complexity: Globe,
+  dataVolume: TrendingDown,
+  latency: Globe,
+  integration: LinkIcon,
+};
+
+// Column keys per sector
+const SECTOR_COLUMNS: Record<string, string[]> = {
+  energyMining: ['revenue', 'risks', 'exposure'],
+  governmentPrograms: ['sovereignty', 'continuity', 'threats'],
+  criticalInfra: ['dependency', 'exposure', 'regulation'],
+  cyberResilience: ['landscape', 'gaps', 'impact'],
+  portsLogistics: ['economic', 'threats', 'complexity'],
+  aiFusion: ['dataVolume', 'latency', 'integration'],
 };
 
 interface SectorOverviewProps {
@@ -21,7 +44,7 @@ export function SectorOverview({ sector }: SectorOverviewProps) {
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
   const prefersReducedMotion = useReducedMotion();
 
-  const columns = ['revenue', 'risks', 'exposure'];
+  const columns = SECTOR_COLUMNS[sector] || ['revenue', 'risks', 'exposure'];
 
   return (
     <section ref={sectionRef} className="py-20 md:py-32 px-6 md:px-12 bg-surface">

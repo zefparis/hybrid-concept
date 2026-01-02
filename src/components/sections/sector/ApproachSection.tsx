@@ -9,6 +9,28 @@ const icons = {
   architecture: Layers,
   integration: Workflow,
   continuity: Shield,
+  assurance: Shield,
+  zerotrust: Shield,
+  soc: Workflow,
+  intelligence: Layers,
+  modeling: Layers,
+  hardening: Shield,
+  monitoring: Workflow,
+  surveillance: Workflow,
+  coordination: Layers,
+  fusion: Layers,
+  prediction: Workflow,
+  autonomy: Shield,
+};
+
+// Tab keys per sector
+const SECTOR_TABS: Record<string, string[]> = {
+  energyMining: ['architecture', 'integration', 'continuity'],
+  governmentPrograms: ['architecture', 'integration', 'assurance'],
+  criticalInfra: ['modeling', 'hardening', 'monitoring'],
+  cyberResilience: ['zerotrust', 'soc', 'intelligence'],
+  portsLogistics: ['surveillance', 'intelligence', 'coordination'],
+  aiFusion: ['fusion', 'prediction', 'autonomy'],
 };
 
 interface ApproachSectionProps {
@@ -20,9 +42,9 @@ export function ApproachSection({ sector }: ApproachSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
   const prefersReducedMotion = useReducedMotion();
-  const [activeTab, setActiveTab] = useState('architecture');
-
-  const tabs = ['architecture', 'integration', 'continuity'];
+  
+  const tabs = SECTOR_TABS[sector] || ['architecture', 'integration', 'continuity'];
+  const [activeTab, setActiveTab] = useState(tabs[0]);
 
   return (
     <section ref={sectionRef} className="py-20 md:py-32 px-6 md:px-12 bg-surface">
