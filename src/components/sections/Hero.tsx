@@ -69,14 +69,27 @@ export function Hero({
         isMinimal && 'pt-32 pb-16'
       )}
     >
+      {/* Background Image (Home only) */}
+      {isHome && (
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: 'url(/images/hc.png)' }}
+        />
+      )}
+      
+      {/* Dark overlay for readability */}
+      {isHome && (
+        <div className="absolute inset-0 bg-background/80" />
+      )}
+      
       {/* Animated grid background (Home only) */}
       {isHome && (
-        <div className="absolute inset-0 grid-pattern opacity-50" />
+        <div className="absolute inset-0 grid-pattern opacity-30" />
       )}
       
       {/* Gradient overlay */}
       {isHome && (
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-surface" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-surface" />
       )}
       
       {/* Glow orb effect (Home only) */}
