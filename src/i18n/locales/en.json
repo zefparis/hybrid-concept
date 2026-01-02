@@ -64,6 +64,157 @@
     "ai": {
       "title": "AI Fusion & Intelligence",
       "description": "Decision intelligence and predictive systems."
+    },
+    "energyMining": {
+      "hero": {
+        "title": "Energy & Mining",
+        "subtitle": "National Revenue Systems Protection",
+        "lead": "HC-1 protects production continuity, secures export corridors, and strengthens national revenue through upstream systems integration and operational assurance."
+      },
+      "stats": {
+        "gdp": {
+          "value": "30-70%",
+          "label": "of GDP in resource economies"
+        },
+        "downtime": {
+          "value": "$1-5M",
+          "label": "per day downtime cost"
+        },
+        "threats": {
+          "value": "300%",
+          "label": "increase in cyber targeting"
+        }
+      },
+      "overview": {
+        "heading": "The Challenge",
+        "intro": "Energy and mining operations represent critical national revenue infrastructure. Production disruptions, export corridor vulnerabilities, and operational inefficiencies directly impact GDP, investor confidence, and sovereign economic stability.",
+        "revenue": {
+          "title": "Revenue Criticality",
+          "points": [
+            "30-70% of national GDP in resource-dependent economies",
+            "Direct correlation between uptime and state revenue",
+            "Export dependencies create geopolitical vulnerabilities"
+          ]
+        },
+        "risks": {
+          "title": "Operational Risks",
+          "points": [
+            "Equipment downtime: $1-5M per day per facility",
+            "Supply chain disruptions: 15-45 day recovery cycles",
+            "Cyber threats: 300% increase targeting energy/mining"
+          ]
+        },
+        "exposure": {
+          "title": "Strategic Exposure",
+          "points": [
+            "Port and corridor dependencies",
+            "GPS-denied environments (mines, offshore)",
+            "Multi-jurisdictional regulatory complexity"
+          ]
+        }
+      },
+      "risks": {
+        "heading": "Critical Vulnerabilities",
+        "production": {
+          "title": "Production Continuity Risks",
+          "items": [
+            {
+              "label": "Equipment failure cascades",
+              "details": "Unplanned downtime: 5-15% annual production loss; Maintenance windows: 20-40% cost overrun"
+            },
+            {
+              "label": "Logistics corridor disruption",
+              "details": "Port congestion: 7-21 day delays; Export pipeline sabotage: 60-180 day recovery"
+            },
+            {
+              "label": "Workforce safety incidents",
+              "details": "Operational halts: regulatory + reputational cost; Remote site isolation"
+            }
+          ]
+        },
+        "revenueGaps": {
+          "title": "Revenue Protection Gaps",
+          "items": [
+            {
+              "label": "Reactive maintenance models",
+              "details": "Failure detection after incident; Parts availability: 14-60 day lead times"
+            },
+            {
+              "label": "Fragmented security systems",
+              "details": "Perimeter security ≠ systems security; OT/IT convergence gaps exploited"
+            },
+            {
+              "label": "Data sovereignty blind spots",
+              "details": "Foreign vendor dependencies; Compliance exposure in multi-jurisdictional operations"
+            }
+          ]
+        }
+      },
+      "approach": {
+        "heading": "HC-1 Approach: Upstream Integration",
+        "intro": "HC-1 does not operate as incident responders. HC-1 architects, integrates, and governs mission-critical systems at the planning stage—anticipating disruption vectors, eliminating single points of failure, and assuring continuity through sovereign, zero-trust infrastructure.",
+        "architecture": {
+          "title": "Architecture & Planning",
+          "description": "Map production dependencies, model disruption scenarios, design redundancy architectures, establish sovereign data governance.",
+          "outcome": "Risk models that quantify downtime cost and guide capital allocation."
+        },
+        "integration": {
+          "title": "Systems Integration",
+          "description": "Integrate OT/IT with zero-trust segmentation, deploy predictive maintenance, secure logistics corridors, establish SOC/NOC.",
+          "outcome": "Unified command infrastructure with SLA-based assurance."
+        },
+        "continuity": {
+          "title": "Continuity Assurance",
+          "description": "Real-time monitoring, automated failover, incident coordination, compliance tracking.",
+          "outcome": "Operational uptime targets met, revenue protected."
+        }
+      },
+      "value": {
+        "heading": "Measurable Impact",
+        "uptime": {
+          "metric": "98-99.5%",
+          "label": "Production Uptime",
+          "impact": "+5-10% annual revenue",
+          "method": "Predictive maintenance + automated failover"
+        },
+        "downtime": {
+          "metric": "40-60%",
+          "label": "Downtime Cost Reduction",
+          "impact": "$50-200M annual savings per major facility",
+          "method": "Risk anticipation + rapid response coordination"
+        },
+        "confidence": {
+          "metric": "Demonstrable",
+          "label": "Investor Confidence",
+          "impact": "Improved sovereign credit ratings, FDI attraction",
+          "method": "SLA transparency + audit-ready traceability"
+        }
+      },
+      "useCases": {
+        "heading": "Operational Scenarios",
+        "offshore": {
+          "title": "Offshore Platform — GPS-Denied Operations",
+          "description": "An offshore oil platform loses GPS connectivity due to jamming. HC-1's CORTEX-U7 autonomous navigation maintains supply vessel operations, preventing 14-day production halt. Revenue protected: $42M."
+        },
+        "mining": {
+          "title": "Mining Export Corridor — Port Congestion",
+          "description": "A copper mine faces 21-day port congestion. HC-1's logistics corridor monitoring predicts delay, reroutes shipments via secondary port. Contract penalties avoided. Revenue protected: $18M."
+        },
+        "pipeline": {
+          "title": "Pipeline Network — Cyber Intrusion Attempt",
+          "description": "SCADA system targeted by APT group. HC-1's SOC detects lateral movement, isolates affected segment, maintains pipeline flow. Downtime avoided: 60+ days. Revenue protected: $250M+."
+        }
+      },
+      "capabilities": {
+        "heading": "Integrated Capabilities",
+        "intro": "HC-1 delivers energy & mining solutions through coordinated deployment of specialized capabilities:"
+      },
+      "cta": {
+        "heading": "Protect National Revenue Systems",
+        "description": "HC-1 works with governments, state-owned enterprises, and multinational operators to anticipate disruption, assure continuity, and protect revenue in energy and mining operations.",
+        "primary": "Discuss Your Operations",
+        "secondary": "Explore All Capabilities"
+      }
     }
   },
 

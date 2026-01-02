@@ -64,6 +64,157 @@
     "ai": {
       "title": "Fusão IA e Inteligência",
       "description": "Inteligência decisional e sistemas preditivos."
+    },
+    "energyMining": {
+      "hero": {
+        "title": "Energia e Mineração",
+        "subtitle": "Proteção de Sistemas de Receitas Nacionais",
+        "lead": "A HC-1 protege a continuidade de produção, protege corredores de exportação e fortalece receitas nacionais através de integração de sistemas a montante e garantia operacional."
+      },
+      "stats": {
+        "gdp": {
+          "value": "30-70%",
+          "label": "do PIB em economias de recursos"
+        },
+        "downtime": {
+          "value": "$1-5M",
+          "label": "custo de paragem por dia"
+        },
+        "threats": {
+          "value": "300%",
+          "label": "aumento em segmentação cibernética"
+        }
+      },
+      "overview": {
+        "heading": "O Desafio",
+        "intro": "As operações de energia e mineração representam infraestrutura crítica de receitas nacionais. Perturbações de produção, vulnerabilidades de corredores de exportação e ineficiências operacionais impactam diretamente o PIB, confiança de investidores e estabilidade económica soberana.",
+        "revenue": {
+          "title": "Criticidade de Receitas",
+          "points": [
+            "30-70% do PIB em economias dependentes de recursos",
+            "Correlação direta entre disponibilidade e receitas estatais",
+            "Dependências de exportação criam vulnerabilidades geopolíticas"
+          ]
+        },
+        "risks": {
+          "title": "Riscos Operacionais",
+          "points": [
+            "Paragem de equipamentos: $1-5M por dia por instalação",
+            "Perturbações na cadeia de abastecimento: ciclos de recuperação de 15-45 dias",
+            "Ameaças cibernéticas: aumento de 300% visando energia/mineração"
+          ]
+        },
+        "exposure": {
+          "title": "Exposição Estratégica",
+          "points": [
+            "Dependências de portos e corredores",
+            "Ambientes sem GPS (minas, offshore)",
+            "Complexidade regulatória multi-jurisdicional"
+          ]
+        }
+      },
+      "risks": {
+        "heading": "Vulnerabilidades Críticas",
+        "production": {
+          "title": "Riscos de Continuidade de Produção",
+          "items": [
+            {
+              "label": "Cascatas de falha de equipamentos",
+              "details": "Paragem não planeada: perda de produção anual de 5-15%; Janelas de manutenção: sobrecusto de 20-40%"
+            },
+            {
+              "label": "Perturbação de corredores logísticos",
+              "details": "Congestionamento portuário: atrasos de 7-21 dias; Sabotagem de oleoduto: recuperação de 60-180 dias"
+            },
+            {
+              "label": "Incidentes de segurança da força de trabalho",
+              "details": "Paragens operacionais: custo regulatório + reputacional; Isolamento de local remoto"
+            }
+          ]
+        },
+        "revenueGaps": {
+          "title": "Lacunas de Proteção de Receitas",
+          "items": [
+            {
+              "label": "Modelos de manutenção reativa",
+              "details": "Deteção de falha após incidente; Disponibilidade de peças: prazos de 14-60 dias"
+            },
+            {
+              "label": "Sistemas de segurança fragmentados",
+              "details": "Segurança de perímetro ≠ segurança de sistemas; Lacunas de convergência OT/IT exploradas"
+            },
+            {
+              "label": "Pontos cegos de soberania de dados",
+              "details": "Dependências de fornecedores estrangeiros; Exposição de conformidade multi-jurisdicional"
+            }
+          ]
+        }
+      },
+      "approach": {
+        "heading": "Abordagem HC-1: Integração a Montante",
+        "intro": "A HC-1 não opera como respondedora de incidentes. A HC-1 arquiteta, integra e governa sistemas de missão crítica na fase de planeamento—antecipando vetores de perturbação, eliminando pontos únicos de falha e assegurando continuidade através de infraestrutura soberana zero-trust.",
+        "architecture": {
+          "title": "Arquitetura e Planeamento",
+          "description": "Mapear dependências de produção, modelar cenários de perturbação, projetar arquiteturas de redundância, estabelecer governação soberana de dados.",
+          "outcome": "Modelos de risco que quantificam custos de paragem e orientam alocação de capital."
+        },
+        "integration": {
+          "title": "Integração de Sistemas",
+          "description": "Integrar OT/IT com segmentação zero-trust, implementar manutenção preditiva, proteger corredores logísticos, estabelecer SOC/NOC.",
+          "outcome": "Infraestrutura de comando unificada com garantia baseada em SLA."
+        },
+        "continuity": {
+          "title": "Garantia de Continuidade",
+          "description": "Monitorização em tempo real, failover automatizado, coordenação de incidentes, rastreamento de conformidade.",
+          "outcome": "Metas de disponibilidade operacional atingidas, receitas protegidas."
+        }
+      },
+      "value": {
+        "heading": "Impacto Mensurável",
+        "uptime": {
+          "metric": "98-99.5%",
+          "label": "Disponibilidade de Produção",
+          "impact": "+5-10% receita anual",
+          "method": "Manutenção preditiva + failover automatizado"
+        },
+        "downtime": {
+          "metric": "40-60%",
+          "label": "Redução de Custo de Paragem",
+          "impact": "$50-200M poupanças anuais por instalação principal",
+          "method": "Antecipação de risco + coordenação de resposta rápida"
+        },
+        "confidence": {
+          "metric": "Demonstrável",
+          "label": "Confiança de Investidor",
+          "impact": "Melhoria de classificações soberanas, atração de IDE",
+          "method": "Transparência SLA + rastreabilidade audit-ready"
+        }
+      },
+      "useCases": {
+        "heading": "Cenários Operacionais",
+        "offshore": {
+          "title": "Plataforma Offshore — Operações sem GPS",
+          "description": "Uma plataforma petrolífera offshore perde conectividade GPS devido a interferência. A navegação autónoma CORTEX-U7 da HC-1 mantém operações de navios de abastecimento, prevenindo paragem de produção de 14 dias. Receita protegida: $42M."
+        },
+        "mining": {
+          "title": "Corredor de Exportação Mineira — Congestionamento Portuário",
+          "description": "Uma mina de cobre enfrenta congestionamento portuário de 21 dias. A monitorização de corredores logísticos da HC-1 prevê atraso, redireciona carregamentos via porto secundário. Penalidades contratuais evitadas. Receita protegida: $18M."
+        },
+        "pipeline": {
+          "title": "Rede de Oleodutos — Tentativa de Intrusão Cibernética",
+          "description": "Sistema SCADA visado por grupo APT. O SOC da HC-1 deteta movimento lateral, isola segmento afetado, mantém fluxo do oleoduto. Paragem evitada: 60+ dias. Receita protegida: $250M+."
+        }
+      },
+      "capabilities": {
+        "heading": "Capacidades Integradas",
+        "intro": "A HC-1 entrega soluções de energia e mineração através de implementação coordenada de capacidades especializadas:"
+      },
+      "cta": {
+        "heading": "Proteger Sistemas de Receitas Nacionais",
+        "description": "A HC-1 trabalha com governos, empresas estatais e operadores multinacionais para antecipar perturbações, assegurar continuidade e proteger receitas em operações de energia e mineração.",
+        "primary": "Discutir Suas Operações",
+        "secondary": "Explorar Todas as Capacidades"
+      }
     }
   },
 
