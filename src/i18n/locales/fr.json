@@ -367,6 +367,614 @@
         "primary": "Discuter de Vos Exigences",
         "secondary": "Explorer Toutes les Capacités"
       }
+    },
+
+    "criticalInfra": {
+      "hero": {
+        "title": "Infrastructures Critiques",
+        "subtitle": "Protection des Services Essentiels",
+        "lead": "HC-1 protège les infrastructures d'eau, d'énergie, de télécommunications, de santé et de transport grâce à la modélisation des risques en amont, l'intégration de systèmes et l'assurance opérationnelle."
+      },
+      "stats": {
+        "services": {
+          "value": "Millions",
+          "label": "de citoyens dépendants"
+        },
+        "downtime": {
+          "value": "10M$+",
+          "label": "impact horaire d'une panne"
+        },
+        "cascades": {
+          "value": "Multi-secteurs",
+          "label": "cascades de défaillance"
+        }
+      },
+      "overview": {
+        "heading": "Le Défi",
+        "intro": "Les perturbations d'infrastructures critiques se propagent à travers les secteurs, impactant des millions de citoyens et créant un risque systémique. Les modèles de sécurité traditionnels sont réactifs—HC-1 prévient les perturbations en amont.",
+        "dependency": {
+          "title": "Interdépendances",
+          "points": [
+            "Panne du réseau électrique désactive traitement de l'eau",
+            "Panne télécoms empêche coordination des services d'urgence",
+            "Défaillance d'une infrastructure peut se propager nationalement"
+          ]
+        },
+        "exposure": {
+          "title": "Surface d'Attaque",
+          "points": [
+            "Systèmes de contrôle industriels vulnérables aux intrusions cyber",
+            "Infrastructure physique accessible en lieux distants",
+            "Dépendances chaîne d'approvisionnement introduisent risque tiers"
+          ]
+        },
+        "regulation": {
+          "title": "Pression Réglementaire",
+          "points": [
+            "Exigences de conformité croissantes (NIS2, CER)",
+            "Déclaration d'incidents obligatoire avec délais serrés",
+            "Responsabilité pour perturbations de service"
+          ]
+        }
+      },
+      "risks": {
+        "heading": "Vulnérabilités Critiques",
+        "operational": {
+          "title": "Risques Opérationnels",
+          "items": [
+            {
+              "label": "Vulnérabilités SCADA/ICS",
+              "details": "Systèmes hérités manquent sécurité moderne; Accès distant crée points d'entrée"
+            },
+            {
+              "label": "Points de défaillance uniques",
+              "details": "Aucune redondance géographique; Processus de basculement manuels"
+            },
+            {
+              "label": "Surveillance inadéquate",
+              "details": "Détection de menace après compromission; Pas de détection d'anomalies temps réel"
+            }
+          ]
+        },
+        "strategic": {
+          "title": "Risques Stratégiques",
+          "items": [
+            {
+              "label": "Défaillances en cascade",
+              "details": "Interdépendances non cartographiées; Aucune coordination inter-secteurs"
+            },
+            {
+              "label": "Exposition chaîne d'approvisionnement",
+              "details": "Équipements étrangers en chemins critiques; Mécanismes de mise à jour non vérifiés"
+            },
+            {
+              "label": "Non-conformité réglementaire",
+              "details": "Lacunes dans pistes d'audit; Plans de réponse aux incidents non testés"
+            }
+          ]
+        }
+      },
+      "approach": {
+        "heading": "Approche HC-1: Résilience par Architecture",
+        "intro": "HC-1 conçoit les infrastructures critiques pour la résilience—anticipant les modes de défaillance, éliminant les points de défaillance uniques et assurant la continuité via redondance et surveillance temps réel.",
+        "modeling": {
+          "title": "Cartographie des Dépendances",
+          "description": "Modéliser interdépendances inter-secteurs, identifier chemins de défaillance en cascade, quantifier impact de perturbation.",
+          "outcome": "Allocation de capital éclairée par les risques et investissements de résilience fondés sur preuves."
+        },
+        "hardening": {
+          "title": "Durcissement d'Infrastructure",
+          "description": "Sécuriser SCADA/ICS, établir redondance géographique, déployer segmentation zéro-confiance.",
+          "outcome": "Surface d'attaque réduite, systèmes critiques isolés, basculement automatisé."
+        },
+        "monitoring": {
+          "title": "Assurance Continue",
+          "description": "Détection d'anomalies temps réel, réponse automatisée aux menaces, coordination inter-secteurs.",
+          "outcome": "Menaces détectées avant impact, disponibilité de service maintenue."
+        }
+      },
+      "value": {
+        "heading": "Impact Mesurable",
+        "availability": {
+          "metric": "99.95%+",
+          "label": "Disponibilité des Services",
+          "impact": "Services essentiels restent opérationnels",
+          "method": "Redondance + maintenance prédictive"
+        },
+        "mttr": {
+          "metric": "80%",
+          "label": "Récupération Plus Rapide",
+          "impact": "Temps moyen de récupération réduit",
+          "method": "Basculement automatisé + runbooks"
+        },
+        "compliance": {
+          "metric": "Complète",
+          "label": "Conformité Réglementaire",
+          "impact": "NIS2, CER, normes sectorielles",
+          "method": "Surveillance continue + pistes d'audit"
+        }
+      },
+      "useCases": {
+        "heading": "Scénarios Opérationnels",
+        "power": {
+          "title": "Réseau Électrique — Intrusion Cyber",
+          "description": "SCADA de sous-station ciblé par APT. Micro-segmentation de HC-1 isole système compromis, maintient stabilité du réseau, coordonne réponse d'urgence. 2.5M résidents protégés de panne d'électricité."
+        },
+        "water": {
+          "title": "Traitement de l'Eau — Sécurité Chimique",
+          "description": "Système de contrôle industriel manipulé pour altérer dosage chimique. Détection d'anomalies de HC-1 déclenche alerte, override de sécurité automatisé empêche contamination. Crise de santé publique évitée."
+        },
+        "telecom": {
+          "title": "Télécommunications — Défaillance d'Infrastructure",
+          "description": "Coupure de fibre perturbe connectivité régionale. Routage redondant de HC-1 reroute automatiquement trafic, maintient accès services d'urgence. Aucune perturbation de service pour hôpitaux, police."
+        }
+      },
+      "capabilities": {
+        "heading": "Capacités Intégrées",
+        "intro": "HC-1 fournit des solutions d'infrastructures critiques via le déploiement coordonné de capacités spécialisées:"
+      },
+      "cta": {
+        "heading": "Protéger les Services Essentiels",
+        "description": "HC-1 travaille avec opérateurs d'infrastructures, régulateurs et services d'urgence pour anticiper perturbations et assurer continuité des services essentiels.",
+        "primary": "Discuter de Votre Infrastructure",
+        "secondary": "Explorer Toutes les Capacités"
+      }
+    },
+
+    "cyberResilience": {
+      "hero": {
+        "title": "Résilience Cyber",
+        "subtitle": "Architecture de Sécurité Zéro-Confiance",
+        "lead": "HC-1 prévient les perturbations cyber grâce à une architecture zéro-confiance, une détection continue des menaces et une réponse coordonnée aux incidents—pas de nettoyage réactif."
+      },
+      "stats": {
+        "threats": {
+          "value": "10,000+",
+          "label": "menaces bloquées quotidiennement"
+        },
+        "detection": {
+          "value": "<5min",
+          "label": "temps moyen de détection"
+        },
+        "containment": {
+          "value": "<15min",
+          "label": "temps moyen de confinement"
+        }
+      },
+      "overview": {
+        "heading": "Le Défi",
+        "intro": "Les menaces cyber évoluent plus vite que les capacités défensives. La sécurité périmétrique a échoué. HC-1 implémente des principes zéro-confiance, présumant la compromission et empêchant le mouvement latéral.",
+        "landscape": {
+          "title": "Paysage des Menaces",
+          "points": [
+            "APTs parrainés par États ciblant infrastructures critiques",
+            "Ransomware ciblant technologies opérationnelles",
+            "Compromissions chaîne d'approvisionnement (modèles SolarWinds, Kaseya)"
+          ]
+        },
+        "gaps": {
+          "title": "Lacunes de Sécurité",
+          "points": [
+            "Modèles de sécurité hérités basés sur périmètre",
+            "Convergence OT/IT crée points aveugles",
+            "Réponse aux incidents repose sur processus manuels"
+          ]
+        },
+        "impact": {
+          "title": "Impact Business",
+          "points": [
+            "Temps d'arrêt ransomware: 15-30 jours en moyenne",
+            "Coûts de violation de données: 4.5M$ en moyenne",
+            "Dommages réputationnels s'étendent au-delà de l'incident"
+          ]
+        }
+      },
+      "risks": {
+        "heading": "Vulnérabilités Critiques",
+        "technical": {
+          "title": "Risques Techniques",
+          "items": [
+            {
+              "label": "Mouvement latéral",
+              "details": "Réseaux plats permettent aux attaquants de pivoter; Escalade de privilèges triviale"
+            },
+            {
+              "label": "Exposition OT",
+              "details": "Systèmes industriels accessibles depuis IT; Protocoles hérités manquent d'authentification"
+            },
+            {
+              "label": "Points aveugles",
+              "details": "Trafic chiffré non inspecté; Actifs cloud non surveillés"
+            }
+          ]
+        },
+        "operational": {
+          "title": "Risques Opérationnels",
+          "items": [
+            {
+              "label": "Fatigue d'alertes",
+              "details": "SOC submergé par faux positifs; Vraies menaces manquées dans le bruit"
+            },
+            {
+              "label": "Réponse manuelle",
+              "details": "Playbooks d'incidents non automatisés; Temps de réponse mesuré en heures"
+            },
+            {
+              "label": "Pénurie de compétences",
+              "details": "Impossible d'embaucher/retenir talents sécurité; Dépendance aux consultants externes"
+            }
+          ]
+        }
+      },
+      "approach": {
+        "heading": "Approche HC-1: Présumer la Compromission",
+        "intro": "HC-1 implémente des principes zéro-confiance: vérifier explicitement, accès au moindre privilège et présumer la compromission. Prévention, détection et réponse sont architecturées comme système unifié.",
+        "zerotrust": {
+          "title": "Architecture Zéro-Confiance",
+          "description": "Micro-segmentation, authentification continue, accès moindre privilège, tout chiffré.",
+          "outcome": "Mouvement latéral empêché. Compromission contenue à un actif unique."
+        },
+        "soc": {
+          "title": "SOC/NOC 24/7",
+          "description": "Détection de menaces temps réel, détection d'anomalies pilotée par IA, playbooks de réponse automatisés.",
+          "outcome": "Menaces détectées en minutes, confinées en <15 minutes."
+        },
+        "intelligence": {
+          "title": "Renseignement sur Menaces",
+          "description": "Intégration de flux OSINT, SIGINT et menaces propriétaires. Modélisation prédictive des menaces.",
+          "outcome": "Attaques anticipées avant lancement. Posture défensive proactive."
+        }
+      },
+      "value": {
+        "heading": "Impact Mesurable",
+        "detection": {
+          "metric": "<5min",
+          "label": "Temps Moyen de Détection",
+          "impact": "Menaces identifiées avant impact",
+          "method": "Détection d'anomalies pilotée par IA"
+        },
+        "containment": {
+          "metric": "<15min",
+          "label": "Temps Moyen de Confinement",
+          "impact": "Compromission isolée immédiatement",
+          "method": "Playbooks de réponse automatisés"
+        },
+        "prevented": {
+          "metric": "10,000+",
+          "label": "Menaces Quotidiennes Bloquées",
+          "impact": "Attaques arrêtées au périmètre",
+          "method": "Défense en couches + renseignement menaces"
+        }
+      },
+      "useCases": {
+        "heading": "Scénarios Opérationnels",
+        "ransomware": {
+          "title": "Attaque Ransomware — Services Financiers",
+          "description": "Infrastructure bancaire ciblée par ransomware. Segmentation zéro-confiance de HC-1 empêche propagation, SOC isole terminaux compromis, récupération depuis sauvegardes immuables complétée en 4 heures. Perte de 50M$+ évitée."
+        },
+        "apt": {
+          "title": "Campagne APT — Contractant Défense",
+          "description": "APT étatique établit persistance dans réseau ingénierie. Analytics comportementales de HC-1 détectent exfiltration de données anormale, équipe de réponse aux incidents expulse attaquant, forensics identifient systèmes compromis. IP protégée."
+        },
+        "supply": {
+          "title": "Compromission Chaîne d'Approvisionnement — Mise à Jour Logiciel",
+          "description": "Mise à jour logiciel fournisseur contient porte dérobée. Vérifications d'intégrité de code de HC-1 signalent anomalie, mise à jour bloquée, fournisseur notifié. Vulnérabilité jour-zéro empêchée de déploiement."
+        }
+      },
+      "capabilities": {
+        "heading": "Capacités Intégrées",
+        "intro": "HC-1 fournit la résilience cyber via le déploiement coordonné de capacités spécialisées:"
+      },
+      "cta": {
+        "heading": "Construire la Résilience Zéro-Confiance",
+        "description": "HC-1 travaille avec entreprises, opérateurs d'infrastructures critiques et organisations de défense pour implémenter architectures zéro-confiance et sécurité opérationnelle.",
+        "primary": "Évaluer Votre Posture de Sécurité",
+        "secondary": "Explorer Toutes les Capacités"
+      }
+    },
+
+    "portsLogistics": {
+      "hero": {
+        "title": "Ports, Frontières et Logistique",
+        "subtitle": "Corridors Sécurisés et Intégrité de la Chaîne d'Approvisionnement",
+        "lead": "HC-1 sécurise les corridors commerciaux, opérations portuaires et logistique transfrontalière grâce à surveillance intégrée, fusion de renseignement et réponse coordonnée."
+      },
+      "stats": {
+        "cargo": {
+          "value": "Billions$",
+          "label": "valeur commerciale annuelle"
+        },
+        "disruption": {
+          "value": "10M$+",
+          "label": "coût quotidien par fermeture portuaire"
+        },
+        "threats": {
+          "value": "Multi-vecteurs",
+          "label": "contrebande, cyber, physique"
+        }
+      },
+      "overview": {
+        "heading": "Le Défi",
+        "intro": "Les ports et corridors logistiques sont des infrastructures économiques critiques. Les perturbations arrêtent le commerce, impactent le PIB et créent des défaillances en cascade de la chaîne d'approvisionnement. La sécurité nécessite intégration physique, cyber et de renseignement.",
+        "economic": {
+          "title": "Criticité Économique",
+          "points": [
+            "80% du commerce mondial se déplace par mer",
+            "Fermetures portuaires coûtent 10M$+ par jour",
+            "Perturbations chaîne d'approvisionnement prennent 6-12 mois à résoudre"
+          ]
+        },
+        "threats": {
+          "title": "Vecteurs de Menaces",
+          "points": [
+            "Contrebande (narcotiques, armes, contrebande)",
+            "Attaques cyber sur systèmes portuaires (opérations grues, douanes)",
+            "Sabotage physique d'infrastructure"
+          ]
+        },
+        "complexity": {
+          "title": "Complexité Opérationnelle",
+          "points": [
+            "Coordination multi-juridictionnelle requise",
+            "Opérations 24/7 avec haut débit",
+            "Systèmes hérités et processus manuels"
+          ]
+        }
+      },
+      "risks": {
+        "heading": "Vulnérabilités Critiques",
+        "security": {
+          "title": "Lacunes de Sécurité",
+          "items": [
+            {
+              "label": "Vulnérabilités périmètre",
+              "details": "Grandes zones avec surveillance limitée; Accès non autorisé via véhicules fournisseurs"
+            },
+            {
+              "label": "Lacunes inspection cargo",
+              "details": "Inspections manuelles manquent 95%+ du cargo; Systèmes de rayons X/scan obsolètes"
+            },
+            {
+              "label": "Exposition cyber",
+              "details": "Systèmes de gestion portuaire vulnérables; Opérations grues peuvent être perturbées à distance"
+            }
+          ]
+        },
+        "operational": {
+          "title": "Risques Opérationnels",
+          "items": [
+            {
+              "label": "Défaillances de coordination",
+              "details": "Douanes, immigration, autorité portuaire opèrent en silos; Aucune image de renseignement unifiée"
+            },
+            {
+              "label": "Fragmentation de données",
+              "details": "Systèmes de suivi cargo incompatibles; Aucune visibilité temps réel à travers corridor"
+            },
+            {
+              "label": "Menaces internes",
+              "details": "Rotation élevée employés/contractants; Vérifications d'antécédents incomplètes"
+            }
+          ]
+        }
+      },
+      "approach": {
+        "heading": "Approche HC-1: Corridors Intégrés",
+        "intro": "HC-1 intègre sécurité physique, défense cyber et fusion de renseignement pour créer des corridors commerciaux sécurisés, visibles et efficaces.",
+        "surveillance": {
+          "title": "Surveillance Intégrée",
+          "description": "Analytiques vidéo pilotées par IA, fusion de capteurs, détection automatisée de menaces à travers périmètre et zones cargo.",
+          "outcome": "Détection de menaces temps réel. Réduction de 95%+ des faux positifs."
+        },
+        "intelligence": {
+          "title": "Fusion de Renseignement",
+          "description": "Combiner données douanières, manifestes cargo, OSINT et analytiques comportementales. Notation de risque prédictive.",
+          "outcome": "Expéditions à haut risque signalées automatiquement. Ressources d'inspection optimisées."
+        },
+        "coordination": {
+          "title": "Coordination Multi-Agences",
+          "description": "Plateforme de commandement unifiée pour douanes, immigration, sécurité portuaire et forces de l'ordre.",
+          "outcome": "Réponse coordonnée aux menaces. Chaîne de preuves maintenue pour poursuites."
+        }
+      },
+      "value": {
+        "heading": "Impact Mesurable",
+        "interdiction": {
+          "metric": "300%",
+          "label": "Taux d'Interdiction Augmenté",
+          "impact": "Plus de contrebande détectée",
+          "method": "Fusion de renseignement + inspection ciblée"
+        },
+        "throughput": {
+          "metric": "25%",
+          "label": "Traitement Cargo Plus Rapide",
+          "impact": "Temps d'immobilisation réduit",
+          "method": "Inspection basée sur risque + automatisation"
+        },
+        "incidents": {
+          "metric": "70%",
+          "label": "Incidents de Sécurité Réduits",
+          "impact": "Moins de violations, moins de vol",
+          "method": "Sécurité périmètre + détection menace interne"
+        }
+      },
+      "useCases": {
+        "heading": "Scénarios Opérationnels",
+        "narcotics": {
+          "title": "Contrebande de Narcotiques — Port à Conteneurs",
+          "description": "Fusion de renseignement signale conteneur à haut risque basé sur historique expéditeur et anomalies de route. Scan rayons X confirme contrebande. Saisie douane/forces de l'ordre coordonnée. 500kg cocaïne interdite."
+        },
+        "weapons": {
+          "title": "Trafic d'Armes — Passage Frontalier",
+          "description": "Véhicule signalé par analytiques comportementales au point de contrôle frontalier. Fusion de capteurs détecte compartiment dissimulé. Cache d'armes saisie, réseau de trafic perturbé."
+        },
+        "cyber": {
+          "title": "Attaque Cyber — Opérations Portuaires",
+          "description": "Système de gestion portuaire ciblé par ransomware. Défense cyber de HC-1 isole attaque, maintient opérations grues via systèmes de sauvegarde, restaure primaire en 6 heures. Aucun retard cargo."
+        }
+      },
+      "capabilities": {
+        "heading": "Capacités Intégrées",
+        "intro": "HC-1 fournit des solutions ports et logistique via le déploiement coordonné de capacités spécialisées:"
+      },
+      "cta": {
+        "heading": "Sécuriser les Corridors Commerciaux",
+        "description": "HC-1 travaille avec autorités portuaires, agences douanières et opérateurs logistiques pour sécuriser corridors commerciaux et maintenir intégrité chaîne d'approvisionnement.",
+        "primary": "Discuter de Votre Corridor",
+        "secondary": "Explorer Toutes les Capacités"
+      }
+    },
+
+    "aiFusion": {
+      "hero": {
+        "title": "Fusion IA et Intelligence",
+        "subtitle": "Intelligence Décisionnelle et Systèmes Prédictifs",
+        "lead": "HC-1 fournit de l'intelligence de qualité décisionnelle grâce à la fusion IA, l'analytique prédictive et les systèmes autonomes—transformant les données en avantage opérationnel."
+      },
+      "stats": {
+        "data": {
+          "value": "Pétaoctets",
+          "label": "de données traitées quotidiennement"
+        },
+        "accuracy": {
+          "value": "95%+",
+          "label": "précision de prédiction"
+        },
+        "latency": {
+          "value": "<100ms",
+          "label": "latence décisionnelle"
+        }
+      },
+      "overview": {
+        "heading": "Le Défi",
+        "intro": "Les organisations se noient dans les données mais manquent d'intelligence exploitable. L'analytique traditionnelle est rétrospective. HC-1 fusionne des données multi-sources avec l'IA pour fournir de l'intelligence prédictive de qualité décisionnelle en temps réel.",
+        "dataVolume": {
+          "title": "Défi du Volume de Données",
+          "points": [
+            "Pétaoctets générés quotidiennement par capteurs, réseaux, systèmes",
+            "Analystes humains ne peuvent traiter le volume à vitesse",
+            "Rapport signal/bruit rend analyse manuelle impossible"
+          ]
+        },
+        "latency": {
+          "title": "Latence Décisionnelle",
+          "points": [
+            "Menaces évoluent plus vite que cycles d'analyse traditionnels",
+            "Systèmes autonomes nécessitent prise de décision sub-seconde",
+            "Avantage concurrentiel va à décision précise la plus rapide"
+          ]
+        },
+        "integration": {
+          "title": "Complexité d'Intégration",
+          "points": [
+            "Silos de données à travers organisations et domaines",
+            "Formats et schémas incompatibles",
+            "Systèmes hérités manquent d'APIs ou sortie structurée"
+          ]
+        }
+      },
+      "risks": {
+        "heading": "Vulnérabilités Critiques",
+        "analytical": {
+          "title": "Lacunes Analytiques",
+          "items": [
+            {
+              "label": "Analyse rétrospective",
+              "details": "Tableaux de bord montrent ce qui s'est passé, pas ce qui va arriver; Décisions basées sur données obsolètes"
+            },
+            {
+              "label": "Goulot d'étranglement humain",
+              "details": "Analystes submergés par alertes et données; Connaissance experte non évolutive"
+            },
+            {
+              "label": "Biais et erreur",
+              "details": "Analyse humaine sujette à biais cognitif; Qualité incohérente entre analystes"
+            }
+          ]
+        },
+        "technical": {
+          "title": "Risques Techniques",
+          "items": [
+            {
+              "label": "Dérive de modèle IA",
+              "details": "Modèles se dégradent avec évolution tactiques adversaires; Aucun pipeline de réentraînement continu"
+            },
+            {
+              "label": "IA boîte noire",
+              "details": "Décisions non explicables; Régulateurs et opérateurs manquent de confiance"
+            },
+            {
+              "label": "Qualité de données",
+              "details": "Données d'entrée médiocres, sortie médiocre; Données d'entraînement incomplètes ou corrompues"
+            }
+          ]
+        }
+      },
+      "approach": {
+        "heading": "Approche HC-1: Fusion IA Explicable",
+        "intro": "HC-1 fusionne données structurées et non structurées de sources multiples, applique des modèles IA explicables et fournit de l'intelligence exploitable avec scores de confiance et raisonnement.",
+        "fusion": {
+          "title": "Fusion Multi-Sources",
+          "description": "Ingérer données capteurs, télémétrie réseau, OSINT, SIGINT, bases de données structurées. Normaliser, corréler, enrichir.",
+          "outcome": "Image de renseignement unifiée avec contexte temporel et spatial."
+        },
+        "prediction": {
+          "title": "Analytique Prédictive",
+          "description": "Modèles d'apprentissage automatique entraînés sur modèles historiques, tactiques adversaires et contexte opérationnel. Réentraînement continu.",
+          "outcome": "Menaces prédites avant exécution. Défense proactive et allocation de ressources."
+        },
+        "autonomy": {
+          "title": "Support Décisionnel Autonome",
+          "description": "IA recommande cours d'action avec scores de confiance et explications. Humain dans la boucle pour décisions à enjeux élevés.",
+          "outcome": "Décisions plus rapides, plus précises. Opérateurs augmentés, non remplacés."
+        }
+      },
+      "value": {
+        "heading": "Impact Mesurable",
+        "prediction": {
+          "metric": "95%+",
+          "label": "Précision de Prédiction",
+          "impact": "Menaces anticipées avant exécution",
+          "method": "Modèles ML + réentraînement continu"
+        },
+        "latency": {
+          "metric": "<100ms",
+          "label": "Latence Décisionnelle",
+          "impact": "Support décisionnel temps réel",
+          "method": "Edge computing + modèles optimisés"
+        },
+        "efficiency": {
+          "metric": "10x",
+          "label": "Efficacité Analyste",
+          "impact": "Analystes se concentrent sur tâches à forte valeur",
+          "method": "Triage automatisé + IA explicable"
+        }
+      },
+      "useCases": {
+        "heading": "Scénarios Opérationnels",
+        "threat": {
+          "title": "Prédiction de Menace — Sécurité Nationale",
+          "description": "Fusion IA combine SIGINT, OSINT et modèles comportementaux pour prédire opération adversaire 72 heures avant exécution. Actifs défensifs repositionnés. Attaque dissuadée."
+        },
+        "maintenance": {
+          "title": "Maintenance Prédictive — Secteur Énergétique",
+          "description": "Fusion de capteurs et modèles ML prédisent défaillance turbine 14 jours avant occurrence. Maintenance planifiée durant temps d'arrêt prévu. Panne non planifiée de 5M$ évitée."
+        },
+        "autonomous": {
+          "title": "Navigation Autonome — Sans GPS",
+          "description": "Essaim de drones perd GPS en environnement contesté. CORTEX-U7 de HC-1 utilise positionnement astronomique et fusion de capteurs pour maintenir navigation. Mission complétée avec succès."
+        }
+      },
+      "capabilities": {
+        "heading": "Capacités Intégrées",
+        "intro": "HC-1 fournit fusion IA et intelligence via le déploiement coordonné de capacités spécialisées:"
+      },
+      "cta": {
+        "heading": "Transformer les Données en Intelligence",
+        "description": "HC-1 travaille avec agences de défense, organisations de renseignement et entreprises pour déployer fusion IA et analytique prédictive pour avantage opérationnel.",
+        "primary": "Discuter de Vos Besoins en Intelligence",
+        "secondary": "Explorer Toutes les Capacités"
+      }
     }
   },
 
