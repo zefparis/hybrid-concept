@@ -70,7 +70,7 @@ export default async function SectorPage({ params }: PageProps) {
                 {sector.challenges.map((challenge) => (
                   <li key={challenge} className="flex items-start gap-3">
                     <svg
-                      className="w-6 h-6 text-accent flex-shrink-0 mt-0.5"
+                      className="w-6 h-6 text-accent shrink-0 mt-0.5"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -99,7 +99,7 @@ export default async function SectorPage({ params }: PageProps) {
                 {sector.outcomes.map((outcome) => (
                   <li key={outcome} className="flex items-start gap-3">
                     <svg
-                      className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5"
+                      className="w-6 h-6 text-green-500 shrink-0 mt-0.5"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"

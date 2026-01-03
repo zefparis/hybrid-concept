@@ -71,10 +71,12 @@
   --radius-xl: 1rem;
 }
 
+/* stylelint-disable declaration-no-unknown */
 /* ============================================================================
    Tailwind v4 Theme Configuration
    ============================================================================ */
 
+/* stylelint-disable-next-line at-rule-no-unknown */
 @theme inline {
   /* Colors */
   --color-background: var(--background);
@@ -680,6 +682,7 @@ textarea::placeholder {
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -687,6 +690,7 @@ textarea::placeholder {
 .line-clamp-3 {
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
