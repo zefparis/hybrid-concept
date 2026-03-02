@@ -1244,6 +1244,123 @@
     }
   },
 
+  "legal": {
+    "hero": {
+      "title": "Mentions Légales",
+      "tagline": "Conditions & Confidentialité",
+      "description": "Informations légales, conditions d'utilisation et politique de confidentialité conformes à la réglementation POPIA sud-africaine."
+    },
+    "company": {
+      "title": "Informations sur l'Entreprise",
+      "name": "Nom de l'entreprise",
+      "address": "Adresse",
+      "email": "Email",
+      "phone": "Téléphone"
+    },
+    "terms": {
+      "title": "Conditions d'Utilisation",
+      "intro": "En accédant et en utilisant ce site web, vous acceptez et vous engagez à respecter les termes et dispositions de cet accord.",
+      "acceptance": {
+        "title": "Acceptation des Conditions",
+        "content": "En accédant à ce site web, vous reconnaissez avoir lu, compris et accepté d'être lié par ces Conditions d'Utilisation et toutes les lois et réglementations applicables. Si vous n'acceptez pas l'une de ces conditions, il vous est interdit d'utiliser ou d'accéder à ce site."
+      },
+      "services": {
+        "title": "Utilisation des Services",
+        "content": "Les informations et services fournis sur ce site web sont uniquement à titre informatif. Hybrid Concept se réserve le droit de modifier, suspendre ou interrompre tout aspect du site web à tout moment sans préavis."
+      },
+      "intellectual": {
+        "title": "Propriété Intellectuelle",
+        "content": "Tout le contenu de ce site web, y compris mais sans s'y limiter le texte, les graphiques, les logos, les images et les logiciels, est la propriété de Hybrid Concept et est protégé par les lois sud-africaines et internationales sur le droit d'auteur. Toute utilisation non autorisée est strictement interdite."
+      },
+      "liability": {
+        "title": "Limitation de Responsabilité",
+        "content": "Hybrid Concept ne sera pas responsable de tout dommage direct, indirect, accessoire, consécutif ou punitif découlant de votre accès ou utilisation de ce site web. Nous ne donnons aucune garantie ou représentation concernant l'exactitude ou l'exhaustivité du contenu du site web."
+      }
+    },
+    "privacy": {
+      "title": "Politique de Confidentialité",
+      "intro": "Hybrid Concept s'engage à protéger votre vie privée et à se conformer à la loi sur la protection des informations personnelles (POPIA) d'Afrique du Sud. Cette politique explique comment nous collectons, utilisons et protégeons vos informations personnelles.",
+      "collection": {
+        "title": "Informations que Nous Collectons",
+        "content": "Nous pouvons collecter les types d'informations personnelles suivants :",
+        "items": {
+          "contact": "Informations de contact (nom, adresse email, numéro de téléphone, nom de l'entreprise)",
+          "technical": "Informations techniques (adresse IP, type de navigateur, informations sur l'appareil)",
+          "usage": "Données d'utilisation (pages visitées, temps passé sur le site, URLs de référence)",
+          "communications": "Communications et correspondance avec notre équipe"
+        }
+      },
+      "purpose": {
+        "title": "Finalité du Traitement",
+        "content": "Nous traitons vos informations personnelles aux fins suivantes :",
+        "items": {
+          "respond": "Répondre à vos demandes et fournir les informations demandées",
+          "services": "Fournir nos services et maintenir les relations clients",
+          "improve": "Améliorer notre site web et nos services",
+          "comply": "Respecter les obligations légales et réglementaires"
+        }
+      },
+      "legal": {
+        "title": "Base Légale du Traitement",
+        "content": "Nous traitons vos informations personnelles sur la base de :",
+        "items": {
+          "consent": "Votre consentement explicite",
+          "contract": "L'exécution d'un contrat avec vous",
+          "legitimate": "Nos intérêts commerciaux légitimes",
+          "compliance": "Exigences de conformité légale et réglementaire"
+        }
+      },
+      "rights": {
+        "title": "Vos Droits en Vertu de la POPIA",
+        "content": "En vertu de la POPIA, vous avez le droit de :",
+        "items": {
+          "access": "Accéder à vos informations personnelles que nous détenons",
+          "correction": "Demander la correction d'informations inexactes",
+          "deletion": "Demander la suppression de vos informations personnelles",
+          "objection": "Vous opposer au traitement de vos informations",
+          "portability": "Demander la portabilité des données",
+          "complaint": "Déposer une plainte auprès du Régulateur de l'Information"
+        }
+      },
+      "security": {
+        "title": "Sécurité des Données",
+        "content": "Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos informations personnelles contre l'accès non autorisé, la modification, la divulgation ou la destruction. Cela inclut le chiffrement, les contrôles d'accès et les systèmes de stockage sécurisés."
+      },
+      "retention": {
+        "title": "Conservation des Données",
+        "content": "Nous conservons vos informations personnelles uniquement aussi longtemps que nécessaire pour atteindre les objectifs pour lesquels elles ont été collectées, respecter les obligations légales, résoudre les litiges et faire respecter nos accords."
+      },
+      "international": {
+        "title": "Transferts Internationaux",
+        "content": "Si nous transférons vos informations personnelles en dehors de l'Afrique du Sud, nous nous assurons que des garanties appropriées sont en place pour protéger vos informations conformément aux exigences de la POPIA."
+      },
+      "cookies": {
+        "title": "Cookies et Suivi",
+        "content": "Notre site web peut utiliser des cookies et des technologies de suivi similaires pour améliorer l'expérience utilisateur. Vous pouvez contrôler les paramètres des cookies via les préférences de votre navigateur."
+      }
+    },
+    "popia": {
+      "title": "Conformité POPIA",
+      "intro": "Hybrid Concept s'engage à respecter pleinement la loi sur la protection des informations personnelles, 2013 (loi n° 4 de 2013) d'Afrique du Sud.",
+      "officer": {
+        "title": "Responsable de l'Information",
+        "contact": "info@hybridconc.com"
+      },
+      "regulator": {
+        "title": "Autorité de Régulation",
+        "name": "Régulateur de l'Information (Afrique du Sud)",
+        "website": "Site web"
+      }
+    },
+    "contact": {
+      "title": "Contact pour les Questions Légales",
+      "content": "Pour toute question concernant ces mentions légales, la politique de confidentialité ou pour exercer vos droits en vertu de la POPIA, veuillez nous contacter :",
+      "email": "Email",
+      "address": "Adresse"
+    },
+    "updated": "Dernière mise à jour"
+  },
+
   "footer": {
     "tagline": "Conçu avec précision pour ceux qui protègent ce qui compte.",
     "copyright": "© 2025 HC-1 | Hybrid Concepts. Tous droits réservés.",

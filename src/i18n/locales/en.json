@@ -1244,6 +1244,123 @@
     }
   },
 
+  "legal": {
+    "hero": {
+      "title": "Legal Notices",
+      "tagline": "Terms & Privacy",
+      "description": "Legal information, terms of use, and privacy policy in compliance with South African POPIA regulations."
+    },
+    "company": {
+      "title": "Company Information",
+      "name": "Company Name",
+      "address": "Address",
+      "email": "Email",
+      "phone": "Phone"
+    },
+    "terms": {
+      "title": "Terms of Use",
+      "intro": "By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement.",
+      "acceptance": {
+        "title": "Acceptance of Terms",
+        "content": "By accessing this website, you acknowledge that you have read, understood, and agree to be bound by these Terms of Use and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this site."
+      },
+      "services": {
+        "title": "Use of Services",
+        "content": "The information and services provided on this website are for informational purposes only. Hybrid Concept reserves the right to modify, suspend, or discontinue any aspect of the website at any time without prior notice."
+      },
+      "intellectual": {
+        "title": "Intellectual Property",
+        "content": "All content on this website, including but not limited to text, graphics, logos, images, and software, is the property of Hybrid Concept and is protected by South African and international copyright laws. Unauthorized use is strictly prohibited."
+      },
+      "liability": {
+        "title": "Limitation of Liability",
+        "content": "Hybrid Concept shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising from your access to or use of this website. We make no warranties or representations about the accuracy or completeness of the website's content."
+      }
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "intro": "Hybrid Concept is committed to protecting your privacy and complying with the Protection of Personal Information Act (POPIA) of South Africa. This policy explains how we collect, use, and safeguard your personal information.",
+      "collection": {
+        "title": "Information We Collect",
+        "content": "We may collect the following types of personal information:",
+        "items": {
+          "contact": "Contact information (name, email address, phone number, company name)",
+          "technical": "Technical information (IP address, browser type, device information)",
+          "usage": "Usage data (pages visited, time spent on site, referring URLs)",
+          "communications": "Communications and correspondence with our team"
+        }
+      },
+      "purpose": {
+        "title": "Purpose of Processing",
+        "content": "We process your personal information for the following purposes:",
+        "items": {
+          "respond": "To respond to your inquiries and provide requested information",
+          "services": "To deliver our services and maintain client relationships",
+          "improve": "To improve our website and services",
+          "comply": "To comply with legal and regulatory obligations"
+        }
+      },
+      "legal": {
+        "title": "Legal Basis for Processing",
+        "content": "We process your personal information based on:",
+        "items": {
+          "consent": "Your explicit consent",
+          "contract": "Performance of a contract with you",
+          "legitimate": "Our legitimate business interests",
+          "compliance": "Legal and regulatory compliance requirements"
+        }
+      },
+      "rights": {
+        "title": "Your Rights Under POPIA",
+        "content": "Under POPIA, you have the right to:",
+        "items": {
+          "access": "Access your personal information we hold",
+          "correction": "Request correction of inaccurate information",
+          "deletion": "Request deletion of your personal information",
+          "objection": "Object to the processing of your information",
+          "portability": "Request data portability",
+          "complaint": "Lodge a complaint with the Information Regulator"
+        }
+      },
+      "security": {
+        "title": "Data Security",
+        "content": "We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. This includes encryption, access controls, and secure storage systems."
+      },
+      "retention": {
+        "title": "Data Retention",
+        "content": "We retain your personal information only for as long as necessary to fulfill the purposes for which it was collected, comply with legal obligations, resolve disputes, and enforce our agreements."
+      },
+      "international": {
+        "title": "International Transfers",
+        "content": "If we transfer your personal information outside of South Africa, we ensure that appropriate safeguards are in place to protect your information in accordance with POPIA requirements."
+      },
+      "cookies": {
+        "title": "Cookies and Tracking",
+        "content": "Our website may use cookies and similar tracking technologies to enhance user experience. You can control cookie settings through your browser preferences."
+      }
+    },
+    "popia": {
+      "title": "POPIA Compliance",
+      "intro": "Hybrid Concept is committed to full compliance with the Protection of Personal Information Act, 2013 (Act No. 4 of 2013) of South Africa.",
+      "officer": {
+        "title": "Information Officer",
+        "contact": "info@hybridconc.com"
+      },
+      "regulator": {
+        "title": "Regulatory Authority",
+        "name": "Information Regulator (South Africa)",
+        "website": "Website"
+      }
+    },
+    "contact": {
+      "title": "Contact for Legal Matters",
+      "content": "For any questions regarding these legal notices, privacy policy, or to exercise your rights under POPIA, please contact us:",
+      "email": "Email",
+      "address": "Address"
+    },
+    "updated": "Last Updated"
+  },
+
   "footer": {
     "tagline": "Built with precision for those who protect what matters.",
     "copyright": "© 2025 HC-1 | Hybrid Concepts. All rights reserved.",

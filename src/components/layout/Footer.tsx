@@ -21,6 +21,7 @@ export function Footer() {
   ];
 
   const legalLinks = [
+    { href: `/${locale}/legal`, label: t('legal') },
     { href: `/${locale}/privacy`, label: t('privacy') },
     { href: `/${locale}/terms`, label: t('terms') },
     { href: `/${locale}/security`, label: t('security') },

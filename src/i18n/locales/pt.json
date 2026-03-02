@@ -1244,6 +1244,123 @@
     }
   },
 
+  "legal": {
+    "hero": {
+      "title": "Avisos Legais",
+      "tagline": "Termos & Privacidade",
+      "description": "Informações legais, termos de uso e política de privacidade em conformidade com os regulamentos POPIA da África do Sul."
+    },
+    "company": {
+      "title": "Informações da Empresa",
+      "name": "Nome da empresa",
+      "address": "Endereço",
+      "email": "Email",
+      "phone": "Telefone"
+    },
+    "terms": {
+      "title": "Termos de Uso",
+      "intro": "Ao acessar e usar este site, você aceita e concorda em estar vinculado aos termos e disposições deste acordo.",
+      "acceptance": {
+        "title": "Aceitação dos Termos",
+        "content": "Ao acessar este site, você reconhece que leu, compreendeu e concorda em estar vinculado a estes Termos de Uso e todas as leis e regulamentos aplicáveis. Se você não concordar com algum destes termos, está proibido de usar ou acessar este site."
+      },
+      "services": {
+        "title": "Uso dos Serviços",
+        "content": "As informações e serviços fornecidos neste site são apenas para fins informativos. A Hybrid Concept reserva-se o direito de modificar, suspender ou descontinuar qualquer aspecto do site a qualquer momento sem aviso prévio."
+      },
+      "intellectual": {
+        "title": "Propriedade Intelectual",
+        "content": "Todo o conteúdo deste site, incluindo, mas não se limitando a texto, gráficos, logotipos, imagens e software, é propriedade da Hybrid Concept e está protegido pelas leis de direitos autorais sul-africanas e internacionais. O uso não autorizado é estritamente proibido."
+      },
+      "liability": {
+        "title": "Limitação de Responsabilidade",
+        "content": "A Hybrid Concept não será responsável por quaisquer danos diretos, indiretos, incidentais, consequenciais ou punitivos decorrentes do seu acesso ou uso deste site. Não fazemos garantias ou representações sobre a precisão ou integridade do conteúdo do site."
+      }
+    },
+    "privacy": {
+      "title": "Política de Privacidade",
+      "intro": "A Hybrid Concept está comprometida em proteger sua privacidade e em cumprir a Lei de Proteção de Informações Pessoais (POPIA) da África do Sul. Esta política explica como coletamos, usamos e protegemos suas informações pessoais.",
+      "collection": {
+        "title": "Informações que Coletamos",
+        "content": "Podemos coletar os seguintes tipos de informações pessoais:",
+        "items": {
+          "contact": "Informações de contato (nome, endereço de email, número de telefone, nome da empresa)",
+          "technical": "Informações técnicas (endereço IP, tipo de navegador, informações do dispositivo)",
+          "usage": "Dados de uso (páginas visitadas, tempo gasto no site, URLs de referência)",
+          "communications": "Comunicações e correspondência com nossa equipe"
+        }
+      },
+      "purpose": {
+        "title": "Finalidade do Processamento",
+        "content": "Processamos suas informações pessoais para os seguintes fins:",
+        "items": {
+          "respond": "Responder às suas consultas e fornecer informações solicitadas",
+          "services": "Fornecer nossos serviços e manter relacionamentos com clientes",
+          "improve": "Melhorar nosso site e serviços",
+          "comply": "Cumprir obrigações legais e regulatórias"
+        }
+      },
+      "legal": {
+        "title": "Base Legal para Processamento",
+        "content": "Processamos suas informações pessoais com base em:",
+        "items": {
+          "consent": "Seu consentimento explícito",
+          "contract": "Execução de um contrato com você",
+          "legitimate": "Nossos interesses comerciais legítimos",
+          "compliance": "Requisitos de conformidade legal e regulatória"
+        }
+      },
+      "rights": {
+        "title": "Seus Direitos sob a POPIA",
+        "content": "Sob a POPIA, você tem o direito de:",
+        "items": {
+          "access": "Acessar suas informações pessoais que mantemos",
+          "correction": "Solicitar correção de informações imprecisas",
+          "deletion": "Solicitar exclusão de suas informações pessoais",
+          "objection": "Objetar ao processamento de suas informações",
+          "portability": "Solicitar portabilidade de dados",
+          "complaint": "Apresentar uma reclamação ao Regulador de Informações"
+        }
+      },
+      "security": {
+        "title": "Segurança de Dados",
+        "content": "Implementamos medidas técnicas e organizacionais apropriadas para proteger suas informações pessoais contra acesso não autorizado, alteração, divulgação ou destruição. Isso inclui criptografia, controles de acesso e sistemas de armazenamento seguro."
+      },
+      "retention": {
+        "title": "Retenção de Dados",
+        "content": "Retemos suas informações pessoais apenas pelo tempo necessário para cumprir os fins para os quais foram coletadas, cumprir obrigações legais, resolver disputas e fazer cumprir nossos acordos."
+      },
+      "international": {
+        "title": "Transferências Internacionais",
+        "content": "Se transferirmos suas informações pessoais para fora da África do Sul, garantimos que salvaguardas apropriadas estejam em vigor para proteger suas informações de acordo com os requisitos da POPIA."
+      },
+      "cookies": {
+        "title": "Cookies e Rastreamento",
+        "content": "Nosso site pode usar cookies e tecnologias de rastreamento semelhantes para melhorar a experiência do usuário. Você pode controlar as configurações de cookies através das preferências do seu navegador."
+      }
+    },
+    "popia": {
+      "title": "Conformidade com a POPIA",
+      "intro": "A Hybrid Concept está comprometida com a conformidade total com a Lei de Proteção de Informações Pessoais, 2013 (Lei nº 4 de 2013) da África do Sul.",
+      "officer": {
+        "title": "Oficial de Informação",
+        "contact": "info@hybridconc.com"
+      },
+      "regulator": {
+        "title": "Autoridade Reguladora",
+        "name": "Regulador de Informações (África do Sul)",
+        "website": "Site"
+      }
+    },
+    "contact": {
+      "title": "Contato para Questões Legais",
+      "content": "Para quaisquer perguntas sobre estes avisos legais, política de privacidade ou para exercer seus direitos sob a POPIA, entre em contato conosco:",
+      "email": "Email",
+      "address": "Endereço"
+    },
+    "updated": "Última atualização"
+  },
+
   "footer": {
     "tagline": "Construído com precisão para quem protege o que importa.",
     "copyright": "© 2025 HC-1 | Hybrid Concepts. Todos os direitos reservados.",
