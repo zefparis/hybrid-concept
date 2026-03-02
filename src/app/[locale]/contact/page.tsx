@@ -159,43 +159,44 @@ export default async function ContactPage({ params }: Props) {
               <div className="space-y-8">
                 <div className="p-6 rounded-2xl bg-surface border border-border">
                   <h3 className="text-lg font-semibold text-foreground mb-2">
-                    General Inquiries
+                    Email
                   </h3>
-                  <p className="text-foreground-secondary">
-                    info@hc-1.com
-                  </p>
+                  <a 
+                    href="mailto:info@hybridconc.com"
+                    className="text-accent hover:text-accent-hover transition-colors"
+                  >
+                    info@hybridconc.com
+                  </a>
                 </div>
 
                 <div className="p-6 rounded-2xl bg-surface border border-border">
                   <h3 className="text-lg font-semibold text-foreground mb-2">
-                    Media Relations
+                    Contact Info
                   </h3>
-                  <p className="text-foreground-secondary">
-                    media@hc-1.com
-                  </p>
+                  <a 
+                    href="tel:+27112455900"
+                    className="text-accent hover:text-accent-hover transition-colors"
+                  >
+                    +27-11 245 5900
+                  </a>
                 </div>
 
                 <div className="p-6 rounded-2xl bg-surface border border-border">
                   <h3 className="text-lg font-semibold text-foreground mb-2">
-                    Security Concerns
+                    Address
                   </h3>
                   <p className="text-foreground-secondary">
-                    security@hc-1.com
+                    114 West Street c/o Katherine and West 6th Floor
                   </p>
-                  <p className="text-sm text-foreground-muted mt-2">
-                    For responsible disclosure of security vulnerabilities.
-                  </p>
-                </div>
-
-                <div className="p-6 rounded-2xl bg-surface border border-border">
-                  <h3 className="text-lg font-semibold text-foreground mb-2">
-                    Headquarters
-                  </h3>
                   <p className="text-foreground-secondary">
-                    Location disclosed upon engagement
+                    Suite 43 Sandton 2196
                   </p>
-                  <p className="text-sm text-foreground-muted mt-2">
-                    We maintain a global presence with regional offices.
+                  <p className="text-sm text-foreground-muted mt-3 flex items-center gap-2">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10" strokeWidth="2"/>
+                      <path strokeWidth="2" d="M12 6v6l4 2"/>
+                    </svg>
+                    Mon-Fri - 08:00-19:00
                   </p>
                 </div>
               </div>
