@@ -1361,6 +1361,428 @@
     "updated": "Última atualização"
   },
 
+  "privacyPage": {
+    "hero": {
+      "title": "Política de Privacidade",
+      "tagline": "Proteção de Dados & Privacidade",
+      "description": "Nosso compromisso em proteger suas informações pessoais em conformidade com a POPIA e padrões internacionais."
+    },
+    "intro": "A Hybrid Concept está comprometida em proteger sua privacidade e garantir a segurança de suas informações pessoais. Esta Política de Privacidade explica como coletamos, usamos, divulgamos e protegemos suas informações quando você visita nosso site ou usa nossos serviços, em total conformidade com a Lei de Proteção de Informações Pessoais (POPIA) da África do Sul.",
+    "collection": {
+      "title": "Informações que Coletamos",
+      "content": "Coletamos informações que você nos fornece diretamente, bem como informações coletadas automaticamente quando você usa nossos serviços:",
+      "personal": {
+        "title": "Informações Pessoais",
+        "items": {
+          "name": "Nome completo e detalhes de contato",
+          "contact": "Endereço de email e número de telefone",
+          "company": "Nome da empresa e cargo",
+          "job": "Título do cargo e informações profissionais"
+        }
+      },
+      "technical": {
+        "title": "Informações Técnicas",
+        "items": {
+          "ip": "Endereço IP e dados de localização",
+          "browser": "Tipo e versão do navegador",
+          "device": "Informações do dispositivo e sistema operacional",
+          "location": "Localização geográfica (com consentimento)"
+        }
+      },
+      "usage": {
+        "title": "Dados de Uso",
+        "items": {
+          "pages": "Páginas visitadas e recursos usados",
+          "time": "Tempo gasto em nosso site",
+          "interactions": "Interações com nosso conteúdo",
+          "referral": "Fontes de referência e URLs"
+        }
+      }
+    },
+    "usage": {
+      "title": "Como Usamos Suas Informações",
+      "content": "Usamos as informações coletadas para os seguintes fins:",
+      "items": {
+        "respond": "Responder às suas consultas e fornecer suporte ao cliente",
+        "services": "Fornecer e melhorar nossos serviços",
+        "improve": "Analisar e aprimorar a funcionalidade do nosso site",
+        "communicate": "Enviar informações e atualizações relevantes (com consentimento)",
+        "security": "Proteger contra fraudes e garantir a segurança",
+        "comply": "Cumprir obrigações legais e regulatórias"
+      }
+    },
+    "legal": {
+      "title": "Base Legal para Processamento (Conformidade com POPIA)",
+      "content": "Sob a POPIA, processamos suas informações pessoais com base nos seguintes fundamentos legais:",
+      "items": {
+        "consent": {
+          "title": "Consentimento",
+          "desc": "Você deu consentimento explícito para o processamento de suas informações pessoais para fins específicos."
+        },
+        "contract": {
+          "title": "Necessidade Contratual",
+          "desc": "O processamento é necessário para a execução de um contrato com você ou para tomar medidas a seu pedido."
+        },
+        "legitimate": {
+          "title": "Interesses Legítimos",
+          "desc": "O processamento é necessário para nossos interesses comerciais legítimos, desde que seus direitos não sejam substituídos."
+        },
+        "compliance": {
+          "title": "Conformidade Legal",
+          "desc": "O processamento é necessário para cumprir obrigações legais sob a lei sul-africana."
+        }
+      }
+    },
+    "rights": {
+      "title": "Seus Direitos sob a POPIA",
+      "content": "Como titular de dados sob a POPIA, você tem os seguintes direitos:",
+      "items": {
+        "access": {
+          "title": "Direito de Acesso",
+          "desc": "Você pode solicitar acesso às suas informações pessoais que mantemos"
+        },
+        "correction": {
+          "title": "Direito de Correção",
+          "desc": "Você pode solicitar correção de informações imprecisas ou incompletas"
+        },
+        "deletion": {
+          "title": "Direito de Exclusão",
+          "desc": "Você pode solicitar a exclusão de suas informações pessoais em certas circunstâncias"
+        },
+        "objection": {
+          "title": "Direito de Objeção",
+          "desc": "Você pode objetar ao processamento de suas informações pessoais"
+        },
+        "portability": {
+          "title": "Direito à Portabilidade de Dados",
+          "desc": "Você pode solicitar seus dados em um formato estruturado e comumente usado"
+        },
+        "complaint": {
+          "title": "Direito de Reclamação",
+          "desc": "Você pode apresentar uma reclamação ao Regulador de Informações da África do Sul"
+        }
+      }
+    },
+    "security": {
+      "title": "Segurança de Dados",
+      "content": "Implementamos medidas de segurança abrangentes para proteger suas informações pessoais:",
+      "items": {
+        "encryption": "Criptografia de ponta a ponta para transmissão e armazenamento de dados",
+        "access": "Controles de acesso rigorosos e mecanismos de autenticação",
+        "monitoring": "Sistemas de monitoramento contínuo e detecção de ameaças",
+        "training": "Treinamento regular de segurança para todo o pessoal"
+      }
+    },
+    "retention": {
+      "title": "Retenção de Dados",
+      "content": "Retemos suas informações pessoais apenas pelo tempo necessário para cumprir os fins descritos nesta política, cumprir obrigações legais, resolver disputas e fazer cumprir nossos acordos. Quando as informações não são mais necessárias, são excluídas com segurança ou anonimizadas."
+    },
+    "international": {
+      "title": "Transferências Internacionais de Dados",
+      "content": "Se transferirmos suas informações pessoais para fora da África do Sul, garantimos que salvaguardas apropriadas estejam em vigor, incluindo cláusulas contratuais padrão, decisões de adequação ou seu consentimento explícito, de acordo com os requisitos da POPIA."
+    },
+    "cookies": {
+      "title": "Cookies e Tecnologias de Rastreamento",
+      "content": "Nosso site usa cookies e tecnologias semelhantes para melhorar sua experiência. Você pode controlar as preferências de cookies através das configurações do seu navegador.",
+      "types": {
+        "essential": "Cookies Essenciais",
+        "essentialDesc": "Necessários para funcionalidades básicas do site",
+        "analytics": "Cookies Analíticos",
+        "analyticsDesc": "Nos ajudam a entender como os visitantes usam nosso site",
+        "functional": "Cookies Funcionais",
+        "functionalDesc": "Lembram suas preferências e configurações"
+      }
+    },
+    "thirdParty": {
+      "title": "Serviços de Terceiros",
+      "content": "Podemos usar provedores de serviços terceirizados confiáveis para nos ajudar a operar nosso site e fornecer nossos serviços. Esses provedores são contratualmente obrigados a proteger suas informações e usá-las apenas para fins especificados."
+    },
+    "children": {
+      "title": "Privacidade de Crianças",
+      "content": "Nossos serviços não são direcionados a indivíduos menores de 18 anos. Não coletamos intencionalmente informações pessoais de crianças. Se tomarmos conhecimento de que coletamos informações de uma criança, tomaremos medidas para excluí-las prontamente."
+    },
+    "changes": {
+      "title": "Alterações a Esta Política de Privacidade",
+      "content": "Podemos atualizar esta Política de Privacidade de tempos em tempos para refletir mudanças em nossas práticas ou requisitos legais. Notificaremos você sobre quaisquer alterações materiais publicando a política atualizada em nosso site e atualizando a data de 'Última atualização'."
+    },
+    "contact": {
+      "title": "Entre em Contato Conosco",
+      "content": "Para perguntas sobre esta Política de Privacidade ou para exercer seus direitos sob a POPIA, entre em contato conosco:",
+      "company": "Empresa",
+      "address": "Endereço",
+      "email": "Email",
+      "phone": "Telefone"
+    },
+    "updated": "Última atualização"
+  },
+
+  "termsPage": {
+    "hero": {
+      "title": "Termos de Uso",
+      "tagline": "Termos & Condições",
+      "description": "Termos e condições que regem o uso dos serviços e site da Hybrid Concept."
+    },
+    "intro": "Estes Termos de Uso regem seu acesso e uso do site e serviços da Hybrid Concept. Ao acessar ou usar nossos serviços, você concorda em estar vinculado a estes termos. Por favor, leia-os cuidadosamente.",
+    "acceptance": {
+      "title": "Aceitação dos Termos",
+      "content": "Ao acessar este site, você reconhece e concorda com o seguinte:",
+      "items": {
+        "binding": "Estes termos constituem um acordo juridicamente vinculativo entre você e a Hybrid Concept",
+        "compliance": "Você cumprirá todas as leis e regulamentos aplicáveis",
+        "capacity": "Você tem capacidade legal para celebrar este acordo",
+        "updates": "Podemos atualizar estes termos, e o uso continuado constitui aceitação"
+      }
+    },
+    "services": {
+      "title": "Uso dos Serviços",
+      "content": "Nossos serviços são fornecidos para fins informativos e comerciais. Você concorda em usá-los de forma responsável e legal.",
+      "permitted": {
+        "title": "Usos Permitidos",
+        "items": {
+          "information": "Acessar informações sobre nossos serviços e capacidades",
+          "contact": "Entrar em contato conosco para consultas comerciais legítimas",
+          "learn": "Aprender sobre soluções de segurança e integração"
+        }
+      },
+      "prohibited": {
+        "title": "Atividades Proibidas",
+        "items": {
+          "illegal": "Usar nossos serviços para qualquer finalidade ilegal ou não autorizada",
+          "unauthorized": "Tentar obter acesso não autorizado aos nossos sistemas",
+          "interference": "Interferir ou interromper nossos serviços ou servidores",
+          "malicious": "Transmitir vírus, malware ou outro código malicioso",
+          "impersonate": "Personificar qualquer pessoa ou entidade",
+          "scraping": "Coleta automatizada de dados ou scraping sem permissão",
+          "reverse": "Engenharia reversa ou tentativa de extrair código-fonte"
+        }
+      }
+    },
+    "intellectual": {
+      "title": "Direitos de Propriedade Intelectual",
+      "content": "Todo o conteúdo deste site está protegido por leis de propriedade intelectual.",
+      "ownership": {
+        "title": "Propriedade",
+        "content": "Todo o conteúdo, incluindo texto, gráficos, logotipos, imagens, software e marcas registradas, é propriedade exclusiva da Hybrid Concept e está protegido pelas leis sul-africanas e internacionais de direitos autorais, marcas registradas e outras leis de propriedade intelectual."
+      },
+      "restrictions": {
+        "title": "Restrições de Uso",
+        "items": {
+          "modify": "Você não pode modificar, copiar ou criar obras derivadas",
+          "reproduce": "Você não pode reproduzir ou republicar nosso conteúdo sem permissão",
+          "distribute": "Você não pode distribuir ou vender nossos materiais proprietários",
+          "commercial": "O uso comercial requer autorização escrita explícita"
+        }
+      }
+    },
+    "userContent": {
+      "title": "Conteúdo Gerado pelo Usuário",
+      "content": "Se você nos enviar conteúdo (por exemplo, consultas, feedback), você concorda que:",
+      "items": {
+        "responsibility": "Você é o único responsável pelo conteúdo que envia",
+        "license": "Você nos concede uma licença para usar, modificar e exibir seu conteúdo",
+        "prohibited": "Você não enviará conteúdo ilegal, difamatório ou infrator"
+      }
+    },
+    "disclaimer": {
+      "title": "Isenção de Garantias",
+      "content": "NOSSOS SERVIÇOS SÃO FORNECIDOS 'COMO ESTÃO' SEM GARANTIAS DE QUALQUER TIPO:",
+      "items": {
+        "asis": "Não fazemos garantias sobre a precisão ou integridade das informações",
+        "accuracy": "As informações podem conter erros ou imprecisões",
+        "availability": "Os serviços podem ser interrompidos ou indisponíveis às vezes",
+        "errors": "Não somos responsáveis por erros técnicos ou omissões"
+      }
+    },
+    "liability": {
+      "title": "Limitação de Responsabilidade",
+      "content": "NA MÁXIMA EXTENSÃO PERMITIDA POR LEI, A HYBRID CONCEPT NÃO SERÁ RESPONSÁVEL POR:",
+      "items": {
+        "indirect": "Danos indiretos, incidentais ou consequenciais",
+        "loss": "Perda de lucros, receitas ou oportunidades de negócios",
+        "business": "Interrupção de negócios ou perda de dados",
+        "data": "Danos decorrentes do uso ou incapacidade de usar nossos serviços"
+      }
+    },
+    "indemnification": {
+      "title": "Indenização",
+      "content": "Você concorda em indenizar e isentar a Hybrid Concept, seus diretores, administradores, funcionários e agentes de quaisquer reivindicações, danos, perdas, responsabilidades e despesas (incluindo honorários advocatícios) decorrentes do seu uso de nossos serviços ou violação destes termos."
+    },
+    "thirdParty": {
+      "title": "Links de Terceiros",
+      "content": "Nosso site pode conter links para sites de terceiros. Não somos responsáveis pelo conteúdo, políticas de privacidade ou práticas de sites de terceiros. Acessar links de terceiros é por sua conta e risco."
+    },
+    "governing": {
+      "title": "Lei Aplicável e Jurisdição",
+      "content": "Estes Termos de Uso são regidos pelas leis da África do Sul:",
+      "items": {
+        "law": "Lei Aplicável",
+        "lawDesc": "Estes termos são regidos pelas leis da República da África do Sul",
+        "jurisdiction": "Jurisdição",
+        "jurisdictionDesc": "Quaisquer disputas estarão sujeitas à jurisdição exclusiva dos tribunais sul-africanos",
+        "disputes": "Resolução de Disputas",
+        "disputesDesc": "Incentivamos a resolução amigável antes de buscar ação legal"
+      }
+    },
+    "modifications": {
+      "title": "Modificações aos Termos",
+      "content": "Reservamo-nos o direito de modificar estes Termos de Uso a qualquer momento. As alterações entrarão em vigor imediatamente após a publicação. Seu uso continuado de nossos serviços após as alterações constitui aceitação dos termos modificados."
+    },
+    "severability": {
+      "title": "Divisibilidade",
+      "content": "Se qualquer disposição destes termos for considerada inválida ou inexequível, as disposições restantes permanecerão em pleno vigor e efeito."
+    },
+    "contact": {
+      "title": "Informações de Contato",
+      "content": "Para perguntas sobre estes Termos de Uso, entre em contato conosco:",
+      "company": "Empresa",
+      "address": "Endereço",
+      "email": "Email",
+      "phone": "Telefone"
+    },
+    "updated": "Última atualização"
+  },
+
+  "securityPage": {
+    "hero": {
+      "title": "Segurança",
+      "tagline": "Práticas & Políticas de Segurança",
+      "description": "Nossa abordagem abrangente para segurança, proteção de dados e divulgação responsável."
+    },
+    "intro": "A segurança está no centro de tudo o que fazemos na Hybrid Concept. Implementamos práticas de segurança líderes do setor para proteger nossos sistemas, os dados de nossos clientes e a integridade de nossos serviços. Esta página descreve nossos compromissos de segurança, práticas e como relatar preocupações de segurança.",
+    "commitment": {
+      "title": "Nosso Compromisso com a Segurança",
+      "content": "Estamos comprometidos em manter os mais altos padrões de segurança em todos os aspectos de nossas operações:",
+      "items": {
+        "proactive": {
+          "title": "Defesa Proativa",
+          "desc": "Antecipamos ameaças e implementamos medidas preventivas antes que os incidentes ocorram"
+        },
+        "compliance": {
+          "title": "Conformidade Regulatória",
+          "desc": "Conformidade total com POPIA, GDPR e padrões internacionais de segurança"
+        },
+        "transparency": {
+          "title": "Transparência",
+          "desc": "Comunicação clara sobre nossas práticas de segurança e resposta a incidentes"
+        },
+        "continuous": {
+          "title": "Melhoria Contínua",
+          "desc": "Auditorias de segurança regulares, testes e atualizações para ficar à frente das ameaças"
+        }
+      }
+    },
+    "protection": {
+      "title": "Medidas de Proteção de Dados",
+      "content": "Empregamos múltiplas camadas de segurança para proteger suas informações:",
+      "encryption": {
+        "title": "Criptografia",
+        "items": {
+          "transit": "Criptografia TLS 1.3 para todos os dados em trânsito",
+          "rest": "Criptografia AES-256 para dados em repouso",
+          "protocols": "Protocolos criptográficos padrão da indústria"
+        }
+      },
+      "access": {
+        "title": "Controle de Acesso",
+        "items": {
+          "principle": "Princípio do menor privilégio para todo acesso ao sistema",
+          "authentication": "Autenticação multifator (MFA) obrigatória",
+          "authorization": "Controle de acesso baseado em funções (RBAC)",
+          "monitoring": "Monitoramento e registro contínuos de acesso"
+        }
+      },
+      "infrastructure": {
+        "title": "Segurança de Infraestrutura",
+        "items": {
+          "firewalls": "Firewalls de próxima geração e prevenção de intrusões",
+          "detection": "Sistemas avançados de detecção e resposta a ameaças",
+          "segmentation": "Segmentação e isolamento de rede",
+          "redundancy": "Sistemas redundantes e recuperação de desastres"
+        }
+      }
+    },
+    "practices": {
+      "title": "Práticas de Segurança",
+      "content": "Nossas práticas de segurança estão incorporadas em toda a nossa organização:",
+      "items": {
+        "development": "Ciclo de vida de desenvolvimento seguro (SDLC) com revisões de segurança",
+        "testing": "Testes de penetração regulares e avaliações de vulnerabilidade",
+        "reviews": "Revisões de código e auditorias de segurança",
+        "updates": "Patches e atualizações de segurança oportunos",
+        "training": "Treinamento obrigatório de conscientização de segurança para toda a equipe",
+        "audits": "Auditorias de segurança e certificações de terceiros"
+      }
+    },
+    "incident": {
+      "title": "Resposta a Incidentes",
+      "content": "Mantemos um plano abrangente de resposta a incidentes:",
+      "steps": {
+        "detection": "1. Detecção & Análise",
+        "detectionDesc": "Monitoramento 24/7 para detectar e analisar incidentes de segurança",
+        "containment": "2. Contenção",
+        "containmentDesc": "Ação imediata para conter e isolar sistemas afetados",
+        "investigation": "3. Investigação",
+        "investigationDesc": "Investigação completa para determinar escopo e impacto",
+        "remediation": "4. Remediação",
+        "remediationDesc": "Implementar correções e restaurar operações normais",
+        "notification": "5. Notificação",
+        "notificationDesc": "Notificar as partes afetadas conforme exigido por lei e melhores práticas"
+      }
+    },
+    "disclosure": {
+      "title": "Política de Divulgação Responsável",
+      "content": "Acolhemos e incentivamos a divulgação responsável de vulnerabilidades de segurança. Se você descobrir um problema de segurança, pedimos que nos relate de forma responsável.",
+      "reporting": {
+        "title": "Como Relatar uma Vulnerabilidade",
+        "content": "Se você acredita ter descoberto uma vulnerabilidade de segurança, relate-nos:",
+        "email": "Email de Segurança",
+        "note": "Por favor, criptografe informações sensíveis usando nossa chave PGP (disponível mediante solicitação)"
+      },
+      "include": {
+        "title": "O Que Incluir em Seu Relatório",
+        "items": {
+          "description": "Descrição detalhada da vulnerabilidade",
+          "steps": "Passos para reproduzir o problema",
+          "impact": "Avaliação de impacto potencial e gravidade",
+          "evidence": "Evidências de suporte (capturas de tela, logs, etc.)",
+          "contact": "Suas informações de contato para acompanhamento"
+        }
+      },
+      "commitment": {
+        "title": "Nosso Compromisso com Pesquisadores",
+        "items": {
+          "acknowledge": "Confirmaremos o recebimento em 48 horas",
+          "investigate": "Investigaremos todos os relatórios legítimos prontamente",
+          "updates": "Forneceremos atualizações regulares sobre nosso progresso",
+          "credit": "Creditaremos pesquisadores (com permissão) por descobertas válidas",
+          "legal": "Não buscaremos ação legal contra pesquisa de segurança de boa-fé"
+        }
+      }
+    },
+    "compliance": {
+      "title": "Conformidade & Certificações",
+      "content": "Mantemos conformidade com padrões e regulamentos de segurança relevantes:",
+      "items": {
+        "popia": "POPIA (Lei de Proteção de Informações Pessoais)",
+        "popiaDesc": "Conformidade total com a lei sul-africana de proteção de dados",
+        "iso": "ISO 27001",
+        "isoDesc": "Padrões de sistema de gestão de segurança da informação",
+        "gdpr": "Alinhamento GDPR",
+        "gdprDesc": "Alinhado com requisitos europeus de proteção de dados",
+        "standards": "Padrões da Indústria",
+        "standardsDesc": "Aderência aos frameworks NIST, CIS e outros frameworks de segurança"
+      }
+    },
+    "contact": {
+      "title": "Entre em Contato com Nossa Equipe de Segurança",
+      "content": "Para consultas relacionadas à segurança ou para relatar uma vulnerabilidade:",
+      "security": "Equipe de Segurança",
+      "general": "Consultas Gerais",
+      "address": "Endereço"
+    },
+    "updated": "Última atualização"
+  },
+
   "footer": {
     "tagline": "Construído com precisão para quem protege o que importa.",
     "copyright": "© 2025 HC-1 | Hybrid Concepts. Todos os direitos reservados.",
