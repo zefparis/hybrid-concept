@@ -64,12 +64,21 @@ const CAP_BACKGROUNDS: React.ReactNode[] = [
   ),
 ];
 
-export function CapabilitiesIntegration() {
-  const t = useTranslations('sectors.energyMining.capabilities');
+interface CapabilitiesIntegrationProps {
+  sector?: string;
+}
+
+export function CapabilitiesIntegration({ sector }: CapabilitiesIntegrationProps) {
+  const sectorKey = sector || 'energyMining';
+  const t = useTranslations(`sectors.${sectorKey}.capabilities`);
+  const tCaps = useTranslations(`sectors.${sectorKey}.capabilityCards`);
   const locale = useLocale();
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
   const prefersReducedMotion = useReducedMotion();
+
+  const isCyber = sector === 'cyberResilience';
+  const cyberCapKeys = ['brainML', 'antiMimicry', 'pqc', 'celestialEntropy', 'tripleSig', 'dockerIsolation'];
 
   return (
     <section ref={sectionRef} className="py-20 md:py-32 px-6 md:px-12 bg-surface">
@@ -89,37 +98,68 @@ export function CapabilitiesIntegration() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {CAPABILITIES.map((capability, idx) => (
-            <motion.div
-              key={capability.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView && !prefersReducedMotion ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: idx * 0.05 }}
-            >
-              <Link
-                href={`/${locale}/capabilities/${capability.slug}`}
-                className="group relative block h-full p-6 md:p-8 rounded-2xl bg-[#1a1b2e] border border-white/5 hover:border-white/10 hover-lift shadow-xl transition-all duration-500 overflow-hidden"
+          {isCyber ? (
+            cyberCapKeys.map((key, idx) => (
+              <motion.div
+                key={key}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView && !prefersReducedMotion ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, delay: idx * 0.05 }}
               >
-                {/* Background Graphic */}
-                {CAP_BACKGROUNDS[idx % 3]}
+                <div className="group relative block h-full p-6 md:p-8 rounded-2xl bg-[#1a1b2e] border border-white/5 hover:border-white/10 hover-lift shadow-xl transition-all duration-500 overflow-hidden">
+                  {/* Background Graphic */}
+                  {CAP_BACKGROUNDS[idx % 3]}
 
-                {/* Hover gradient overlay */}
-                <div className="absolute inset-0 bg-linear-to-br from-[#38bdf8]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  {/* Hover gradient overlay */}
+                  <div className="absolute inset-0 bg-linear-to-br from-[#38bdf8]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                <div className="relative z-10">
-                  <h3 className="text-xl font-bold text-white mb-2 tracking-tight group-hover:text-[#38bdf8] transition-colors">
-                    {capability.name}
-                  </h3>
-                  <p className="text-sm text-[#38bdf8]/70 font-medium mb-3">
-                    {capability.tagline}
-                  </p>
-                  <p className="text-sm text-white/60 line-clamp-2">
-                    {capability.description}
-                  </p>
+                  <div className="relative z-10">
+                    <h3 className="text-xl font-bold text-white mb-2 tracking-tight group-hover:text-[#38bdf8] transition-colors">
+                      {tCaps(`${key}.name`)}
+                    </h3>
+                    <p className="text-sm text-[#38bdf8]/70 font-medium mb-3">
+                      {tCaps(`${key}.tagline`)}
+                    </p>
+                    <p className="text-sm text-white/60 line-clamp-3">
+                      {tCaps(`${key}.description`)}
+                    </p>
+                  </div>
                 </div>
-              </Link>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))
+          ) : (
+            CAPABILITIES.map((capability, idx) => (
+              <motion.div
+                key={capability.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView && !prefersReducedMotion ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, delay: idx * 0.05 }}
+              >
+                <Link
+                  href={`/${locale}/capabilities/${capability.slug}`}
+                  className="group relative block h-full p-6 md:p-8 rounded-2xl bg-[#1a1b2e] border border-white/5 hover:border-white/10 hover-lift shadow-xl transition-all duration-500 overflow-hidden"
+                >
+                  {/* Background Graphic */}
+                  {CAP_BACKGROUNDS[idx % 3]}
+
+                  {/* Hover gradient overlay */}
+                  <div className="absolute inset-0 bg-linear-to-br from-[#38bdf8]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                  <div className="relative z-10">
+                    <h3 className="text-xl font-bold text-white mb-2 tracking-tight group-hover:text-[#38bdf8] transition-colors">
+                      {capability.name}
+                    </h3>
+                    <p className="text-sm text-[#38bdf8]/70 font-medium mb-3">
+                      {capability.tagline}
+                    </p>
+                    <p className="text-sm text-white/60 line-clamp-2">
+                      {capability.description}
+                    </p>
+                  </div>
+                </Link>
+              </motion.div>
+            ))
+          )}
         </div>
       </div>
     </section>

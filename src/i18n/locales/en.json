@@ -523,153 +523,185 @@
 
     "cyberResilience": {
       "hero": {
-        "title": "Cyber Resilience",
-        "subtitle": "Zero-Trust Security Architecture",
-        "lead": "HC-1 prevents cyber disruption through zero-trust architecture, continuous threat detection, and coordinated incident response—not reactive cleanup."
+        "title": "HCS-U7 Cognitive Cybersecurity",
+        "subtitle": "Patented Human Authentication & AI Defense Platform",
+        "lead": "HCS-U7 is a patented cognitive authentication system that proves you are human — not a bot, not a replay, not an AI. 11-layer anti-mimicry detection, post-quantum cryptography, and autonomous machine learning protect your infrastructure from the most sophisticated threats."
       },
       "stats": {
         "threats": {
-          "value": "10,000+",
-          "label": "threats blocked daily"
+          "value": "99.5%",
+          "label": "attack rejection rate — zero exploitable vulnerability"
         },
         "detection": {
-          "value": "<5min",
-          "label": "mean time to detect"
+          "value": "<1ms",
+          "label": "ML inference latency (Brain ML v2.0)"
         },
         "containment": {
-          "value": "<15min",
-          "label": "mean time to contain"
+          "value": "11",
+          "label": "independent anti-mimicry detection layers"
         }
       },
       "overview": {
-        "heading": "The Challenge",
-        "intro": "Cyber threats evolve faster than defensive capabilities. Perimeter security has failed. HC-1 implements zero-trust principles, assuming breach and preventing lateral movement.",
+        "heading": "Three Pillars of Cognitive Defense",
+        "intro": "HCS-U7 goes beyond traditional cybersecurity. Our patented technology combines cognitive science, machine learning, and post-quantum cryptography to create an authentication system that cannot be fooled, replayed, or brute-forced.",
         "landscape": {
-          "title": "Threat Landscape",
+          "title": "Brain ML Engine",
           "points": [
-            "State-sponsored APTs targeting critical infrastructure",
-            "Ransomware targeting operational technology",
-            "Supply chain compromises (SolarWinds, Kaseya patterns)"
+            "Gradient Boosting classifier with 43-dimension behavioral feature vector",
+            "Autonomous closed-loop: OBSERVE → ANALYZE → DECIDE → ACT → EVALUATE → DEPLOY",
+            "Drift detection via PSI (Population Stability Index) + EWMA/CUSUM accuracy monitoring"
           ]
         },
         "gaps": {
-          "title": "Security Gaps",
+          "title": "Anti-Mimicry Defense",
           "points": [
-            "Legacy perimeter-based security models",
-            "OT/IT convergence creates blind spots",
-            "Incident response relies on manual processes"
+            "11 independent detection layers: Shannon entropy, micro-tremor, Benford's law, fractal DFA, Mahalanobis distance, replay fingerprint, cognitive drift",
+            "V2 layers: randomized session weights, secret model parameters, adversarial simulation, adaptive calibration detection",
+            "FAR/FRR auto-calibration across 4 sliding windows without manual labels"
           ]
         },
         "impact": {
-          "title": "Business Impact",
+          "title": "Post-Quantum Cryptography",
           "points": [
-            "Ransomware downtime: 15-30 days average",
-            "Data breach costs: $4.5M average",
-            "Reputational damage extends beyond incident"
+            "CRYSTALS-Dilithium (ML-DSA-65) quantum-resistant digital signatures — NIST FIPS 204",
+            "CRYSTALS-Kyber (ML-KEM-768) quantum-resistant key encapsulation + AES-256-GCM — NIST FIPS 203",
+            "Triple independent signatures: QSIG (HMAC-SHA256) + B3 (BLAKE3) + MFB (Multi-Factor Binding) with HKDF key separation"
           ]
         }
       },
       "risks": {
-        "heading": "Critical Vulnerabilities",
+        "heading": "Threats We Neutralize",
         "technical": {
-          "title": "Technical Risks",
+          "title": "Attack Vectors Blocked",
           "items": [
             {
-              "label": "Lateral movement",
-              "details": "Flat networks allow attackers to pivot; Privilege escalation trivial"
+              "label": "AI bot mimicry & credential stuffing",
+              "details": "Advanced ML evasion strategies — naive random, learned ranges, correlation-aware, temporal-aware, statistical mimicry, adversarial optimized — all neutralized by the 11-layer anti-mimicry engine"
             },
             {
-              "label": "OT exposure",
-              "details": "Industrial systems accessible from IT; Legacy protocols lack authentication"
+              "label": "JWT forgery & injection attacks",
+              "details": "alg:none bypass, expired tokens, weak secrets, SQL/NoSQL injection, null byte injection, CRLF — every vector is blocked at the authentication layer"
             },
             {
-              "label": "Blind spots",
-              "details": "Encrypted traffic not inspected; Cloud assets unmonitored"
+              "label": "Cross-tenant & privilege escalation",
+              "details": "IDOR, cross-tenant data access, body injection, privilege escalation — zero bypass possible across all attack surfaces"
             }
           ]
         },
         "operational": {
-          "title": "Operational Risks",
+          "title": "Built-in Resilience",
           "items": [
             {
-              "label": "Alert fatigue",
-              "details": "SOC overwhelmed by false positives; Real threats missed in noise"
+              "label": "Null byte & injection hardening",
+              "details": "Input sanitization at every entry point. Control characters, encoding attacks, and malformed payloads are stripped before reaching any database or service layer"
             },
             {
-              "label": "Manual response",
-              "details": "Incident playbooks not automated; Response time measured in hours"
+              "label": "Timing-safe verification pipeline",
+              "details": "ISO-CHRONIC pipeline: fixed 5-window iteration, no early return, constant-time comparison, bitwise accumulation — eliminates all timing-based side channels"
             },
             {
-              "label": "Skills shortage",
-              "details": "Cannot hire/retain security talent; Reliance on external consultants"
+              "label": "Autonomous incident response",
+              "details": "Automated detection-to-remediation pipeline: detect → diagnose → patch → deploy → verify. Mean remediation time under 19 minutes for critical vulnerabilities"
             }
           ]
         }
       },
       "approach": {
-        "heading": "HC-1 Approach: Assume Breach",
-        "intro": "HC-1 implements zero-trust principles: verify explicitly, least privilege access, and assume breach. Prevention, detection, and response are architected as a unified system.",
+        "heading": "HCS-U7 Architecture: Defense in Depth",
+        "intro": "Every layer of HCS-U7 is designed to be independently secure. Compromise one layer, the others hold. Cognitive challenges prove humanity, ML classifies behavior, and post-quantum cryptography ensures the code cannot be forged — even by a quantum computer.",
         "zerotrust": {
-          "title": "Zero-Trust Architecture",
-          "description": "Micro-segmentation, continuous authentication, least privilege access, encrypted everything.",
-          "outcome": "Lateral movement prevented. Breach contained to single asset."
+          "title": "Cognitive Authentication",
+          "description": "Multi-domain cognitive challenges (Stroop, N-Back, RAN vocal, digit span, reaction time) generate a human identity code with 16 cryptographic segments. Behavioral fingerprinting captures passive interaction patterns. Celestial Entropy adds astronomical randomness via planetary orbital positions with a secret temporal offset.",
+          "outcome": "Each HCS-U7 code is cryptographically unique, bound to device + voice + tenant, and expires in 30-second windows."
         },
         "soc": {
-          "title": "24/7 SOC/NOC",
-          "description": "Real-time threat detection, AI-driven anomaly detection, automated response playbooks.",
-          "outcome": "Threats detected in minutes, contained in <15 minutes."
+          "title": "Autonomous ML Loop (Brain v2.0)",
+          "description": "Closed-loop system in 6 phases: drift detection (PSI + EWMA/CUSUM), deterministic decision matrix (P0-P3 priorities), automated retrain with early stopping, 7-gate evaluator guard (AUC regression, precision ≥95%, latency <1ms, size <200KB, overfit ≤0.03), atomic deployment with SHA-256 checksums, and SAFE_STATIC_MODE fail-safe.",
+          "outcome": "Self-improving defense that adapts to new attack patterns without human intervention. Circuit breaker freezes after 3 consecutive rollbacks."
         },
         "intelligence": {
-          "title": "Threat Intelligence",
-          "description": "Integration of OSINT, SIGINT, and proprietary threat feeds. Predictive threat modeling.",
-          "outcome": "Attacks anticipated before launch. Proactive defense posture."
+          "title": "Triple Signature & PQC Architecture",
+          "description": "Every code carries 3 independent cryptographic signatures with HKDF-derived keys: QSIG (temporal + cognitive + celestial entropy), B3 (BLAKE3 canonical hash), MFB (tenant + device + voiceprint binding). Post-quantum layer adds ML-DSA-65 signatures and ML-KEM-768 key encapsulation with progressive rollout.",
+          "outcome": "Compromising one key never compromises the others. Quantum-resistant from day one."
         }
       },
       "value": {
-        "heading": "Measurable Impact",
+        "heading": "Performance Guarantees",
         "detection": {
-          "metric": "<5min",
-          "label": "Mean Time to Detect",
-          "impact": "Threats identified before impact",
-          "method": "AI-driven anomaly detection"
+          "metric": "99.5%",
+          "label": "Attack Rejection Rate",
+          "impact": "Every known attack vector blocked — zero exploitable vulnerability",
+          "method": "11-layer anti-mimicry + triple signature + post-quantum cryptography"
         },
         "containment": {
-          "metric": "<15min",
-          "label": "Mean Time to Contain",
-          "impact": "Breach isolated immediately",
-          "method": "Automated response playbooks"
+          "metric": "<1ms",
+          "label": "ML Inference Latency",
+          "impact": "Real-time classification with 43-dimension feature vector",
+          "method": "Gradient Boosting with Docker-isolated worker — CPU separation guarantees latency"
         },
         "prevented": {
-          "metric": "10,000+",
-          "label": "Daily Threats Blocked",
-          "impact": "Attacks stopped at perimeter",
-          "method": "Layered defense + threat intelligence"
+          "metric": "<19min",
+          "label": "Mean Remediation Time",
+          "impact": "From detection to verified production fix",
+          "method": "Automated pipeline: detect → diagnose → patch → deploy → verify"
         }
       },
       "useCases": {
-        "heading": "Operational Scenarios",
+        "heading": "Protection Scenarios",
         "ransomware": {
-          "title": "Ransomware Attack — Financial Services",
-          "description": "Banking infrastructure targeted by ransomware. HC-1's zero-trust segmentation prevents spread, SOC isolates compromised endpoints, recovery from immutable backups completed in 4 hours. $50M+ loss avoided."
+          "title": "Bot & AI Impersonation Defense",
+          "description": "Sophisticated AI bots attempt to mimic human behavior — learned timing patterns, correlated interactions, statistical mimicry of cognitive responses. HCS-U7's 11-layer anti-mimicry engine analyzes Shannon entropy, micro-tremors, Benford's law, fractal dimensions, and Mahalanobis distance to distinguish humans from machines with >85% block rate on every strategy."
         },
         "apt": {
-          "title": "APT Campaign — Defense Contractor",
-          "description": "Nation-state APT establishes persistence in engineering network. HC-1's behavior analytics detect anomalous data exfiltration, incident response team ejects attacker, forensics identify compromised systems. IP protected."
+          "title": "Injection & Forgery Protection",
+          "description": "Attackers target authentication with JWT forgery, SQL/NoSQL injection, null byte injection, CRLF manipulation, session hijacking, and prototype pollution. HCS-U7 blocks every vector at the authentication layer with input sanitization, constant-time verification, and triple independent signature validation."
         },
         "supply": {
-          "title": "Supply Chain Compromise — Software Update",
-          "description": "Vendor software update contains backdoor. HC-1's code integrity checks flag anomaly, update blocked, vendor notified. Zero-day prevented from deployment."
+          "title": "Quantum-Resistant Key Protection",
+          "description": "Future quantum computers threaten today's cryptographic standards. HCS-U7 deploys CRYSTALS-Dilithium (ML-DSA-65) for quantum-resistant signatures and CRYSTALS-Kyber (ML-KEM-768) for key encapsulation, compliant with NIST FIPS 203/204. Triple signature architecture ensures no single key compromise can break the system."
         }
       },
       "capabilities": {
-        "heading": "Integrated Capabilities",
-        "intro": "HC-1 delivers cyber resilience through coordinated deployment of specialized capabilities:"
+        "heading": "HCS-U7 Technology Stack",
+        "intro": "HCS-U7 delivers cognitive cybersecurity through a coordinated stack of patented technologies:"
+      },
+      "capabilityCards": {
+        "brainML": {
+          "name": "Brain ML v2.0",
+          "tagline": "Autonomous Machine Learning Engine",
+          "description": "Gradient Boosting classifier with 43-dimension behavioral feature vector. Autonomous closed-loop learning: observe, analyze, decide, act, evaluate, deploy — with 7-gate evaluator guard and SAFE_STATIC_MODE fail-safe."
+        },
+        "antiMimicry": {
+          "name": "Anti-Mimicry Engine",
+          "tagline": "11-Layer Bot Detection",
+          "description": "Shannon entropy, micro-tremor analysis, Benford's law, fractal DFA, Mahalanobis distance, replay fingerprint, cognitive drift detection. V2 adds randomized session weights, secret model parameters, and adaptive calibration."
+        },
+        "pqc": {
+          "name": "Post-Quantum Cryptography",
+          "tagline": "NIST FIPS 203/204 Compliant",
+          "description": "CRYSTALS-Dilithium (ML-DSA-65) quantum-resistant digital signatures and CRYSTALS-Kyber (ML-KEM-768) key encapsulation with AES-256-GCM encryption. Future-proof against quantum computing threats."
+        },
+        "celestialEntropy": {
+          "name": "Celestial Entropy",
+          "tagline": "Astronomical Randomness Source",
+          "description": "Entropy derived from real-time planetary orbital positions with a secret temporal offset. Unpredictable, non-reproducible randomness that makes each authentication code astronomically unique."
+        },
+        "tripleSig": {
+          "name": "Triple Signature Architecture",
+          "tagline": "Independent Cryptographic Binding",
+          "description": "Three independent signatures per code: QSIG (temporal + cognitive + celestial), B3 (BLAKE3 canonical hash), MFB (tenant + device + voiceprint). HKDF key separation ensures compromising one never compromises the others."
+        },
+        "dockerIsolation": {
+          "name": "Docker Worker Isolation",
+          "tagline": "Secure Compute Separation",
+          "description": "ML inference runs in isolated Docker containers with dedicated CPU allocation. Process-level isolation prevents side-channel attacks and guarantees <1ms latency for real-time classification."
+        }
       },
       "cta": {
-        "heading": "Build Zero-Trust Resilience",
-        "description": "HC-1 works with enterprises, critical infrastructure operators, and defense organizations to implement zero-trust architectures and operational security.",
-        "primary": "Assess Your Security Posture",
-        "secondary": "Explore All Capabilities"
+        "heading": "Deploy Cognitive Authentication",
+        "description": "HCS-U7 is the world's first patented cognitive authentication platform with autonomous ML, post-quantum cryptography, and 11-layer anti-mimicry defense — protecting your infrastructure against today's and tomorrow's threats.",
+        "primary": "Request a Security Assessment",
+        "secondary": "Explore the Technology"
       }
     },
 

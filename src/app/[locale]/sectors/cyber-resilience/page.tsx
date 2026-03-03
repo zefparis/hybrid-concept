@@ -12,8 +12,8 @@ import {
 } from '@/components/sections/sector';
 
 export const metadata: Metadata = {
-  title: 'Cyber Resilience | HC-1',
-  description: 'Zero-trust architecture and threat prevention.',
+  title: 'HCS-U7 Cognitive Cybersecurity | Patented Human Authentication',
+  description: 'HCS-U7: patented cognitive authentication with 11-layer anti-mimicry, Brain ML v2.0, and post-quantum cryptography. 99.5% attack rejection rate.',
 };
 
 type Props = {
@@ -32,7 +32,7 @@ export default async function CyberResiliencePage({ params }: Props) {
       <ApproachSection sector="cyberResilience" />
       <ValueProposition sector="cyberResilience" />
       <UseCases sector="cyberResilience" />
-      <CapabilitiesIntegration />
+      <CapabilitiesIntegration sector="cyberResilience" />
       <SectorCTA sector="cyberResilience" />
     </>
   );
