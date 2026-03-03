@@ -32,7 +32,7 @@ export function SectorHero({ sector }: SectorHeroProps) {
   return (
     <section
       ref={sectionRef}
-      className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden"
+      className="relative h-[60vh] min-h-[500px] flex items-end justify-center overflow-hidden pb-12"
     >
       {/* Background image */}
       <div className="absolute inset-0">

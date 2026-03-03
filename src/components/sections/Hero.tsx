@@ -65,8 +65,8 @@ export function Hero({
       className={cn(
         'relative flex items-center justify-center overflow-hidden',
         isHome && 'min-h-screen',
-        !isHome && !isMinimal && 'min-h-[60vh] pt-32 pb-20',
-        isMinimal && 'pt-32 pb-16'
+        !isHome && !isMinimal && 'min-h-[60vh] pt-16 pb-20',
+        isMinimal && 'pt-16 pb-16'
       )}
     >
       {/* Background Image (Home only) */}
