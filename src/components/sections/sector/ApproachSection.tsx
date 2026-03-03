@@ -74,8 +74,8 @@ export function ApproachSection({ sector }: ApproachSectionProps) {
                 onClick={() => setActiveTab(tab)}
                 className={`flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
                   activeTab === tab
-                    ? 'bg-[#38bdf8] text-white shadow-lg shadow-[#38bdf8]/20'
-                    : 'bg-surface-card text-white/60 border border-white/8 hover:border-white/15 hover:text-white'
+                    ? 'bg-accent text-white shadow-lg shadow-accent/20'
+                    : 'bg-surface-card text-foreground-secondary border border-border hover:border-border-strong hover:text-foreground'
                 }`}
               >
                 <Icon className="w-5 h-5" />
@@ -95,43 +95,43 @@ export function ApproachSection({ sector }: ApproachSectionProps) {
         >
           {/* Background SVG */}
           <svg className="absolute inset-0 w-full h-full text-white transition-transform duration-700 pointer-events-none" viewBox="0 0 800 400" fill="none" stroke="currentColor">
-            <circle cx="650" cy="200" r="180" fill="#38bdf8" opacity="0.02" />
-            <circle cx="650" cy="200" r="90" fill="#818cf8" opacity="0.03" />
+            <circle cx="650" cy="200" r="180" fill="#00C2FF" opacity="0.02" />
+            <circle cx="650" cy="200" r="90" fill="#00C2FF" opacity="0.03" />
             <g transform="translate(450, 50)">
               {/* Layered architecture blocks */}
               <rect x="40" y="60" width="200" height="40" rx="4" fill="currentColor" fillOpacity="0.04" strokeWidth="1" opacity="0.08" />
-              <rect x="40" y="110" width="200" height="40" rx="4" fill="#38bdf8" fillOpacity="0.03" strokeWidth="1" stroke="#38bdf8" opacity="0.1" />
-              <rect x="40" y="160" width="200" height="40" rx="4" fill="#818cf8" fillOpacity="0.03" strokeWidth="1" stroke="#818cf8" opacity="0.08" />
-              <rect x="40" y="210" width="200" height="40" rx="4" fill="#c084fc" fillOpacity="0.02" strokeWidth="1" stroke="#c084fc" opacity="0.06" />
+              <rect x="40" y="110" width="200" height="40" rx="4" fill="#00C2FF" fillOpacity="0.03" strokeWidth="1" stroke="#00C2FF" opacity="0.1" />
+              <rect x="40" y="160" width="200" height="40" rx="4" fill="#00C2FF" fillOpacity="0.02" strokeWidth="1" stroke="#00C2FF" opacity="0.08" />
+              <rect x="40" y="210" width="200" height="40" rx="4" fill="#00C2FF" fillOpacity="0.02" strokeWidth="1" stroke="#00C2FF" opacity="0.06" />
               {/* Connection arrows between layers */}
-              <line x1="140" y1="100" x2="140" y2="110" strokeWidth="1" stroke="#38bdf8" opacity="0.15" />
-              <line x1="140" y1="150" x2="140" y2="160" strokeWidth="1" stroke="#818cf8" opacity="0.12" />
-              <line x1="140" y1="200" x2="140" y2="210" strokeWidth="1" stroke="#c084fc" opacity="0.1" />
+              <line x1="140" y1="100" x2="140" y2="110" strokeWidth="1" stroke="#00C2FF" opacity="0.15" />
+              <line x1="140" y1="150" x2="140" y2="160" strokeWidth="1" stroke="#00C2FF" opacity="0.12" />
+              <line x1="140" y1="200" x2="140" y2="210" strokeWidth="1" stroke="#00C2FF" opacity="0.1" />
               {/* Nodes */}
-              <circle cx="140" cy="80" r="3" fill="#38bdf8" opacity="0.5" stroke="none" />
-              <circle cx="140" cy="130" r="4" fill="#38bdf8" opacity="0.6" stroke="none" />
-              <circle cx="140" cy="180" r="3" fill="#818cf8" opacity="0.5" stroke="none" />
-              <circle cx="140" cy="230" r="3" fill="#c084fc" opacity="0.4" stroke="none" />
+              <circle cx="140" cy="80" r="3" fill="#00C2FF" opacity="0.5" stroke="none" />
+              <circle cx="140" cy="130" r="4" fill="#00C2FF" opacity="0.6" stroke="none" />
+              <circle cx="140" cy="180" r="3" fill="#00C2FF" opacity="0.5" stroke="none" />
+              <circle cx="140" cy="230" r="3" fill="#00C2FF" opacity="0.4" stroke="none" />
               {/* Decorative lines */}
-              <line x1="60" y1="75" x2="120" y2="75" strokeWidth="1" stroke="#38bdf8" opacity="0.08" />
-              <line x1="160" y1="125" x2="220" y2="125" strokeWidth="1" stroke="#818cf8" opacity="0.06" />
+              <line x1="60" y1="75" x2="120" y2="75" strokeWidth="1" stroke="#00C2FF" opacity="0.08" />
+              <line x1="160" y1="125" x2="220" y2="125" strokeWidth="1" stroke="#00C2FF" opacity="0.06" />
               {/* Particles */}
-              <circle cx="20" cy="100" r="1.5" fill="#38bdf8" opacity="0.4" stroke="none" />
-              <circle cx="260" cy="180" r="1.5" fill="#c084fc" opacity="0.3" stroke="none" />
-              <circle cx="80" cy="260" r="1.5" fill="#818cf8" opacity="0.3" stroke="none" />
+              <circle cx="20" cy="100" r="1.5" fill="#00C2FF" opacity="0.4" stroke="none" />
+              <circle cx="260" cy="180" r="1.5" fill="#00C2FF" opacity="0.3" stroke="none" />
+              <circle cx="80" cy="260" r="1.5" fill="#00C2FF" opacity="0.3" stroke="none" />
             </g>
           </svg>
 
           <div className="relative z-10">
-            <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">
+            <h3 className="text-2xl font-extrabold text-foreground mb-4 tracking-tight">
               {t(`${activeTab}.title`)}
             </h3>
-            <p className="text-white/70 font-medium mb-6 leading-relaxed">
+            <p className="text-foreground-secondary font-medium mb-6 leading-relaxed">
               {t(`${activeTab}.description`)}
             </p>
-            <div className="pl-4 border-l-2 border-[#38bdf8]">
-              <p className="text-sm font-semibold text-[#38bdf8] mb-1">Outcome</p>
-              <p className="text-white/80 font-medium">
+            <div className="pl-4 border-l-2 border-accent">
+              <p className="text-sm font-semibold text-accent mb-1">Outcome</p>
+              <p className="text-foreground-muted font-medium">
                 {t(`${activeTab}.outcome`)}
               </p>
             </div>

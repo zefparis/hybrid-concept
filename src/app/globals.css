@@ -13,27 +13,27 @@
   --surface-hover: #213050;
   --surface-card: #162032;
   
-  /* Primary accent - Steady blue-cyan (trustworthy, not neon) */
-  --accent: #0ea5e9;
-  --accent-hover: #0284c7;
-  --accent-muted: #0369a1;
-  --accent-glow: rgba(14, 165, 233, 0.12);
+  /* Primary accent - Cyan #00C2FF (single accent, surgical use) */
+  --accent: #00C2FF;
+  --accent-hover: #00A8E0;
+  --accent-muted: #0088B8;
+  --accent-glow: rgba(0, 194, 255, 0.12);
   
-  /* Secondary accent - Muted indigo for special states */
-  --accent-secondary: #6366f1;
-  --accent-secondary-hover: #4f46e5;
-  --accent-secondary-glow: rgba(99, 102, 241, 0.12);
+  /* Secondary accent - REMOVED (single accent policy) */
+  /* --accent-secondary: #6366f1; */
+  /* --accent-secondary-hover: #4f46e5; */
+  /* --accent-secondary-glow: rgba(99, 102, 241, 0.12); */
   
-  /* Foreground (text hierarchy) */
-  --foreground: #f1f5f9;
-  --foreground-secondary: #d1d5db;
-  --foreground-muted: #9ca3af;
-  --foreground-disabled: #6b7280;
+  /* Foreground (text hierarchy) - Professional scale */
+  --foreground: #F8FAFC;
+  --foreground-secondary: #94A3B8;
+  --foreground-muted: #CBD5E1;
+  --foreground-disabled: #64748B;
   
   /* Borders & dividers */
   --border: rgba(148, 163, 184, 0.12);
   --border-strong: rgba(148, 163, 184, 0.22);
-  --border-accent: rgba(14, 165, 233, 0.3);
+  --border-accent: rgba(0, 194, 255, 0.3);
   
   /* Status */
   --success: #10b981;
@@ -44,16 +44,16 @@
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.25);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.35);
-  --shadow-glow-subtle: 0 0 20px rgba(14, 165, 233, 0.1);
-  --shadow-glow-hover: 0 0 30px rgba(14, 165, 233, 0.18);
+  --shadow-glow-subtle: 0 0 20px rgba(0, 194, 255, 0.1);
+  --shadow-glow-hover: 0 0 30px rgba(0, 194, 255, 0.18);
   
-  /* Gradient backgrounds */
-  --gradient-primary: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
-  --gradient-secondary: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
-  --gradient-mesh: radial-gradient(at 0% 0%, rgba(14, 165, 233, 0.06) 0px, transparent 50%),
-                   radial-gradient(at 100% 0%, rgba(99, 102, 241, 0.06) 0px, transparent 50%),
-                   radial-gradient(at 100% 100%, rgba(14, 165, 233, 0.04) 0px, transparent 50%),
-                   radial-gradient(at 0% 100%, rgba(99, 102, 241, 0.04) 0px, transparent 50%);
+  /* Gradient backgrounds - Single accent only */
+  --gradient-primary: linear-gradient(135deg, #00C2FF 0%, #00A8E0 100%);
+  /* --gradient-secondary: REMOVED (single accent policy) */
+  --gradient-mesh: radial-gradient(at 0% 0%, rgba(0, 194, 255, 0.06) 0px, transparent 50%),
+                   radial-gradient(at 100% 0%, rgba(0, 194, 255, 0.04) 0px, transparent 50%),
+                   radial-gradient(at 100% 100%, rgba(0, 194, 255, 0.03) 0px, transparent 50%),
+                   radial-gradient(at 0% 100%, rgba(0, 194, 255, 0.05) 0px, transparent 50%);
   
   /* Animation */
   --duration-fast: 150ms;
@@ -171,25 +171,25 @@ body::before {
    ============================================================================ */
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--foreground);
 }
 
 h1 {
-  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+  background: linear-gradient(135deg, #F8FAFC 0%, #CBD5E1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 h2 {
-  color: #f1f5f9;
+  color: #F8FAFC;
 }
 
 h3 {
-  color: #cbd5e1;
+  color: #CBD5E1;
 }
 
 h1 { font-size: 3rem; }
@@ -215,13 +215,13 @@ p {
   color: var(--foreground-muted);
 }
 
-/* Text utilities - Subtle accents only */
+/* Text utilities - Single accent #00C2FF only */
 .text-accent {
-  color: #38bdf8;
+  color: #00C2FF;
 }
 
 .text-accent-muted {
-  color: var(--foreground-muted);
+  color: var(--foreground-secondary);
 }
 
 a {
@@ -288,7 +288,7 @@ a:hover {
    ============================================================================ */
 
 .text-gradient {
-  background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
+  background: linear-gradient(135deg, #F8FAFC 0%, #CBD5E1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -568,7 +568,7 @@ a:hover {
 }
 
 .badge-accent {
-  background: rgba(6, 182, 212, 0.1);
+  background: rgba(0, 194, 255, 0.1);
   color: var(--accent);
   border: 1px solid var(--border-accent);
 }

@@ -31,7 +31,7 @@ export function SectorCTA({ sector }: SectorCTAProps) {
             {t('description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href={`/${locale}/contact`} size="lg">
+            <Button href="https://www.hcs-u7.com" size="lg">
               {t('primary')}
             </Button>
             <Button href={`/${locale}/capabilities`} size="lg" variant="outline">

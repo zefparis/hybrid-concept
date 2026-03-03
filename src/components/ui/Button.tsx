@@ -99,6 +99,20 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     );
 
     if (href && !disabled) {
+      // External links use <a> tag
+      if (href.startsWith('http')) {
+        return (
+          <a 
+            href={href} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className={cn(buttonVariants({ variant, size, className }))}
+          >
+            {content}
+          </a>
+        );
+      }
+      // Internal links use Next.js Link
       return (
         <Link 
           href={href} 
