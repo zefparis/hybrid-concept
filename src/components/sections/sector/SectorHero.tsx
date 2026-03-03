@@ -43,7 +43,7 @@ export function SectorHero({ sector }: SectorHeroProps) {
           }}
         />
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background" />
+        <div className="absolute inset-0 bg-linear-to-b from-background/80 via-background/70 to-background" />
       </div>
 
       {/* Content */}
