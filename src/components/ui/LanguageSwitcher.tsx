@@ -3,7 +3,7 @@
 import { useLocale } from 'next-intl';
 import { useRouter, usePathname } from 'next/navigation';
 import { Globe } from 'lucide-react';
-import { locales, localeNames, type Locale } from '@/i18n/config';
+import { locales, localeNames, localeFlags, type Locale } from '@/i18n/config';
 import { cn } from '@/lib/utils';
 
 export function LanguageSwitcher() {
@@ -26,6 +26,7 @@ export function LanguageSwitcher() {
       >
         <Globe className="w-4 h-4" />
         <span className="text-body-sm uppercase">{locale}</span>
+        <span className="text-lg leading-none">{localeFlags[locale]}</span>
       </button>
       
       {/* Dropdown */}
@@ -35,11 +36,12 @@ export function LanguageSwitcher() {
             key={loc}
             onClick={() => switchLocale(loc)}
             className={cn(
-              "w-full px-4 py-2 text-left text-body-sm hover:bg-surface-hover transition-colors first:rounded-t-md last:rounded-b-md",
+              "w-full px-4 py-2 text-left text-body-sm hover:bg-surface-hover transition-colors first:rounded-t-md last:rounded-b-md flex items-center gap-3",
               locale === loc ? "text-accent font-medium" : "text-foreground-secondary"
             )}
           >
-            {localeNames[loc]}
+            <span className="text-lg leading-none">{localeFlags[loc]}</span>
+            <span>{localeNames[loc]}</span>
           </button>
         ))}
       </div>
