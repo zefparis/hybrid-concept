@@ -3,8 +3,9 @@
 import { useLocale } from 'next-intl';
 import { useRouter, usePathname } from 'next/navigation';
 import { Globe } from 'lucide-react';
-import { locales, localeNames, localeFlags, type Locale } from '@/i18n/config';
+import { locales, localeNames, type Locale } from '@/i18n/config';
 import { cn } from '@/lib/utils';
+import { FlagIcon } from './FlagIcon';
 
 export function LanguageSwitcher() {
   const locale = useLocale() as Locale;
@@ -25,8 +26,8 @@ export function LanguageSwitcher() {
         aria-label="Select language"
       >
         <Globe className="w-4 h-4" />
+        <FlagIcon country={locale === 'en' ? 'GB' : locale === 'fr' ? 'FR' : 'PT'} />
         <span className="text-body-sm uppercase">{locale}</span>
-        <span className="text-lg leading-none">{localeFlags[locale]}</span>
       </button>
       
       {/* Dropdown */}
@@ -40,7 +41,7 @@ export function LanguageSwitcher() {
               locale === loc ? "text-accent font-medium" : "text-foreground-secondary"
             )}
           >
-            <span className="text-lg leading-none">{localeFlags[loc]}</span>
+            <FlagIcon country={loc === 'en' ? 'GB' : loc === 'fr' ? 'FR' : 'PT'} />
             <span>{localeNames[loc]}</span>
           </button>
         ))}

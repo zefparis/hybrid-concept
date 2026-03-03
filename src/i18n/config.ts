@@ -10,9 +10,9 @@ export const localeNames: Record<Locale, string> = {
 };
 
 export const localeFlags: Record<Locale, string> = {
-  en: '🇬🇧',
-  fr: '🇫🇷',
-  pt: '🇵🇹',
+  en: 'GB',
+  fr: 'FR',
+  pt: 'PT',
 };
 
 export function isValidLocale(locale: string): locale is Locale {
