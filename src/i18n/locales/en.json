@@ -1089,28 +1089,45 @@
 
   "insightsPage": {
     "hero": {
-      "title": "Insights",
-      "tagline": "Thought Leadership",
-      "description": "Strategic perspectives on security, technology, and operational resilience from our team of experts."
+      "title": "Insights & Analyses",
+      "tagline": "Intelligence Briefings",
+      "description": "In-depth analysis on emerging threats, defense technology, and operational resilience — from cognitive authentication to post-quantum cryptography, critical infrastructure protection, and sovereign AI governance."
     },
     "featured": "Featured",
+    "latest": "Latest",
     "minRead": "min read",
-    "comingSoon": "More insights coming soon. Connect with us to receive updates.",
+    "readMore": "Read the full analysis",
+    "comingSoon": "New analyses published regularly. Subscribe to our intelligence briefing to stay informed.",
     "sampleInsights": {
-      "infrastructure": {
-        "title": "The Evolution of Critical Infrastructure Protection",
-        "excerpt": "How converging threats are reshaping security strategies for essential services.",
-        "category": "Strategic Analysis"
-      },
-      "aiSecurity": {
-        "title": "AI in National Security: Opportunities and Governance",
-        "excerpt": "Balancing innovation with responsible deployment in sensitive environments.",
+      "cognitiveAuth": {
+        "title": "Why Cognitive Authentication Will Replace CAPTCHAs",
+        "excerpt": "Traditional CAPTCHAs are broken. AI solves them faster than humans. HCS-U7 introduces a fundamentally different approach: multi-domain cognitive challenges — Stroop, N-Back, digit span, vocal RAN — that generate cryptographically unique human identity codes. Unlike CAPTCHAs that test pattern recognition, cognitive authentication measures the neurological signature of human thought. Combined with 11-layer anti-mimicry detection, this approach achieves a 99.5% attack rejection rate while remaining invisible to legitimate users.",
         "category": "Technology"
       },
-      "cyberResilience": {
-        "title": "Building Cyber Resilience in the Energy Sector",
-        "excerpt": "Lessons learned from securing operational technology in complex environments.",
-        "category": "Case Study"
+      "pqcReadiness": {
+        "title": "Post-Quantum Cryptography: Are You Ready for Q-Day?",
+        "excerpt": "When large-scale quantum computers arrive, every RSA and ECC key in the world becomes vulnerable. The threat is not theoretical — nation-states are already harvesting encrypted data today for decryption tomorrow. NIST has finalized FIPS 203 (ML-KEM) and FIPS 204 (ML-DSA) standards. Organizations that delay migration face a narrowing window. This analysis examines the practical steps for deploying CRYSTALS-Dilithium and CRYSTALS-Kyber in production environments, including key management, performance implications, and the case for hybrid classical-quantum schemes during transition.",
+        "category": "Strategic Analysis"
+      },
+      "criticalInfra": {
+        "title": "OT/IT Convergence: The Invisible Attack Surface",
+        "excerpt": "The convergence of operational technology and IT networks has created attack surfaces that neither OT nor IT teams fully understand. SCADA systems designed for isolated networks now connect to cloud analytics. Industrial controllers share bandwidth with corporate email. A single compromised credential can bridge the gap between a corporate laptop and a power grid relay. We analyze the emerging threat landscape across energy, water, and transportation sectors — and the architectural patterns that prevent lateral movement from IT to OT without sacrificing the operational benefits of convergence.",
+        "category": "Strategic Analysis"
+      },
+      "antiMimicry": {
+        "title": "The Anti-Mimicry Problem: When AI Learns to Fake Being Human",
+        "excerpt": "Modern AI bots can simulate human-like timing, mouse movements, and interaction patterns with statistical accuracy. Standard behavioral biometrics are no longer sufficient. The anti-mimicry challenge requires a multi-layered approach: Shannon entropy analysis of interaction sequences, Benford's law deviation detection, fractal dimension analysis via DFA, Mahalanobis distance from population baselines, and cognitive drift tracking across sessions. This paper presents the mathematical foundations behind 11-layer anti-mimicry defense and why each layer must operate independently to resist adversarial optimization.",
+        "category": "Whitepaper"
+      },
+      "sovereignAI": {
+        "title": "Sovereign AI: Why National Security Demands Local Intelligence",
+        "excerpt": "Dependence on foreign AI infrastructure for national security decisions is a strategic vulnerability. When threat intelligence, facial recognition, or critical decision-making pipelines run through third-party cloud providers, sovereignty is compromised. This analysis examines the case for sovereign AI — locally deployed, locally trained, locally controlled machine learning systems for defense, intelligence, and law enforcement. We explore the trade-offs between capability and control, the infrastructure requirements for on-premise AI at scale, and the governance frameworks that ensure responsible deployment without sacrificing operational effectiveness.",
+        "category": "Governance"
+      },
+      "supplyChain": {
+        "title": "Securing the Digital Supply Chain: Lessons from SolarWinds to MOVEit",
+        "excerpt": "Supply chain attacks have evolved from theoretical risk to operational reality. SolarWinds, Kaseya, Log4j, MOVEit — each incident revealed systemic weaknesses in how organizations trust their vendors. The attack surface extends beyond software: hardware supply chains, firmware updates, and even open-source dependencies are vectors. This analysis maps the complete supply chain threat landscape for critical infrastructure operators and presents a practical framework for vendor risk assessment, software bill of materials (SBOM) management, and zero-trust approaches to third-party integration.",
+        "category": "Strategic Analysis"
       }
     }
   },

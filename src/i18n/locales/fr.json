@@ -1089,28 +1089,45 @@
 
   "insightsPage": {
     "hero": {
-      "title": "Analyses",
-      "tagline": "Leadership Éclairé",
-      "description": "Perspectives stratégiques sur la sécurité, la technologie et la résilience opérationnelle de notre équipe d'experts."
+      "title": "Analyses & Perspectives",
+      "tagline": "Veille Stratégique",
+      "description": "Analyses approfondies sur les menaces émergentes, les technologies de défense et la résilience opérationnelle — de l'authentification cognitive à la cryptographie post-quantique, la protection des infrastructures critiques et la gouvernance de l'IA souveraine."
     },
-    "featured": "En Vedette",
+    "featured": "À la Une",
+    "latest": "Dernières Publications",
     "minRead": "min de lecture",
-    "comingSoon": "Plus d'analyses à venir. Contactez-nous pour recevoir les mises à jour.",
+    "readMore": "Lire l'analyse complète",
+    "comingSoon": "Nouvelles analyses publiées régulièrement. Abonnez-vous à notre veille stratégique pour rester informé.",
     "sampleInsights": {
-      "infrastructure": {
-        "title": "L'Évolution de la Protection des Infrastructures Critiques",
-        "excerpt": "Comment les menaces convergentes remodèlent les stratégies de sécurité pour les services essentiels.",
-        "category": "Analyse Stratégique"
-      },
-      "aiSecurity": {
-        "title": "L'IA dans la Sécurité Nationale : Opportunités et Gouvernance",
-        "excerpt": "Équilibrer l'innovation avec un déploiement responsable dans des environnements sensibles.",
+      "cognitiveAuth": {
+        "title": "Pourquoi l'Authentification Cognitive Va Remplacer les CAPTCHAs",
+        "excerpt": "Les CAPTCHAs traditionnels sont obsolètes. L'IA les résout plus vite que les humains. HCS-U7 introduit une approche fondamentalement différente : des défis cognitifs multi-domaines — Stroop, N-Back, empan de chiffres, RAN vocal — qui génèrent des codes d'identité humaine cryptographiquement uniques. Contrairement aux CAPTCHAs qui testent la reconnaissance de formes, l'authentification cognitive mesure la signature neurologique de la pensée humaine. Combinée à une détection anti-mimétisme à 11 couches, cette approche atteint un taux de rejet d'attaques de 99,5% tout en restant invisible pour les utilisateurs légitimes.",
         "category": "Technologie"
       },
-      "cyberResilience": {
-        "title": "Construire la Résilience Cyber dans le Secteur Énergétique",
-        "excerpt": "Leçons tirées de la sécurisation de la technologie opérationnelle dans des environnements complexes.",
-        "category": "Étude de Cas"
+      "pqcReadiness": {
+        "title": "Cryptographie Post-Quantique : Êtes-Vous Prêts pour le Q-Day ?",
+        "excerpt": "Quand les ordinateurs quantiques à grande échelle arriveront, chaque clé RSA et ECC au monde deviendra vulnérable. La menace n'est pas théorique — des États récoltent déjà des données chiffrées aujourd'hui pour les déchiffrer demain. Le NIST a finalisé les standards FIPS 203 (ML-KEM) et FIPS 204 (ML-DSA). Les organisations qui retardent la migration font face à une fenêtre qui se rétrécit. Cette analyse examine les étapes pratiques pour déployer CRYSTALS-Dilithium et CRYSTALS-Kyber en environnement de production, incluant la gestion des clés, les implications de performance, et le cas des schémas hybrides classique-quantique durant la transition.",
+        "category": "Analyse Stratégique"
+      },
+      "criticalInfra": {
+        "title": "Convergence OT/IT : La Surface d'Attaque Invisible",
+        "excerpt": "La convergence des technologies opérationnelles et des réseaux IT a créé des surfaces d'attaque que ni les équipes OT ni les équipes IT ne comprennent pleinement. Les systèmes SCADA conçus pour des réseaux isolés se connectent désormais à des plateformes d'analytique cloud. Les contrôleurs industriels partagent la bande passante avec les e-mails de l'entreprise. Un seul identifiant compromis peut faire le pont entre un laptop corporate et un relais de réseau électrique. Nous analysons le paysage des menaces émergentes dans les secteurs de l'énergie, de l'eau et des transports — et les patterns architecturaux qui empêchent le mouvement latéral de l'IT vers l'OT sans sacrifier les bénéfices opérationnels de la convergence.",
+        "category": "Analyse Stratégique"
+      },
+      "antiMimicry": {
+        "title": "Le Problème de l'Anti-Mimétisme : Quand l'IA Apprend à Se Faire Passer pour Humain",
+        "excerpt": "Les bots IA modernes peuvent simuler le timing, les mouvements de souris et les patterns d'interaction humains avec une précision statistique. La biométrie comportementale standard ne suffit plus. Le défi anti-mimétisme nécessite une approche multi-couches : analyse de l'entropie de Shannon des séquences d'interaction, détection des déviations de la loi de Benford, analyse de dimension fractale via DFA, distance de Mahalanobis par rapport aux baselines populationnelles, et suivi de la dérive cognitive entre sessions. Ce document présente les fondements mathématiques de la défense anti-mimétisme à 11 couches et pourquoi chaque couche doit opérer indépendamment pour résister à l'optimisation adversariale.",
+        "category": "Livre Blanc"
+      },
+      "sovereignAI": {
+        "title": "IA Souveraine : Pourquoi la Sécurité Nationale Exige une Intelligence Locale",
+        "excerpt": "La dépendance à des infrastructures IA étrangères pour les décisions de sécurité nationale est une vulnérabilité stratégique. Quand le renseignement sur les menaces, la reconnaissance faciale ou les pipelines de décision critique passent par des fournisseurs cloud tiers, la souveraineté est compromise. Cette analyse examine le cas de l'IA souveraine — des systèmes de machine learning déployés localement, entraînés localement, contrôlés localement pour la défense, le renseignement et les forces de l'ordre. Nous explorons les compromis entre capacité et contrôle, les exigences d'infrastructure pour l'IA on-premise à grande échelle, et les cadres de gouvernance qui assurent un déploiement responsable sans sacrifier l'efficacité opérationnelle.",
+        "category": "Gouvernance"
+      },
+      "supplyChain": {
+        "title": "Sécuriser la Chaîne d'Approvisionnement Numérique : De SolarWinds à MOVEit",
+        "excerpt": "Les attaques de chaîne d'approvisionnement ont évolué du risque théorique à la réalité opérationnelle. SolarWinds, Kaseya, Log4j, MOVEit — chaque incident a révélé des faiblesses systémiques dans la confiance que les organisations accordent à leurs fournisseurs. La surface d'attaque s'étend au-delà du logiciel : chaînes d'approvisionnement matérielles, mises à jour firmware, et même les dépendances open-source sont des vecteurs. Cette analyse cartographie le paysage complet des menaces de chaîne d'approvisionnement pour les opérateurs d'infrastructures critiques et présente un cadre pratique pour l'évaluation des risques fournisseurs, la gestion de la nomenclature logicielle (SBOM), et les approches zéro-confiance pour l'intégration de tiers.",
+        "category": "Analyse Stratégique"
       }
     }
   },

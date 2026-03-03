@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
+import Link from 'next/link';
 import { Hero } from '@/components/sections';
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -28,29 +29,73 @@ export default async function InsightsPage({ params }: Props) {
   const sampleInsights = [
     {
       id: '1',
-      title: tInsights('infrastructure.title'),
-      excerpt: tInsights('infrastructure.excerpt'),
-      category: tInsights('infrastructure.category'),
-      date: '2024-12-15',
-      readingTime: 8,
-    },
-    {
-      id: '2',
-      title: tInsights('aiSecurity.title'),
-      excerpt: tInsights('aiSecurity.excerpt'),
-      category: tInsights('aiSecurity.category'),
-      date: '2024-12-01',
+      title: tInsights('cognitiveAuth.title'),
+      excerpt: tInsights('cognitiveAuth.excerpt'),
+      category: tInsights('cognitiveAuth.category'),
+      href: `/${locale}/sectors/cyber-resilience`,
+      date: '2025-02-28',
       readingTime: 12,
     },
     {
+      id: '2',
+      title: tInsights('pqcReadiness.title'),
+      excerpt: tInsights('pqcReadiness.excerpt'),
+      category: tInsights('pqcReadiness.category'),
+      href: `/${locale}/sectors/cyber-resilience`,
+      date: '2025-02-15',
+      readingTime: 15,
+    },
+    {
       id: '3',
-      title: tInsights('cyberResilience.title'),
-      excerpt: tInsights('cyberResilience.excerpt'),
-      category: tInsights('cyberResilience.category'),
-      date: '2024-11-20',
+      title: tInsights('criticalInfra.title'),
+      excerpt: tInsights('criticalInfra.excerpt'),
+      category: tInsights('criticalInfra.category'),
+      href: `/${locale}/sectors/critical-infrastructure`,
+      date: '2025-01-30',
       readingTime: 10,
     },
+    {
+      id: '4',
+      title: tInsights('antiMimicry.title'),
+      excerpt: tInsights('antiMimicry.excerpt'),
+      category: tInsights('antiMimicry.category'),
+      href: `/${locale}/sectors/cyber-resilience`,
+      date: '2025-01-15',
+      readingTime: 18,
+    },
+    {
+      id: '5',
+      title: tInsights('sovereignAI.title'),
+      excerpt: tInsights('sovereignAI.excerpt'),
+      category: tInsights('sovereignAI.category'),
+      href: `/${locale}/sectors/ai-fusion-intelligence`,
+      date: '2024-12-20',
+      readingTime: 14,
+    },
+    {
+      id: '6',
+      title: tInsights('supplyChain.title'),
+      excerpt: tInsights('supplyChain.excerpt'),
+      category: tInsights('supplyChain.category'),
+      href: `/${locale}/sectors/ports-borders-logistics`,
+      date: '2024-12-05',
+      readingTime: 11,
+    },
   ];
+
+  const featured = sampleInsights[0];
+  const rest = sampleInsights.slice(1);
+
+  const categoryColors: Record<string, string> = {
+    'Technology': 'bg-sky-500/10 text-sky-400 border-sky-500/20',
+    'Technologie': 'bg-sky-500/10 text-sky-400 border-sky-500/20',
+    'Strategic Analysis': 'bg-violet-500/10 text-violet-400 border-violet-500/20',
+    'Analyse Stratégique': 'bg-violet-500/10 text-violet-400 border-violet-500/20',
+    'Whitepaper': 'bg-amber-500/10 text-amber-400 border-amber-500/20',
+    'Livre Blanc': 'bg-amber-500/10 text-amber-400 border-amber-500/20',
+    'Governance': 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
+    'Gouvernance': 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
+  };
 
   return (
     <>
@@ -64,52 +109,103 @@ export default async function InsightsPage({ params }: Props) {
       <section className="py-20 md:py-32">
         <div className="container">
           {/* Featured Article */}
-          <div className="mb-16">
-            <div className="p-8 md:p-12 rounded-3xl bg-surface border border-border">
-              <span className="inline-block px-3 py-1 text-xs font-medium text-accent bg-accent-muted rounded-full mb-4">
-                {t('featured')}
-              </span>
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
-                {sampleInsights[0].title}
-              </h2>
-              <p className="text-lg text-foreground-secondary mb-6 max-w-2xl">
-                {sampleInsights[0].excerpt}
-              </p>
-              <div className="flex items-center gap-4 text-sm text-foreground-muted">
-                <span>{sampleInsights[0].category}</span>
-                <span>•</span>
-                <span>{sampleInsights[0].readingTime} {t('minRead')}</span>
+          <div className="mb-20">
+            <Link href={featured.href} className="block relative p-8 md:p-12 lg:p-16 rounded-3xl bg-[#1a1b2e] border border-white/5 hover:border-white/10 transition-all duration-500 overflow-hidden group">
+              {/* Background accent */}
+              <div className="absolute top-0 right-0 w-1/2 h-full bg-linear-to-l from-sky-500/5 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-sky-500 via-violet-500 to-transparent opacity-60" />
+
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="inline-block px-3 py-1 text-xs font-semibold tracking-wider uppercase text-sky-400 bg-sky-500/10 border border-sky-500/20 rounded-full">
+                    {t('featured')}
+                  </span>
+                  <span className={`inline-block px-3 py-1 text-xs font-medium rounded-full border ${categoryColors[featured.category] || 'bg-white/5 text-white/60 border-white/10'}`}>
+                    {featured.category}
+                  </span>
+                </div>
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6 group-hover:text-sky-400 transition-colors leading-tight">
+                  {featured.title}
+                </h2>
+                <p className="text-base md:text-lg text-white/60 mb-8 max-w-4xl leading-relaxed">
+                  {featured.excerpt}
+                </p>
+                <div className="flex items-center gap-6 text-sm text-white/40">
+                  <span>{featured.date}</span>
+                  <span className="w-1 h-1 rounded-full bg-white/20" />
+                  <span>{featured.readingTime} {t('minRead')}</span>
+                  <span className="w-1 h-1 rounded-full bg-white/20" />
+                  <span className="text-sky-400/70 font-medium">{t('readMore')} →</span>
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
 
-          {/* Article Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {sampleInsights.map((insight) => (
-              <article
+          {/* Latest Label */}
+          <div className="mb-8">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.15em] text-foreground-secondary">{t('latest')}</h3>
+          </div>
+
+          {/* Article Grid — 2 large + 3 medium */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+            {rest.slice(0, 2).map((insight) => (
+              <Link
                 key={insight.id}
-                className="group p-6 rounded-2xl bg-surface border border-border hover:border-accent transition-colors cursor-pointer"
+                href={insight.href}
+                className="group relative block p-8 rounded-2xl bg-[#1a1b2e] border border-white/5 hover:border-white/10 transition-all duration-500 overflow-hidden"
               >
-                <span className="inline-block px-3 py-1 text-xs font-medium text-foreground-muted bg-surface-elevated rounded-full mb-4">
-                  {insight.category}
-                </span>
-                <h3 className="text-lg font-semibold text-foreground group-hover:text-accent transition-colors mb-3">
-                  {insight.title}
-                </h3>
-                <p className="text-sm text-foreground-secondary mb-4">
-                  {insight.excerpt}
-                </p>
-                <div className="flex items-center justify-between text-xs text-foreground-muted">
-                  <span>{insight.date}</span>
-                  <span>{insight.readingTime} {t('minRead')}</span>
+                <div className="absolute inset-0 bg-linear-to-br from-violet-500/3 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                <div className="relative z-10">
+                  <span className={`inline-block px-3 py-1 text-xs font-medium rounded-full border mb-5 ${categoryColors[insight.category] || 'bg-white/5 text-white/60 border-white/10'}`}>
+                    {insight.category}
+                  </span>
+                  <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-sky-400 transition-colors mb-4 leading-tight">
+                    {insight.title}
+                  </h3>
+                  <p className="text-sm text-white/50 mb-6 line-clamp-4 leading-relaxed">
+                    {insight.excerpt}
+                  </p>
+                  <div className="flex items-center gap-4 text-xs text-white/30">
+                    <span>{insight.date}</span>
+                    <span className="w-1 h-1 rounded-full bg-white/15" />
+                    <span>{insight.readingTime} {t('minRead')}</span>
+                  </div>
                 </div>
-              </article>
+              </Link>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {rest.slice(2).map((insight) => (
+              <Link
+                key={insight.id}
+                href={insight.href}
+                className="group relative block p-6 rounded-2xl bg-[#1a1b2e] border border-white/5 hover:border-white/10 transition-all duration-500 overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-linear-to-br from-sky-500/3 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                <div className="relative z-10">
+                  <span className={`inline-block px-3 py-1 text-xs font-medium rounded-full border mb-4 ${categoryColors[insight.category] || 'bg-white/5 text-white/60 border-white/10'}`}>
+                    {insight.category}
+                  </span>
+                  <h3 className="text-lg font-bold text-white group-hover:text-sky-400 transition-colors mb-3 leading-tight">
+                    {insight.title}
+                  </h3>
+                  <p className="text-sm text-white/50 mb-5 line-clamp-3 leading-relaxed">
+                    {insight.excerpt}
+                  </p>
+                  <div className="flex items-center gap-4 text-xs text-white/30">
+                    <span>{insight.date}</span>
+                    <span className="w-1 h-1 rounded-full bg-white/15" />
+                    <span>{insight.readingTime} {t('minRead')}</span>
+                  </div>
+                </div>
+              </Link>
             ))}
           </div>
 
           {/* Coming Soon Notice */}
-          <div className="mt-16 text-center">
-            <p className="text-foreground-muted">
+          <div className="mt-20 text-center py-12 rounded-2xl border border-white/5 bg-[#1a1b2e]/50">
+            <p className="text-white/40 text-sm">
               {t('comingSoon')}
             </p>
           </div>
