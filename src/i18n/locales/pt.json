@@ -523,153 +523,185 @@
 
     "cyberResilience": {
       "hero": {
-        "title": "Resiliência Cibernética",
-        "subtitle": "Arquitetura de Segurança Zero-Trust",
-        "lead": "A HC-1 previne perturbações cibernéticas através de arquitetura zero-trust, deteção contínua de ameaças e resposta coordenada a incidentes—não limpeza reativa."
+        "title": "HCS-U7 Cibersegurança Cognitiva",
+        "subtitle": "Plataforma Patenteada de Autenticação Humana & Defesa IA",
+        "lead": "O HCS-U7 é um sistema de autenticação cognitiva patenteado que prova que é humano — não um bot, não uma repetição, não uma IA. Deteção anti-mimetismo de 11 camadas, criptografia pós-quântica e machine learning autónomo protegem a sua infraestrutura contra as ameaças mais sofisticadas."
       },
       "stats": {
         "threats": {
-          "value": "10,000+",
-          "label": "ameaças bloqueadas diariamente"
+          "value": "99,5%",
+          "label": "taxa de rejeição de ataques — zero vulnerabilidade explorável"
         },
         "detection": {
-          "value": "<5min",
-          "label": "tempo médio de deteção"
+          "value": "<1ms",
+          "label": "latência de inferência ML (Brain ML v2.0)"
         },
         "containment": {
-          "value": "<15min",
-          "label": "tempo médio de contenção"
+          "value": "11",
+          "label": "camadas de deteção anti-mimetismo independentes"
         }
       },
       "overview": {
-        "heading": "O Desafio",
-        "intro": "Ameaças cibernéticas evoluem mais rápido que capacidades defensivas. Segurança de perímetro falhou. A HC-1 implementa princípios zero-trust, assumindo compromisso e prevenindo movimento lateral.",
+        "heading": "Três Pilares da Defesa Cognitiva",
+        "intro": "O HCS-U7 vai além da cibersegurança tradicional. A nossa tecnologia patenteada combina ciência cognitiva, machine learning e criptografia pós-quântica para criar um sistema de autenticação impossível de enganar, repetir ou forçar.",
         "landscape": {
-          "title": "Panorama de Ameaças",
+          "title": "Motor Brain ML",
           "points": [
-            "APTs patrocinados por Estados visando infraestruturas críticas",
-            "Ransomware visando tecnologia operacional",
-            "Compromissos de cadeia de abastecimento (padrões SolarWinds, Kaseya)"
+            "Classificador Gradient Boosting com vetor de características comportamentais de 43 dimensões",
+            "Ciclo fechado autónomo: OBSERVAR → ANALISAR → DECIDIR → AGIR → AVALIAR → IMPLEMENTAR",
+            "Deteção de desvio via PSI (Population Stability Index) + monitorização de precisão EWMA/CUSUM"
           ]
         },
         "gaps": {
-          "title": "Lacunas de Segurança",
+          "title": "Defesa Anti-Mimetismo",
           "points": [
-            "Modelos de segurança legados baseados em perímetro",
-            "Convergência OT/IT cria pontos cegos",
-            "Resposta a incidentes depende de processos manuais"
+            "11 camadas de deteção independentes: entropia de Shannon, micro-tremor, lei de Benford, DFA fractal, distância de Mahalanobis, impressão de repetição, desvio cognitivo",
+            "Camadas V2: pesos de sessão aleatorizados, parâmetros de modelo secretos, simulação adversarial, deteção de calibração adaptativa",
+            "Auto-calibração FAR/FRR em 4 janelas deslizantes sem etiquetas manuais"
           ]
         },
         "impact": {
-          "title": "Impacto Empresarial",
+          "title": "Criptografia Pós-Quântica",
           "points": [
-            "Tempo de inatividade ransomware: 15-30 dias em média",
-            "Custos de violação de dados: $4.5M em média",
-            "Danos reputacionais estendem-se além do incidente"
+            "CRYSTALS-Dilithium (ML-DSA-65) assinaturas digitais resistentes a quântica — NIST FIPS 204",
+            "CRYSTALS-Kyber (ML-KEM-768) encapsulação de chave resistente a quântica + AES-256-GCM — NIST FIPS 203",
+            "Tripla assinatura independente: QSIG (HMAC-SHA256) + B3 (BLAKE3) + MFB (Multi-Factor Binding) com separação de chaves HKDF"
           ]
         }
       },
       "risks": {
-        "heading": "Vulnerabilidades Críticas",
+        "heading": "Ameaças que Neutralizamos",
         "technical": {
-          "title": "Riscos Técnicos",
+          "title": "Vetores de Ataque Bloqueados",
           "items": [
             {
-              "label": "Movimento lateral",
-              "details": "Redes planas permitem atacantes pivotarem; Escalada de privilégios trivial"
+              "label": "Mimetismo IA & preenchimento de credenciais",
+              "details": "Estratégias avançadas de evasão ML — aleatório naive, intervalos aprendidos, correlação-aware, temporal-aware, mimetismo estatístico, otimizado adversarial — todas neutralizadas pelo motor anti-mimetismo de 11 camadas"
             },
             {
-              "label": "Exposição OT",
-              "details": "Sistemas industriais acessíveis de IT; Protocolos legados carecem de autenticação"
+              "label": "Falsificação JWT & ataques de injeção",
+              "details": "Bypass alg:none, tokens expirados, segredos fracos, injeção SQL/NoSQL, injeção null byte, CRLF — cada vetor bloqueado na camada de autenticação"
             },
             {
-              "label": "Pontos cegos",
-              "details": "Tráfego encriptado não inspecionado; Ativos cloud não monitorizados"
+              "label": "Cross-tenant & escalada de privilégios",
+              "details": "IDOR, acesso a dados cross-tenant, injeção de body, escalada de privilégios — nenhum bypass possível em todas as superfícies de ataque"
             }
           ]
         },
         "operational": {
-          "title": "Riscos Operacionais",
+          "title": "Resiliência Integrada",
           "items": [
             {
-              "label": "Fadiga de alertas",
-              "details": "SOC sobrecarregado por falsos positivos; Ameaças reais perdidas no ruído"
+              "label": "Proteção contra null byte & injeção",
+              "details": "Sanitização de entrada em cada ponto de acesso. Caracteres de controlo, ataques de codificação e payloads malformados são removidos antes de alcançar qualquer base de dados ou camada de serviço"
             },
             {
-              "label": "Resposta manual",
-              "details": "Playbooks de incidentes não automatizados; Tempo de resposta medido em horas"
+              "label": "Pipeline de verificação constant-time",
+              "details": "Pipeline ISO-CRÓNICO: iteração fixa em 5 janelas, sem retorno antecipado, comparação constant-time, acumulação bitwise — elimina todos os canais laterais baseados em timing"
             },
             {
-              "label": "Escassez de competências",
-              "details": "Impossível contratar/reter talento de segurança; Dependência de consultores externos"
+              "label": "Resposta a incidentes autónoma",
+              "details": "Pipeline automatizado de deteção a remediação: detetar → diagnosticar → corrigir → implementar → verificar. Tempo médio de remediação inferior a 19 minutos para vulnerabilidades críticas"
             }
           ]
         }
       },
       "approach": {
-        "heading": "Abordagem HC-1: Assumir Compromisso",
-        "intro": "A HC-1 implementa princípios zero-trust: verificar explicitamente, acesso de menor privilégio e assumir compromisso. Prevenção, deteção e resposta são arquitetadas como sistema unificado.",
+        "heading": "Arquitetura HCS-U7: Defesa em Profundidade",
+        "intro": "Cada camada do HCS-U7 é projetada para ser independentemente segura. Comprometer uma camada, as outras mantêm-se. Os desafios cognitivos provam humanidade, o ML classifica comportamento, e a criptografia pós-quântica garante que o código não pode ser falsificado — mesmo por um computador quântico.",
         "zerotrust": {
-          "title": "Arquitetura Zero-Trust",
-          "description": "Micro-segmentação, autenticação contínua, acesso de menor privilégio, tudo encriptado.",
-          "outcome": "Movimento lateral prevenido. Compromisso contido a ativo único."
+          "title": "Autenticação Cognitiva",
+          "description": "Desafios cognitivos multi-domínio (Stroop, N-Back, RAN vocal, extensão de dígitos, tempo de reação) geram um código de identidade humana com 16 segmentos criptográficos. A impressão comportamental captura padrões de interação passivos. A Entropia Celestial adiciona aleatoriedade astronómica via posições orbitais planetárias com desfasamento temporal secreto.",
+          "outcome": "Cada código HCS-U7 é criptograficamente único, ligado ao dispositivo + voz + tenant, e expira em janelas de 30 segundos."
         },
         "soc": {
-          "title": "SOC/NOC 24/7",
-          "description": "Deteção de ameaças em tempo real, deteção de anomalias impulsionada por IA, playbooks de resposta automatizados.",
-          "outcome": "Ameaças detetadas em minutos, contidas em <15 minutos."
+          "title": "Ciclo ML Autónomo (Brain v2.0)",
+          "description": "Sistema de ciclo fechado em 6 fases: deteção de desvio (PSI + EWMA/CUSUM), matriz de decisão determinística (prioridades P0-P3), retrain automático com early stopping, guarda avaliador de 7 portas (regressão AUC, precisão ≥95%, latência <1ms, tamanho <200KB, overfit ≤0.03), implementação atómica com checksums SHA-256, e SAFE_STATIC_MODE fail-safe.",
+          "outcome": "Defesa auto-melhorante que se adapta a novos padrões de ataque sem intervenção humana. Circuit breaker congela após 3 rollbacks consecutivos."
         },
         "intelligence": {
-          "title": "Inteligência de Ameaças",
-          "description": "Integração de feeds OSINT, SIGINT e ameaças proprietárias. Modelação preditiva de ameaças.",
-          "outcome": "Ataques antecipados antes do lançamento. Postura defensiva proativa."
+          "title": "Tripla Assinatura & Arquitetura PQC",
+          "description": "Cada código transporta 3 assinaturas criptográficas independentes com chaves derivadas HKDF: QSIG (temporal + cognitivo + entropia celestial), B3 (hash canónico BLAKE3), MFB (ligação tenant + dispositivo + impressão vocal). A camada pós-quântica adiciona assinaturas ML-DSA-65 e encapsulação de chave ML-KEM-768 com implementação progressiva.",
+          "outcome": "Comprometer uma chave nunca compromete as outras. Resistente a quântica desde o primeiro dia."
         }
       },
       "value": {
-        "heading": "Impacto Mensurável",
+        "heading": "Garantias de Desempenho",
         "detection": {
-          "metric": "<5min",
-          "label": "Tempo Médio de Deteção",
-          "impact": "Ameaças identificadas antes do impacto",
-          "method": "Deteção de anomalias impulsionada por IA"
+          "metric": "99,5%",
+          "label": "Taxa de Rejeição de Ataques",
+          "impact": "Cada vetor de ataque conhecido bloqueado — zero vulnerabilidade explorável",
+          "method": "Anti-mimetismo 11 camadas + tripla assinatura + criptografia pós-quântica"
         },
         "containment": {
-          "metric": "<15min",
-          "label": "Tempo Médio de Contenção",
-          "impact": "Compromisso isolado imediatamente",
-          "method": "Playbooks de resposta automatizados"
+          "metric": "<1ms",
+          "label": "Latência de Inferência ML",
+          "impact": "Classificação em tempo real com vetor de características de 43 dimensões",
+          "method": "Gradient Boosting com worker Docker isolado — separação CPU garante latência"
         },
         "prevented": {
-          "metric": "10,000+",
-          "label": "Ameaças Diárias Bloqueadas",
-          "impact": "Ataques parados no perímetro",
-          "method": "Defesa em camadas + inteligência de ameaças"
+          "metric": "<19min",
+          "label": "Tempo Médio de Remediação",
+          "impact": "Da deteção à correção verificada em produção",
+          "method": "Pipeline automatizado: detetar → diagnosticar → corrigir → implementar → verificar"
         }
       },
       "useCases": {
-        "heading": "Cenários Operacionais",
+        "heading": "Cenários de Proteção",
         "ransomware": {
-          "title": "Ataque Ransomware — Serviços Financeiros",
-          "description": "Infraestrutura bancária visada por ransomware. Segmentação zero-trust da HC-1 previne propagação, SOC isola endpoints comprometidos, recuperação de backups imutáveis completada em 4 horas. Perda de $50M+ evitada."
+          "title": "Defesa contra Bots & Usurpação IA",
+          "description": "Bots IA sofisticados tentam mimetizar comportamento humano — padrões temporais aprendidos, interações correlacionadas, mimetismo estatístico de respostas cognitivas. O motor anti-mimetismo de 11 camadas do HCS-U7 analisa a entropia de Shannon, micro-tremores, lei de Benford, dimensões fractais e distância de Mahalanobis para distinguir humanos de máquinas com >85% de taxa de bloqueio em cada estratégia."
         },
         "apt": {
-          "title": "Campanha APT — Contratante de Defesa",
-          "description": "APT de Estado-nação estabelece persistência em rede de engenharia. Analytics comportamentais da HC-1 detetam exfiltração de dados anómala, equipa de resposta a incidentes expulsa atacante, forense identifica sistemas comprometidos. IP protegida."
+          "title": "Proteção contra Injeção & Falsificação",
+          "description": "Atacantes visam a autenticação com falsificação JWT, injeção SQL/NoSQL, injeção null byte, manipulação CRLF, sequestro de sessão e poluição de protótipo. O HCS-U7 bloqueia cada vetor na camada de autenticação com sanitização de entrada, verificação constant-time e validação de tripla assinatura independente."
         },
         "supply": {
-          "title": "Compromisso de Cadeia de Abastecimento — Atualização de Software",
-          "description": "Atualização de software de fornecedor contém backdoor. Verificações de integridade de código da HC-1 sinalizam anomalia, atualização bloqueada, fornecedor notificado. Zero-day prevenido de implementação."
+          "title": "Proteção de Chaves Resistente a Quântica",
+          "description": "Futuros computadores quânticos ameaçam os padrões criptográficos atuais. O HCS-U7 implementa CRYSTALS-Dilithium (ML-DSA-65) para assinaturas resistentes a quântica e CRYSTALS-Kyber (ML-KEM-768) para encapsulação de chave, conforme NIST FIPS 203/204. A arquitetura de tripla assinatura garante que nenhuma comprometimento de chave única pode quebrar o sistema."
         }
       },
       "capabilities": {
-        "heading": "Capacidades Integradas",
-        "intro": "A HC-1 fornece resiliência cibernética através da implementação coordenada de capacidades especializadas:"
+        "heading": "Stack Tecnológico HCS-U7",
+        "intro": "O HCS-U7 fornece cibersegurança cognitiva através de um stack coordenado de tecnologias patenteadas:"
+      },
+      "capabilityCards": {
+        "brainML": {
+          "name": "Brain ML v2.0",
+          "tagline": "Motor de Machine Learning Autónomo",
+          "description": "Classificador Gradient Boosting com vetor de características comportamentais de 43 dimensões. Aprendizagem em ciclo fechado autónomo: observar, analisar, decidir, agir, avaliar, implementar — com guarda avaliador de 7 portas e SAFE_STATIC_MODE fail-safe."
+        },
+        "antiMimicry": {
+          "name": "Motor Anti-Mimetismo",
+          "tagline": "Deteção de Bots em 11 Camadas",
+          "description": "Entropia de Shannon, análise de micro-tremor, lei de Benford, DFA fractal, distância de Mahalanobis, impressão de repetição, deteção de desvio cognitivo. V2 adiciona pesos de sessão aleatorizados, parâmetros de modelo secretos e calibração adaptativa."
+        },
+        "pqc": {
+          "name": "Criptografia Pós-Quântica",
+          "tagline": "Conforme NIST FIPS 203/204",
+          "description": "CRYSTALS-Dilithium (ML-DSA-65) assinaturas digitais resistentes a quântica e CRYSTALS-Kyber (ML-KEM-768) encapsulação de chave com cifra AES-256-GCM. Proteção a longo prazo contra ameaças da computação quântica."
+        },
+        "celestialEntropy": {
+          "name": "Entropia Celestial",
+          "tagline": "Fonte de Aleatoriedade Astronómica",
+          "description": "Entropia derivada de posições orbitais planetárias em tempo real com desfasamento temporal secreto. Aleatoriedade imprevisível e não reproduzível que torna cada código de autenticação astronomicamente único."
+        },
+        "tripleSig": {
+          "name": "Arquitetura de Tripla Assinatura",
+          "tagline": "Ligação Criptográfica Independente",
+          "description": "Três assinaturas independentes por código: QSIG (temporal + cognitivo + celestial), B3 (hash canónico BLAKE3), MFB (tenant + dispositivo + impressão vocal). A separação de chaves HKDF garante que comprometer uma nunca compromete as outras."
+        },
+        "dockerIsolation": {
+          "name": "Isolamento Worker Docker",
+          "tagline": "Separação de Computação Segura",
+          "description": "A inferência ML executa em contentores Docker isolados com alocação CPU dedicada. O isolamento ao nível do processo previne ataques de canal lateral e garante latência <1ms para classificação em tempo real."
+        }
       },
       "cta": {
-        "heading": "Construir Resiliência Zero-Trust",
-        "description": "A HC-1 trabalha com empresas, operadores de infraestruturas críticas e organizações de defesa para implementar arquiteturas zero-trust e segurança operacional.",
-        "primary": "Avaliar a Sua Postura de Segurança",
-        "secondary": "Explorar Todas as Capacidades"
+        "heading": "Implementar Autenticação Cognitiva",
+        "description": "O HCS-U7 é a primeira plataforma de autenticação cognitiva patenteada do mundo com ML autónomo, criptografia pós-quântica e defesa anti-mimetismo de 11 camadas — protegendo a sua infraestrutura contra as ameaças de hoje e de amanhã.",
+        "primary": "Solicitar Avaliação de Segurança",
+        "secondary": "Explorar a Tecnologia"
       }
     },
 
@@ -1057,28 +1089,45 @@
 
   "insightsPage": {
     "hero": {
-      "title": "Análises",
-      "tagline": "Liderança de Pensamento",
-      "description": "Perspetivas estratégicas sobre segurança, tecnologia e resiliência operacional da nossa equipa de especialistas."
+      "title": "Análises & Perspetivas",
+      "tagline": "Inteligência Estratégica",
+      "description": "Análises aprofundadas sobre ameaças emergentes, tecnologia de defesa e resiliência operacional — da autenticação cognitiva à criptografia pós-quântica, proteção de infraestruturas críticas e governança de IA soberana."
     },
     "featured": "Destaque",
+    "latest": "Últimas Publicações",
     "minRead": "min de leitura",
-    "comingSoon": "Mais análises em breve. Conecte-se connosco para receber atualizações.",
+    "readMore": "Ler a análise completa",
+    "comingSoon": "Novas análises publicadas regularmente. Subscreva a nossa inteligência estratégica para se manter informado.",
     "sampleInsights": {
-      "infrastructure": {
-        "title": "A Evolução da Proteção de Infraestruturas Críticas",
-        "excerpt": "Como as ameaças convergentes estão a remodelar as estratégias de segurança para serviços essenciais.",
-        "category": "Análise Estratégica"
-      },
-      "aiSecurity": {
-        "title": "IA na Segurança Nacional: Oportunidades e Governança",
-        "excerpt": "Equilibrar a inovação com a implementação responsável em ambientes sensíveis.",
+      "cognitiveAuth": {
+        "title": "Porque a Autenticação Cognitiva Vai Substituir os CAPTCHAs",
+        "excerpt": "Os CAPTCHAs tradicionais estão obsoletos. A IA resolve-os mais rápido que os humanos. O HCS-U7 introduz uma abordagem fundamentalmente diferente: desafios cognitivos multi-domínio — Stroop, N-Back, extensão de dígitos, RAN vocal — que geram códigos de identidade humana criptograficamente únicos. Ao contrário dos CAPTCHAs que testam reconhecimento de padrões, a autenticação cognitiva mede a assinatura neurológica do pensamento humano. Combinada com deteção anti-mimetismo de 11 camadas, esta abordagem atinge uma taxa de rejeição de ataques de 99,5% permanecendo invisível para utilizadores legítimos.",
         "category": "Tecnologia"
       },
-      "cyberResilience": {
-        "title": "Construir Resiliência Cibernética no Setor Energético",
-        "excerpt": "Lições aprendidas ao proteger tecnologia operacional em ambientes complexos.",
-        "category": "Estudo de Caso"
+      "pqcReadiness": {
+        "title": "Criptografia Pós-Quântica: Está Preparado para o Q-Day?",
+        "excerpt": "Quando os computadores quânticos de grande escala chegarem, cada chave RSA e ECC no mundo torna-se vulnerável. A ameaça não é teórica — Estados-nação já estão a recolher dados encriptados hoje para desencriptar amanhã. O NIST finalizou os padrões FIPS 203 (ML-KEM) e FIPS 204 (ML-DSA). Organizações que atrasam a migração enfrentam uma janela que se estreita. Esta análise examina os passos práticos para implementar CRYSTALS-Dilithium e CRYSTALS-Kyber em ambientes de produção, incluindo gestão de chaves, implicações de desempenho e o caso para esquemas híbridos clássico-quântico durante a transição.",
+        "category": "Análise Estratégica"
+      },
+      "criticalInfra": {
+        "title": "Convergência OT/IT: A Superfície de Ataque Invisível",
+        "excerpt": "A convergência da tecnologia operacional e redes IT criou superfícies de ataque que nem as equipas OT nem as equipas IT compreendem totalmente. Sistemas SCADA projetados para redes isoladas agora conectam-se a analíticas cloud. Controladores industriais partilham largura de banda com email corporativo. Uma única credencial comprometida pode fazer a ponte entre um laptop corporativo e um relé de rede elétrica. Analisamos o panorama de ameaças emergentes nos setores de energia, água e transportes — e os padrões arquiteturais que previnem movimento lateral de IT para OT sem sacrificar os benefícios operacionais da convergência.",
+        "category": "Análise Estratégica"
+      },
+      "antiMimicry": {
+        "title": "O Problema do Anti-Mimetismo: Quando a IA Aprende a Fingir Ser Humana",
+        "excerpt": "Os bots IA modernos podem simular timing, movimentos de rato e padrões de interação semelhantes aos humanos com precisão estatística. A biometria comportamental padrão já não é suficiente. O desafio anti-mimetismo requer uma abordagem multi-camadas: análise de entropia de Shannon de sequências de interação, deteção de desvio da lei de Benford, análise de dimensão fractal via DFA, distância de Mahalanobis de baselines populacionais e rastreamento de desvio cognitivo entre sessões. Este documento apresenta os fundamentos matemáticos da defesa anti-mimetismo de 11 camadas e porque cada camada deve operar independentemente para resistir à otimização adversarial.",
+        "category": "Livro Branco"
+      },
+      "sovereignAI": {
+        "title": "IA Soberana: Porque a Segurança Nacional Exige Inteligência Local",
+        "excerpt": "A dependência de infraestruturas IA estrangeiras para decisões de segurança nacional é uma vulnerabilidade estratégica. Quando inteligência de ameaças, reconhecimento facial ou pipelines de decisão crítica passam por fornecedores cloud terceiros, a soberania é comprometida. Esta análise examina o caso da IA soberana — sistemas de machine learning implementados localmente, treinados localmente, controlados localmente para defesa, inteligência e forças da ordem. Exploramos os compromissos entre capacidade e controlo, os requisitos de infraestrutura para IA on-premise em escala, e os quadros de governança que asseguram implementação responsável sem sacrificar eficácia operacional.",
+        "category": "Governança"
+      },
+      "supplyChain": {
+        "title": "Proteger a Cadeia de Abastecimento Digital: De SolarWinds a MOVEit",
+        "excerpt": "Os ataques à cadeia de abastecimento evoluíram de risco teórico para realidade operacional. SolarWinds, Kaseya, Log4j, MOVEit — cada incidente revelou fraquezas sistémicas na forma como as organizações confiam nos seus fornecedores. A superfície de ataque estende-se além do software: cadeias de abastecimento de hardware, atualizações de firmware e até dependências open-source são vetores. Esta análise mapeia o panorama completo de ameaças da cadeia de abastecimento para operadores de infraestruturas críticas e apresenta um quadro prático para avaliação de risco de fornecedores, gestão de nomenclatura de software (SBOM) e abordagens zero-trust para integração de terceiros.",
+        "category": "Análise Estratégica"
       }
     }
   },
