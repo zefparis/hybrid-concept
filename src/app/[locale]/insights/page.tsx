@@ -110,7 +110,7 @@ export default async function InsightsPage({ params }: Props) {
         <div className="container">
           {/* Featured Article */}
           <div className="mb-20">
-            <Link href={featured.href} className="block relative p-8 md:p-12 lg:p-16 rounded-3xl bg-[#1a1b2e] border border-white/5 hover:border-white/10 transition-all duration-500 overflow-hidden group">
+            <Link href={featured.href} className="block relative p-8 md:p-12 lg:p-16 rounded-3xl bg-surface-card border border-white/8 hover:border-white/10 transition-all duration-500 overflow-hidden group">
               {/* Background accent */}
               <div className="absolute top-0 right-0 w-1/2 h-full bg-linear-to-l from-sky-500/5 via-transparent to-transparent pointer-events-none" />
               <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-sky-500 via-violet-500 to-transparent opacity-60" />
@@ -152,7 +152,7 @@ export default async function InsightsPage({ params }: Props) {
               <Link
                 key={insight.id}
                 href={insight.href}
-                className="group relative block p-8 rounded-2xl bg-[#1a1b2e] border border-white/5 hover:border-white/10 transition-all duration-500 overflow-hidden"
+                className="group relative block p-8 rounded-2xl bg-surface-card border border-white/8 hover:border-white/10 transition-all duration-500 overflow-hidden"
               >
                 <div className="absolute inset-0 bg-linear-to-br from-violet-500/3 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                 <div className="relative z-10">
@@ -180,7 +180,7 @@ export default async function InsightsPage({ params }: Props) {
               <Link
                 key={insight.id}
                 href={insight.href}
-                className="group relative block p-6 rounded-2xl bg-[#1a1b2e] border border-white/5 hover:border-white/10 transition-all duration-500 overflow-hidden"
+                className="group relative block p-6 rounded-2xl bg-surface-card border border-white/8 hover:border-white/10 transition-all duration-500 overflow-hidden"
               >
                 <div className="absolute inset-0 bg-linear-to-br from-sky-500/3 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                 <div className="relative z-10">
@@ -204,7 +204,7 @@ export default async function InsightsPage({ params }: Props) {
           </div>
 
           {/* Coming Soon Notice */}
-          <div className="mt-20 text-center py-12 rounded-2xl border border-white/5 bg-[#1a1b2e]/50">
+          <div className="mt-20 text-center py-12 rounded-2xl border border-white/5 bg-surface-card/50">
             <p className="text-white/40 text-sm">
               {t('comingSoon')}
             </p>

@@ -75,7 +75,7 @@ export function ApproachSection({ sector }: ApproachSectionProps) {
                 className={`flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
                   activeTab === tab
                     ? 'bg-[#38bdf8] text-white shadow-lg shadow-[#38bdf8]/20'
-                    : 'bg-[#1a1b2e] text-white/60 border border-white/5 hover:border-white/10 hover:text-white'
+                    : 'bg-surface-card text-white/60 border border-white/8 hover:border-white/15 hover:text-white'
                 }`}
               >
                 <Icon className="w-5 h-5" />
@@ -91,7 +91,7 @@ export function ApproachSection({ sector }: ApproachSectionProps) {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="group relative p-8 md:p-10 rounded-2xl bg-[#1a1b2e] border border-white/5 shadow-xl overflow-hidden"
+          className="group relative p-8 md:p-10 rounded-2xl bg-surface-card border border-white/8 shadow-xl overflow-hidden"
         >
           {/* Background SVG */}
           <svg className="absolute inset-0 w-full h-full text-white transition-transform duration-700 pointer-events-none" viewBox="0 0 800 400" fill="none" stroke="currentColor">

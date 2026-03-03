@@ -527,7 +527,7 @@ export function SectorGrid({ title }: SectorGridProps) {
                 href={`/sectors/${sector.slug}`}
                 className={cn(
                   'group relative block h-full p-8 md:p-10 rounded-2xl overflow-hidden',
-                  'bg-[#1a1b2e] border border-white/5',
+                  'bg-surface-card border border-white/8',
                   'hover:border-white/10 hover-lift shadow-xl',
                   'transition-all duration-500'
                 )}

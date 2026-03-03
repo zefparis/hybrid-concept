@@ -168,7 +168,7 @@ export function SectorOverview({ sector }: SectorOverviewProps) {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView && !prefersReducedMotion ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: idx * 0.1 }}
-                className="group relative p-8 md:p-10 rounded-2xl bg-[#1a1b2e] border border-white/5 hover:border-white/10 hover-lift shadow-xl transition-all duration-500 overflow-hidden"
+                className="group relative p-8 md:p-10 rounded-2xl bg-surface-card border border-white/8 hover:border-white/15 hover-lift shadow-xl transition-all duration-500 overflow-hidden"
               >
                 {/* Background Graphic */}
                 {OVERVIEW_BACKGROUNDS[idx]}

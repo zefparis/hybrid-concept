@@ -149,7 +149,7 @@ export function OperatingModel() {
                 className="relative flex flex-col items-center"
               >
                 {/* Card */}
-                <div className="group w-full relative p-6 rounded-2xl bg-[#1a1b2e] border border-white/5 text-center hover:border-white/10 hover-lift shadow-xl transition-all duration-500 overflow-hidden">
+                <div className="group w-full relative p-6 rounded-2xl bg-surface-card border border-white/8 text-center hover:border-white/10 hover-lift shadow-xl transition-all duration-500 overflow-hidden">
                   {/* Background Graphic */}
                   {STEP_BACKGROUNDS[key]}
 

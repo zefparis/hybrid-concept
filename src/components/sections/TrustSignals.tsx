@@ -237,7 +237,7 @@ export function TrustSignals() {
 
   const cardClasses = cn(
     'group relative p-8 md:p-10 rounded-2xl overflow-hidden',
-    'bg-[#1a1b2e] border border-white/5',
+    'bg-surface-card border border-white/8',
     'hover:border-white/10 hover-lift shadow-xl',
     'transition-all duration-500'
   );
