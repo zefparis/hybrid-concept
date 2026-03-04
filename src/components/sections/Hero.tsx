@@ -44,8 +44,9 @@ export function Hero({
   secondaryCta,
   variant = 'home',
   backgroundImage,
+  backgroundVideo,
   showCta = true,
-}: Partial<HeroProps> & { variant?: 'home' | 'page' | 'minimal'; backgroundImage?: string; showCta?: boolean } = {}) {
+}: Partial<HeroProps> & { variant?: 'home' | 'page' | 'minimal'; backgroundImage?: string; backgroundVideo?: string; showCta?: boolean } = {}) {
   const t = useTranslations('hero');
   const tCommon = useTranslations('common');
   const sectionRef = useRef<HTMLElement>(null);
@@ -67,7 +68,7 @@ export function Hero({
       className={cn(
         'relative flex items-center justify-center overflow-hidden',
         isHome && 'min-h-screen',
-        !isHome && !isMinimal && backgroundImage && 'min-h-[90vh] pt-20 pb-20',
+        !isHome && !isMinimal && (backgroundImage || backgroundVideo) && 'min-h-[90vh] pt-20 pb-20',
         !isHome && !isMinimal && !backgroundImage && 'min-h-[60vh] pt-16 pb-20',
         isMinimal && 'pt-16 pb-16'
       )}
@@ -84,14 +85,25 @@ export function Hero({
           className="absolute inset-0 bg-no-repeat"
           style={{ 
             backgroundImage: `url(${backgroundImage})`,
-            backgroundSize: 'cover',
+            backgroundSize: 'contain',
             backgroundPosition: 'center center'
           }}
         />
       )}
+      {backgroundVideo && (
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover -z-10"
+        >
+          <source src={backgroundVideo} type="video/mp4" />
+        </video>
+      )}
       
       {/* Dark overlay for readability */}
-      {(isHome || backgroundImage) && (
+      {(isHome || backgroundImage || backgroundVideo) && (
         <div className={cn('absolute inset-0', isHome ? 'bg-background/50' : 'bg-black/60')} />
       )}
       
@@ -118,7 +130,8 @@ export function Hero({
         className={cn(
           'relative z-10 w-full max-w-5xl mx-auto px-6 md:px-12',
           isHome && 'text-center',
-          !isHome && 'text-left'
+          !isHome && 'text-left',
+          backgroundImage && 'mt-20 md:mt-32 mr-auto ml-0 md:pl-8'
         )}
       >
         {/* Subtitle (overline) */}

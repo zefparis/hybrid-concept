@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import Link from 'next/link';
-import { Hero } from '@/components/sections';
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
@@ -99,12 +98,30 @@ export default async function InsightsPage({ params }: Props) {
 
   return (
     <>
-      <Hero
-        title={tHero('title')}
-        tagline={tHero('tagline')}
-        description={tHero('description')}
-        variant="page"
-      />
+      {/* Video Hero Section */}
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/video/edge.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-6 md:px-12 text-left">
+          <p className="uppercase tracking-[0.2em] mb-6 text-white drop-shadow-lg text-lg md:text-xl">
+            {tHero('tagline')}
+          </p>
+          <h1 className="font-bold mb-8 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] text-display-lg md:text-display-xl">
+            {tHero('title')}
+          </h1>
+          <p className="leading-relaxed text-white/95 drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)] text-heading-md md:text-heading-lg max-w-3xl">
+            {tHero('description')}
+          </p>
+        </div>
+      </section>
 
       <section className="py-20 md:py-32">
         <div className="container">
