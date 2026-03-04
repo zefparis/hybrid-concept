@@ -99,7 +99,7 @@ export default async function InsightsPage({ params }: Props) {
   return (
     <>
       {/* Video Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden">
         <video
           autoPlay
           loop
@@ -110,14 +110,14 @@ export default async function InsightsPage({ params }: Props) {
           <source src="/video/edge.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/60" />
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-6 md:px-12 text-left">
-          <p className="uppercase tracking-[0.2em] mb-6 text-white drop-shadow-lg text-lg md:text-xl">
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 md:px-12 text-left pt-16">
+          <p className="uppercase tracking-[0.15em] md:tracking-[0.2em] mb-4 md:mb-6 text-white drop-shadow-lg text-sm md:text-lg lg:text-xl">
             {tHero('tagline')}
           </p>
-          <h1 className="font-bold mb-8 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] text-display-lg md:text-display-xl">
+          <h1 className="font-bold mb-6 md:mb-8 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] text-3xl sm:text-4xl md:text-5xl lg:text-display-lg xl:text-display-xl">
             {tHero('title')}
           </h1>
-          <p className="leading-relaxed text-white/95 drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)] text-heading-md md:text-heading-lg max-w-3xl">
+          <p className="leading-relaxed text-white/95 drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)] text-base md:text-heading-md lg:text-heading-lg max-w-3xl">
             {tHero('description')}
           </p>
         </div>
