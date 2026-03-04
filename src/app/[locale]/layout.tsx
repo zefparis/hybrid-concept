@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { Header, Footer } from '@/components/layout';
 import { locales, type Locale } from '@/i18n/config';
+import { HCSWidgetScript } from '@/components/ui/HCSWidgetScript';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -66,11 +66,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <Header />
       <main className="min-h-screen pt-16 md:pt-20">{children}</main>
       <Footer />
-      <Script
-        src="https://hcs-widget-mvp.vercel.app/widget/v3/hcs-widget.js"
-        data-widget="wid_252792d76ceaa21f2d263aab"
-        strategy="afterInteractive"
-      />
+      <HCSWidgetScript />
     </NextIntlClientProvider>
   );
 }

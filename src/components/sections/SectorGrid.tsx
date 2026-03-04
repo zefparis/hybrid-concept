@@ -31,9 +31,11 @@ const ICONS: Record<string, React.ReactNode> = {
       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
     </svg>
   ),
-  ai: (
+  agriculture: (
     <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 21c0 0-8-4-8-11a8 8 0 0116 0c0 7-8 11-8 11z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 21V10" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8 14c2-2 4-4 4-4s2 2 4 4" />
     </svg>
   ),
 };
@@ -386,90 +388,78 @@ const SECTOR_BACKGROUNDS: Record<string, React.ReactNode> = {
   ),
   ai: (
     <svg className="absolute inset-0 w-full h-full text-white transition-transform duration-700 group-hover:scale-105 pointer-events-none" viewBox="0 0 500 500" fill="none" stroke="currentColor">
-      {/* Brain glow */}
-      <circle cx="250" cy="220" r="170" fill="#c084fc" opacity="0.03" />
-      <circle cx="250" cy="220" r="100" fill="#818cf8" opacity="0.04" />
-      <circle cx="250" cy="210" r="50" fill="#38bdf8" opacity="0.05" />
+      {/* Sun glow */}
+      <circle cx="380" cy="80" r="120" fill="#34d399" opacity="0.03" />
+      <circle cx="380" cy="80" r="60" fill="#fbbf24" opacity="0.05" />
+      <circle cx="380" cy="80" r="30" fill="#fbbf24" opacity="0.08" />
 
-      <g transform="translate(40, 30)">
-        {/* Neural network — Input layer (4 nodes) */}
-        <circle cx="40" cy="100" r="6" fill="#38bdf8" fillOpacity="0.2" stroke="#38bdf8" strokeWidth="1" opacity="0.5" />
-        <circle cx="40" cy="100" r="3" fill="#38bdf8" opacity="0.8" stroke="none" />
-        <circle cx="40" cy="190" r="6" fill="#818cf8" fillOpacity="0.2" stroke="#818cf8" strokeWidth="1" opacity="0.5" />
-        <circle cx="40" cy="190" r="3" fill="#818cf8" opacity="0.8" stroke="none" />
-        <circle cx="40" cy="280" r="6" fill="#c084fc" fillOpacity="0.2" stroke="#c084fc" strokeWidth="1" opacity="0.5" />
-        <circle cx="40" cy="280" r="3" fill="#c084fc" opacity="0.8" stroke="none" />
-        <circle cx="40" cy="370" r="6" fill="#38bdf8" fillOpacity="0.2" stroke="#38bdf8" strokeWidth="1" opacity="0.4" />
-        <circle cx="40" cy="370" r="3" fill="#38bdf8" opacity="0.7" stroke="none" />
+      {/* Earth glow */}
+      <circle cx="250" cy="350" r="160" fill="#34d399" opacity="0.03" />
+      <circle cx="250" cy="350" r="90" fill="#22c55e" opacity="0.04" />
 
-        {/* Hidden layer 1 (5 nodes) */}
-        <circle cx="160" cy="70" r="5" fill="#818cf8" fillOpacity="0.15" stroke="#818cf8" strokeWidth="1" opacity="0.4" />
-        <circle cx="160" cy="70" r="2.5" fill="#818cf8" opacity="0.7" stroke="none" />
-        <circle cx="160" cy="150" r="7" fill="#38bdf8" fillOpacity="0.2" stroke="#38bdf8" strokeWidth="1.5" opacity="0.5" />
-        <circle cx="160" cy="150" r="3.5" fill="#38bdf8" opacity="0.9" stroke="none" />
-        <circle cx="160" cy="235" r="8" fill="#c084fc" fillOpacity="0.2" stroke="#c084fc" strokeWidth="1.5" opacity="0.5" />
-        <circle cx="160" cy="235" r="4" fill="#c084fc" opacity="0.9" stroke="none" />
-        <circle cx="160" cy="310" r="6" fill="#818cf8" fillOpacity="0.15" stroke="#818cf8" strokeWidth="1" opacity="0.4" />
-        <circle cx="160" cy="310" r="3" fill="#818cf8" opacity="0.7" stroke="none" />
-        <circle cx="160" cy="390" r="5" fill="#38bdf8" fillOpacity="0.12" stroke="#38bdf8" strokeWidth="1" opacity="0.35" />
-        <circle cx="160" cy="390" r="2.5" fill="#38bdf8" opacity="0.6" stroke="none" />
+      <g transform="translate(30, 40)">
+        {/* Rolling hills / terrain */}
+        <path d="M0 380 Q 60 320 140 340 T 280 310 T 440 340 L440 420 L0 420 Z" fill="#22c55e" fillOpacity="0.06" stroke="none" />
+        <path d="M0 380 Q 60 320 140 340 T 280 310 T 440 340" strokeWidth="1.5" stroke="#34d399" opacity="0.15" fill="none" />
+        <path d="M0 400 Q 80 360 180 370 T 360 350 T 440 370" strokeWidth="1" opacity="0.08" fill="none" />
 
-        {/* Hidden layer 2 (4 nodes) */}
-        <circle cx="280" cy="110" r="6" fill="#c084fc" fillOpacity="0.15" stroke="#c084fc" strokeWidth="1" opacity="0.45" />
-        <circle cx="280" cy="110" r="3" fill="#c084fc" opacity="0.8" stroke="none" />
-        <circle cx="280" cy="200" r="10" fill="#818cf8" fillOpacity="0.2" stroke="#818cf8" strokeWidth="2" opacity="0.5" />
-        <circle cx="280" cy="200" r="5" fill="#818cf8" opacity="0.9" stroke="none" />
-        <circle cx="280" cy="290" r="7" fill="#38bdf8" fillOpacity="0.18" stroke="#38bdf8" strokeWidth="1.5" opacity="0.45" />
-        <circle cx="280" cy="290" r="3.5" fill="#38bdf8" opacity="0.8" stroke="none" />
-        <circle cx="280" cy="370" r="5" fill="#c084fc" fillOpacity="0.12" stroke="#c084fc" strokeWidth="1" opacity="0.35" />
-        <circle cx="280" cy="370" r="2.5" fill="#c084fc" opacity="0.6" stroke="none" />
+        {/* Field rows — parallel lines */}
+        <g opacity="0.06">
+          {[...Array(8)].map((_, i) => (
+            <line key={`fr${i}`} x1={60 + i * 10} y1={350 - i * 2} x2={380 - i * 10} y2={350 - i * 2} strokeWidth="0.5" />
+          ))}
+        </g>
 
-        {/* Output layer (3 nodes) */}
-        <circle cx="400" cy="150" r="7" fill="#38bdf8" fillOpacity="0.2" stroke="#38bdf8" strokeWidth="1.5" opacity="0.5" />
-        <circle cx="400" cy="150" r="3.5" fill="#38bdf8" opacity="0.9" stroke="none" />
-        <circle cx="400" cy="240" r="9" fill="#c084fc" fillOpacity="0.25" stroke="#c084fc" strokeWidth="2" opacity="0.55" />
-        <circle cx="400" cy="240" r="4.5" fill="#c084fc" opacity="0.9" stroke="none" />
-        <circle cx="400" cy="330" r="6" fill="#818cf8" fillOpacity="0.15" stroke="#818cf8" strokeWidth="1" opacity="0.4" />
-        <circle cx="400" cy="330" r="3" fill="#818cf8" opacity="0.7" stroke="none" />
+        {/* Central plant / tree */}
+        <line x1="220" y1="340" x2="220" y2="160" strokeWidth="2" stroke="#22c55e" opacity="0.2" />
+        <line x1="220" y1="160" x2="220" y2="120" strokeWidth="1.5" stroke="#34d399" opacity="0.25" />
+        
+        {/* Branches */}
+        <path d="M220 200 Q 180 170 160 180" strokeWidth="1.5" stroke="#22c55e" opacity="0.18" fill="none" />
+        <path d="M220 200 Q 260 170 280 180" strokeWidth="1.5" stroke="#22c55e" opacity="0.18" fill="none" />
+        <path d="M220 240 Q 190 220 170 230" strokeWidth="1" stroke="#34d399" opacity="0.15" fill="none" />
+        <path d="M220 240 Q 250 220 270 230" strokeWidth="1" stroke="#34d399" opacity="0.15" fill="none" />
+        <path d="M220 160 Q 195 130 180 135" strokeWidth="1" stroke="#22c55e" opacity="0.15" fill="none" />
+        <path d="M220 160 Q 245 130 260 135" strokeWidth="1" stroke="#22c55e" opacity="0.15" fill="none" />
 
-        {/* Connections: Input → Hidden1 (selective for clarity) */}
-        <line x1="46" y1="100" x2="154" y2="70" strokeWidth="1" stroke="#38bdf8" opacity="0.12" />
-        <line x1="46" y1="100" x2="154" y2="150" strokeWidth="1" stroke="#38bdf8" opacity="0.15" />
-        <line x1="46" y1="190" x2="154" y2="150" strokeWidth="1" stroke="#818cf8" opacity="0.15" />
-        <line x1="46" y1="190" x2="154" y2="235" strokeWidth="1.5" stroke="#818cf8" opacity="0.18" />
-        <line x1="46" y1="280" x2="154" y2="235" strokeWidth="1.5" stroke="#c084fc" opacity="0.18" />
-        <line x1="46" y1="280" x2="154" y2="310" strokeWidth="1" stroke="#c084fc" opacity="0.12" />
-        <line x1="46" y1="370" x2="154" y2="310" strokeWidth="1" opacity="0.1" />
-        <line x1="46" y1="370" x2="154" y2="390" strokeWidth="1" stroke="#38bdf8" opacity="0.1" />
+        {/* Leaves */}
+        <ellipse cx="155" cy="175" rx="18" ry="10" transform="rotate(-20 155 175)" fill="#22c55e" fillOpacity="0.12" stroke="#22c55e" strokeWidth="0.5" opacity="0.2" />
+        <ellipse cx="285" cy="175" rx="18" ry="10" transform="rotate(20 285 175)" fill="#34d399" fillOpacity="0.12" stroke="#34d399" strokeWidth="0.5" opacity="0.2" />
+        <ellipse cx="165" cy="225" rx="15" ry="8" transform="rotate(-15 165 225)" fill="#34d399" fillOpacity="0.1" stroke="none" />
+        <ellipse cx="275" cy="225" rx="15" ry="8" transform="rotate(15 275 225)" fill="#22c55e" fillOpacity="0.1" stroke="none" />
+        <ellipse cx="175" cy="130" rx="14" ry="8" transform="rotate(-25 175 130)" fill="#34d399" fillOpacity="0.1" stroke="none" />
+        <ellipse cx="265" cy="130" rx="14" ry="8" transform="rotate(25 265 130)" fill="#22c55e" fillOpacity="0.1" stroke="none" />
 
-        {/* Connections: Hidden1 → Hidden2 */}
-        <line x1="166" y1="70" x2="274" y2="110" strokeWidth="1" opacity="0.1" />
-        <line x1="166" y1="150" x2="274" y2="110" strokeWidth="1" stroke="#38bdf8" opacity="0.12" />
-        <line x1="166" y1="150" x2="274" y2="200" strokeWidth="1.5" stroke="#38bdf8" opacity="0.2" />
-        <line x1="166" y1="235" x2="274" y2="200" strokeWidth="2" stroke="#c084fc" opacity="0.22" />
-        <line x1="166" y1="235" x2="274" y2="290" strokeWidth="1.5" stroke="#c084fc" opacity="0.18" />
-        <line x1="166" y1="310" x2="274" y2="290" strokeWidth="1" stroke="#818cf8" opacity="0.15" />
-        <line x1="166" y1="310" x2="274" y2="370" strokeWidth="1" opacity="0.1" />
-        <line x1="166" y1="390" x2="274" y2="370" strokeWidth="1" stroke="#38bdf8" opacity="0.1" />
+        {/* Crown foliage */}
+        <circle cx="220" cy="110" r="35" fill="#22c55e" fillOpacity="0.06" stroke="none" />
+        <circle cx="220" cy="110" r="25" fill="#34d399" fillOpacity="0.08" stroke="none" />
 
-        {/* Connections: Hidden2 → Output */}
-        <line x1="286" y1="110" x2="394" y2="150" strokeWidth="1" stroke="#c084fc" opacity="0.15" />
-        <line x1="286" y1="200" x2="394" y2="150" strokeWidth="1.5" stroke="#818cf8" opacity="0.18" />
-        <line x1="286" y1="200" x2="394" y2="240" strokeWidth="2" stroke="#818cf8" opacity="0.25" />
-        <line x1="286" y1="290" x2="394" y2="240" strokeWidth="1.5" stroke="#38bdf8" opacity="0.2" />
-        <line x1="286" y1="290" x2="394" y2="330" strokeWidth="1" stroke="#38bdf8" opacity="0.15" />
-        <line x1="286" y1="370" x2="394" y2="330" strokeWidth="1" stroke="#c084fc" opacity="0.12" />
+        {/* Small plants on field */}
+        <line x1="100" y1="360" x2="100" y2="340" strokeWidth="1" stroke="#22c55e" opacity="0.15" />
+        <ellipse cx="100" cy="336" rx="8" ry="5" fill="#34d399" fillOpacity="0.1" stroke="none" />
+        <line x1="160" y1="348" x2="160" y2="330" strokeWidth="1" stroke="#34d399" opacity="0.12" />
+        <ellipse cx="160" cy="326" rx="7" ry="4" fill="#22c55e" fillOpacity="0.08" stroke="none" />
+        <line x1="280" y1="342" x2="280" y2="325" strokeWidth="1" stroke="#22c55e" opacity="0.12" />
+        <ellipse cx="280" cy="321" rx="7" ry="4" fill="#34d399" fillOpacity="0.08" stroke="none" />
+        <line x1="340" y1="350" x2="340" y2="332" strokeWidth="1" stroke="#34d399" opacity="0.15" />
+        <ellipse cx="340" cy="328" rx="8" ry="5" fill="#22c55e" fillOpacity="0.1" stroke="none" />
 
-        {/* Central pulse on biggest hidden node */}
-        <circle cx="280" cy="200" r="18" fill="#818cf8" fillOpacity="0.08" stroke="none" />
-        <circle cx="280" cy="200" r="30" stroke="#818cf8" strokeWidth="0.5" opacity="0.08" strokeDasharray="4 4" />
+        {/* Sun rays */}
+        <line x1="350" y1="50" x2="310" y2="100" strokeWidth="1" stroke="#fbbf24" opacity="0.12" strokeDasharray="6 6" />
+        <line x1="370" y1="40" x2="370" y2="100" strokeWidth="1" stroke="#fbbf24" opacity="0.1" strokeDasharray="4 8" />
+        <line x1="390" y1="50" x2="400" y2="110" strokeWidth="1" stroke="#fbbf24" opacity="0.12" strokeDasharray="6 6" />
 
-        {/* Sparkle accents */}
-        <circle cx="110" cy="120" r="1.5" fill="#38bdf8" opacity="0.5" stroke="none" />
-        <circle cx="220" cy="165" r="1.5" fill="#c084fc" opacity="0.5" stroke="none" />
-        <circle cx="340" cy="195" r="1.5" fill="#818cf8" opacity="0.5" stroke="none" />
-        <circle cx="120" cy="340" r="1.5" fill="#c084fc" opacity="0.3" stroke="none" />
-        <circle cx="340" cy="310" r="1.5" fill="#38bdf8" opacity="0.3" stroke="none" />
+        {/* Water drops / irrigation */}
+        <circle cx="130" cy="290" r="3" fill="#38bdf8" opacity="0.4" stroke="none" />
+        <circle cx="200" cy="300" r="2" fill="#38bdf8" opacity="0.3" stroke="none" />
+        <circle cx="260" cy="290" r="3" fill="#38bdf8" opacity="0.4" stroke="none" />
+        <circle cx="320" cy="305" r="2" fill="#38bdf8" opacity="0.3" stroke="none" />
+
+        {/* Particle scatter */}
+        <circle cx="80" cy="200" r="2" fill="#34d399" opacity="0.4" stroke="none" />
+        <circle cx="360" cy="220" r="2" fill="#22c55e" opacity="0.4" stroke="none" />
+        <circle cx="140" cy="100" r="1.5" fill="#fbbf24" opacity="0.4" stroke="none" />
+        <circle cx="300" cy="90" r="1.5" fill="#34d399" opacity="0.3" stroke="none" />
       </g>
     </svg>
   )
@@ -481,7 +471,7 @@ const SECTOR_DATA = [
   { key: 'energy', slug: 'energy-mining', icon: 'energy' },
   { key: 'ports', slug: 'ports-borders-logistics', icon: 'logistics' },
   { key: 'cyber', slug: 'cyber-resilience', icon: 'cyber' },
-  { key: 'ai', slug: 'ai-fusion-intelligence', icon: 'ai' },
+  { key: 'ai', slug: 'agriculture', icon: 'agriculture', externalUrl: 'https://www.greenleafafricaventure.com/' },
 ] as const;
 
 interface SectorGridProps {
@@ -523,6 +513,57 @@ export function SectorGrid({ title }: SectorGridProps) {
               transition={{ duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] as const }}
               className="h-full"
             >
+              {'externalUrl' in sector && sector.externalUrl ? (
+              <a
+                href={sector.externalUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  'group relative block h-full p-8 md:p-10 rounded-2xl overflow-hidden',
+                  'bg-surface-card border border-white/8',
+                  'hover:border-white/10 hover-lift shadow-xl',
+                  'transition-all duration-500'
+                )}
+              >
+                {/* Background Graphic */}
+                {SECTOR_BACKGROUNDS[sector.key]}
+
+                {/* Hover gradient overlay */}
+                <div className="absolute inset-0 bg-linear-to-br from-[#34d399]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                <div className="relative z-10 flex flex-col h-full">
+                  {/* Icon */}
+                  <div className="mb-6 text-white/80 group-hover:text-white transition-colors duration-300">
+                    <div className="w-12 h-12 rounded-lg border border-white/20 flex items-center justify-center bg-white/5">
+                      {ICONS[sector.icon] || ICONS.government}
+                    </div>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-2xl font-bold text-white mb-4 tracking-tight group-hover:text-[#34d399] transition-colors">
+                    {t(`${sector.key}.title`)}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="mt-2 text-white/70 font-medium line-clamp-3">
+                    {t(`${sector.key}.description`)}
+                  </p>
+
+                  {/* Arrow */}
+                  <div className="mt-auto pt-6 flex items-center text-[#34d399] font-semibold opacity-80 group-hover:opacity-100 transition-opacity">
+                    <span className="text-sm">{tCommon('learnMore')}</span>
+                    <svg
+                      className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
+                </div>
+              </a>
+              ) : (
               <Link
                 href={`/sectors/${sector.slug}`}
                 className={cn(
@@ -570,6 +611,7 @@ export function SectorGrid({ title }: SectorGridProps) {
                   </div>
                 </div>
               </Link>
+              )}
             </motion.div>
           ))}
         </div>
