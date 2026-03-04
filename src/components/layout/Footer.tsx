@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 
 /**
@@ -33,9 +34,15 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <Link href={`/${locale}`} className="inline-block">
+            <Link href={`/${locale}`} className="inline-flex items-center gap-3">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/lolgo.jpeg"
+                alt="Hybrid Concepts"
+                className="h-10 w-auto object-contain"
+              />
               <span className="text-xl font-semibold text-foreground">
-                <span className="text-accent">HC-1</span> | Hybrid Concepts
+                Hybrid Concepts
               </span>
             </Link>
             <p className="mt-4 text-sm text-foreground-secondary max-w-sm">

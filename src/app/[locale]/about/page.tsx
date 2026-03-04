@@ -31,6 +31,8 @@ export default async function AboutPage({ params }: Props) {
         tagline={tHero('tagline')}
         description={tHero('description')}
         variant="page"
+        backgroundImage="/unnamed.jpg"
+        showCta={false}
       />
 
       {/* Mission Section */}

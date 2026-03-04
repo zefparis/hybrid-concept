@@ -43,7 +43,9 @@ export function Hero({
   cta,
   secondaryCta,
   variant = 'home',
-}: Partial<HeroProps> & { variant?: 'home' | 'page' | 'minimal' } = {}) {
+  backgroundImage,
+  showCta = true,
+}: Partial<HeroProps> & { variant?: 'home' | 'page' | 'minimal'; backgroundImage?: string; showCta?: boolean } = {}) {
   const t = useTranslations('hero');
   const tCommon = useTranslations('common');
   const sectionRef = useRef<HTMLElement>(null);
@@ -65,21 +67,32 @@ export function Hero({
       className={cn(
         'relative flex items-center justify-center overflow-hidden',
         isHome && 'min-h-screen',
-        !isHome && !isMinimal && 'min-h-[60vh] pt-16 pb-20',
+        !isHome && !isMinimal && backgroundImage && 'min-h-[90vh] pt-20 pb-20',
+        !isHome && !isMinimal && !backgroundImage && 'min-h-[60vh] pt-16 pb-20',
         isMinimal && 'pt-16 pb-16'
       )}
     >
-      {/* Background Image (Home only) */}
-      {isHome && (
+      {/* Background Image */}
+      {isHome && !backgroundImage && (
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(/images/hc.png)' }}
+          style={{ backgroundImage: `url(/images/hc.png)` }}
+        />
+      )}
+      {backgroundImage && (
+        <div 
+          className="absolute inset-0 bg-no-repeat"
+          style={{ 
+            backgroundImage: `url(${backgroundImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center center'
+          }}
         />
       )}
       
       {/* Dark overlay for readability */}
-      {isHome && (
-        <div className="absolute inset-0 bg-background/50" />
+      {(isHome || backgroundImage) && (
+        <div className={cn('absolute inset-0', isHome ? 'bg-background/50' : 'bg-black/60')} />
       )}
       
       {/* Animated grid background (Home only) */}
@@ -113,9 +126,10 @@ export function Hero({
           <motion.p 
             variants={item}
             className={cn(
-              'uppercase tracking-[0.2em] text-foreground-secondary mb-6',
-              isHome && 'text-sm md:text-base',
-              !isHome && 'text-sm'
+              'uppercase tracking-[0.2em] mb-6',
+              backgroundImage ? 'text-white drop-shadow-lg text-lg md:text-xl' : 'text-foreground-secondary text-sm md:text-base',
+              isHome && !backgroundImage && 'text-base md:text-lg',
+              !isHome && !backgroundImage && 'text-sm'
             )}
           >
             {displaySubtitle}
@@ -126,9 +140,10 @@ export function Hero({
         <motion.h1 
           variants={item}
           className={cn(
-            'font-bold text-gradient mb-8',
-            isHome && 'text-display-md md:text-display-lg',
-            !isHome && 'text-display-sm md:text-display-md'
+            'font-bold mb-8',
+            backgroundImage ? 'text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] text-display-lg md:text-display-xl' : 'text-gradient',
+            isHome && !backgroundImage && 'text-display-lg md:text-display-xl',
+            !isHome && !backgroundImage && 'text-display-sm md:text-display-md'
           )}
         >
           {displayTitle}
@@ -139,9 +154,10 @@ export function Hero({
           <motion.p 
             variants={item}
             className={cn(
-              'text-foreground-secondary leading-relaxed mb-12',
-              isHome && 'text-body-lg md:text-heading-md max-w-4xl mx-auto',
-              !isHome && 'text-body md:text-body-lg max-w-2xl'
+              'leading-relaxed mb-12',
+              backgroundImage ? 'text-white/95 drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)] text-heading-md md:text-heading-lg max-w-3xl' : 'text-foreground-secondary',
+              isHome && !backgroundImage && 'text-heading-md md:text-heading-lg max-w-4xl mx-auto',
+              !isHome && !backgroundImage && 'text-body md:text-body-lg max-w-2xl'
             )}
           >
             {displayDescription}
@@ -149,7 +165,7 @@ export function Hero({
         )}
         
         {/* CTA */}
-        {displayCtaText && displayCtaHref && (
+        {showCta && displayCtaText && displayCtaHref && (
           <motion.div 
             variants={item}
             className={cn(

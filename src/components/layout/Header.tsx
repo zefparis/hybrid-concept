@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
@@ -33,9 +34,13 @@ export function Header() {
             href="/"
             className="flex items-center gap-2 text-[var(--text-primary)] font-semibold text-lg"
           >
-            <span className="text-[var(--accent)]">HC-1</span>
-            <span className="hidden sm:inline text-[var(--text-muted)]">|</span>
-            <span className="hidden sm:inline text-sm font-normal text-[var(--text-secondary)]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/lolgo.jpeg"
+              alt="Hybrid Concepts"
+              className="h-9 w-auto object-contain"
+            />
+            <span className="hidden sm:inline text-sm font-semibold text-[var(--text-primary)]">
               Hybrid Concepts
             </span>
           </Link>

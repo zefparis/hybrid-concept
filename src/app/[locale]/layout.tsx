@@ -19,21 +19,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   
   const titles: Record<Locale, string> = {
-    en: 'HC-1 | Strategic Command & Integration Authority',
-    fr: 'HC-1 | Autorité de Commandement Stratégique et d\'Intégration',
-    pt: 'HC-1 | Autoridade de Comando Estratégico e Integração',
+    en: 'Hybrid Concepts | Strategic Command & Integration Authority',
+    fr: 'Hybrid Concepts | Autorité de Commandement Stratégique et d\'Intégration',
+    pt: 'Hybrid Concepts | Autoridade de Comando Estratégico e Integração',
   };
 
   const descriptions: Record<Locale, string> = {
-    en: 'HC-1 anticipates and secures systems upstream to prevent disruption, reduce operational risk, and protect revenue through assured continuity.',
-    fr: 'HC-1 anticipe et sécurise les systèmes en amont pour prévenir les perturbations, réduire les risques opérationnels et protéger les revenus.',
-    pt: 'A HC-1 antecipa e protege sistemas a montante para prevenir perturbações, reduzir riscos operacionais e proteger receitas.',
+    en: 'Hybrid Concepts anticipates and secures systems upstream to prevent disruption, reduce operational risk, and protect revenue through assured continuity.',
+    fr: 'Hybrid Concepts anticipe et sécurise les systèmes en amont pour prévenir les perturbations, réduire les risques opérationnels et protéger les revenus.',
+    pt: 'A Hybrid Concepts antecipa e protege sistemas a montante para prevenir perturbações, reduzir riscos operacionais e proteger receitas.',
   };
 
   return {
     title: {
       default: titles[locale as Locale] || titles.en,
-      template: '%s | HC-1',
+      template: '%s | Hybrid Concepts',
     },
     description: descriptions[locale as Locale] || descriptions.en,
     alternates: {

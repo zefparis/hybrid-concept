@@ -20,10 +20,8 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <>
-      <Hero />
+      <Hero showCta={false} />
       <WhatWeDo />
-      <SectorGrid />
-      <OperatingModel />
       <TrustSignals />
       <CTASection />
     </>

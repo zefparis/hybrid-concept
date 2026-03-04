@@ -30,6 +30,8 @@ export default async function SectorsPage({ params }: Props) {
         tagline={tHero('tagline')}
         description={tHero('description')}
         variant="page"
+        backgroundImage="/sectors-bg.jpg"
+        showCta={false}
       />
       <SectorGrid title={tPage('gridTitle')} />
     </>

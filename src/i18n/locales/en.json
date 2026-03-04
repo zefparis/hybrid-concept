@@ -18,9 +18,9 @@
   },
 
   "hero": {
-    "title": "HC-1 | Hybrid Concepts",
+    "title": "Hybrid Concepts",
     "subtitle": "Strategic Command & Integration Authority",
-    "coreStatement": "HC-1 anticipates and secures systems upstream to prevent disruption, reduce operational risk, eliminate the cost and inefficiency of reactive response, and protect and maximize revenue through assured continuity and operational efficiency."
+    "coreStatement": "Hybrid Concepts anticipates and secures systems upstream to prevent disruption, reduce operational risk, eliminate the cost and inefficiency of reactive response, and protect and maximize revenue through assured continuity and operational efficiency."
   },
 
   "whatWeDo": {
@@ -1251,7 +1251,7 @@
 
   "about": {
     "hero": {
-      "title": "About HC-1",
+      "title": "About Hybrid Concepts",
       "tagline": "Strategic Command & Integration Authority",
       "description": "We are the trusted partner for governments and enterprises navigating complex security landscapes. Our mission is to architect resilient systems that protect nations and enable progress."
     },
