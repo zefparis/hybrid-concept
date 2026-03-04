@@ -141,10 +141,10 @@ export default async function InsightsPage({ params }: Props) {
                     {featured.category}
                   </span>
                 </div>
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6 group-hover:text-sky-400 transition-colors leading-tight">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 md:mb-6 group-hover:text-sky-400 transition-colors leading-snug md:leading-tight">
                   {featured.title}
                 </h2>
-                <p className="text-base md:text-lg text-white/60 mb-8 max-w-4xl leading-relaxed">
+                <p className="text-sm sm:text-base md:text-lg text-white/60 mb-6 md:mb-8 max-w-4xl leading-relaxed line-clamp-4 md:line-clamp-none">
                   {featured.excerpt}
                 </p>
                 <div className="flex items-center gap-6 text-sm text-white/40">
@@ -176,10 +176,10 @@ export default async function InsightsPage({ params }: Props) {
                   <span className={`inline-block px-3 py-1 text-xs font-medium rounded-full border mb-5 ${categoryColors[insight.category] || 'bg-white/5 text-white/60 border-white/10'}`}>
                     {insight.category}
                   </span>
-                  <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-sky-400 transition-colors mb-4 leading-tight">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white group-hover:text-sky-400 transition-colors mb-3 md:mb-4 leading-snug md:leading-tight">
                     {insight.title}
                   </h3>
-                  <p className="text-sm text-white/50 mb-6 line-clamp-4 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-white/50 mb-4 md:mb-6 line-clamp-3 md:line-clamp-4 leading-relaxed">
                     {insight.excerpt}
                   </p>
                   <div className="flex items-center gap-4 text-xs text-white/30">
@@ -204,10 +204,10 @@ export default async function InsightsPage({ params }: Props) {
                   <span className={`inline-block px-3 py-1 text-xs font-medium rounded-full border mb-4 ${categoryColors[insight.category] || 'bg-white/5 text-white/60 border-white/10'}`}>
                     {insight.category}
                   </span>
-                  <h3 className="text-lg font-bold text-white group-hover:text-sky-400 transition-colors mb-3 leading-tight">
+                  <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-sky-400 transition-colors mb-2 md:mb-3 leading-snug md:leading-tight">
                     {insight.title}
                   </h3>
-                  <p className="text-sm text-white/50 mb-5 line-clamp-3 leading-relaxed">
+                  <p className="text-xs text-white/50 mb-3 md:mb-5 line-clamp-2 md:line-clamp-3 leading-relaxed">
                     {insight.excerpt}
                   </p>
                   <div className="flex items-center gap-4 text-xs text-white/30">
