@@ -11,9 +11,9 @@ const ICONS: Record<string, React.ReactNode> = {
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
     </svg>
   ),
-  infrastructure: (
+  aviation: (
     <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
     </svg>
   ),
   energy: (
@@ -114,81 +114,75 @@ const SECTOR_BACKGROUNDS: Record<string, React.ReactNode> = {
   ),
   infrastructure: (
     <svg className="absolute inset-0 w-full h-full text-white transition-transform duration-700 group-hover:scale-105 pointer-events-none" viewBox="0 0 500 500" fill="none" stroke="currentColor">
-      {/* Ambient grid */}
-      <g opacity="0.05">
-        {[...Array(10)].map((_, i) => (
-          <line key={`ig${i}`} x1="0" y1={50 + i * 45} x2="500" y2={50 + i * 45} strokeWidth="1" />
-        ))}
-      </g>
+      {/* Sky glow */}
+      <circle cx="250" cy="180" r="180" fill="#38bdf8" opacity="0.03" />
+      <circle cx="250" cy="180" r="100" fill="#818cf8" opacity="0.04" />
+      <circle cx="300" cy="150" r="50" fill="#38bdf8" opacity="0.05" />
 
-      {/* Glow */}
-      <circle cx="250" cy="230" r="150" fill="#818cf8" opacity="0.04" />
-      <circle cx="280" cy="200" r="90" fill="#38bdf8" opacity="0.05" />
+      <g transform="translate(20, 20)">
+        {/* Cloud layers */}
+        <ellipse cx="120" cy="340" rx="80" ry="15" fill="currentColor" fillOpacity="0.04" stroke="none" />
+        <ellipse cx="350" cy="360" rx="100" ry="18" fill="currentColor" fillOpacity="0.03" stroke="none" />
+        <ellipse cx="230" cy="380" rx="120" ry="12" fill="currentColor" fillOpacity="0.03" stroke="none" />
 
-      <g transform="translate(30, 30)">
-        {/* Isometric platform base */}
-        <path d="M220 320 L440 210 L440 240 L220 350 Z" fill="currentColor" fillOpacity="0.04" stroke="none" />
-        <path d="M220 320 L0 210 L0 240 L220 350 Z" fill="currentColor" fillOpacity="0.03" stroke="none" />
-        <path d="M0 210 L220 100 L440 210 L220 320 Z" fill="currentColor" fillOpacity="0.05" stroke="none" />
-        <path d="M0 210 L220 100 L440 210 L220 320 Z" strokeWidth="1.5" opacity="0.12" />
+        {/* Runway / horizon */}
+        <line x1="0" y1="400" x2="460" y2="400" strokeWidth="1" opacity="0.08" />
+        <line x1="140" y1="400" x2="320" y2="400" strokeWidth="2" stroke="#38bdf8" opacity="0.15" />
+        {/* Runway markers */}
+        <line x1="180" y1="398" x2="180" y2="402" strokeWidth="2" stroke="#38bdf8" opacity="0.2" />
+        <line x1="210" y1="398" x2="210" y2="402" strokeWidth="2" stroke="#38bdf8" opacity="0.2" />
+        <line x1="240" y1="398" x2="240" y2="402" strokeWidth="2" stroke="#38bdf8" opacity="0.2" />
+        <line x1="270" y1="398" x2="270" y2="402" strokeWidth="2" stroke="#38bdf8" opacity="0.2" />
 
-        {/* Inner platform */}
-        <path d="M110 265 L220 210 L330 265 L220 320 Z" strokeWidth="1" stroke="#38bdf8" opacity="0.2" fill="#38bdf8" fillOpacity="0.03" />
+        {/* Main aircraft silhouette — angled climb */}
+        {/* Fuselage */}
+        <line x1="100" y1="280" x2="340" y2="160" strokeWidth="3" stroke="#38bdf8" opacity="0.2" />
+        <line x1="100" y1="280" x2="340" y2="160" strokeWidth="1.5" stroke="#818cf8" opacity="0.15" />
+        {/* Nose cone */}
+        <path d="M340 160 L365 148 L345 155 Z" fill="#38bdf8" fillOpacity="0.15" stroke="none" />
 
-        {/* Grid lines on platform */}
-        <line x1="55" y1="237" x2="385" y2="237" strokeWidth="0.5" opacity="0.08" />
-        <line x1="110" y1="265" x2="330" y2="265" strokeWidth="0.5" stroke="#818cf8" opacity="0.1" />
-        <line x1="165" y1="155" x2="165" y2="292" strokeWidth="0.5" opacity="0.08" />
-        <line x1="275" y1="155" x2="275" y2="292" strokeWidth="0.5" opacity="0.08" />
-        <line x1="220" y1="100" x2="220" y2="320" strokeWidth="0.5" stroke="#38bdf8" opacity="0.12" />
+        {/* Wings */}
+        <path d="M200 230 L140 260 L120 255 L195 225 Z" fill="#818cf8" fillOpacity="0.08" stroke="#818cf8" strokeWidth="1" opacity="0.18" />
+        <path d="M200 230 L260 255 L280 250 L210 222 Z" fill="#38bdf8" fillOpacity="0.08" stroke="#38bdf8" strokeWidth="1" opacity="0.18" />
 
-        {/* Building blocks - left */}
-        <rect x="100" y="150" width="60" height="90" rx="2" fill="currentColor" fillOpacity="0.06" stroke="none" />
-        <line x1="100" y1="150" x2="160" y2="150" strokeWidth="1" opacity="0.1" />
-        <line x1="100" y1="240" x2="160" y2="240" strokeWidth="1" opacity="0.1" />
-        <line x1="110" y1="165" x2="150" y2="165" strokeWidth="1" stroke="#38bdf8" opacity="0.15" />
-        <line x1="110" y1="180" x2="140" y2="180" strokeWidth="1" opacity="0.08" />
-        <line x1="110" y1="195" x2="150" y2="195" strokeWidth="1" stroke="#c084fc" opacity="0.12" />
-        <line x1="110" y1="210" x2="135" y2="210" strokeWidth="1" opacity="0.08" />
+        {/* Tail */}
+        <path d="M110 275 L90 250 L100 255 L115 272 Z" fill="#818cf8" fillOpacity="0.1" stroke="#818cf8" strokeWidth="0.5" opacity="0.2" />
 
-        {/* Building blocks - center tall */}
-        <rect x="190" y="90" width="60" height="150" rx="2" fill="currentColor" fillOpacity="0.07" stroke="none" />
-        <line x1="190" y1="90" x2="250" y2="90" strokeWidth="1.5" stroke="#818cf8" opacity="0.2" />
-        <line x1="200" y1="110" x2="240" y2="110" strokeWidth="1" stroke="#38bdf8" opacity="0.18" />
-        <line x1="200" y1="130" x2="230" y2="130" strokeWidth="1" opacity="0.08" />
-        <line x1="200" y1="150" x2="240" y2="150" strokeWidth="1" stroke="#c084fc" opacity="0.12" />
-        <line x1="200" y1="170" x2="235" y2="170" strokeWidth="1" opacity="0.08" />
-        <line x1="200" y1="190" x2="240" y2="190" strokeWidth="1" stroke="#38bdf8" opacity="0.12" />
-        <line x1="200" y1="210" x2="225" y2="210" strokeWidth="1" opacity="0.06" />
+        {/* Engine trail lines */}
+        <line x1="95" y1="283" x2="30" y2="320" strokeWidth="1" stroke="#38bdf8" opacity="0.1" strokeDasharray="8 6" />
+        <line x1="95" y1="285" x2="20" y2="330" strokeWidth="0.5" stroke="#818cf8" opacity="0.08" strokeDasharray="6 8" />
+        <line x1="92" y1="288" x2="15" y2="340" strokeWidth="0.5" opacity="0.06" strokeDasharray="4 10" />
 
-        {/* Building blocks - right */}
-        <rect x="280" y="170" width="60" height="70" rx="2" fill="currentColor" fillOpacity="0.05" stroke="none" />
-        <line x1="280" y1="170" x2="340" y2="170" strokeWidth="1" opacity="0.1" />
-        <line x1="290" y1="185" x2="330" y2="185" strokeWidth="1" stroke="#818cf8" opacity="0.15" />
-        <line x1="290" y1="200" x2="320" y2="200" strokeWidth="1" opacity="0.08" />
-        <line x1="290" y1="215" x2="330" y2="215" strokeWidth="1" stroke="#38bdf8" opacity="0.12" />
+        {/* Flight path arc */}
+        <path d="M30 350 Q 100 310 180 260 T 360 150" strokeWidth="1" stroke="#38bdf8" opacity="0.1" strokeDasharray="12 8" fill="none" />
 
-        {/* Connection nodes */}
-        <circle cx="130" cy="150" r="4" fill="#38bdf8" opacity="0.7" stroke="none" />
-        <circle cx="220" cy="90" r="5" fill="#818cf8" opacity="0.8" stroke="none" />
-        <circle cx="310" cy="170" r="4" fill="#c084fc" opacity="0.7" stroke="none" />
-        <circle cx="220" cy="240" r="4" fill="#38bdf8" opacity="0.6" stroke="none" />
+        {/* Altitude markers */}
+        <line x1="380" y1="160" x2="380" y2="400" strokeWidth="0.5" opacity="0.06" strokeDasharray="4 8" />
+        <line x1="375" y1="200" x2="385" y2="200" strokeWidth="1" opacity="0.08" />
+        <line x1="375" y1="250" x2="385" y2="250" strokeWidth="1" opacity="0.08" />
+        <line x1="375" y1="300" x2="385" y2="300" strokeWidth="1" opacity="0.08" />
+        <line x1="375" y1="350" x2="385" y2="350" strokeWidth="1" opacity="0.08" />
 
-        {/* Network connections */}
-        <line x1="130" y1="150" x2="220" y2="90" strokeWidth="1.5" stroke="#38bdf8" opacity="0.15" strokeDasharray="6 4" />
-        <line x1="220" y1="90" x2="310" y2="170" strokeWidth="1.5" stroke="#818cf8" opacity="0.15" strokeDasharray="6 4" />
-        <line x1="130" y1="150" x2="220" y2="240" strokeWidth="1" opacity="0.1" strokeDasharray="4 6" />
-        <line x1="310" y1="170" x2="220" y2="240" strokeWidth="1" stroke="#c084fc" opacity="0.1" strokeDasharray="4 6" />
+        {/* Navigation waypoints */}
+        <circle cx="150" cy="270" r="4" fill="#38bdf8" opacity="0.5" stroke="none" />
+        <circle cx="150" cy="270" r="10" stroke="#38bdf8" strokeWidth="0.5" opacity="0.15" strokeDasharray="3 3" />
+        <circle cx="260" cy="200" r="4" fill="#818cf8" opacity="0.5" stroke="none" />
+        <circle cx="260" cy="200" r="10" stroke="#818cf8" strokeWidth="0.5" opacity="0.15" strokeDasharray="3 3" />
+        <circle cx="340" cy="160" r="5" fill="#38bdf8" opacity="0.6" stroke="none" />
+        <circle cx="340" cy="160" r="14" stroke="#38bdf8" strokeWidth="0.5" opacity="0.12" strokeDasharray="3 3" />
 
-        {/* Pulse rings */}
-        <circle cx="220" cy="90" r="12" stroke="#818cf8" strokeWidth="1" opacity="0.15" />
-        <circle cx="220" cy="90" r="22" stroke="#818cf8" strokeWidth="0.5" opacity="0.08" strokeDasharray="4 4" />
+        {/* Compass rose hint */}
+        <circle cx="420" cy="80" r="25" stroke="currentColor" strokeWidth="0.5" opacity="0.08" />
+        <line x1="420" y1="55" x2="420" y2="65" strokeWidth="1" opacity="0.1" />
+        <line x1="420" y1="95" x2="420" y2="105" strokeWidth="1" opacity="0.1" />
+        <line x1="395" y1="80" x2="405" y2="80" strokeWidth="1" opacity="0.1" />
+        <line x1="435" y1="80" x2="445" y2="80" strokeWidth="1" opacity="0.1" />
 
-        {/* Scattered data dots */}
-        <circle cx="70" cy="200" r="2" fill="#38bdf8" opacity="0.4" stroke="none" />
-        <circle cx="380" cy="220" r="2" fill="#c084fc" opacity="0.4" stroke="none" />
-        <circle cx="170" cy="280" r="2" fill="#818cf8" opacity="0.3" stroke="none" />
-        <circle cx="300" cy="280" r="2" fill="#38bdf8" opacity="0.3" stroke="none" />
+        {/* Scattered particles */}
+        <circle cx="60" cy="180" r="2" fill="#38bdf8" opacity="0.4" stroke="none" />
+        <circle cx="400" cy="280" r="2" fill="#818cf8" opacity="0.3" stroke="none" />
+        <circle cx="180" cy="120" r="1.5" fill="#c084fc" opacity="0.3" stroke="none" />
+        <circle cx="320" cy="320" r="1.5" fill="#38bdf8" opacity="0.3" stroke="none" />
       </g>
     </svg>
   ),
@@ -467,7 +461,7 @@ const SECTOR_BACKGROUNDS: Record<string, React.ReactNode> = {
 
 const SECTOR_DATA = [
   { key: 'government', slug: 'government-national-programs', icon: 'government' },
-  { key: 'infrastructure', slug: 'critical-infrastructure', icon: 'infrastructure' },
+  { key: 'infrastructure', slug: 'aviation', icon: 'aviation', externalUrl: 'https://www.jtxaviation.com/' },
   { key: 'energy', slug: 'energy-mining', icon: 'energy' },
   { key: 'ports', slug: 'ports-borders-logistics', icon: 'logistics' },
   { key: 'cyber', slug: 'cyber-resilience', icon: 'cyber' },
@@ -529,7 +523,10 @@ export function SectorGrid({ title }: SectorGridProps) {
                 {SECTOR_BACKGROUNDS[sector.key]}
 
                 {/* Hover gradient overlay */}
-                <div className="absolute inset-0 bg-linear-to-br from-[#34d399]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                <div className={cn(
+                  "absolute inset-0 bg-linear-to-br via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none",
+                  sector.key === 'ai' ? 'from-[#34d399]/5' : 'from-[#38bdf8]/5'
+                )} />
 
                 <div className="relative z-10 flex flex-col h-full">
                   {/* Icon */}
@@ -540,7 +537,10 @@ export function SectorGrid({ title }: SectorGridProps) {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold text-white mb-4 tracking-tight group-hover:text-[#34d399] transition-colors">
+                  <h3 className={cn(
+                    "text-2xl font-bold text-white mb-4 tracking-tight transition-colors",
+                    sector.key === 'ai' ? 'group-hover:text-[#34d399]' : 'group-hover:text-[#38bdf8]'
+                  )}>
                     {t(`${sector.key}.title`)}
                   </h3>
 
@@ -550,7 +550,10 @@ export function SectorGrid({ title }: SectorGridProps) {
                   </p>
 
                   {/* Arrow */}
-                  <div className="mt-auto pt-6 flex items-center text-[#34d399] font-semibold opacity-80 group-hover:opacity-100 transition-opacity">
+                  <div className={cn(
+                    "mt-auto pt-6 flex items-center font-semibold opacity-80 group-hover:opacity-100 transition-opacity",
+                    sector.key === 'ai' ? 'text-[#34d399]' : 'text-[#38bdf8]'
+                  )}>
                     <span className="text-sm">{tCommon('learnMore')}</span>
                     <svg
                       className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform"
