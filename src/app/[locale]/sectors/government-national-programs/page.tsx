@@ -7,7 +7,6 @@ import {
   ApproachSection,
   ValueProposition,
   UseCases,
-  CapabilitiesIntegration,
   SectorCTA,
 } from '@/components/sections/sector';
 
@@ -32,7 +31,6 @@ export default async function GovernmentPage({ params }: Props) {
       <ApproachSection sector="governmentPrograms" />
       <ValueProposition sector="governmentPrograms" />
       <UseCases sector="governmentPrograms" />
-      <CapabilitiesIntegration />
       <SectorCTA sector="governmentPrograms" />
     </>
   );

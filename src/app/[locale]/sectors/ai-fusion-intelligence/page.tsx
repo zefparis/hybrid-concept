@@ -7,7 +7,6 @@ import {
   ApproachSection,
   ValueProposition,
   UseCases,
-  CapabilitiesIntegration,
   SectorCTA,
 } from '@/components/sections/sector';
 
@@ -32,7 +31,6 @@ export default async function AIFusionPage({ params }: Props) {
       <ApproachSection sector="aiFusion" />
       <ValueProposition sector="aiFusion" />
       <UseCases sector="aiFusion" />
-      <CapabilitiesIntegration />
       <SectorCTA sector="aiFusion" />
     </>
   );

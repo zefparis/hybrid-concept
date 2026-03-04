@@ -34,7 +34,7 @@ export function SectorCTA({ sector }: SectorCTAProps) {
             <Button href="https://www.hcs-u7.com" size="lg">
               {t('primary')}
             </Button>
-            <Button href={`/${locale}/capabilities`} size="lg" variant="outline">
+            <Button href={`/${locale}/sectors`} size="lg" variant="outline">
               {t('secondary')}
             </Button>
           </div>

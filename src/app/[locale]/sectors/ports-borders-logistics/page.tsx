@@ -7,7 +7,6 @@ import {
   ApproachSection,
   ValueProposition,
   UseCases,
-  CapabilitiesIntegration,
   SectorCTA,
 } from '@/components/sections/sector';
 
@@ -32,7 +31,6 @@ export default async function PortsLogisticsPage({ params }: Props) {
       <ApproachSection sector="portsLogistics" />
       <ValueProposition sector="portsLogistics" />
       <UseCases sector="portsLogistics" />
-      <CapabilitiesIntegration />
       <SectorCTA sector="portsLogistics" />
     </>
   );

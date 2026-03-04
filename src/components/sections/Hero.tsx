@@ -57,7 +57,7 @@ export function Hero({
   const displaySubtitle = subtitle || tagline || t('subtitle');
   const displayDescription = coreStatement || description || t('coreStatement');
   const displayCtaText = ctaText || cta?.label || tCommon('exploreCTA');
-  const displayCtaHref = ctaHref || cta?.href || '/capabilities';
+  const displayCtaHref = ctaHref || cta?.href || '/sectors';
 
   return (
     <section

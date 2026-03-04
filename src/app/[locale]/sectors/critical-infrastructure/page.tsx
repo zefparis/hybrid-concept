@@ -7,7 +7,6 @@ import {
   ApproachSection,
   ValueProposition,
   UseCases,
-  CapabilitiesIntegration,
   SectorCTA,
 } from '@/components/sections/sector';
 
@@ -32,7 +31,6 @@ export default async function CriticalInfraPage({ params }: Props) {
       <ApproachSection sector="criticalInfra" />
       <ValueProposition sector="criticalInfra" />
       <UseCases sector="criticalInfra" />
-      <CapabilitiesIntegration />
       <SectorCTA sector="criticalInfra" />
     </>
   );

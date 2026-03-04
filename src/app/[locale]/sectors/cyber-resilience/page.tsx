@@ -7,7 +7,6 @@ import {
   ApproachSection,
   ValueProposition,
   UseCases,
-  CapabilitiesIntegration,
   SectorCTA,
 } from '@/components/sections/sector';
 
@@ -32,7 +31,6 @@ export default async function CyberResiliencePage({ params }: Props) {
       <ApproachSection sector="cyberResilience" />
       <ValueProposition sector="cyberResilience" />
       <UseCases sector="cyberResilience" />
-      <CapabilitiesIntegration sector="cyberResilience" />
       <SectorCTA sector="cyberResilience" />
     </>
   );

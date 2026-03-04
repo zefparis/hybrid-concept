@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
 import { Hero } from '@/components/sections';
 import { Button } from '@/components/ui';
-import { SECTORS, CAPABILITIES } from '@/lib/constants';
+import { SECTORS } from '@/lib/constants';
 
 interface PageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -41,10 +41,6 @@ export default async function SectorPage({ params }: PageProps) {
   if (!sector) {
     notFound();
   }
-
-  const relatedCapabilities = CAPABILITIES.filter((cap) =>
-    sector.capabilities.includes(cap.slug)
-  );
 
   return (
     <>
@@ -116,34 +112,6 @@ export default async function SectorPage({ params }: PageProps) {
                 ))}
               </ul>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Related Capabilities */}
-      <section className="py-20 md:py-32 bg-surface">
-        <div className="container">
-          <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-12">
-            Relevant Capabilities
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {relatedCapabilities.map((capability) => (
-              <a
-                key={capability.id}
-                href={`/${locale}/capabilities/${capability.slug}`}
-                className="block p-6 rounded-2xl bg-surface-elevated border border-border hover:border-accent transition-colors"
-              >
-                <h3 className="text-lg font-semibold text-foreground mb-2">
-                  {capability.name}
-                </h3>
-                <p className="text-sm text-foreground-muted mb-3">
-                  {capability.tagline}
-                </p>
-                <p className="text-sm text-foreground-secondary">
-                  {capability.description.slice(0, 120)}...
-                </p>
-              </a>
-            ))}
           </div>
         </div>
       </section>

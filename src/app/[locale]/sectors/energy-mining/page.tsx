@@ -7,7 +7,6 @@ import {
   ApproachSection,
   ValueProposition,
   UseCases,
-  CapabilitiesIntegration,
   SectorCTA,
 } from '@/components/sections/sector';
 
@@ -33,7 +32,6 @@ export default async function EnergyMiningPage({ params }: Props) {
       <ApproachSection sector="energyMining" />
       <ValueProposition sector="energyMining" />
       <UseCases sector="energyMining" />
-      <CapabilitiesIntegration />
       <SectorCTA sector="energyMining" />
     </>
   );

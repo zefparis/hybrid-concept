@@ -21,7 +21,6 @@ export function Header() {
     { href: `/${locale}`, label: t('home') },
     { href: `/${locale}/about`, label: t('about') },
     { href: `/${locale}/sectors`, label: t('sectors') },
-    { href: `/${locale}/capabilities`, label: t('capabilities') },
     { href: `/${locale}/insights`, label: t('insights') },
   ];
 
