@@ -182,9 +182,9 @@ export function Hero({
           <motion.div 
             variants={item}
             className={cn(
-              'flex gap-4',
-              isHome && 'justify-center',
-              !isHome && 'justify-start'
+              'flex flex-col sm:flex-row flex-wrap gap-4',
+              isHome && 'items-center justify-center',
+              !isHome && 'items-start justify-start'
             )}
           >
             <Button 

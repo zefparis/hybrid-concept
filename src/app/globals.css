@@ -152,6 +152,7 @@ body {
   min-height: 100vh;
   font-feature-settings: "rlig" 1, "calt" 1;
   position: relative;
+  overflow-x: hidden;
 }
 
 body::before {

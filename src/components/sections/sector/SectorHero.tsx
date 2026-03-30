@@ -40,7 +40,7 @@ export function SectorHero({ sector }: SectorHeroProps) {
   return (
     <section
       ref={sectionRef}
-      className={`relative ${hasSideImage ? 'min-h-[600px]' : 'h-[60vh] min-h-[500px]'} flex items-center overflow-hidden`}
+      className={`relative ${hasSideImage ? 'min-h-[600px]' : 'min-h-[60vh]'} flex items-center overflow-hidden`}
     >
       {/* Background image - only for sectors without side image */}
       {!hasSideImage && (
@@ -99,17 +99,17 @@ export function SectorHero({ sector }: SectorHeroProps) {
 
             {/* Stats */}
             <motion.div
-              className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12"
+              className="grid grid-cols-3 gap-3 sm:gap-8 mt-12"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView && !prefersReducedMotion ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               {statKeys.map((key) => (
-                <div key={key} className="glass p-6 rounded-lg border border-border">
-                  <p className="text-4xl md:text-5xl font-extrabold text-foreground mb-2">
+                <div key={key} className="glass p-3 sm:p-6 rounded-lg border border-border">
+                  <p className="text-xl sm:text-4xl md:text-5xl font-extrabold text-foreground mb-1 sm:mb-2 leading-tight">
                     {tStats(`${key}.value`)}
                   </p>
-                  <p className="text-body-sm text-foreground-secondary">
+                  <p className="text-[10px] sm:text-body-sm text-foreground-secondary leading-tight">
                     {tStats(`${key}.label`)}
                   </p>
                 </div>

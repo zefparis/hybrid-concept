@@ -19,7 +19,7 @@ export function CTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] as const }}
-          className="relative overflow-hidden rounded-3xl bg-surface border border-border p-12 md:p-20 text-center"
+          className="relative overflow-hidden rounded-3xl bg-surface border border-border p-8 sm:p-12 md:p-20 text-center"
         >
           {/* Background Gradient */}
           <div className="absolute inset-0 opacity-30 pointer-events-none">
