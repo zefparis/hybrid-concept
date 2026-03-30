@@ -4,3 +4,4 @@ export { WhatWeDo } from './WhatWeDo';
 export { OperatingModel } from './OperatingModel';
 export { TrustSignals } from './TrustSignals';
 export { CTASection } from './CTASection';
+export { DivisionsSection } from './DivisionsSection';

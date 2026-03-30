@@ -37,11 +37,11 @@ export function Header() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/lolgo.jpeg"
-              alt="Hybrid Concepts"
+              alt="HMH — Hybrid Mobility Holdings"
               className="h-9 w-auto object-contain"
             />
             <span className="hidden sm:inline text-sm font-semibold text-(--text-primary)">
-              Hybrid Concepts
+              HMH
             </span>
           </Link>
 

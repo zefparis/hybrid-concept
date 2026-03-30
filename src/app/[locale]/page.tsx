@@ -2,10 +2,9 @@ import { setRequestLocale } from 'next-intl/server';
 import {
   Hero,
   WhatWeDo,
-  SectorGrid,
-  OperatingModel,
   TrustSignals,
   CTASection,
+  DivisionsSection,
 } from '@/components/sections';
 
 type Props = {
@@ -14,13 +13,11 @@ type Props = {
 
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
-  
-  // Enable static rendering
   setRequestLocale(locale);
-
   return (
     <>
       <Hero showCta={false} />
+      <DivisionsSection />
       <WhatWeDo />
       <TrustSignals />
       <CTASection />

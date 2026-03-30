@@ -19,21 +19,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   
   const titles: Record<Locale, string> = {
-    en: 'Hybrid Concepts | Strategic Command & Integration Authority',
-    fr: 'Hybrid Concepts | Autorité de Commandement Stratégique et d\'Intégration',
-    pt: 'Hybrid Concepts | Autoridade de Comando Estratégico e Integração',
+    en: 'HMH | Hybrid Mobility Holdings — Africa Infrastructure & Technology',
+    fr: 'HMH | Hybrid Mobility Holdings — Infrastructure Afrique',
+    pt: 'HMH | Hybrid Mobility Holdings — Infraestrutura África',
   };
 
   const descriptions: Record<Locale, string> = {
-    en: 'Hybrid Concepts anticipates and secures systems upstream to prevent disruption, reduce operational risk, and protect revenue through assured continuity.',
-    fr: 'Hybrid Concepts anticipe et sécurise les systèmes en amont pour prévenir les perturbations, réduire les risques opérationnels et protéger les revenus.',
-    pt: 'A Hybrid Concepts antecipa e protege sistemas a montante para prevenir perturbações, reduzir riscos operacionais e proteger receitas.',
+    en: 'HMH connects real estate professionals, infrastructure financiers, and sovereign institutions on a single platform secured by post-quantum authentication.',
+    fr: "HMH connecte les professionnels de l'immobilier, les financeurs d'infrastructure et les institutions souveraines sur une seule plateforme sécurisée.",
+    pt: 'A HMH conecta profissionais do setor imobiliário, financiadores de infraestrutura e instituições soberanas numa única plataforma protegida.',
   };
 
   return {
     title: {
       default: titles[locale as Locale] || titles.en,
-      template: '%s | Hybrid Concepts',
+      template: '%s | HMH',
     },
     description: descriptions[locale as Locale] || descriptions.en,
     alternates: {

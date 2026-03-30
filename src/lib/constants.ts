@@ -1,5 +1,5 @@
 /**
- * HC-1 Site Constants
+ * HMH Site Constants
  * Centralized configuration for navigation, metadata, and content
  */
 
@@ -16,13 +16,13 @@ import type {
 // ============================================================================
 
 export const SITE_METADATA: SiteMetadata = {
-  siteName: 'HC-1 | Hybrid Concepts',
-  siteUrl: 'https://hc-1.com',
-  defaultTitle: 'HC-1 | Strategic Command & Integration Authority',
+  siteName: 'HMH | Hybrid Mobility Holdings',
+  siteUrl: 'https://hmh-africa.com',
+  defaultTitle: 'HMH | Hybrid Mobility Holdings — Africa Infrastructure & Technology',
   defaultDescription:
-    'HC-1 delivers sovereign security, systems integration, and operational continuity for governments and critical infrastructure worldwide.',
+    'HMH delivers infrastructure finance, proptech, and post-quantum cybersecurity across Africa — powered by IA-SOLUTION HCS-U7.',
   defaultOgImage: '/og-image.jpg',
-  twitterHandle: '@hc1_official',
+  twitterHandle: '@hmh_africa',
   locale: 'en',
 };
 
@@ -33,7 +33,7 @@ export const SITE_METADATA: SiteMetadata = {
 export const NAVIGATION: NavigationConfig = {
   main: [
     { label: 'Home', href: '/' },
-    { label: 'About HC-1', href: '/about' },
+    { label: 'About HMH', href: '/about' },
     {
       label: 'Sectors',
       href: '/sectors',
@@ -75,27 +75,27 @@ export const NAVIGATION: NavigationConfig = {
       href: '/capabilities',
       children: [
         {
-          label: 'HC-1 | Hybrid Vector',
+          label: 'HMH | Hybrid Vector',
           href: '/capabilities/hybrid-vector',
           description: 'Strategic threat assessment and risk modeling',
         },
         {
-          label: 'HC-1 | Hybrid Nexus',
+          label: 'HMH | Hybrid Nexus',
           href: '/capabilities/hybrid-nexus',
           description: 'Systems integration and interoperability platform',
         },
         {
-          label: 'HC-1 | Hybrid Axis',
+          label: 'HMH | Hybrid Axis',
           href: '/capabilities/hybrid-axis',
           description: 'Command and control infrastructure',
         },
         {
-          label: 'HC-1 | Hybrid Cyber',
+          label: 'HMH | Hybrid Cyber',
           href: '/capabilities/hybrid-cyber',
           description: 'Cyber defense and threat intelligence',
         },
         {
-          label: 'HC-1 | Hybrid Iris',
+          label: 'HMH | Hybrid Iris',
           href: '/capabilities/hybrid-iris',
           description: 'Surveillance and situational awareness',
         },
@@ -136,7 +136,7 @@ export const NAVIGATION: NavigationConfig = {
       {
         title: 'Company',
         links: [
-          { label: 'About HC-1', href: '/about' },
+          { label: 'About HMH', href: '/about' },
           { label: 'Insights', href: '/insights' },
           { label: 'Contact', href: '/contact' },
           { label: 'Careers', href: '/careers' },
@@ -214,7 +214,7 @@ export const SECTORS: Sector[] = [
     shortTitle: 'Government',
     description: 'Sovereign digital transformation and national security programs',
     longDescription:
-      'HC-1 partners with governments to deliver secure, sovereign digital infrastructure that protects national interests while enabling modernization at scale.',
+      'HMH partners with governments to deliver secure, sovereign digital infrastructure that protects national interests while enabling modernization at scale.',
     icon: 'government',
     capabilities: ['hybrid-vector', 'hybrid-nexus', 'hybrid-axis'],
     challenges: [
@@ -229,7 +229,7 @@ export const SECTORS: Sector[] = [
       'Enhanced citizen trust',
     ],
     metadata: {
-      title: 'Government & National Programs | HC-1',
+      title: 'Government & National Programs | HMH',
       description:
         'Sovereign digital transformation and national security programs for governments worldwide.',
       keywords: ['government security', 'national programs', 'digital transformation', 'sovereign infrastructure'],
@@ -257,7 +257,7 @@ export const SECTORS: Sector[] = [
       'Threat-resilient infrastructure',
     ],
     metadata: {
-      title: 'Critical Infrastructure Protection | HC-1',
+      title: 'Critical Infrastructure Protection | HMH',
       description:
         'Comprehensive protection and resilience solutions for critical infrastructure and essential services.',
       keywords: ['critical infrastructure', 'OT security', 'SCADA', 'infrastructure protection'],
@@ -270,7 +270,7 @@ export const SECTORS: Sector[] = [
     shortTitle: 'Energy',
     description: 'Operational technology security and asset protection',
     longDescription:
-      'From offshore platforms to remote mining operations, HC-1 delivers security solutions that operate in the most demanding environments.',
+      'From offshore platforms to remote mining operations, HMH delivers security solutions that operate in the most demanding environments.',
     icon: 'energy',
     capabilities: ['hybrid-cyber', 'hybrid-iris', 'hybrid-axis'],
     challenges: [
@@ -285,7 +285,7 @@ export const SECTORS: Sector[] = [
       'Safety compliance',
     ],
     metadata: {
-      title: 'Energy & Mining Security | HC-1',
+      title: 'Energy & Mining Security | HMH',
       description:
         'Operational technology security and asset protection for energy and mining operations.',
       keywords: ['energy security', 'mining security', 'OT security', 'industrial control'],
@@ -298,7 +298,7 @@ export const SECTORS: Sector[] = [
     shortTitle: 'Ports & Borders',
     description: 'Supply chain security and border management',
     longDescription:
-      'HC-1 enables secure, efficient movement of goods and people across borders while maintaining sovereign control.',
+      'HMH enables secure, efficient movement of goods and people across borders while maintaining sovereign control.',
     icon: 'logistics',
     capabilities: ['hybrid-iris', 'hybrid-nexus', 'hybrid-vector'],
     challenges: [
@@ -313,7 +313,7 @@ export const SECTORS: Sector[] = [
       'Reduced contraband',
     ],
     metadata: {
-      title: 'Ports, Borders & Logistics | HC-1',
+      title: 'Ports, Borders & Logistics | HMH',
       description:
         'Supply chain security and border management solutions for ports and logistics operations.',
       keywords: ['border security', 'port security', 'supply chain', 'logistics security'],
@@ -354,7 +354,7 @@ export const SECTORS: Sector[] = [
     shortTitle: 'AI & Intelligence',
     description: 'Advanced analytics and decision intelligence',
     longDescription:
-      'HC-1 harnesses artificial intelligence to fuse disparate data sources into actionable intelligence for strategic decision-making.',
+      'HMH harnesses artificial intelligence to fuse disparate data sources into actionable intelligence for strategic decision-making.',
     icon: 'ai',
     capabilities: ['hybrid-iris', 'hybrid-vector', 'hybrid-axis'],
     challenges: [
@@ -369,7 +369,7 @@ export const SECTORS: Sector[] = [
       'Accelerated decision cycles',
     ],
     metadata: {
-      title: 'AI Fusion & Intelligence | HC-1',
+      title: 'AI Fusion & Intelligence | HMH',
       description:
         'Advanced analytics, AI fusion, and decision intelligence for strategic operations.',
       keywords: ['AI', 'artificial intelligence', 'data fusion', 'decision intelligence'],
@@ -385,7 +385,7 @@ export const CAPABILITIES: Capability[] = [
   {
     id: 'cap-vector',
     slug: 'hybrid-vector',
-    name: 'HC-1 | Hybrid Vector',
+    name: 'HMH | Hybrid Vector',
     tagline: 'Strategic Threat Assessment',
     description:
       'Hybrid Vector delivers comprehensive threat modeling and risk assessment capabilities, enabling organizations to anticipate and prepare for emerging threats.',
@@ -404,14 +404,14 @@ export const CAPABILITIES: Capability[] = [
     ],
     integrations: ['hybrid-nexus', 'hybrid-cyber'],
     metadata: {
-      title: 'Hybrid Vector | Strategic Threat Assessment | HC-1',
+      title: 'Hybrid Vector | Strategic Threat Assessment | HMH',
       description: 'Strategic threat assessment and risk modeling platform for enterprise and government.',
     },
   },
   {
     id: 'cap-nexus',
     slug: 'hybrid-nexus',
-    name: 'HC-1 | Hybrid Nexus',
+    name: 'HMH | Hybrid Nexus',
     tagline: 'Systems Integration Platform',
     description:
       'Hybrid Nexus is our enterprise integration platform, connecting disparate systems into a unified operational fabric.',
@@ -430,14 +430,14 @@ export const CAPABILITIES: Capability[] = [
     ],
     integrations: ['hybrid-vector', 'hybrid-axis', 'hybrid-cyber', 'hybrid-iris'],
     metadata: {
-      title: 'Hybrid Nexus | Systems Integration Platform | HC-1',
+      title: 'Hybrid Nexus | Systems Integration Platform | HMH',
       description: 'Enterprise systems integration and interoperability platform.',
     },
   },
   {
     id: 'cap-axis',
     slug: 'hybrid-axis',
-    name: 'HC-1 | Hybrid Axis',
+    name: 'HMH | Hybrid Axis',
     tagline: 'Command & Control Infrastructure',
     description:
       'Hybrid Axis provides the command and control backbone for coordinated operations across distributed environments.',
@@ -456,14 +456,14 @@ export const CAPABILITIES: Capability[] = [
     ],
     integrations: ['hybrid-nexus', 'hybrid-iris'],
     metadata: {
-      title: 'Hybrid Axis | Command & Control | HC-1',
+      title: 'Hybrid Axis | Command & Control | HMH',
       description: 'Command and control infrastructure for coordinated operations.',
     },
   },
   {
     id: 'cap-cyber',
     slug: 'hybrid-cyber',
-    name: 'HC-1 | Hybrid Cyber',
+    name: 'HMH | Hybrid Cyber',
     tagline: 'Cyber Defense Platform',
     description:
       'Hybrid Cyber delivers comprehensive cyber defense capabilities, from threat detection to incident response.',
@@ -482,14 +482,14 @@ export const CAPABILITIES: Capability[] = [
     ],
     integrations: ['hybrid-nexus', 'hybrid-vector'],
     metadata: {
-      title: 'Hybrid Cyber | Cyber Defense Platform | HC-1',
+      title: 'Hybrid Cyber | Cyber Defense Platform | HMH',
       description: 'Enterprise cyber defense, threat intelligence, and incident response platform.',
     },
   },
   {
     id: 'cap-iris',
     slug: 'hybrid-iris',
-    name: 'HC-1 | Hybrid Iris',
+    name: 'HMH | Hybrid Iris',
     tagline: 'Surveillance & Awareness',
     description:
       'Hybrid Iris provides comprehensive surveillance and situational awareness capabilities across physical and digital domains.',
@@ -508,7 +508,7 @@ export const CAPABILITIES: Capability[] = [
     ],
     integrations: ['hybrid-nexus', 'hybrid-axis'],
     metadata: {
-      title: 'Hybrid Iris | Surveillance & Awareness | HC-1',
+      title: 'Hybrid Iris | Surveillance & Awareness | HMH',
       description: 'Surveillance and situational awareness platform for physical and digital domains.',
     },
   },
@@ -518,7 +518,7 @@ export const CAPABILITIES: Capability[] = [
     name: 'Centers of Excellence',
     tagline: 'Regional Expertise & Training',
     description:
-      'Our Centers of Excellence provide regional expertise, training, and support to ensure successful deployment and operation of HC-1 solutions.',
+      'Our Centers of Excellence provide regional expertise, training, and support to ensure successful deployment and operation of HMH solutions.',
     features: [
       { title: 'Training Programs', description: 'Comprehensive certification and training curricula' },
       { title: 'Regional Support', description: 'Local expertise and 24/7 support capabilities' },
@@ -534,8 +534,8 @@ export const CAPABILITIES: Capability[] = [
     ],
     integrations: [],
     metadata: {
-      title: 'Centers of Excellence | HC-1',
-      description: 'Regional expertise, training, and support facilities for HC-1 solutions.',
+      title: 'Centers of Excellence | HMH',
+      description: 'Regional expertise, training, and support facilities for HMH solutions.',
     },
   },
 ];
@@ -655,10 +655,10 @@ export const TRUST_SIGNALS: TrustSignal[] = [
 
 export const HOMEPAGE_CONTENT = {
   hero: {
-    title: 'HC-1 | Hybrid Concepts',
-    subtitle: 'Strategic Command & Integration Authority',
+    title: 'Hybrid Mobility Holdings',
+    subtitle: 'Infrastructure · PropTech · Cybersecurity',
     coreStatement:
-      'HC-1 anticipates and secures systems upstream to prevent disruption, reduce operational risk, eliminate the cost and inefficiency of reactive response, and protect and maximize revenue through assured continuity and operational efficiency.',
+      'HMH builds and operates the technology infrastructure layer for Africa — connecting real estate professionals, infrastructure financiers, and sovereign institutions on a single platform secured by post-quantum authentication.',
     cta: {
       label: 'Explore Capabilities',
       href: '/capabilities',
@@ -682,8 +682,8 @@ export const HOMEPAGE_CONTENT = {
     signals: TRUST_SIGNALS,
   },
   cta: {
-    title: 'Ready to Secure Your Future?',
-    description: 'Connect with our team to discuss your strategic security requirements.',
+    title: 'Ready to Build on African Infrastructure?',
+    description: 'Connect with HMH to discuss PropTech, infrastructure finance, or cybersecurity partnerships.',
     buttonLabel: 'Get in Touch',
     href: '/contact',
   },
