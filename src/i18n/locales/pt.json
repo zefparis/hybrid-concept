@@ -1848,5 +1848,141 @@
   "metadata": {
     "title": "HC-1 | Autoridade de Comando Estratégico e Integração",
     "description": "A HC-1 antecipa e protege sistemas a montante para prevenir perturbações, reduzir riscos operacionais e proteger receitas."
+  },
+
+  "homepageHero": {
+    "eyebrow": "Hybrid Mobility Holdings",
+    "title": "A Camada de Infraestrutura de África",
+    "subtitle": "Três plataformas. Um backbone tecnológico. Seguro de ponta a ponta por autenticação pós-quântica."
+  },
+
+  "agentOSPage": {
+    "badge": "HMH PropTech",
+    "tagline": "Da chamada ao fecho.",
+    "description": "Os agentes imobiliários sul-africanos perdem 2 a 3 horas por dia em tarefas administrativas — relatórios manuais, perseguição de documentos de inquilinos e conteúdo social improvisado. O AgentOS automatiza todo o back-office para que se concentre no que gera comissões: visitas e fechos.",
+    "bookDemo": "Agendar uma demo",
+    "learnMore": "Saber mais",
+    "metrics": {
+      "price": { "value": "R 499", "label": "por agente/mês" },
+      "cashPositive": { "value": "Mês 8", "label": "rentabilidade atingida" },
+      "agents": { "value": "50+", "label": "agentes ano 1" },
+      "revenue": { "value": "R 420k", "label": "Receita líquida HMH ano 1" }
+    },
+    "featuresTitle": "Tudo numa única plataforma",
+    "features": {
+      "pipeline": { "title": "Pipeline completo da chamada ao fecho", "desc": "Registe chamadas, acompanhe visitas, gira ofertas — tudo num só lugar." },
+      "verify": { "title": "Verificação de inquilino com um clique", "desc": "Integração TGPDC Verify FLEX para verificações instantâneas." },
+      "reports": { "title": "Relatórios IA semanais para proprietários", "desc": "Auto-elaborados todas as quintas-feiras — sem trabalho manual." },
+      "building": { "title": "Módulo Building Intelligence", "desc": "Registe imóveis e chamadas para construir uma base de dados pesquisável." },
+      "social": { "title": "Motor de conteúdo social", "desc": "Legendas TikTok & Instagram geradas por IA em segundos." },
+      "security": { "title": "Protegido pelo Hybrid Vector HCS-U7", "desc": "Autenticação pós-quântica a proteger cada sessão de agente." }
+    },
+    "beforeAfterTitle": "A sua secretária — antes e depois",
+    "withoutTitle": "Sem AgentOS",
+    "withTitle": "Com AgentOS",
+    "withoutList": [
+      "2–3 horas perdidas diariamente em tarefas administrativas",
+      "Atrasos na verificação manual de inquilinos",
+      "Sem acompanhamento sistemático de leads",
+      "Relatórios de proprietários escritos do zero",
+      "Conteúdo social criado de improviso ou omitido"
+    ],
+    "withList": [
+      "Admin automatizado — foque-se no fecho",
+      "Resultados instantâneos TGPDC Verify FLEX",
+      "Pipeline estruturado com lembretes",
+      "Atualizações semanais para proprietários redigidas por IA",
+      "Legendas sociais geradas em 10 segundos"
+    ],
+    "pricingTitle": "Preços",
+    "pricingSubtitle": "Simples e transparente. Sem taxas de configuração.",
+    "getStarted": "Começar",
+    "tiers": {
+      "solo": {
+        "name": "Agente Solo",
+        "price": "R 499",
+        "period": "/mês",
+        "features": ["Pipeline CRM completo", "Verificação TGPDC", "Relatórios IA semanais", "Motor de conteúdo social"]
+      },
+      "agency": {
+        "name": "Agência",
+        "price": "R 5 000",
+        "period": "/mês",
+        "features": ["Todas as funções Solo", "Dashboard de equipa", "Análises por filial", "Suporte prioritário", "Building Intelligence"]
+      },
+      "franchise": {
+        "name": "Rede Franchise",
+        "price": "Personalizado",
+        "period": "/anual",
+        "features": ["Todas as funções Agência", "Gestão multi-filial", "Opção marca branca", "Gestor de conta dedicado"]
+      }
+    },
+    "stackTitle": "Construído sobre infraestrutura de confiança",
+    "stack": {
+      "affectli": { "name": "Affectli", "role": "Operações de campo e gestão de tarefas" },
+      "tgpdc": { "name": "TGPDC", "role": "Verificação de inquilinos e conformidade" },
+      "hybridVector": { "name": "Hybrid Vector", "role": "Autenticação pós-quântica HCS-U7" },
+      "mobipaid": { "name": "Mobipaid", "role": "Cobrança e reconciliação de pagamentos" }
+    },
+    "ctaTitle": "Pronto para gerir a sua secretária com o AgentOS?",
+    "ctaDesc": "Junte-se à primeira coorte de agentes sul-africanos a automatizar o seu fluxo de trabalho com o AgentOS.",
+    "ctaButton": "Contacte-nos para começar",
+    "metaTitle": "AgentOS — Da Chamada ao Fecho | HMH PropTech",
+    "metaDesc": "AgentOS é a plataforma operacional para agentes imobiliários sul-africanos."
+  },
+
+  "aecGatewayPage": {
+    "badge": "HMH Finanças de Infraestrutura",
+    "tagline": "Powered by HMH · Standard INFRAGATE",
+    "description": "O AEC Gateway conecta projetos de infraestrutura africanos a uma rede de 80+ instituições de financiamento ao desenvolvimento. Da submissão ao fecho financeiro, cada projeto é pontuado, estruturado e correspondido usando a metodologia proprietária INFRAGATE VS/BS.",
+    "requestAccess": "Solicitar acesso à plataforma",
+    "institutionalDemo": "Demo institucional",
+    "metrics": {
+      "fee": { "value": "0,1–0,5%", "label": "taxa de sucesso", "sub": "do fecho financeiro" },
+      "dfi": { "value": "80+", "label": "rede DFI", "sub": "via AADFI" },
+      "sectors": { "value": "12", "label": "setores africanos", "sub": "cobertura pipeline" },
+      "standard": { "value": "VS 1-5", "label": "standard INFRAGATE", "sub": "metodologia proprietária" }
+    },
+    "modulesTitle": "Módulos da plataforma",
+    "modules": {
+      "pipeline": { "title": "Pipeline", "desc": "Gestão completa do pipeline de projetos da submissão ao fecho." },
+      "verify": { "title": "Verificar", "desc": "Verificação de documentos e validação de conformidade." },
+      "dfiMatch": { "title": "DFI Match", "desc": "Correspondência algorítmica às instituições de financiamento certas." },
+      "bsScore": { "title": "Score BS", "desc": "Avaliação de Bankability Score 0–100 para cada projeto." },
+      "kyc": { "title": "KYC/AML", "desc": "Propulsado pela autenticação pós-quântica HCS-U7." },
+      "localContent": { "title": "Conteúdo Local", "desc": "Rastreia conformidade de conteúdo local em 12 países." }
+    },
+    "infragateTitle": "O Standard INFRAGATE",
+    "infragateDesc": "O INFRAGATE é a metodologia de avaliação de projetos proprietária da HMH — um quadro bi-axial que mapeia a viabilidade (VS 1–5) contra a bancabilidade (BS 0–100) para dar a DFIs e promotores de projetos uma linguagem comum para financiamento de infraestrutura.",
+    "infragateChecks": [
+      "Score VS 1–5 mapeia a prontidão do projeto face a critérios DFI",
+      "Score BS 0–100 quantifica a financiabilidade em cada etapa",
+      "Dossier de projeto estandardizado aceite por membros da AADFI",
+      "Análise de lacunas automatizada com etapas de remediação"
+    ],
+    "sectorsCovered": "12 setores africanos cobertos",
+    "africanSectors": ["Energia", "Água", "Transportes", "Infraestrutura Digital", "Saúde", "Educação", "Agricultura", "Mineração", "Habitação", "Parques Industriais", "Infraestrutura Financeira", "Desenvolvimento Social"],
+    "dfiTitle": "Rede DFI",
+    "dfiSubtitle": "Ancorado pela AADFI — conectando projetos a 80+ instituições de financiamento.",
+    "revenueTitle": "Modelo de receitas",
+    "revenue": {
+      "fee": { "title": "Taxa de sucesso de transação", "detail": "0,1–0,5% do valor de fecho financeiro" },
+      "subscription": { "title": "Subscrição de plataforma", "detail": "SaaS por níveis por projeto ativo" },
+      "advisory": { "title": "Consultoria e relatórios", "detail": "Taxa por projeto para suporte de estruturação" },
+      "whitelabel": { "title": "Instâncias marca branca", "detail": "Implementações com marca AEC · ECP" }
+    },
+    "archTitle": "Arquitetura da plataforma",
+    "actors": {
+      "aec": { "name": "AEC/ECP", "role": "Cliente marca", "desc": "Promotores de projetos usando o gateway AEC ou ECP." },
+      "dfi": { "name": "DFIs/Bancos", "role": "Subscritor", "desc": "Instituições de financiamento a aceder ao pipeline de projetos." },
+      "gov": { "name": "Governos", "role": "Portal nacional", "desc": "Entidades soberanas a gerir registos de projetos nacionais." },
+      "advisory": { "name": "Firmas de consultoria", "role": "Parceiro de receitas", "desc": "Consultores de transações a receber honorários em fechos bem-sucedidos." }
+    },
+    "bannerHighlight": "Autenticação HCS-U7",
+    "bannerText": "— cada sessão AEC Gateway é protegida pela autenticação cognitiva pós-quântica da IA-SOLUTION.",
+    "ctaTitle": "Pronto para aceder ao AEC Gateway?",
+    "ctaDesc": "Seja um promotor de projetos, DFI ou firma de consultoria — o AEC Gateway dá-lhe acesso direto aos fluxos de capital de infraestrutura africanos.",
+    "metaTitle": "AEC Gateway — Plataforma de Finanças de Infraestrutura | HMH",
+    "metaDesc": "O AEC Gateway conecta projetos de infraestrutura africanos a 80+ DFIs. Standard INFRAGATE VS/BS."
   }
 }

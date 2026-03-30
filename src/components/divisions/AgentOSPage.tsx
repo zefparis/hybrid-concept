@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
+import { useTranslations, useLocale } from 'next-intl';
 import {
   Phone,
   FileCheck,
@@ -49,72 +50,28 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
   );
 }
 
-// ─── Data ─────────────────────────────────────────────────────────────────────
-const metrics = [
-  { value: 'R 499', label: 'per agent/month' },
-  { value: 'Month 8', label: 'cash positive' },
-  { value: '50+', label: 'agents year 1' },
-  { value: 'R 420k', label: 'Year 1 HMH net' },
-];
-
-const features = [
-  { Icon: Phone, title: 'Full call-to-close pipeline', desc: 'Log calls, track viewings, manage offers — all in one place.' },
-  { Icon: FileCheck, title: 'One-click tenant verification', desc: 'TGPDC Verify FLEX integration for instant background checks.' },
-  { Icon: MessageSquare, title: 'AI landlord weekly reports', desc: 'Auto-drafted every Thursday — no manual work required.' },
-  { Icon: BarChart3, title: 'Building Intelligence module', desc: 'Log buildings and calls to build a searchable property database.' },
-  { Icon: TrendingUp, title: 'Social content engine', desc: 'OpenAI-powered TikTok & Instagram captions generated in seconds.' },
-  { Icon: Shield, title: 'Secured by Hybrid Vector HCS-U7', desc: 'Post-quantum authentication protecting every agent session.' },
-];
-
-const withoutAgentOS = [
-  '2–3 hours daily lost to admin tasks',
-  'Manual tenant verification delays',
-  'No systematic follow-up on leads',
-  'Landlord reports typed from scratch',
-  'Social content created ad-hoc or skipped',
-];
-
-const withAgentOS = [
-  'Automated admin — focus on closing',
-  'Instant TGPDC Verify FLEX results',
-  'Structured pipeline with reminders',
-  'AI-drafted weekly landlord updates',
-  'Social captions generated in 10 seconds',
-];
-
-const pricingTiers = [
-  {
-    name: 'Solo Agent',
-    price: 'R 499',
-    period: '/month',
-    featured: false,
-    features: ['Full CRM pipeline', 'TGPDC verification', 'AI weekly reports', 'Social content engine'],
-  },
-  {
-    name: 'Agency Office',
-    price: 'R 5 000',
-    period: '/month',
-    featured: true,
-    features: ['All Solo features', 'Team dashboard', 'Branch analytics', 'Priority support', 'Building Intelligence'],
-  },
-  {
-    name: 'Franchise Network',
-    price: 'Custom',
-    period: '/annual',
-    featured: false,
-    features: ['All Agency features', 'Multi-branch management', 'White-label option', 'Dedicated account manager'],
-  },
-];
-
-const stack = [
-  { name: 'Affectli', role: 'Field operations & task management', color: '#1A6FB5' },
-  { name: 'TGPDC', role: 'Tenant verification & compliance', color: '#0D9A6A' },
-  { name: 'Hybrid Vector', role: 'HCS-U7 post-quantum auth', color: '#7B4FD4' },
-  { name: 'Mobipaid', role: 'Payment collection & reconciliation', color: '#D97706' },
-];
+const FEATURE_ICONS = [Phone, FileCheck, MessageSquare, BarChart3, TrendingUp, Shield];
+const STACK_COLORS = ['#1A6FB5', '#0D9A6A', '#7B4FD4', '#D97706'];
+const STACK_KEYS = ['affectli', 'tgpdc', 'hybridVector', 'mobipaid'] as const;
+const FEATURE_KEYS = ['pipeline', 'verify', 'reports', 'building', 'social', 'security'] as const;
+const TIER_KEYS = ['solo', 'agency', 'franchise'] as const;
+const TIER_FEATURED = [false, true, false];
 
 // ─── Main component ───────────────────────────────────────────────────────────
 export function AgentOSPage() {
+  const t = useTranslations('agentOSPage');
+  const locale = useLocale();
+
+  const metrics = [
+    { value: t('metrics.price.value'), label: t('metrics.price.label') },
+    { value: t('metrics.cashPositive.value'), label: t('metrics.cashPositive.label') },
+    { value: t('metrics.agents.value'), label: t('metrics.agents.label') },
+    { value: t('metrics.revenue.value'), label: t('metrics.revenue.label') },
+  ];
+
+  const withoutList = t.raw('withoutList') as string[];
+  const withList = t.raw('withList') as string[];
+
   return (
     <div className="bg-background text-foreground">
       {/* 1 — HERO */}
@@ -124,7 +81,7 @@ export function AgentOSPage() {
             className="inline-block text-xs font-semibold uppercase tracking-widest rounded-full px-4 py-1.5 mb-6"
             style={{ background: `${ACCENT}22`, color: ACCENT }}
           >
-            HMH PropTech
+            {t('badge')}
           </span>
         </Reveal>
         <Reveal delay={0.05}>
@@ -132,15 +89,12 @@ export function AgentOSPage() {
         </Reveal>
         <Reveal delay={0.1}>
           <p className="text-xl font-medium mb-6" style={{ color: ACCENT }}>
-            From call to closing.
+            {t('tagline')}
           </p>
         </Reveal>
         <Reveal delay={0.15}>
           <p className="max-w-2xl mx-auto text-base text-foreground-secondary leading-relaxed mb-10">
-            South African real estate agents lose 2–3 hours every day to admin — manually typing
-            reports, chasing tenant documents, and scrambling for social content. AgentOS automates
-            the entire back-office so you focus on what actually earns commission: showing properties
-            and closing deals.
+            {t('description')}
           </p>
         </Reveal>
         <Reveal delay={0.2}>
@@ -150,13 +104,13 @@ export function AgentOSPage() {
               className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
               style={{ background: ACCENT }}
             >
-              Book a demo
+              {t('bookDemo')}
             </a>
             <Link
-              href="/en/contact"
+              href={`/${locale}/contact`}
               className="inline-flex items-center gap-2 rounded-xl border border-border px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-surface"
             >
-              Learn more
+              {t('learnMore')}
             </Link>
           </div>
         </Reveal>
@@ -180,24 +134,27 @@ export function AgentOSPage() {
       <Section>
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
-            Everything in one platform
+            {t('featuresTitle')}
           </h2>
         </Reveal>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((f, i) => (
-            <Reveal key={f.title} delay={i * 0.07}>
-              <div className="rounded-2xl border border-border bg-surface p-6 h-full">
-                <div
-                  className="flex items-center justify-center w-10 h-10 rounded-xl mb-4"
-                  style={{ background: `${ACCENT}22` }}
-                >
-                  <f.Icon size={20} style={{ color: ACCENT }} />
+          {FEATURE_KEYS.map((key, i) => {
+            const Icon = FEATURE_ICONS[i];
+            return (
+              <Reveal key={key} delay={i * 0.07}>
+                <div className="rounded-2xl border border-border bg-surface p-6 h-full">
+                  <div
+                    className="flex items-center justify-center w-10 h-10 rounded-xl mb-4"
+                    style={{ background: `${ACCENT}22` }}
+                  >
+                    <Icon size={20} style={{ color: ACCENT }} />
+                  </div>
+                  <h3 className="font-semibold text-foreground mb-2">{t(`features.${key}.title`)}</h3>
+                  <p className="text-sm text-foreground-secondary leading-relaxed">{t(`features.${key}.desc`)}</p>
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">{f.title}</h3>
-                <p className="text-sm text-foreground-secondary leading-relaxed">{f.desc}</p>
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            );
+          })}
         </div>
       </Section>
 
@@ -205,17 +162,16 @@ export function AgentOSPage() {
       <Section className="bg-surface">
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
-            Your desk — before and after
+            {t('beforeAfterTitle')}
           </h2>
         </Reveal>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {/* Without */}
           <Reveal delay={0.05}>
             <div className="rounded-2xl border border-red-500/20 bg-red-500/5 p-6">
-              <h3 className="font-bold text-red-400 mb-5">Without AgentOS</h3>
+              <h3 className="font-bold text-red-400 mb-5">{t('withoutTitle')}</h3>
               <ul className="space-y-3">
-                {withoutAgentOS.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-foreground-secondary">
+                {withoutList.map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm text-foreground-secondary">
                     <span className="text-red-400 mt-0.5 shrink-0">✕</span>
                     {item}
                   </li>
@@ -223,18 +179,17 @@ export function AgentOSPage() {
               </ul>
             </div>
           </Reveal>
-          {/* With */}
           <Reveal delay={0.1}>
             <div
               className="rounded-2xl border p-6"
               style={{ borderColor: `${ACCENT}44`, background: `${ACCENT}0D` }}
             >
               <h3 className="font-bold mb-5" style={{ color: ACCENT }}>
-                With AgentOS
+                {t('withTitle')}
               </h3>
               <ul className="space-y-3">
-                {withAgentOS.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-foreground-secondary">
+                {withList.map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm text-foreground-secondary">
                     <CheckCircle2 size={16} style={{ color: ACCENT }} className="mt-0.5 shrink-0" />
                     {item}
                   </li>
@@ -248,66 +203,70 @@ export function AgentOSPage() {
       {/* 5 — PRICING */}
       <Section>
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-3">Pricing</h2>
-          <p className="text-center text-foreground-secondary mb-12">Simple, transparent. No setup fees.</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-3">{t('pricingTitle')}</h2>
+          <p className="text-center text-foreground-secondary mb-12">{t('pricingSubtitle')}</p>
         </Reveal>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {pricingTiers.map((tier, i) => (
-            <Reveal key={tier.name} delay={i * 0.08}>
-              <div
-                className={`rounded-2xl border p-7 flex flex-col h-full ${
-                  tier.featured ? 'border-transparent shadow-xl shadow-black/20' : 'border-border bg-surface'
-                }`}
-                style={tier.featured ? { background: ACCENT, color: '#fff' } : {}}
-              >
-                <p className={`text-sm font-semibold mb-1 ${tier.featured ? 'text-white/80' : 'text-foreground-secondary'}`}>
-                  {tier.name}
-                </p>
-                <div className="flex items-baseline gap-1 mb-5">
-                  <span className="text-3xl font-extrabold">{tier.price}</span>
-                  <span className={`text-sm ${tier.featured ? 'text-white/70' : 'text-foreground-secondary'}`}>
-                    {tier.period}
-                  </span>
-                </div>
-                <ul className="space-y-2 flex-1">
-                  {tier.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2 text-sm">
-                      <CheckCircle2 size={14} className={`mt-0.5 shrink-0 ${tier.featured ? 'text-white' : ''}`} style={!tier.featured ? { color: ACCENT } : {}} />
-                      <span className={tier.featured ? 'text-white' : 'text-foreground-secondary'}>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href="mailto:contact@hmh-africa.com"
-                  className={`mt-6 block text-center rounded-xl py-2.5 text-sm font-semibold transition-opacity hover:opacity-90 ${
-                    tier.featured ? 'bg-white text-[#0D9A6A]' : 'border border-border text-foreground hover:bg-surface-elevated'
+          {TIER_KEYS.map((key, i) => {
+            const featured = TIER_FEATURED[i];
+            const features = t.raw(`tiers.${key}.features`) as string[];
+            return (
+              <Reveal key={key} delay={i * 0.08}>
+                <div
+                  className={`rounded-2xl border p-7 flex flex-col h-full ${
+                    featured ? 'border-transparent shadow-xl shadow-black/20' : 'border-border bg-surface'
                   }`}
+                  style={featured ? { background: ACCENT, color: '#fff' } : {}}
                 >
-                  Get started
-                </a>
-              </div>
-            </Reveal>
-          ))}
+                  <p className={`text-sm font-semibold mb-1 ${featured ? 'text-white/80' : 'text-foreground-secondary'}`}>
+                    {t(`tiers.${key}.name`)}
+                  </p>
+                  <div className="flex items-baseline gap-1 mb-5">
+                    <span className="text-3xl font-extrabold">{t(`tiers.${key}.price`)}</span>
+                    <span className={`text-sm ${featured ? 'text-white/70' : 'text-foreground-secondary'}`}>
+                      {t(`tiers.${key}.period`)}
+                    </span>
+                  </div>
+                  <ul className="space-y-2 flex-1">
+                    {features.map((f) => (
+                      <li key={f} className="flex items-start gap-2 text-sm">
+                        <CheckCircle2 size={14} className={`mt-0.5 shrink-0 ${featured ? 'text-white' : ''}`} style={!featured ? { color: ACCENT } : {}} />
+                        <span className={featured ? 'text-white' : 'text-foreground-secondary'}>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href="mailto:contact@hmh-africa.com"
+                    className={`mt-6 block text-center rounded-xl py-2.5 text-sm font-semibold transition-opacity hover:opacity-90 ${
+                      featured ? 'bg-white text-[#0D9A6A]' : 'border border-border text-foreground hover:bg-surface-elevated'
+                    }`}
+                  >
+                    {t('getStarted')}
+                  </a>
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
       </Section>
 
       {/* 6 — STACK */}
       <Section className="bg-surface">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">Built on trusted infrastructure</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">{t('stackTitle')}</h2>
         </Reveal>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-          {stack.map((s, i) => (
-            <Reveal key={s.name} delay={i * 0.07}>
+          {STACK_KEYS.map((key, i) => (
+            <Reveal key={key} delay={i * 0.07}>
               <div className="rounded-2xl border border-border bg-background p-5 text-center">
                 <div
                   className="w-10 h-10 rounded-xl mx-auto mb-3 flex items-center justify-center text-sm font-bold text-white"
-                  style={{ background: s.color }}
+                  style={{ background: STACK_COLORS[i] }}
                 >
-                  {s.name[0]}
+                  {t(`stack.${key}.name`)[0]}
                 </div>
-                <p className="font-semibold text-foreground text-sm">{s.name}</p>
-                <p className="text-xs text-foreground-secondary mt-1 leading-tight">{s.role}</p>
+                <p className="font-semibold text-foreground text-sm">{t(`stack.${key}.name`)}</p>
+                <p className="text-xs text-foreground-secondary mt-1 leading-tight">{t(`stack.${key}.role`)}</p>
               </div>
             </Reveal>
           ))}
@@ -317,18 +276,14 @@ export function AgentOSPage() {
       {/* 7 — CTA */}
       <Section className="text-center">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            Ready to run your desk on AgentOS?
-          </h2>
-          <p className="text-foreground-secondary mb-8 max-w-md mx-auto">
-            Join the first cohort of South African agents automating their workflow with AgentOS.
-          </p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">{t('ctaTitle')}</h2>
+          <p className="text-foreground-secondary mb-8 max-w-md mx-auto">{t('ctaDesc')}</p>
           <a
             href="mailto:contact@hmh-africa.com"
             className="inline-flex items-center gap-2 rounded-xl px-8 py-4 text-base font-semibold text-white transition-opacity hover:opacity-90"
             style={{ background: ACCENT }}
           >
-            Contact us to get started
+            {t('ctaButton')}
           </a>
         </Reveal>
       </Section>

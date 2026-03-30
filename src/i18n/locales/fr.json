@@ -1848,5 +1848,141 @@
   "metadata": {
     "title": "HC-1 | Autorité de Commandement Stratégique et d'Intégration",
     "description": "HC-1 anticipe et sécurise les systèmes en amont pour prévenir les perturbations, réduire les risques opérationnels et protéger les revenus."
+  },
+
+  "homepageHero": {
+    "eyebrow": "Hybrid Mobility Holdings",
+    "title": "La Couche d'Infrastructure de l'Afrique",
+    "subtitle": "Trois plateformes. Un socle technologique. Sécurisé de bout en bout par authentification post-quantique."
+  },
+
+  "agentOSPage": {
+    "badge": "HMH PropTech",
+    "tagline": "Du premier appel à la signature.",
+    "description": "Les agents immobiliers sud-africains perdent 2 à 3 heures par jour en tâches administratives — rapports manuels, relance de documents locataires, contenu social improvisé. AgentOS automatise l'ensemble du back-office pour que vous vous consacriez à ce qui génère des commissions : les visites et les signatures.",
+    "bookDemo": "Réserver une démo",
+    "learnMore": "En savoir plus",
+    "metrics": {
+      "price": { "value": "R 499", "label": "par agent/mois" },
+      "cashPositive": { "value": "Mois 8", "label": "rentabilité atteinte" },
+      "agents": { "value": "50+", "label": "agents an 1" },
+      "revenue": { "value": "R 420k", "label": "Revenu net HMH an 1" }
+    },
+    "featuresTitle": "Tout en une seule plateforme",
+    "features": {
+      "pipeline": { "title": "Pipeline complet du premier appel à la signature", "desc": "Enregistrez les appels, suivez les visites, gérez les offres — en un seul endroit." },
+      "verify": { "title": "Vérification locataire en un clic", "desc": "Intégration TGPDC Verify FLEX pour des vérifications instantanées." },
+      "reports": { "title": "Rapports propriétaires IA hebdomadaires", "desc": "Auto-rédigés chaque jeudi — aucun travail manuel requis." },
+      "building": { "title": "Module Building Intelligence", "desc": "Enregistrez les immeubles et les appels pour constituer une base de données de propriétés." },
+      "social": { "title": "Moteur de contenu social", "desc": "Légendes TikTok & Instagram générées par IA en quelques secondes." },
+      "security": { "title": "Sécurisé par Hybrid Vector HCS-U7", "desc": "Authentification post-quantique protégeant chaque session agent." }
+    },
+    "beforeAfterTitle": "Votre bureau — avant et après",
+    "withoutTitle": "Sans AgentOS",
+    "withTitle": "Avec AgentOS",
+    "withoutList": [
+      "2–3 heures perdues quotidiennement en tâches admin",
+      "Délais de vérification locataire manuelle",
+      "Pas de suivi systématique des leads",
+      "Rapports propriétaires rédigés de zéro",
+      "Contenu social créé à la hâte ou omis"
+    ],
+    "withList": [
+      "Admin automatisé — concentrez-vous sur la signature",
+      "Résultats TGPDC Verify FLEX instantanés",
+      "Pipeline structuré avec rappels",
+      "Mises à jour propriétaires hebdomadaires rédigées par IA",
+      "Légendes sociales générées en 10 secondes"
+    ],
+    "pricingTitle": "Tarifs",
+    "pricingSubtitle": "Simple et transparent. Sans frais de démarrage.",
+    "getStarted": "Commencer",
+    "tiers": {
+      "solo": {
+        "name": "Agent Solo",
+        "price": "R 499",
+        "period": "/mois",
+        "features": ["Pipeline CRM complet", "Vérification TGPDC", "Rapports IA hebdomadaires", "Moteur de contenu social"]
+      },
+      "agency": {
+        "name": "Agence",
+        "price": "R 5 000",
+        "period": "/mois",
+        "features": ["Toutes les fonctions Solo", "Tableau de bord équipe", "Analytiques par branche", "Support prioritaire", "Building Intelligence"]
+      },
+      "franchise": {
+        "name": "Réseau Franchise",
+        "price": "Sur devis",
+        "period": "/an",
+        "features": ["Toutes les fonctions Agence", "Gestion multi-branches", "Option marque blanche", "Gestionnaire de compte dédié"]
+      }
+    },
+    "stackTitle": "Construit sur une infrastructure fiable",
+    "stack": {
+      "affectli": { "name": "Affectli", "role": "Opérations terrain & gestion des tâches" },
+      "tgpdc": { "name": "TGPDC", "role": "Vérification locataire & conformité" },
+      "hybridVector": { "name": "Hybrid Vector", "role": "Authentification post-quantique HCS-U7" },
+      "mobipaid": { "name": "Mobipaid", "role": "Collecte & réconciliation des paiements" }
+    },
+    "ctaTitle": "Prêt à gérer votre bureau avec AgentOS ?",
+    "ctaDesc": "Rejoignez la première cohorte d'agents sud-africains automatisant leur flux de travail avec AgentOS.",
+    "ctaButton": "Contactez-nous pour commencer",
+    "metaTitle": "AgentOS — Du premier appel à la signature | HMH PropTech",
+    "metaDesc": "AgentOS est la plateforme opérationnelle pour les agents immobiliers sud-africains."
+  },
+
+  "aecGatewayPage": {
+    "badge": "HMH Finance d'Infrastructure",
+    "tagline": "Propulsé par HMH · Standard INFRAGATE",
+    "description": "AEC Gateway connecte les projets d'infrastructure africains à un réseau de plus de 80 institutions de financement du développement. De la soumission au bouclage financier, chaque projet est évalué, structuré et mis en correspondance selon la méthodologie propriétaire INFRAGATE VS/BS.",
+    "requestAccess": "Demander l'accès à la plateforme",
+    "institutionalDemo": "Démo institutionnelle",
+    "metrics": {
+      "fee": { "value": "0,1–0,5%", "label": "commission de succès", "sub": "de la clôture financière" },
+      "dfi": { "value": "80+", "label": "réseau DFI", "sub": "via AADFI" },
+      "sectors": { "value": "12", "label": "secteurs africains", "sub": "couverture pipeline" },
+      "standard": { "value": "VS 1-5", "label": "standard INFRAGATE", "sub": "méthodologie propriétaire" }
+    },
+    "modulesTitle": "Modules de la plateforme",
+    "modules": {
+      "pipeline": { "title": "Pipeline", "desc": "Gestion complète du pipeline de projets de la soumission à la clôture." },
+      "verify": { "title": "Vérification", "desc": "Vérification des documents et validation de la conformité." },
+      "dfiMatch": { "title": "DFI Match", "desc": "Correspondance algorithmique avec les bonnes institutions de financement." },
+      "bsScore": { "title": "Score BS", "desc": "Évaluation du score de bancabilité 0–100 pour chaque projet." },
+      "kyc": { "title": "KYC/LBC", "desc": "Propulsé par l'authentification post-quantique HCS-U7." },
+      "localContent": { "title": "Contenu Local", "desc": "Suivi de la conformité au contenu local dans 12 pays." }
+    },
+    "infragateTitle": "Le Standard INFRAGATE",
+    "infragateDesc": "INFRAGATE est la méthodologie d'évaluation de projets propriétaire de HMH — un cadre bi-axial qui cartographie la viabilité (VS 1–5) par rapport à la bancabilité (BS 0–100) pour donner aux DFIs et promoteurs de projets un langage commun pour le financement d'infrastructure.",
+    "infragateChecks": [
+      "Le score VS 1–5 cartographie la maturité du projet par rapport aux critères DFI",
+      "Le score BS 0–100 quantifie la finançabilité à chaque étape",
+      "Dossier de projet standardisé accepté par les membres de l'AADFI",
+      "Analyse des lacunes automatisée avec étapes correctives"
+    ],
+    "sectorsCovered": "12 secteurs africains couverts",
+    "africanSectors": ["Énergie", "Eau", "Transport", "Infrastructure Numérique", "Santé", "Éducation", "Agriculture", "Mines", "Logement", "Parcs Industriels", "Infrastructure Financière", "Développement Social"],
+    "dfiTitle": "Réseau DFI",
+    "dfiSubtitle": "Ancré par l'AADFI — connectant les projets à plus de 80 institutions de financement.",
+    "revenueTitle": "Modèle de revenus",
+    "revenue": {
+      "fee": { "title": "Commission de succès", "detail": "0,1–0,5% de la valeur de clôture financière" },
+      "subscription": { "title": "Abonnement plateforme", "detail": "SaaS à paliers par projet actif" },
+      "advisory": { "title": "Conseil & reporting", "detail": "Honoraires au projet pour le soutien à la structuration" },
+      "whitelabel": { "title": "Instances marque blanche", "detail": "Déploiements sous marque AEC · ECP" }
+    },
+    "archTitle": "Architecture de la plateforme",
+    "actors": {
+      "aec": { "name": "AEC/ECP", "role": "Client marque", "desc": "Promoteurs de projets utilisant la passerelle AEC ou ECP." },
+      "dfi": { "name": "DFIs/Banques", "role": "Abonné", "desc": "Institutions de financement accédant au pipeline d'opportunités." },
+      "gov": { "name": "Gouvernements", "role": "Portail national", "desc": "Entités souveraines gérant les registres de projets nationaux." },
+      "advisory": { "name": "Cabinets conseil", "role": "Partenaire revenus", "desc": "Conseillers en transactions percevant des honoraires sur clôtures réussies." }
+    },
+    "bannerHighlight": "Authentification HCS-U7",
+    "bannerText": "— chaque session AEC Gateway est protégée par l'authentification cognitive post-quantique IA-SOLUTION.",
+    "ctaTitle": "Prêt à accéder à l'AEC Gateway ?",
+    "ctaDesc": "Que vous soyez promoteur de projets, DFI ou cabinet conseil — AEC Gateway vous donne un accès direct aux flux de capitaux d'infrastructure africains.",
+    "metaTitle": "AEC Gateway — Plateforme de Finance d'Infrastructure | HMH",
+    "metaDesc": "AEC Gateway connecte les projets d'infrastructure africains à plus de 80 DFIs. Standard INFRAGATE VS/BS."
   }
 }
