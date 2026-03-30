@@ -15,8 +15,6 @@ export function Footer() {
 
   const companyLinks = [
     { href: `/${locale}/about`, label: tNav('about') },
-    { href: `/${locale}/sectors`, label: tNav('sectors') },
-    { href: `/${locale}/insights`, label: tNav('insights') },
     { href: `/${locale}/contact`, label: tNav('contact') },
   ];
 

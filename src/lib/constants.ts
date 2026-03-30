@@ -35,42 +35,6 @@ export const NAVIGATION: NavigationConfig = {
     { label: 'Home', href: '/' },
     { label: 'About HMH', href: '/about' },
     {
-      label: 'Sectors',
-      href: '/sectors',
-      children: [
-        {
-          label: 'Government & National Programs',
-          href: '/sectors/government-national-programs',
-          description: 'Sovereign digital transformation and national security programs',
-        },
-        {
-          label: 'Critical Infrastructure',
-          href: '/sectors/critical-infrastructure',
-          description: 'Protection and resilience for essential services',
-        },
-        {
-          label: 'Energy & Mining',
-          href: '/sectors/energy-mining',
-          description: 'Operational technology security and asset protection',
-        },
-        {
-          label: 'Ports, Borders & Logistics',
-          href: '/sectors/ports-borders-logistics',
-          description: 'Supply chain security and border management',
-        },
-        {
-          label: 'HCS-U7 Cybersecurity',
-          href: '/sectors/cyber-resilience',
-          description: 'Patented cognitive authentication & AI defense platform',
-        },
-        {
-          label: 'AI Fusion & Intelligence',
-          href: '/sectors/ai-fusion-intelligence',
-          description: 'Advanced analytics and decision intelligence',
-        },
-      ],
-    },
-    {
       label: 'Capabilities',
       href: '/capabilities',
       children: [
@@ -106,7 +70,6 @@ export const NAVIGATION: NavigationConfig = {
         },
       ],
     },
-    { label: 'Insights', href: '/insights' },
     { label: 'Contact', href: '/contact' },
   ],
   footer: {
@@ -137,7 +100,6 @@ export const NAVIGATION: NavigationConfig = {
         title: 'Company',
         links: [
           { label: 'About HMH', href: '/about' },
-          { label: 'Insights', href: '/insights' },
           { label: 'Contact', href: '/contact' },
           { label: 'Careers', href: '/careers' },
         ],
