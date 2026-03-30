@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
@@ -30,16 +29,32 @@ export function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2 text-(--text-primary) font-semibold text-lg"
+            className="flex items-center gap-0 text-(--text-primary)"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/lolgo.jpeg"
-              alt="HMH — Hybrid Mobility Holdings"
-              className="h-9 w-auto object-contain"
-            />
-            <span className="hidden sm:inline text-sm font-semibold text-(--text-primary)">
+            <span
+              style={{
+                fontWeight: 800,
+                fontSize: '1.25rem',
+                letterSpacing: '-0.04em',
+                color: 'white',
+              }}
+            >
               HMH
+            </span>
+            <span
+              style={{
+                fontWeight: 300,
+                fontSize: '0.6rem',
+                letterSpacing: '0.18em',
+                textTransform: 'uppercase',
+                color: 'rgba(255,255,255,0.45)',
+                marginLeft: '8px',
+                marginTop: '2px',
+                alignSelf: 'flex-end',
+                paddingBottom: '2px',
+              }}
+            >
+              Hybrid Mobility Holdings
             </span>
           </Link>
 
