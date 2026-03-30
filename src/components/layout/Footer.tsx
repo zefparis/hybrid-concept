@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 
 /**
@@ -32,15 +31,34 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <Link href={`/${locale}`} className="inline-flex items-center gap-3">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/lolgo.jpeg"
-                alt="Hybrid Concepts"
-                className="h-10 w-auto object-contain"
-              />
-              <span className="text-xl font-semibold text-foreground">
-                Hybrid Concepts
+            <Link href={`/${locale}`} className="inline-flex items-center gap-0">
+              <span
+                style={{
+                  fontWeight: 800,
+                  fontSize: '1.25rem',
+                  letterSpacing: '-0.04em',
+                  background: 'linear-gradient(135deg, #ffffff 0%, #c8c8c8 20%, #f0f0f0 40%, #888888 60%, #d4d4d4 80%, #ffffff 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+              >
+                HMH
+              </span>
+              <span
+                style={{
+                  fontWeight: 300,
+                  fontSize: '0.6rem',
+                  letterSpacing: '0.18em',
+                  textTransform: 'uppercase',
+                  color: 'rgba(255,255,255,0.35)',
+                  marginLeft: '8px',
+                  marginTop: '2px',
+                  alignSelf: 'flex-end',
+                  paddingBottom: '2px',
+                }}
+              >
+                Hybrid Mobility Holdings
               </span>
             </Link>
             <p className="mt-4 text-sm text-foreground-secondary max-w-sm">

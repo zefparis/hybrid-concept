@@ -36,7 +36,10 @@ export function Header() {
                 fontWeight: 800,
                 fontSize: '1.25rem',
                 letterSpacing: '-0.04em',
-                color: 'white',
+                background: 'linear-gradient(135deg, #ffffff 0%, #c8c8c8 20%, #f0f0f0 40%, #888888 60%, #d4d4d4 80%, #ffffff 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
               }}
             >
               HMH
