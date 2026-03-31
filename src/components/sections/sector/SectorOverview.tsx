@@ -182,7 +182,7 @@ export function SectorOverview({ sector }: SectorOverviewProps) {
                       <Icon className="w-7 h-7 text-accent" />
                     </div>
                   </div>
-                  <h3 className="text-2xl font-extrabold text-foreground mb-4 tracking-tight group-hover:text-accent transition-colors">
+                  <h3 className="text-xl md:text-2xl font-extrabold text-foreground mb-4 tracking-tight group-hover:text-accent transition-colors break-words">
                     {t(`${col}.title`)}
                   </h3>
                   <ul className="space-y-3">

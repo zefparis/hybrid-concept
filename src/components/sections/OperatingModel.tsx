@@ -158,7 +158,7 @@ export function OperatingModel() {
 
                   <div className="relative z-10">
                     {/* Label */}
-                    <h3 className="text-xl font-bold uppercase tracking-wide text-white mb-2 group-hover:text-[#38bdf8] transition-colors">
+                    <h3 className="text-sm sm:text-lg font-bold uppercase tracking-normal sm:tracking-wide text-white mb-2 group-hover:text-[#38bdf8] transition-colors">
                       {t(`${key}.label`)}
                     </h3>
 

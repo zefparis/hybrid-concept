@@ -86,7 +86,7 @@ export default async function AboutPage({ params }: Props) {
           <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-12 text-center">
             {tValues('heading')}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
             {[
               { key: 'integrity' },
               { key: 'excellence' },
@@ -94,7 +94,7 @@ export default async function AboutPage({ params }: Props) {
               { key: 'innovation' },
             ].map((value) => (
               <div key={value.key} className="text-center">
-                <h3 className="text-xl font-semibold text-foreground mb-3">
+                <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3 break-words">
                   {tValues(`${value.key}.title`)}
                 </h3>
                 <p className="text-foreground-secondary">{tValues(`${value.key}.description`)}</p>

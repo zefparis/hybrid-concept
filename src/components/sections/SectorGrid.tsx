@@ -538,7 +538,7 @@ export function SectorGrid({ title }: SectorGridProps) {
 
                   {/* Title */}
                   <h3 className={cn(
-                    "text-2xl font-bold text-white mb-4 tracking-tight transition-colors",
+                    "text-xl md:text-2xl font-bold text-white mb-4 tracking-tight transition-colors break-words",
                     sector.key === 'ai' ? 'group-hover:text-[#34d399]' : 'group-hover:text-[#38bdf8]'
                   )}>
                     {t(`${sector.key}.title`)}
@@ -591,7 +591,7 @@ export function SectorGrid({ title }: SectorGridProps) {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold text-white mb-4 tracking-tight group-hover:text-[#38bdf8] transition-colors">
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4 tracking-tight group-hover:text-[#38bdf8] transition-colors break-words">
                     {t(`${sector.key}.title`)}
                   </h3>
 

@@ -105,11 +105,11 @@ export function SectorHero({ sector }: SectorHeroProps) {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               {statKeys.map((key) => (
-                <div key={key} className="glass p-3 sm:p-6 rounded-lg border border-border">
-                  <p className="text-xl sm:text-4xl md:text-5xl font-extrabold text-foreground mb-1 sm:mb-2 leading-tight">
+                <div key={key} className="glass p-3 sm:p-6 rounded-lg border border-border min-w-0">
+                  <p className="text-lg sm:text-4xl md:text-5xl font-extrabold text-foreground mb-1 sm:mb-2 leading-tight break-words">
                     {tStats(`${key}.value`)}
                   </p>
-                  <p className="text-[10px] sm:text-body-sm text-foreground-secondary leading-tight">
+                  <p className="text-[9px] sm:text-body-sm text-foreground-secondary leading-tight break-words">
                     {tStats(`${key}.label`)}
                   </p>
                 </div>

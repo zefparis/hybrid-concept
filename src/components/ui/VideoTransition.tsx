@@ -43,9 +43,7 @@ export function VideoTransition({ src, href, onClose }: VideoTransitionProps) {
         inset: 0,
         zIndex: 9999,
         background: '#000',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+        overflow: 'hidden',
         opacity: visible ? 1 : 0,
         transition: 'opacity 0.4s ease',
       }}
@@ -57,9 +55,12 @@ export function VideoTransition({ src, href, onClose }: VideoTransitionProps) {
         muted
         playsInline
         style={{
+          position: 'absolute',
+          inset: 0,
           width: '100%',
           height: '100%',
           objectFit: 'cover',
+          objectPosition: 'center',
         }}
       />
     </div>

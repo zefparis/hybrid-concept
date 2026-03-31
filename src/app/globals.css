@@ -176,6 +176,12 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--foreground);
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+p, li, span, a, button, label {
+  overflow-wrap: break-word;
 }
 
 h1 {

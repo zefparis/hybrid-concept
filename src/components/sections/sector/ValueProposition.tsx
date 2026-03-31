@@ -171,11 +171,11 @@ export function ValueProposition({ sector }: ValuePropositionProps) {
                     </div>
                   </div>
 
-                  <p className="text-5xl md:text-6xl font-extrabold text-accent mb-3">
+                  <p className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-accent mb-3 break-words">
                     {t(`${metric}.metric`)}
                   </p>
 
-                  <h3 className="text-2xl font-extrabold text-foreground mb-4 tracking-tight group-hover:text-accent transition-colors">
+                  <h3 className="text-xl md:text-2xl font-extrabold text-foreground mb-4 tracking-tight group-hover:text-accent transition-colors break-words">
                     {t(`${metric}.label`)}
                   </h3>
 

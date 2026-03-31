@@ -117,11 +117,11 @@ export function RiskLandscape({ sector }: RiskLandscapeProps) {
             <div className="absolute inset-0 bg-linear-to-br from-[#00C2FF]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
             <div className="relative z-10">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-lg border border-border-strong flex items-center justify-center bg-surface/50 text-accent">
+              <div className="flex items-start gap-3 mb-6">
+                <div className="w-10 h-10 rounded-lg border border-border-strong flex items-center justify-center bg-surface/50 text-accent shrink-0">
                   <Icon1 className="w-5 h-5" />
                 </div>
-                <h3 className="text-2xl font-extrabold text-foreground tracking-tight">
+                <h3 className="text-xl md:text-2xl font-extrabold text-foreground tracking-tight min-w-0">
                   {t(`${category1}.title`)}
                 </h3>
               </div>
@@ -154,11 +154,11 @@ export function RiskLandscape({ sector }: RiskLandscapeProps) {
             <div className="absolute inset-0 bg-linear-to-br from-[#00C2FF]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
             <div className="relative z-10">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-lg border border-border-strong flex items-center justify-center bg-surface/50 text-accent">
+              <div className="flex items-start gap-3 mb-6">
+                <div className="w-10 h-10 rounded-lg border border-border-strong flex items-center justify-center bg-surface/50 text-accent shrink-0">
                   <Icon2 className="w-5 h-5" />
                 </div>
-                <h3 className="text-2xl font-extrabold text-foreground tracking-tight">
+                <h3 className="text-xl md:text-2xl font-extrabold text-foreground tracking-tight min-w-0">
                   {t(`${category2}.title`)}
                 </h3>
               </div>

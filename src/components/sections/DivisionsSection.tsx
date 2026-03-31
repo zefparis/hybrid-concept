@@ -161,13 +161,13 @@ export function DivisionsSection() {
                   {div.metrics.map((m) => (
                     <div
                       key={m.label}
-                      className="rounded-lg p-2 text-center"
+                      className="rounded-lg p-2 text-center min-w-0"
                       style={{ background: `${div.accent}11` }}
                     >
-                      <p className="text-sm font-bold" style={{ color: div.accent }}>
+                      <p className="text-xs font-bold break-words" style={{ color: div.accent }}>
                         {m.value}
                       </p>
-                      <p className="text-[10px] text-foreground-secondary leading-tight mt-0.5">
+                      <p className="text-[9px] text-foreground-secondary leading-tight mt-0.5 break-words">
                         {m.label}
                       </p>
                     </div>
