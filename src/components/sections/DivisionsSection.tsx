@@ -1,11 +1,12 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
 import { ArrowRight, Shield, Building2, Home } from 'lucide-react';
 import { useLocale } from 'next-intl';
 import { cn } from '@/lib/utils';
+import { VideoTransition } from '@/components/ui/VideoTransition';
 
 const divisions = [
   {
@@ -101,6 +102,7 @@ export function DivisionsSection() {
   const locale = useLocale();
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-80px' });
+  const [showVideo, setShowVideo] = useState(false);
 
   return (
     <section className="py-24 bg-background">
@@ -123,15 +125,10 @@ export function DivisionsSection() {
           animate={isInView ? 'visible' : 'hidden'}
           className="grid grid-cols-1 md:grid-cols-3 gap-6"
         >
-          {divisions.map((div) => (
-            <motion.div key={div.id} variants={cardVariants}>
-              <Link
-                href={`/${locale}${div.href}`}
-                className={cn(
-                  'group flex flex-col h-full rounded-2xl border border-border bg-surface p-6',
-                  'transition-shadow hover:shadow-xl hover:shadow-black/20'
-                )}
-              >
+          {divisions.map((div) => {
+            const isHybridVector = div.id === 'hybrid-vector';
+            const cardInner = (
+              <>
                 {/* Category badge */}
                 <span
                   className="inline-block self-start text-xs font-semibold uppercase tracking-wider rounded-full px-3 py-1 mb-4"
@@ -186,9 +183,36 @@ export function DivisionsSection() {
                     style={{ color: div.accent }}
                   />
                 </div>
-              </Link>
-            </motion.div>
-          ))}
+              </>
+            );
+
+            return (
+              <motion.div key={div.id} variants={cardVariants}>
+                {isHybridVector ? (
+                  <div
+                    onClick={() => setShowVideo(true)}
+                    style={{ cursor: 'pointer' }}
+                    className={cn(
+                      'group flex flex-col h-full rounded-2xl border border-border bg-surface p-6',
+                      'transition-shadow hover:shadow-xl hover:shadow-black/20'
+                    )}
+                  >
+                    {cardInner}
+                  </div>
+                ) : (
+                  <Link
+                    href={`/${locale}${div.href}`}
+                    className={cn(
+                      'group flex flex-col h-full rounded-2xl border border-border bg-surface p-6',
+                      'transition-shadow hover:shadow-xl hover:shadow-black/20'
+                    )}
+                  >
+                    {cardInner}
+                  </Link>
+                )}
+              </motion.div>
+            );
+          })}
         </motion.div>
 
         {/* HCS-U7 banner */}
@@ -215,6 +239,14 @@ export function DivisionsSection() {
           </a>
         </motion.div>
       </div>
+
+      {showVideo && (
+        <VideoTransition
+          src="/images/biometrie.mp4"
+          href={`/${locale}/sectors/cyber-resilience`}
+          onClose={() => setShowVideo(false)}
+        />
+      )}
     </section>
   );
 }
