@@ -35,26 +35,14 @@ export default async function HomePage({ params }: Props) {
 
         <div className="relative z-10 max-w-4xl mx-auto">
           <h1
-            className="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-[1.05]"
-            style={{
-              // Override the global h1 gradient defined in globals.css (lines 187-192)
-              // which applies background-clip:text + -webkit-text-fill-color:transparent.
-              background: 'none',
-              backgroundClip: 'unset',
-              WebkitBackgroundClip: 'unset',
-              WebkitTextFillColor: '#ffffff',
-              color: '#ffffff',
-              textShadow: '0 2px 12px rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.6)',
-            }}
+            className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight leading-[1.05]"
+            style={{ textShadow: '0 2px 12px rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.6)' }}
           >
             {t('title')}
           </h1>
           <p
-            className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
-            style={{
-              color: '#E2E8F0',
-              textShadow: '0 1px 6px rgba(0,0,0,0.55)',
-            }}
+            className="text-base sm:text-lg md:text-xl text-foreground-muted max-w-2xl mx-auto leading-relaxed"
+            style={{ textShadow: '0 1px 6px rgba(0,0,0,0.55)' }}
           >
             {t('subtitle')}
           </p>
