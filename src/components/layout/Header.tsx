@@ -45,9 +45,9 @@ export function Header() {
             >
               HMH
             </span>
-            {/* Sub-brand: hidden on mobile to prevent wrapping; visible on sm+ */}
+            {/* Sub-brand: hidden on mobile to prevent wrapping; visible on md+ for safer breathing room with mobile menu trigger */}
             <span
-              className="hidden sm:inline-block whitespace-nowrap"
+              className="hidden md:inline-block whitespace-nowrap"
               style={{
                 fontWeight: 300,
                 fontSize: '0.6rem',

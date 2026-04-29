@@ -42,7 +42,7 @@ export function SectorHero({ sector }: SectorHeroProps) {
   return (
     <section
       ref={sectionRef}
-      className={`relative ${hasSideImage ? 'min-h-[600px]' : 'min-h-[60vh]'} flex items-center overflow-hidden`}
+      className={`relative ${hasSideImage ? 'min-h-[480px] lg:min-h-[600px]' : 'min-h-[55vh] sm:min-h-[60vh]'} flex items-center overflow-hidden`}
     >
       {/* Background image - only for sectors without side image */}
       {!hasSideImage && (
@@ -59,7 +59,7 @@ export function SectorHero({ sector }: SectorHeroProps) {
       )}
 
       {/* Content */}
-      <div className={`relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full ${hasSideImage ? 'py-16' : 'pb-12'}`}>
+      <div className={`relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-12 w-full ${hasSideImage ? 'py-12 sm:py-16' : 'py-12 sm:pb-12'}`}>
         <div className={`grid ${hasSideImage ? 'grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center' : 'grid-cols-1'}`}>
           {/* Text column - 60% */}
           <div className={`${hasSideImage ? 'lg:col-span-3' : ''}`}>
@@ -91,10 +91,10 @@ export function SectorHero({ sector }: SectorHeroProps) {
               <p className="text-body uppercase tracking-[0.2em] text-accent mb-4">
                 {t('subtitle')}
               </p>
-              <h1 className="text-display-md md:text-display-lg font-extrabold text-foreground mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-display-md lg:text-display-lg font-extrabold text-foreground mb-4 sm:mb-6 wrap-break-word">
                 {t('title')}
               </h1>
-              <p className="text-body-lg md:text-heading-md text-foreground-secondary max-w-3xl leading-relaxed">
+              <p className="text-base sm:text-body-lg md:text-heading-md text-foreground-secondary max-w-3xl leading-relaxed">
                 {t('lead')}
               </p>
             </motion.div>

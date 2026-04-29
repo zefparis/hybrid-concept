@@ -42,24 +42,24 @@ export function ProductHero({
         </div>
       )}
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pb-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-12 w-full py-12 md:pb-12">
         {/* Breadcrumb */}
-        <nav className="text-body-sm text-foreground-secondary mb-8">
+        <nav className="flex flex-wrap items-center gap-x-2 text-xs sm:text-body-sm text-foreground-secondary mb-6 sm:mb-8 min-w-0">
           <Link
             href={homeHref}
             className="hover:text-foreground transition-colors"
           >
             Home
           </Link>
-          <span className="mx-2">/</span>
+          <span aria-hidden="true">/</span>
           <Link
             href={productsHref}
             className="hover:text-foreground transition-colors"
           >
             Products
           </Link>
-          <span className="mx-2">/</span>
-          <span className="text-foreground">{title}</span>
+          <span aria-hidden="true">/</span>
+          <span className="text-foreground truncate max-w-[60vw] sm:max-w-none">{title}</span>
         </nav>
 
         {/* Title block */}
@@ -67,10 +67,10 @@ export function ProductHero({
           <p className="text-body uppercase tracking-[0.2em] text-accent mb-4">
             {subtitle}
           </p>
-          <h1 className="text-display-md md:text-display-lg font-extrabold text-foreground mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-display-md lg:text-display-lg font-extrabold text-foreground mb-4 sm:mb-6 wrap-break-word">
             {title}
           </h1>
-          <p className="text-body-lg md:text-heading-md text-foreground-secondary max-w-3xl leading-relaxed">
+          <p className="text-base sm:text-body-lg md:text-heading-md text-foreground-secondary max-w-3xl leading-relaxed">
             {description}
           </p>
         </div>
