@@ -91,21 +91,20 @@ function SectorCard({ sector, href, title, description, exploreLabel }: SectorCa
     background: 'var(--surface)',
     border: '1px solid var(--border)',
     borderRadius: '16px',
-    padding: '28px 32px',
     transition: 'border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
   };
 
-  // Wide banner card: horizontal layout
+  // Wide banner card: horizontal on ≥md, stacked on mobile
   if (isWide) {
     return (
       <Link
         href={href}
-        className="sector-card group block hover:-translate-y-0.5 transition-transform duration-300"
-        style={{ ...baseStyle, height: '160px' }}
+        className="sector-card group block hover:-translate-y-0.5 transition-transform duration-300 p-6 sm:p-7 md:px-8 md:py-6 min-h-[200px] md:min-h-0 md:h-[160px]"
+        style={baseStyle}
       >
-        <div className="flex items-center h-full gap-6">
+        <div className="flex flex-col md:flex-row md:items-center h-full gap-3 md:gap-6">
           {/* Left: number + icon + title */}
-          <div className="flex items-center gap-5 shrink-0">
+          <div className="flex items-center gap-3 sm:gap-5 shrink-0">
             <span
               className="font-semibold uppercase"
               style={{
@@ -118,8 +117,7 @@ function SectorCard({ sector, href, title, description, exploreLabel }: SectorCa
             </span>
             <Icon size={20} style={{ color: 'var(--accent)' }} aria-hidden="true" />
             <h3
-              className="font-semibold text-white tracking-tight transition-colors duration-300 group-hover:text-accent-hover"
-              style={{ fontSize: '1.5rem' }}
+              className="font-semibold text-white tracking-tight transition-colors duration-300 group-hover:text-accent-hover text-xl sm:text-2xl"
             >
               {title}
             </h3>
@@ -127,10 +125,11 @@ function SectorCard({ sector, href, title, description, exploreLabel }: SectorCa
 
           {/* Center: description */}
           <p
-            className="hidden md:block flex-1 text-center"
+            className="flex-1 md:text-center"
             style={{
               color: 'var(--foreground-secondary)',
               fontSize: '14px',
+              lineHeight: 1.6,
             }}
           >
             {description}
@@ -138,7 +137,7 @@ function SectorCard({ sector, href, title, description, exploreLabel }: SectorCa
 
           {/* Right: explore arrow */}
           <span
-            className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            className="shrink-0 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"
             style={{ color: 'var(--accent)', fontSize: '13px', fontWeight: 500 }}
           >
             {exploreLabel} →
@@ -151,7 +150,7 @@ function SectorCard({ sector, href, title, description, exploreLabel }: SectorCa
   return (
     <Link
       href={href}
-      className="sector-card group block h-full hover:-translate-y-0.5 transition-transform duration-300"
+      className="sector-card group block h-full hover:-translate-y-0.5 transition-transform duration-300 p-6 sm:p-7 md:px-8"
       style={{
         ...baseStyle,
         minHeight: isLarge ? '280px' : '200px',
@@ -159,7 +158,7 @@ function SectorCard({ sector, href, title, description, exploreLabel }: SectorCa
     >
       <div className="flex flex-col h-full">
         {/* Top row: number + icon */}
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center justify-between mb-5 sm:mb-6">
           <span
             className="font-semibold uppercase"
             style={{
@@ -175,8 +174,10 @@ function SectorCard({ sector, href, title, description, exploreLabel }: SectorCa
 
         {/* Title */}
         <h3
-          className="font-semibold text-white tracking-tight transition-colors duration-300 group-hover:text-accent-hover mb-3"
-          style={{ fontSize: isLarge ? '2rem' : '1.25rem', lineHeight: 1.2 }}
+          className={`font-semibold text-white tracking-tight transition-colors duration-300 group-hover:text-accent-hover mb-3 ${
+            isLarge ? 'text-2xl sm:text-3xl md:text-[2rem]' : 'text-lg sm:text-xl'
+          }`}
+          style={{ lineHeight: 1.2 }}
         >
           {title}
         </h3>
@@ -193,9 +194,9 @@ function SectorCard({ sector, href, title, description, exploreLabel }: SectorCa
           {description}
         </p>
 
-        {/* Bottom: explore link */}
+        {/* Bottom: explore link — always visible on touch (no hover), hover-fade on ≥md */}
         <span
-          className="mt-auto pt-6 inline-flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          className="mt-auto pt-6 inline-flex items-center md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"
           style={{ color: 'var(--accent)', fontSize: '13px', fontWeight: 500 }}
         >
           {exploreLabel} →
