@@ -80,13 +80,13 @@ export function DivisionGrid() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-14 md:mb-16 max-w-3xl mx-auto"
         >
-          <p className="uppercase tracking-[0.2em] text-xs mb-4 text-foreground-secondary">
+          <p className="uppercase tracking-[0.25em] text-xs sm:text-sm mb-4 text-accent font-semibold">
             {t('eyebrow')}
           </p>
-          <h2 className="text-display-sm md:text-display-md font-bold text-foreground mb-5">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-5 tracking-tight leading-tight">
             {t('heading')}
           </h2>
-          <p className="text-body md:text-body-lg text-foreground-secondary leading-relaxed">
+          <p className="text-base sm:text-lg text-foreground-muted leading-relaxed">
             {t('subheading')}
           </p>
         </motion.div>
@@ -143,7 +143,7 @@ export function DivisionGrid() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl md:text-[1.6rem] font-extrabold text-white mb-3 tracking-tight leading-tight">
+                  <h3 className="text-2xl md:text-[1.7rem] font-extrabold text-white mb-3 tracking-tight leading-tight">
                     {t(`${division.key}.title`)}
                   </h3>
 
@@ -154,7 +154,7 @@ export function DivisionGrid() {
                   />
 
                   {/* Subtitle */}
-                  <p className="text-white/60 leading-relaxed text-sm md:text-[0.95rem] mb-6">
+                  <p className="text-white/85 leading-relaxed text-[15px] md:text-base mb-6">
                     {t(`${division.key}.subtitle`)}
                   </p>
 
@@ -163,11 +163,11 @@ export function DivisionGrid() {
                     {division.products.map((product) => (
                       <li
                         key={product}
-                        className="text-[11px] font-semibold tracking-wide px-2.5 py-1 rounded-full"
+                        className="text-xs sm:text-[13px] font-semibold tracking-wide px-3 py-1.5 rounded-full"
                         style={{
-                          background: `${division.accent}14`,
-                          color: division.accent,
-                          border: `1px solid ${division.accent}30`,
+                          background: `${division.accent}26`,
+                          color: '#fff',
+                          border: `1px solid ${division.accent}66`,
                         }}
                       >
                         {product}
@@ -178,7 +178,7 @@ export function DivisionGrid() {
                   {/* Author label */}
                   <p
                     className="mt-2"
-                    style={{ fontSize: '12px', color: 'var(--foreground-muted)' }}
+                    style={{ fontSize: '13px', color: 'var(--foreground-muted)' }}
                   >
                     {t(`authors.${division.authorKey}`)}
                   </p>

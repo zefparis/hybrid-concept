@@ -106,11 +106,11 @@ function SectorCard({ sector, href, title, description, exploreLabel }: SectorCa
           {/* Left: number + icon + title */}
           <div className="flex items-center gap-3 sm:gap-5 shrink-0">
             <span
-              className="font-semibold uppercase"
+              className="font-bold uppercase"
               style={{
-                fontSize: '11px',
-                letterSpacing: '0.15em',
-                color: 'var(--foreground-muted)',
+                fontSize: '12px',
+                letterSpacing: '0.2em',
+                color: 'var(--accent)',
               }}
             >
               {sector.number}
@@ -127,8 +127,8 @@ function SectorCard({ sector, href, title, description, exploreLabel }: SectorCa
           <p
             className="flex-1 md:text-center"
             style={{
-              color: 'var(--foreground-secondary)',
-              fontSize: '14px',
+              color: 'var(--foreground-muted)',
+              fontSize: '15px',
               lineHeight: 1.6,
             }}
           >
@@ -160,11 +160,11 @@ function SectorCard({ sector, href, title, description, exploreLabel }: SectorCa
         {/* Top row: number + icon */}
         <div className="flex items-center justify-between mb-5 sm:mb-6">
           <span
-            className="font-semibold uppercase"
+            className="font-bold uppercase"
             style={{
-              fontSize: '11px',
-              letterSpacing: '0.15em',
-              color: 'var(--foreground-muted)',
+              fontSize: '12px',
+              letterSpacing: '0.2em',
+              color: 'var(--accent)',
             }}
           >
             {sector.number}
@@ -174,8 +174,8 @@ function SectorCard({ sector, href, title, description, exploreLabel }: SectorCa
 
         {/* Title */}
         <h3
-          className={`font-semibold text-white tracking-tight transition-colors duration-300 group-hover:text-accent-hover mb-3 ${
-            isLarge ? 'text-2xl sm:text-3xl md:text-[2rem]' : 'text-lg sm:text-xl'
+          className={`font-extrabold text-white tracking-tight transition-colors duration-300 group-hover:text-accent-hover mb-3 ${
+            isLarge ? 'text-2xl sm:text-3xl md:text-[2rem]' : 'text-xl sm:text-2xl'
           }`}
           style={{ lineHeight: 1.2 }}
         >
@@ -186,8 +186,8 @@ function SectorCard({ sector, href, title, description, exploreLabel }: SectorCa
         <p
           className={isLarge ? 'line-clamp-2' : 'line-clamp-3'}
           style={{
-            color: 'var(--foreground-secondary)',
-            fontSize: '14px',
+            color: 'var(--foreground-muted)',
+            fontSize: isLarge ? '16px' : '15px',
             lineHeight: 1.6,
           }}
         >
@@ -234,7 +234,7 @@ export function SectorGrid({ title }: SectorGridProps = {}) {
 
   return (
     <section ref={sectionRef} className="py-20 md:py-32">
-      <div className="container">
+      <div className="container px-4 sm:px-6">
         {/* Section header — left aligned */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -243,19 +243,18 @@ export function SectorGrid({ title }: SectorGridProps = {}) {
           className="max-w-2xl mb-12 md:mb-16"
         >
           <p
-            className="uppercase mb-4"
+            className="uppercase mb-4 text-accent font-semibold"
             style={{
-              fontSize: '11px',
-              letterSpacing: '0.15em',
-              color: 'var(--foreground-muted)',
+              fontSize: '12px',
+              letterSpacing: '0.25em',
             }}
           >
             {t('eyebrow')}
           </p>
-          <h2 className="text-display-sm font-bold text-gradient mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight leading-tight">
             {title || t('heading')}
           </h2>
-          <p className="text-body md:text-body-lg text-foreground-secondary leading-relaxed">
+          <p className="text-base sm:text-lg text-foreground-muted leading-relaxed">
             {t('description')}
           </p>
         </motion.div>

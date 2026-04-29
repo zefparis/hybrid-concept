@@ -18,7 +18,7 @@ export default async function HomePage({ params }: Props) {
   return (
     <>
       <section
-        className="relative pt-28 pb-20 text-center overflow-hidden"
+        className="relative pt-32 pb-24 md:pt-40 md:pb-32 text-center overflow-hidden px-6"
         style={{
           backgroundImage: 'url(/images/New_York_City_skyline_banner.jpg)',
           backgroundSize: 'cover',
@@ -26,19 +26,26 @@ export default async function HomePage({ params }: Props) {
           backgroundRepeat: 'no-repeat',
         }}
       >
-        {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-background/70 pointer-events-none" />
+        {/* Heavy gradient overlay for legibility */}
+        <div className="absolute inset-0 bg-linear-to-b from-background/90 via-background/80 to-background pointer-events-none" />
+        <div className="absolute inset-0 bg-background/40 pointer-events-none" />
         {/* Bottom fade into next section */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-background to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-background to-transparent pointer-events-none" />
 
-        <div className="relative z-10">
-          <p className="uppercase tracking-[0.2em] text-xs mb-4 text-foreground-secondary">
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <p className="uppercase tracking-[0.25em] text-[11px] sm:text-xs mb-5 text-accent font-semibold drop-shadow">
             {t('eyebrow')}
           </p>
-          <h1 className="text-display-lg md:text-display-xl font-bold text-gradient mb-6">
+          <h1
+            className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight leading-[1.05]"
+            style={{ textShadow: '0 2px 24px rgba(0,0,0,0.6)' }}
+          >
             {t('title')}
           </h1>
-          <p className="text-body-lg text-foreground-secondary max-w-2xl mx-auto leading-relaxed">
+          <p
+            className="text-base sm:text-lg md:text-xl text-foreground-muted max-w-2xl mx-auto leading-relaxed"
+            style={{ textShadow: '0 1px 8px rgba(0,0,0,0.5)' }}
+          >
             {t('subtitle')}
           </p>
         </div>

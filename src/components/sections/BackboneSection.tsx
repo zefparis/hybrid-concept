@@ -74,20 +74,20 @@ export function BackboneSection() {
         <div className="max-w-3xl mx-auto text-center mb-14 md:mb-16">
           <motion.p
             variants={item}
-            className="uppercase tracking-[0.2em] text-xs mb-4 text-foreground-secondary"
+            className="uppercase tracking-[0.25em] text-xs sm:text-sm mb-4 text-accent font-semibold"
           >
             {t('label')}
           </motion.p>
           <motion.h2
             variants={item}
-            className="text-display-sm md:text-display-md font-bold mb-5"
+            className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-5 tracking-tight leading-tight"
           >
-            <span className="text-foreground">{t('titlePrefix')} </span>
+            <span className="text-white">{t('titlePrefix')} </span>
             <span className="text-gradient-accent">{t('titleHighlight')}</span>
           </motion.h2>
           <motion.p
             variants={item}
-            className="text-body md:text-body-lg text-foreground-secondary leading-relaxed"
+            className="text-base sm:text-lg text-foreground-muted leading-relaxed"
           >
             {t('description')}
           </motion.p>
@@ -101,12 +101,12 @@ export function BackboneSection() {
           {STATS.map((stat) => (
             <div
               key={stat.key}
-              className="glass hover-lift rounded-2xl p-6 md:p-7 text-center"
+              className="glass hover-lift rounded-2xl p-5 sm:p-6 md:p-7 text-center"
             >
-              <div className="text-3xl md:text-4xl font-extrabold text-gradient-accent mb-2 tracking-tight">
+              <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gradient-accent mb-2 tracking-tight">
                 {stat.value}
               </div>
-              <div className="text-xs md:text-sm text-foreground-secondary leading-snug">
+              <div className="text-sm md:text-base text-foreground-muted leading-snug font-medium">
                 {t(`stats.${stat.key}`)}
               </div>
             </div>
@@ -117,11 +117,11 @@ export function BackboneSection() {
         <motion.div variants={item} className="flex justify-center">
           <a
             href={`/${locale}/capabilities/hybrid-vector`}
-            className="group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-foreground transition-all duration-300 hover:gap-3"
+            className="group inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-sm sm:text-base font-semibold text-white transition-all duration-300 hover:gap-3"
             style={{
-              background: 'rgba(0, 194, 255, 0.08)',
-              border: '1px solid var(--border-accent)',
-              boxShadow: 'var(--shadow-glow-subtle)',
+              background: 'rgba(0, 194, 255, 0.16)',
+              border: '1px solid var(--accent)',
+              boxShadow: 'var(--shadow-glow-hover)',
             }}
           >
             <span>{t('cta')}</span>
