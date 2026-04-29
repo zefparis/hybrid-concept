@@ -34,18 +34,21 @@ export default async function HomePage({ params }: Props) {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-background to-transparent pointer-events-none" />
 
         <div className="relative z-10 max-w-4xl mx-auto">
-          <p className="uppercase tracking-[0.25em] text-[11px] sm:text-xs mb-5 text-accent font-semibold drop-shadow">
-            {t('eyebrow')}
-          </p>
           <h1
-            className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight leading-[1.05]"
-            style={{ textShadow: '0 2px 24px rgba(0,0,0,0.6)' }}
+            className="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-[1.05]"
+            style={{
+              color: '#ffffff',
+              textShadow: '0 2px 12px rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.6)',
+            }}
           >
             {t('title')}
           </h1>
           <p
-            className="text-base sm:text-lg md:text-xl text-foreground-muted max-w-2xl mx-auto leading-relaxed"
-            style={{ textShadow: '0 1px 8px rgba(0,0,0,0.5)' }}
+            className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
+            style={{
+              color: '#E2E8F0',
+              textShadow: '0 1px 6px rgba(0,0,0,0.55)',
+            }}
           >
             {t('subtitle')}
           </p>
