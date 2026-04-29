@@ -40,7 +40,35 @@
   },
 
   "sectors": {
-    "heading": "Secteurs",
+    "eyebrow": "Secteurs",
+    "heading": "Là où HC-1 opère",
+    "subheading": "Six secteurs, une plateforme intégrée",
+    "description": "De l'infrastructure souveraine à l'agriculture de précision — six secteurs, une seule plateforme intégrée.",
+    "explore": "Explorer",
+    "1": {
+      "title": "Gouvernement et Programmes Nationaux",
+      "description": "Infrastructures souveraines et systèmes de sécurité nationale."
+    },
+    "2": {
+      "title": "Aviation",
+      "description": "Solutions aéronautiques et services d'aviation de pointe."
+    },
+    "3": {
+      "title": "Énergie et Mines",
+      "description": "Continuité de production et protection des revenus."
+    },
+    "4": {
+      "title": "Ports, Frontières et Logistique",
+      "description": "Corridors sécurisés et intégrité de la chaîne d'approvisionnement."
+    },
+    "5": {
+      "title": "Résilience Cyber",
+      "description": "Architecture zéro-confiance et prévention des menaces."
+    },
+    "6": {
+      "title": "Agriculture Moderne",
+      "description": "Solutions technologiques pour une agriculture durable et performante."
+    },
     "government": {
       "title": "Gouvernement et Programmes Nationaux",
       "description": "Infrastructures souveraines et systèmes de sécurité nationale."
@@ -64,6 +92,42 @@
     "ai": {
       "title": "Agriculture Moderne",
       "description": "Solutions technologiques pour une agriculture durable et performante."
+    },
+    "aviation": {
+      "hero": {
+        "title": "Aviation",
+        "subtitle": "Opérations Aéronautiques et Sûreté",
+        "lead": "HC-1 sécurise les opérations aéronautiques avec authentification cognitive, anti-spoofing drone et communications post-quantiques sur flottes, aéroports et corridors aériens."
+      },
+      "stats": {
+        "fleet":        { "value": "100%", "label": "opérations de flotte sécurisées" },
+        "availability": { "value": "<3ms", "label": "latence d'authentification cockpit" },
+        "safety":       { "value": "0",    "label": "intrusions par spoofing détectées" }
+      },
+      "cta": {
+        "heading": "Sécurisez vos opérations aériennes",
+        "description": "Échangez avec notre équipe pour déployer le socle de sécurité aviation HC-1 sur votre flotte et vos opérations sol.",
+        "primary": "Demander un briefing",
+        "secondary": "Tous les secteurs"
+      }
+    },
+    "modernAgriculture": {
+      "hero": {
+        "title": "Agriculture Moderne",
+        "subtitle": "Agriculture de Précision et Sécurité Alimentaire",
+        "lead": "HC-1 active l'agriculture durable pilotée par la technologie — du satellite à la coopérative sécurisée, en passant par la traçabilité de la chaîne agricole."
+      },
+      "stats": {
+        "yield":         { "value": "+30%",  "label": "hausse moyenne de rendement" },
+        "irrigation":    { "value": "-40%",  "label": "réduction de la consommation d'eau" },
+        "sustainability":{ "value": "12",    "label": "filières agricoles africaines couvertes" }
+      },
+      "cta": {
+        "heading": "Modernisez vos opérations agricoles",
+        "description": "Contactez notre équipe agriculture pour explorer les solutions de précision, de traçabilité et de coopératives connectées.",
+        "primary": "Demander un briefing",
+        "secondary": "Tous les secteurs"
+      }
     },
     "energyMining": {
       "hero": {

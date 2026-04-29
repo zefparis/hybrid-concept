@@ -1,624 +1,325 @@
 'use client';
 
+import { useRef } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { useTranslations } from 'next-intl';
-import { cn } from '@/lib/utils';
+import { motion, useInView, useReducedMotion, type Variants } from 'framer-motion';
+import { useTranslations, useLocale } from 'next-intl';
+import {
+  Building2,
+  Plane,
+  Zap,
+  Container,
+  ShieldCheck,
+  Leaf,
+  type LucideIcon,
+} from 'lucide-react';
 
-const ICONS: Record<string, React.ReactNode> = {
-  government: (
-    <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
-    </svg>
-  ),
-  aviation: (
-    <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
-    </svg>
-  ),
-  energy: (
-    <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-    </svg>
-  ),
-  logistics: (
-    <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
-    </svg>
-  ),
-  cyber: (
-    <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-    </svg>
-  ),
-  agriculture: (
-    <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 21c0 0-8-4-8-11a8 8 0 0116 0c0 7-8 11-8 11z" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 21V10" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M8 14c2-2 4-4 4-4s2 2 4 4" />
-    </svg>
-  ),
+type SectorSize = 'large' | 'medium' | 'small' | 'wide';
+
+type SectorEntry = {
+  /** Numeric translation key (1..6) */
+  key: '1' | '2' | '3' | '4' | '5' | '6';
+  /** Display number e.g. "01" */
+  number: string;
+  /** URL slug under /[locale]/sectors/{slug} */
+  slug: string;
+  icon: LucideIcon;
+  size: SectorSize;
 };
 
-const SECTOR_BACKGROUNDS: Record<string, React.ReactNode> = {
-  government: (
-    <svg className="absolute inset-0 w-full h-full text-white transition-transform duration-700 group-hover:scale-105 pointer-events-none" viewBox="0 0 500 500" fill="none" stroke="currentColor">
-      {/* Ambient grid */}
-      <g opacity="0.06">
-        {[...Array(12)].map((_, i) => (
-          <line key={`gh${i}`} x1="0" y1={40 + i * 38} x2="500" y2={40 + i * 38} strokeWidth="1" />
-        ))}
-        {[...Array(12)].map((_, i) => (
-          <line key={`gv${i}`} x1={40 + i * 38} y1="0" x2={40 + i * 38} y2="500" strokeWidth="1" />
-        ))}
-      </g>
-
-      {/* Glow */}
-      <circle cx="250" cy="210" r="140" fill="#38bdf8" opacity="0.04" />
-      <circle cx="250" cy="210" r="80" fill="#818cf8" opacity="0.05" />
-
-      <g transform="translate(80, 40)">
-        {/* Grand building structure */}
-        <path d="M170 80 L340 80 L340 360 L170 360 Z" strokeWidth="1" opacity="0.08" fill="currentColor" fillOpacity="0.03" />
-
-        {/* Pediment / Triangle */}
-        <path d="M120 120 L255 40 L390 120 Z" strokeWidth="2" opacity="0.15" fill="currentColor" fillOpacity="0.04" />
-        <path d="M160 120 L255 60 L350 120 Z" strokeWidth="1.5" stroke="#38bdf8" opacity="0.25" fill="#38bdf8" fillOpacity="0.03" />
-
-        {/* Columns */}
-        <rect x="150" y="120" width="14" height="220" rx="3" fill="currentColor" fillOpacity="0.06" stroke="none" />
-        <rect x="200" y="120" width="14" height="220" rx="3" fill="currentColor" fillOpacity="0.06" stroke="none" />
-        <rect x="250" y="120" width="14" height="220" rx="3" fill="currentColor" fillOpacity="0.08" stroke="none" />
-        <rect x="300" y="120" width="14" height="220" rx="3" fill="currentColor" fillOpacity="0.06" stroke="none" />
-        <rect x="350" y="120" width="14" height="220" rx="3" fill="currentColor" fillOpacity="0.06" stroke="none" />
-
-        {/* Column highlights */}
-        <line x1="157" y1="130" x2="157" y2="330" strokeWidth="1" stroke="#38bdf8" opacity="0.15" />
-        <line x1="257" y1="130" x2="257" y2="330" strokeWidth="1.5" stroke="#818cf8" opacity="0.2" />
-        <line x1="357" y1="130" x2="357" y2="330" strokeWidth="1" stroke="#38bdf8" opacity="0.15" />
-
-        {/* Base platform */}
-        <rect x="120" y="340" width="280" height="16" rx="2" fill="currentColor" fillOpacity="0.06" stroke="none" />
-        <line x1="120" y1="340" x2="400" y2="340" strokeWidth="2" opacity="0.12" />
-        <line x1="120" y1="356" x2="400" y2="356" strokeWidth="1" stroke="#38bdf8" opacity="0.15" />
-
-        {/* Lintel / Entablature */}
-        <rect x="135" y="115" width="250" height="10" rx="1" fill="currentColor" fillOpacity="0.05" stroke="none" />
-        <line x1="135" y1="115" x2="385" y2="115" strokeWidth="1.5" stroke="#818cf8" opacity="0.18" />
-
-        {/* Network nodes on columns */}
-        <circle cx="157" cy="180" r="4" fill="#38bdf8" opacity="0.7" stroke="none" />
-        <circle cx="207" cy="220" r="3" fill="#c084fc" opacity="0.6" stroke="none" />
-        <circle cx="257" cy="170" r="5" fill="#818cf8" opacity="0.8" stroke="none" />
-        <circle cx="307" cy="240" r="3" fill="#38bdf8" opacity="0.6" stroke="none" />
-        <circle cx="357" cy="200" r="4" fill="#c084fc" opacity="0.7" stroke="none" />
-
-        {/* Interconnect lines between nodes */}
-        <line x1="157" y1="180" x2="257" y2="170" strokeWidth="1" stroke="#38bdf8" opacity="0.2" strokeDasharray="4 6" />
-        <line x1="257" y1="170" x2="357" y2="200" strokeWidth="1" stroke="#818cf8" opacity="0.2" strokeDasharray="4 6" />
-        <line x1="207" y1="220" x2="307" y2="240" strokeWidth="1" stroke="#c084fc" opacity="0.15" strokeDasharray="3 5" />
-        <line x1="157" y1="180" x2="207" y2="220" strokeWidth="1" opacity="0.12" strokeDasharray="4 4" />
-        <line x1="307" y1="240" x2="357" y2="200" strokeWidth="1" opacity="0.12" strokeDasharray="4 4" />
-
-        {/* Data flow dots */}
-        <circle cx="200" cy="175" r="2" fill="#38bdf8" opacity="0.5" stroke="none" />
-        <circle cx="310" cy="205" r="2" fill="#818cf8" opacity="0.5" stroke="none" />
-        <circle cx="255" cy="80" r="3" fill="#38bdf8" opacity="0.6" stroke="none" />
-
-        {/* Floating abstract data lines */}
-        <line x1="60" y1="280" x2="140" y2="280" strokeWidth="1" opacity="0.08" strokeDasharray="6 4 2 4" />
-        <line x1="380" y1="260" x2="440" y2="260" strokeWidth="1" opacity="0.08" strokeDasharray="4 6 2 4" />
-        <line x1="60" y1="300" x2="120" y2="300" strokeWidth="1" stroke="#38bdf8" opacity="0.1" strokeDasharray="8 4" />
-      </g>
-    </svg>
-  ),
-  infrastructure: (
-    <svg className="absolute inset-0 w-full h-full text-white transition-transform duration-700 group-hover:scale-105 pointer-events-none" viewBox="0 0 500 500" fill="none" stroke="currentColor">
-      {/* Sky glow */}
-      <circle cx="250" cy="180" r="180" fill="#38bdf8" opacity="0.03" />
-      <circle cx="250" cy="180" r="100" fill="#818cf8" opacity="0.04" />
-      <circle cx="300" cy="150" r="50" fill="#38bdf8" opacity="0.05" />
-
-      <g transform="translate(20, 20)">
-        {/* Cloud layers */}
-        <ellipse cx="120" cy="340" rx="80" ry="15" fill="currentColor" fillOpacity="0.04" stroke="none" />
-        <ellipse cx="350" cy="360" rx="100" ry="18" fill="currentColor" fillOpacity="0.03" stroke="none" />
-        <ellipse cx="230" cy="380" rx="120" ry="12" fill="currentColor" fillOpacity="0.03" stroke="none" />
-
-        {/* Runway / horizon */}
-        <line x1="0" y1="400" x2="460" y2="400" strokeWidth="1" opacity="0.08" />
-        <line x1="140" y1="400" x2="320" y2="400" strokeWidth="2" stroke="#38bdf8" opacity="0.15" />
-        {/* Runway markers */}
-        <line x1="180" y1="398" x2="180" y2="402" strokeWidth="2" stroke="#38bdf8" opacity="0.2" />
-        <line x1="210" y1="398" x2="210" y2="402" strokeWidth="2" stroke="#38bdf8" opacity="0.2" />
-        <line x1="240" y1="398" x2="240" y2="402" strokeWidth="2" stroke="#38bdf8" opacity="0.2" />
-        <line x1="270" y1="398" x2="270" y2="402" strokeWidth="2" stroke="#38bdf8" opacity="0.2" />
-
-        {/* Main aircraft silhouette — angled climb */}
-        {/* Fuselage */}
-        <line x1="100" y1="280" x2="340" y2="160" strokeWidth="3" stroke="#38bdf8" opacity="0.2" />
-        <line x1="100" y1="280" x2="340" y2="160" strokeWidth="1.5" stroke="#818cf8" opacity="0.15" />
-        {/* Nose cone */}
-        <path d="M340 160 L365 148 L345 155 Z" fill="#38bdf8" fillOpacity="0.15" stroke="none" />
-
-        {/* Wings */}
-        <path d="M200 230 L140 260 L120 255 L195 225 Z" fill="#818cf8" fillOpacity="0.08" stroke="#818cf8" strokeWidth="1" opacity="0.18" />
-        <path d="M200 230 L260 255 L280 250 L210 222 Z" fill="#38bdf8" fillOpacity="0.08" stroke="#38bdf8" strokeWidth="1" opacity="0.18" />
-
-        {/* Tail */}
-        <path d="M110 275 L90 250 L100 255 L115 272 Z" fill="#818cf8" fillOpacity="0.1" stroke="#818cf8" strokeWidth="0.5" opacity="0.2" />
-
-        {/* Engine trail lines */}
-        <line x1="95" y1="283" x2="30" y2="320" strokeWidth="1" stroke="#38bdf8" opacity="0.1" strokeDasharray="8 6" />
-        <line x1="95" y1="285" x2="20" y2="330" strokeWidth="0.5" stroke="#818cf8" opacity="0.08" strokeDasharray="6 8" />
-        <line x1="92" y1="288" x2="15" y2="340" strokeWidth="0.5" opacity="0.06" strokeDasharray="4 10" />
-
-        {/* Flight path arc */}
-        <path d="M30 350 Q 100 310 180 260 T 360 150" strokeWidth="1" stroke="#38bdf8" opacity="0.1" strokeDasharray="12 8" fill="none" />
-
-        {/* Altitude markers */}
-        <line x1="380" y1="160" x2="380" y2="400" strokeWidth="0.5" opacity="0.06" strokeDasharray="4 8" />
-        <line x1="375" y1="200" x2="385" y2="200" strokeWidth="1" opacity="0.08" />
-        <line x1="375" y1="250" x2="385" y2="250" strokeWidth="1" opacity="0.08" />
-        <line x1="375" y1="300" x2="385" y2="300" strokeWidth="1" opacity="0.08" />
-        <line x1="375" y1="350" x2="385" y2="350" strokeWidth="1" opacity="0.08" />
-
-        {/* Navigation waypoints */}
-        <circle cx="150" cy="270" r="4" fill="#38bdf8" opacity="0.5" stroke="none" />
-        <circle cx="150" cy="270" r="10" stroke="#38bdf8" strokeWidth="0.5" opacity="0.15" strokeDasharray="3 3" />
-        <circle cx="260" cy="200" r="4" fill="#818cf8" opacity="0.5" stroke="none" />
-        <circle cx="260" cy="200" r="10" stroke="#818cf8" strokeWidth="0.5" opacity="0.15" strokeDasharray="3 3" />
-        <circle cx="340" cy="160" r="5" fill="#38bdf8" opacity="0.6" stroke="none" />
-        <circle cx="340" cy="160" r="14" stroke="#38bdf8" strokeWidth="0.5" opacity="0.12" strokeDasharray="3 3" />
-
-        {/* Compass rose hint */}
-        <circle cx="420" cy="80" r="25" stroke="currentColor" strokeWidth="0.5" opacity="0.08" />
-        <line x1="420" y1="55" x2="420" y2="65" strokeWidth="1" opacity="0.1" />
-        <line x1="420" y1="95" x2="420" y2="105" strokeWidth="1" opacity="0.1" />
-        <line x1="395" y1="80" x2="405" y2="80" strokeWidth="1" opacity="0.1" />
-        <line x1="435" y1="80" x2="445" y2="80" strokeWidth="1" opacity="0.1" />
-
-        {/* Scattered particles */}
-        <circle cx="60" cy="180" r="2" fill="#38bdf8" opacity="0.4" stroke="none" />
-        <circle cx="400" cy="280" r="2" fill="#818cf8" opacity="0.3" stroke="none" />
-        <circle cx="180" cy="120" r="1.5" fill="#c084fc" opacity="0.3" stroke="none" />
-        <circle cx="320" cy="320" r="1.5" fill="#38bdf8" opacity="0.3" stroke="none" />
-      </g>
-    </svg>
-  ),
-  energy: (
-    <svg className="absolute inset-0 w-full h-full text-white transition-transform duration-700 group-hover:scale-105 pointer-events-none" viewBox="0 0 500 500" fill="none" stroke="currentColor">
-      {/* Radial glow */}
-      <circle cx="260" cy="220" r="160" fill="#fbbf24" opacity="0.03" />
-      <circle cx="260" cy="220" r="100" fill="#38bdf8" opacity="0.04" />
-      <circle cx="260" cy="220" r="50" fill="#fbbf24" opacity="0.05" />
-
-      {/* Background energy arcs */}
-      <g opacity="0.08" strokeWidth="1">
-        <path d="M50 250 Q 150 50 250 250 T 450 250" />
-        <path d="M50 280 Q 150 80 250 280 T 450 280" />
-        <path d="M50 310 Q 150 110 250 310 T 450 310" />
-      </g>
-
-      <g transform="translate(50, 40)">
-        {/* Giant lightning bolt */}
-        <path d="M220 40 L180 180 L240 180 L160 380 L210 220 L150 220 Z" 
-          strokeWidth="2" opacity="0.12" fill="currentColor" fillOpacity="0.04" />
-        <path d="M225 60 L190 175 L240 175 L175 350 L215 215 L165 215 Z" 
-          strokeWidth="1.5" stroke="#fbbf24" opacity="0.2" fill="#fbbf24" fillOpacity="0.03" />
-
-        {/* Energy wave rings */}
-        <ellipse cx="200" cy="210" rx="160" ry="40" strokeWidth="1" opacity="0.08" />
-        <ellipse cx="200" cy="210" rx="130" ry="32" strokeWidth="1" stroke="#38bdf8" opacity="0.12" />
-        <ellipse cx="200" cy="210" rx="100" ry="25" strokeWidth="1.5" stroke="#fbbf24" opacity="0.18" />
-        <ellipse cx="200" cy="210" rx="60" ry="15" strokeWidth="1" stroke="#818cf8" opacity="0.15" />
-
-        {/* Core energy hub */}
-        <circle cx="200" cy="210" r="30" fill="currentColor" fillOpacity="0.06" stroke="none" />
-        <circle cx="200" cy="210" r="18" fill="#fbbf24" fillOpacity="0.12" stroke="none" />
-        <circle cx="200" cy="210" r="8" fill="#fbbf24" opacity="0.8" stroke="none" />
-        <circle cx="200" cy="210" r="4" fill="#fff" opacity="0.9" stroke="none" />
-
-        {/* Radiating energy beams */}
-        <line x1="200" y1="180" x2="200" y2="60" strokeWidth="1.5" stroke="#fbbf24" opacity="0.2" strokeDasharray="8 6" />
-        <line x1="200" y1="240" x2="200" y2="380" strokeWidth="1.5" stroke="#fbbf24" opacity="0.15" strokeDasharray="8 6" />
-        <line x1="170" y1="210" x2="40" y2="210" strokeWidth="1" stroke="#38bdf8" opacity="0.15" strokeDasharray="6 8" />
-        <line x1="230" y1="210" x2="380" y2="210" strokeWidth="1" stroke="#38bdf8" opacity="0.15" strokeDasharray="6 8" />
-        
-        {/* Diagonal beams */}
-        <line x1="180" y1="190" x2="80" y2="90" strokeWidth="1" opacity="0.08" strokeDasharray="4 6" />
-        <line x1="220" y1="190" x2="340" y2="90" strokeWidth="1" opacity="0.08" strokeDasharray="4 6" />
-        <line x1="180" y1="230" x2="80" y2="340" strokeWidth="1" stroke="#c084fc" opacity="0.1" strokeDasharray="4 6" />
-        <line x1="220" y1="230" x2="340" y2="340" strokeWidth="1" stroke="#c084fc" opacity="0.1" strokeDasharray="4 6" />
-
-        {/* Satellite energy nodes */}
-        <circle cx="80" cy="90" r="5" fill="#38bdf8" opacity="0.5" stroke="none" />
-        <circle cx="340" cy="90" r="4" fill="#fbbf24" opacity="0.5" stroke="none" />
-        <circle cx="80" cy="340" r="4" fill="#c084fc" opacity="0.5" stroke="none" />
-        <circle cx="340" cy="340" r="5" fill="#38bdf8" opacity="0.4" stroke="none" />
-        <circle cx="40" cy="210" r="3" fill="#818cf8" opacity="0.5" stroke="none" />
-        <circle cx="380" cy="210" r="3" fill="#fbbf24" opacity="0.5" stroke="none" />
-
-        {/* Particle scatter */}
-        <circle cx="140" cy="130" r="2" fill="#fbbf24" opacity="0.4" stroke="none" />
-        <circle cx="280" cy="140" r="2" fill="#38bdf8" opacity="0.4" stroke="none" />
-        <circle cx="120" cy="300" r="2" fill="#818cf8" opacity="0.3" stroke="none" />
-        <circle cx="300" cy="290" r="2" fill="#fbbf24" opacity="0.3" stroke="none" />
-        <circle cx="250" cy="120" r="1.5" fill="#fbbf24" opacity="0.5" stroke="none" />
-        <circle cx="160" cy="280" r="1.5" fill="#c084fc" opacity="0.4" stroke="none" />
-      </g>
-    </svg>
-  ),
-  ports: (
-    <svg className="absolute inset-0 w-full h-full text-white transition-transform duration-700 group-hover:scale-105 pointer-events-none" viewBox="0 0 500 500" fill="none" stroke="currentColor">
-      {/* Subtle grid */}
-      <g opacity="0.05">
-        {[...Array(8)].map((_, i) => (
-          <line key={`pg${i}`} x1="0" y1={60 + i * 50} x2="500" y2={60 + i * 50} strokeWidth="1" />
-        ))}
-      </g>
-
-      {/* Glow */}
-      <circle cx="250" cy="250" r="140" fill="#34d399" opacity="0.03" />
-      <circle cx="250" cy="230" r="80" fill="#38bdf8" opacity="0.04" />
-
-      <g transform="translate(30, 50)">
-        {/* World map outline — abstract curved shapes */}
-        <path d="M60 200 Q 120 140 200 160 T 340 150 Q 380 150 420 190" strokeWidth="1.5" opacity="0.1" fill="none" />
-        <path d="M40 230 Q 100 180 180 200 T 360 190 Q 400 195 440 220" strokeWidth="1" stroke="#34d399" opacity="0.12" fill="none" />
-        <path d="M60 260 Q 140 220 220 240 T 380 240" strokeWidth="1" opacity="0.06" fill="none" />
-
-        {/* Major port/hub nodes */}
-        <circle cx="100" cy="170" r="8" fill="#38bdf8" fillOpacity="0.15" stroke="#38bdf8" strokeWidth="1.5" opacity="0.5" />
-        <circle cx="100" cy="170" r="3" fill="#38bdf8" opacity="0.8" stroke="none" />
-
-        <circle cx="230" cy="155" r="10" fill="#34d399" fillOpacity="0.15" stroke="#34d399" strokeWidth="1.5" opacity="0.5" />
-        <circle cx="230" cy="155" r="4" fill="#34d399" opacity="0.8" stroke="none" />
-
-        <circle cx="360" cy="165" r="8" fill="#818cf8" fillOpacity="0.15" stroke="#818cf8" strokeWidth="1.5" opacity="0.5" />
-        <circle cx="360" cy="165" r="3" fill="#818cf8" opacity="0.8" stroke="none" />
-
-        <circle cx="170" cy="280" r="7" fill="#c084fc" fillOpacity="0.12" stroke="#c084fc" strokeWidth="1" opacity="0.4" />
-        <circle cx="170" cy="280" r="3" fill="#c084fc" opacity="0.7" stroke="none" />
-
-        <circle cx="310" cy="300" r="7" fill="#38bdf8" fillOpacity="0.12" stroke="#38bdf8" strokeWidth="1" opacity="0.4" />
-        <circle cx="310" cy="300" r="3" fill="#38bdf8" opacity="0.7" stroke="none" />
-
-        {/* Route lines between hubs */}
-        <path d="M100 170 Q 160 130 230 155" strokeWidth="1.5" stroke="#38bdf8" opacity="0.2" strokeDasharray="6 4" />
-        <path d="M230 155 Q 290 140 360 165" strokeWidth="1.5" stroke="#34d399" opacity="0.2" strokeDasharray="6 4" />
-        <path d="M100 170 Q 130 230 170 280" strokeWidth="1" stroke="#c084fc" opacity="0.15" strokeDasharray="4 6" />
-        <path d="M230 155 Q 260 220 310 300" strokeWidth="1" stroke="#818cf8" opacity="0.15" strokeDasharray="4 6" />
-        <path d="M360 165 Q 340 230 310 300" strokeWidth="1" stroke="#38bdf8" opacity="0.12" strokeDasharray="4 6" />
-        <path d="M170 280 Q 240 290 310 300" strokeWidth="1" stroke="#c084fc" opacity="0.12" strokeDasharray="5 5" />
-
-        {/* Ship/container icons — abstract rectangles */}
-        <rect x="145" y="140" width="20" height="8" rx="1" fill="#38bdf8" opacity="0.2" stroke="none" />
-        <rect x="280" y="148" width="18" height="7" rx="1" fill="#34d399" opacity="0.18" stroke="none" />
-        <rect x="200" y="240" width="16" height="6" rx="1" fill="#818cf8" opacity="0.15" stroke="none" />
-
-        {/* Animated pulse rings on main hub */}
-        <circle cx="230" cy="155" r="20" stroke="#34d399" strokeWidth="1" opacity="0.12" />
-        <circle cx="230" cy="155" r="35" stroke="#34d399" strokeWidth="0.5" opacity="0.06" strokeDasharray="4 4" />
-
-        {/* Scattered data particles */}
-        <circle cx="60" cy="220" r="1.5" fill="#34d399" opacity="0.5" stroke="none" />
-        <circle cx="410" cy="200" r="1.5" fill="#38bdf8" opacity="0.4" stroke="none" />
-        <circle cx="140" cy="320" r="1.5" fill="#818cf8" opacity="0.3" stroke="none" />
-        <circle cx="380" cy="280" r="1.5" fill="#34d399" opacity="0.3" stroke="none" />
-        <circle cx="250" cy="340" r="2" fill="#c084fc" opacity="0.3" stroke="none" />
-
-        {/* Abstract wave at bottom */}
-        <path d="M0 360 Q 60 340 120 360 T 240 360 T 360 360 T 440 360" strokeWidth="1" stroke="#34d399" opacity="0.1" />
-        <path d="M0 375 Q 60 355 120 375 T 240 375 T 360 375 T 440 375" strokeWidth="0.5" opacity="0.06" />
-      </g>
-    </svg>
-  ),
-  cyber: (
-    <svg className="absolute inset-0 w-full h-full text-white transition-transform duration-700 group-hover:scale-105 pointer-events-none" viewBox="0 0 500 500" fill="none" stroke="currentColor">
-      {/* Matrix-style background lines */}
-      <g strokeWidth="1" opacity="0.06">
-        {[...Array(16)].map((_, i) => (
-          <line key={`cl${i}`} x1={30 + (i % 4) * 15} y1={30 + i * 28} x2={470 - (i % 3) * 20} y2={30 + i * 28}
-            strokeDasharray={`${(i * 7 % 20) + 4} ${(i * 11 % 15) + 8} ${(i * 13 % 25) + 6} ${(i * 17 % 10) + 4}`} />
-        ))}
-      </g>
-
-      {/* Central glow */}
-      <circle cx="250" cy="220" r="150" fill="#38bdf8" opacity="0.03" />
-      <circle cx="250" cy="220" r="80" fill="#818cf8" opacity="0.05" />
-
-      <g transform="translate(70, 30)">
-        {/* Outermost shield */}
-        <path d="M180 30 L350 90 V280 C350 370 270 420 180 440 C90 420 10 370 10 280 V90 Z" 
-          strokeWidth="1.5" opacity="0.1" fill="currentColor" fillOpacity="0.02" />
-
-        {/* Second shield ring */}
-        <path d="M180 60 L320 110 V270 C320 345 255 390 180 408 C105 390 40 345 40 270 V110 Z" 
-          strokeWidth="1.5" stroke="#38bdf8" opacity="0.15" fill="#38bdf8" fillOpacity="0.02" />
-
-        {/* Third shield ring */}
-        <path d="M180 90 L290 130 V260 C290 320 240 360 180 375 C120 360 70 320 70 260 V130 Z" 
-          strokeWidth="2" stroke="#818cf8" opacity="0.2" fill="#818cf8" fillOpacity="0.03" />
-
-        {/* Inner shield core */}
-        <path d="M180 120 L260 150 V250 C260 295 225 330 180 342 C135 330 100 295 100 250 V150 Z" 
-          strokeWidth="2" stroke="#c084fc" opacity="0.25" fill="#c084fc" fillOpacity="0.04" />
-
-        {/* Central lock icon */}
-        <rect x="160" y="200" width="40" height="35" rx="3" fill="currentColor" fillOpacity="0.08" stroke="none" />
-        <path d="M165 200 V185 C165 170 195 170 195 185 V200" strokeWidth="2" stroke="#38bdf8" opacity="0.4" fill="none" />
-        <circle cx="180" cy="218" r="5" fill="#38bdf8" opacity="0.8" stroke="none" />
-        <line x1="180" y1="223" x2="180" y2="228" strokeWidth="2" stroke="#38bdf8" opacity="0.6" />
-
-        {/* Hexagonal grid overlay */}
-        <path d="M180 140 L220 160 L220 200 L180 220 L140 200 L140 160 Z" strokeWidth="0.5" opacity="0.1" strokeDasharray="4 4" />
-        <path d="M180 100 L250 135 L250 215 L180 250 L110 215 L110 135 Z" strokeWidth="0.5" stroke="#818cf8" opacity="0.08" strokeDasharray="6 4" />
-
-        {/* Scan lines radiating from shield */}
-        <line x1="180" y1="30" x2="180" y2="120" strokeWidth="1" stroke="#38bdf8" opacity="0.1" strokeDasharray="4 8" />
-        <line x1="10" y1="185" x2="100" y2="185" strokeWidth="1" opacity="0.08" strokeDasharray="4 8" />
-        <line x1="260" y1="185" x2="350" y2="185" strokeWidth="1" opacity="0.08" strokeDasharray="4 8" />
-
-        {/* Perimeter sensor nodes */}
-        <circle cx="180" cy="30" r="3" fill="#38bdf8" opacity="0.6" stroke="none" />
-        <circle cx="350" cy="90" r="3" fill="#818cf8" opacity="0.5" stroke="none" />
-        <circle cx="10" cy="90" r="3" fill="#c084fc" opacity="0.5" stroke="none" />
-        <circle cx="350" cy="280" r="3" fill="#38bdf8" opacity="0.4" stroke="none" />
-        <circle cx="10" cy="280" r="3" fill="#818cf8" opacity="0.4" stroke="none" />
-        <circle cx="180" cy="440" r="3" fill="#c084fc" opacity="0.4" stroke="none" />
-
-        {/* Shield highlight streaks */}
-        <line x1="180" y1="60" x2="320" y2="110" strokeWidth="0.5" stroke="#38bdf8" opacity="0.12" />
-        <line x1="40" y1="110" x2="180" y2="60" strokeWidth="0.5" stroke="#c084fc" opacity="0.1" />
-
-        {/* Data particles */}
-        <circle cx="130" cy="150" r="2" fill="#38bdf8" opacity="0.4" stroke="none" />
-        <circle cx="240" cy="170" r="2" fill="#c084fc" opacity="0.4" stroke="none" />
-        <circle cx="120" cy="300" r="1.5" fill="#818cf8" opacity="0.3" stroke="none" />
-        <circle cx="250" cy="310" r="1.5" fill="#38bdf8" opacity="0.3" stroke="none" />
-      </g>
-    </svg>
-  ),
-  ai: (
-    <svg className="absolute inset-0 w-full h-full text-white transition-transform duration-700 group-hover:scale-105 pointer-events-none" viewBox="0 0 500 500" fill="none" stroke="currentColor">
-      {/* Sun glow */}
-      <circle cx="380" cy="80" r="120" fill="#34d399" opacity="0.03" />
-      <circle cx="380" cy="80" r="60" fill="#fbbf24" opacity="0.05" />
-      <circle cx="380" cy="80" r="30" fill="#fbbf24" opacity="0.08" />
-
-      {/* Earth glow */}
-      <circle cx="250" cy="350" r="160" fill="#34d399" opacity="0.03" />
-      <circle cx="250" cy="350" r="90" fill="#22c55e" opacity="0.04" />
-
-      <g transform="translate(30, 40)">
-        {/* Rolling hills / terrain */}
-        <path d="M0 380 Q 60 320 140 340 T 280 310 T 440 340 L440 420 L0 420 Z" fill="#22c55e" fillOpacity="0.06" stroke="none" />
-        <path d="M0 380 Q 60 320 140 340 T 280 310 T 440 340" strokeWidth="1.5" stroke="#34d399" opacity="0.15" fill="none" />
-        <path d="M0 400 Q 80 360 180 370 T 360 350 T 440 370" strokeWidth="1" opacity="0.08" fill="none" />
-
-        {/* Field rows — parallel lines */}
-        <g opacity="0.06">
-          {[...Array(8)].map((_, i) => (
-            <line key={`fr${i}`} x1={60 + i * 10} y1={350 - i * 2} x2={380 - i * 10} y2={350 - i * 2} strokeWidth="0.5" />
-          ))}
-        </g>
-
-        {/* Central plant / tree */}
-        <line x1="220" y1="340" x2="220" y2="160" strokeWidth="2" stroke="#22c55e" opacity="0.2" />
-        <line x1="220" y1="160" x2="220" y2="120" strokeWidth="1.5" stroke="#34d399" opacity="0.25" />
-        
-        {/* Branches */}
-        <path d="M220 200 Q 180 170 160 180" strokeWidth="1.5" stroke="#22c55e" opacity="0.18" fill="none" />
-        <path d="M220 200 Q 260 170 280 180" strokeWidth="1.5" stroke="#22c55e" opacity="0.18" fill="none" />
-        <path d="M220 240 Q 190 220 170 230" strokeWidth="1" stroke="#34d399" opacity="0.15" fill="none" />
-        <path d="M220 240 Q 250 220 270 230" strokeWidth="1" stroke="#34d399" opacity="0.15" fill="none" />
-        <path d="M220 160 Q 195 130 180 135" strokeWidth="1" stroke="#22c55e" opacity="0.15" fill="none" />
-        <path d="M220 160 Q 245 130 260 135" strokeWidth="1" stroke="#22c55e" opacity="0.15" fill="none" />
-
-        {/* Leaves */}
-        <ellipse cx="155" cy="175" rx="18" ry="10" transform="rotate(-20 155 175)" fill="#22c55e" fillOpacity="0.12" stroke="#22c55e" strokeWidth="0.5" opacity="0.2" />
-        <ellipse cx="285" cy="175" rx="18" ry="10" transform="rotate(20 285 175)" fill="#34d399" fillOpacity="0.12" stroke="#34d399" strokeWidth="0.5" opacity="0.2" />
-        <ellipse cx="165" cy="225" rx="15" ry="8" transform="rotate(-15 165 225)" fill="#34d399" fillOpacity="0.1" stroke="none" />
-        <ellipse cx="275" cy="225" rx="15" ry="8" transform="rotate(15 275 225)" fill="#22c55e" fillOpacity="0.1" stroke="none" />
-        <ellipse cx="175" cy="130" rx="14" ry="8" transform="rotate(-25 175 130)" fill="#34d399" fillOpacity="0.1" stroke="none" />
-        <ellipse cx="265" cy="130" rx="14" ry="8" transform="rotate(25 265 130)" fill="#22c55e" fillOpacity="0.1" stroke="none" />
-
-        {/* Crown foliage */}
-        <circle cx="220" cy="110" r="35" fill="#22c55e" fillOpacity="0.06" stroke="none" />
-        <circle cx="220" cy="110" r="25" fill="#34d399" fillOpacity="0.08" stroke="none" />
-
-        {/* Small plants on field */}
-        <line x1="100" y1="360" x2="100" y2="340" strokeWidth="1" stroke="#22c55e" opacity="0.15" />
-        <ellipse cx="100" cy="336" rx="8" ry="5" fill="#34d399" fillOpacity="0.1" stroke="none" />
-        <line x1="160" y1="348" x2="160" y2="330" strokeWidth="1" stroke="#34d399" opacity="0.12" />
-        <ellipse cx="160" cy="326" rx="7" ry="4" fill="#22c55e" fillOpacity="0.08" stroke="none" />
-        <line x1="280" y1="342" x2="280" y2="325" strokeWidth="1" stroke="#22c55e" opacity="0.12" />
-        <ellipse cx="280" cy="321" rx="7" ry="4" fill="#34d399" fillOpacity="0.08" stroke="none" />
-        <line x1="340" y1="350" x2="340" y2="332" strokeWidth="1" stroke="#34d399" opacity="0.15" />
-        <ellipse cx="340" cy="328" rx="8" ry="5" fill="#22c55e" fillOpacity="0.1" stroke="none" />
-
-        {/* Sun rays */}
-        <line x1="350" y1="50" x2="310" y2="100" strokeWidth="1" stroke="#fbbf24" opacity="0.12" strokeDasharray="6 6" />
-        <line x1="370" y1="40" x2="370" y2="100" strokeWidth="1" stroke="#fbbf24" opacity="0.1" strokeDasharray="4 8" />
-        <line x1="390" y1="50" x2="400" y2="110" strokeWidth="1" stroke="#fbbf24" opacity="0.12" strokeDasharray="6 6" />
-
-        {/* Water drops / irrigation */}
-        <circle cx="130" cy="290" r="3" fill="#38bdf8" opacity="0.4" stroke="none" />
-        <circle cx="200" cy="300" r="2" fill="#38bdf8" opacity="0.3" stroke="none" />
-        <circle cx="260" cy="290" r="3" fill="#38bdf8" opacity="0.4" stroke="none" />
-        <circle cx="320" cy="305" r="2" fill="#38bdf8" opacity="0.3" stroke="none" />
-
-        {/* Particle scatter */}
-        <circle cx="80" cy="200" r="2" fill="#34d399" opacity="0.4" stroke="none" />
-        <circle cx="360" cy="220" r="2" fill="#22c55e" opacity="0.4" stroke="none" />
-        <circle cx="140" cy="100" r="1.5" fill="#fbbf24" opacity="0.4" stroke="none" />
-        <circle cx="300" cy="90" r="1.5" fill="#34d399" opacity="0.3" stroke="none" />
-      </g>
-    </svg>
-  )
-};
-
-const SECTOR_DATA = [
-  { key: 'government', slug: 'government-national-programs', icon: 'government' },
-  { key: 'infrastructure', slug: 'aviation', icon: 'aviation', externalUrl: 'https://www.jtxaviation.com/' },
-  { key: 'energy', slug: 'energy-mining', icon: 'energy' },
-  { key: 'ports', slug: 'ports-borders-logistics', icon: 'logistics' },
-  { key: 'cyber', slug: 'cyber-resilience', icon: 'cyber' },
-  { key: 'ai', slug: 'agriculture', icon: 'agriculture', externalUrl: 'https://www.greenleafafricaventure.com/' },
+const SECTORS: readonly SectorEntry[] = [
+  { key: '1', number: '01', slug: 'government-national-programs', icon: Building2,   size: 'large'  },
+  { key: '2', number: '02', slug: 'aviation',                     icon: Plane,       size: 'medium' },
+  { key: '3', number: '03', slug: 'energy-mining',                icon: Zap,         size: 'small'  },
+  { key: '4', number: '04', slug: 'ports-borders-logistics',      icon: Container,   size: 'small'  },
+  { key: '5', number: '05', slug: 'cyber-resilience',             icon: ShieldCheck, size: 'small'  },
+  { key: '6', number: '06', slug: 'modern-agriculture',           icon: Leaf,        size: 'wide'   },
 ] as const;
+
+const container: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.08 },
+  },
+};
+
+const item: Variants = {
+  hidden: { opacity: 0, y: 16 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
+  },
+};
+
+/** Tailwind grid-column spans for the bento layout (desktop md+). */
+function colSpan(size: SectorSize): string {
+  switch (size) {
+    case 'large':
+      return 'md:col-span-3'; // 60% of 5
+    case 'medium':
+      return 'md:col-span-2'; // 40% of 5
+    case 'small':
+      return 'md:col-span-2'; // 1/3 of 6 (row 2 uses 6-col grid)
+    case 'wide':
+      return 'md:col-span-6'; // full width
+  }
+}
+
+/** Which row of the desktop grid this card belongs to. */
+function rowFor(size: SectorSize): 'top' | 'mid' | 'wide' {
+  if (size === 'large' || size === 'medium') return 'top';
+  if (size === 'wide') return 'wide';
+  return 'mid';
+}
+
+interface SectorCardProps {
+  sector: SectorEntry;
+  href: string;
+  title: string;
+  description: string;
+  exploreLabel: string;
+}
+
+function SectorCard({ sector, href, title, description, exploreLabel }: SectorCardProps) {
+  const Icon = sector.icon;
+  const isLarge = sector.size === 'large';
+  const isWide = sector.size === 'wide';
+
+  const baseStyle: React.CSSProperties = {
+    background: 'var(--surface)',
+    border: '1px solid var(--border)',
+    borderRadius: '16px',
+    padding: '28px 32px',
+    transition: 'border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
+  };
+
+  // Wide banner card: horizontal layout
+  if (isWide) {
+    return (
+      <Link
+        href={href}
+        className="sector-card group block hover:-translate-y-0.5 transition-transform duration-300"
+        style={{ ...baseStyle, height: '160px' }}
+      >
+        <div className="flex items-center h-full gap-6">
+          {/* Left: number + icon + title */}
+          <div className="flex items-center gap-5 shrink-0">
+            <span
+              className="font-semibold uppercase"
+              style={{
+                fontSize: '11px',
+                letterSpacing: '0.15em',
+                color: 'var(--foreground-muted)',
+              }}
+            >
+              {sector.number}
+            </span>
+            <Icon size={20} style={{ color: 'var(--accent)' }} aria-hidden="true" />
+            <h3
+              className="font-semibold text-white tracking-tight transition-colors duration-300 group-hover:text-accent-hover"
+              style={{ fontSize: '1.5rem' }}
+            >
+              {title}
+            </h3>
+          </div>
+
+          {/* Center: description */}
+          <p
+            className="hidden md:block flex-1 text-center"
+            style={{
+              color: 'var(--foreground-secondary)',
+              fontSize: '14px',
+            }}
+          >
+            {description}
+          </p>
+
+          {/* Right: explore arrow */}
+          <span
+            className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            style={{ color: 'var(--accent)', fontSize: '13px', fontWeight: 500 }}
+          >
+            {exploreLabel} →
+          </span>
+        </div>
+      </Link>
+    );
+  }
+
+  return (
+    <Link
+      href={href}
+      className="sector-card group block h-full hover:-translate-y-0.5 transition-transform duration-300"
+      style={{
+        ...baseStyle,
+        minHeight: isLarge ? '280px' : '200px',
+      }}
+    >
+      <div className="flex flex-col h-full">
+        {/* Top row: number + icon */}
+        <div className="flex items-center justify-between mb-6">
+          <span
+            className="font-semibold uppercase"
+            style={{
+              fontSize: '11px',
+              letterSpacing: '0.15em',
+              color: 'var(--foreground-muted)',
+            }}
+          >
+            {sector.number}
+          </span>
+          <Icon size={20} style={{ color: 'var(--accent)' }} aria-hidden="true" />
+        </div>
+
+        {/* Title */}
+        <h3
+          className="font-semibold text-white tracking-tight transition-colors duration-300 group-hover:text-accent-hover mb-3"
+          style={{ fontSize: isLarge ? '2rem' : '1.25rem', lineHeight: 1.2 }}
+        >
+          {title}
+        </h3>
+
+        {/* Description */}
+        <p
+          className={isLarge ? 'line-clamp-2' : 'line-clamp-3'}
+          style={{
+            color: 'var(--foreground-secondary)',
+            fontSize: '14px',
+            lineHeight: 1.6,
+          }}
+        >
+          {description}
+        </p>
+
+        {/* Bottom: explore link */}
+        <span
+          className="mt-auto pt-6 inline-flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          style={{ color: 'var(--accent)', fontSize: '13px', fontWeight: 500 }}
+        >
+          {exploreLabel} →
+        </span>
+      </div>
+    </Link>
+  );
+}
 
 interface SectorGridProps {
   title?: string;
 }
 
 /**
- * Grid display of sector cards
- * Used on homepage and sectors index page
+ * SectorGrid — bento-style asymmetric grid showcasing the 6 HC-1 sectors.
+ *
+ * Desktop layout:
+ *   Row 1 (5-col): [LARGE 60%] [MEDIUM 40%]
+ *   Row 2 (6-col): [SMALL] [SMALL] [SMALL]
+ *   Row 3 (6-col): [WIDE banner full]
+ *
+ * Mobile: single column stack.
  */
-export function SectorGrid({ title }: SectorGridProps) {
+export function SectorGrid({ title }: SectorGridProps = {}) {
   const t = useTranslations('sectors');
-  const tCommon = useTranslations('common');
+  const locale = useLocale();
+  const sectionRef = useRef<HTMLElement>(null);
+  const isInView = useInView(sectionRef, { once: true, margin: '-80px' });
+  const prefersReducedMotion = useReducedMotion();
+  const exploreLabel = t('explore');
+
+  const topRow = SECTORS.filter((s) => rowFor(s.size) === 'top');
+  const midRow = SECTORS.filter((s) => rowFor(s.size) === 'mid');
+  const wideRow = SECTORS.filter((s) => rowFor(s.size) === 'wide');
 
   return (
-    <section className="py-20 md:py-32">
+    <section ref={sectionRef} className="py-20 md:py-32">
       <div className="container">
-        {/* Section Header */}
+        {/* Section header — left aligned */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] as const }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-2xl mb-12 md:mb-16"
         >
-          <h2 className="text-display-sm md:text-display-md font-bold text-foreground">
+          <p
+            className="uppercase mb-4"
+            style={{
+              fontSize: '11px',
+              letterSpacing: '0.15em',
+              color: 'var(--foreground-muted)',
+            }}
+          >
+            {t('eyebrow')}
+          </p>
+          <h2 className="text-display-sm font-bold text-gradient mb-4">
             {title || t('heading')}
           </h2>
+          <p className="text-body md:text-body-lg text-foreground-secondary leading-relaxed">
+            {t('description')}
+          </p>
         </motion.div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {SECTOR_DATA.map((sector, index) => (
-            <motion.div
-              key={sector.key}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] as const }}
-              className="h-full"
-            >
-              {'externalUrl' in sector && sector.externalUrl ? (
-              <a
-                href={sector.externalUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={cn(
-                  'group relative block h-full p-8 md:p-10 rounded-2xl overflow-hidden',
-                  'bg-surface-card border border-white/8',
-                  'hover:border-white/10 hover-lift shadow-xl',
-                  'transition-all duration-500'
-                )}
-              >
-                {/* Background Graphic */}
-                {SECTOR_BACKGROUNDS[sector.key]}
+        {/* Bento grid */}
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate={isInView && !prefersReducedMotion ? 'visible' : 'hidden'}
+          className="flex flex-col gap-5"
+        >
+          {/* Row 1: large + medium (5-col split) */}
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-5">
+            {topRow.map((sector) => (
+              <motion.div key={sector.key} variants={item} className={colSpan(sector.size)}>
+                <SectorCard
+                  sector={sector}
+                  href={`/${locale}/sectors/${sector.slug}`}
+                  title={t(`${sector.key}.title`)}
+                  description={t(`${sector.key}.description`)}
+                  exploreLabel={exploreLabel}
+                />
+              </motion.div>
+            ))}
+          </div>
 
-                {/* Hover gradient overlay */}
-                <div className={cn(
-                  "absolute inset-0 bg-linear-to-br via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none",
-                  sector.key === 'ai' ? 'from-[#34d399]/5' : 'from-[#38bdf8]/5'
-                )} />
+          {/* Row 2: 3 equal small cards (6-col grid, span 2 each) */}
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-5">
+            {midRow.map((sector) => (
+              <motion.div key={sector.key} variants={item} className={colSpan(sector.size)}>
+                <SectorCard
+                  sector={sector}
+                  href={`/${locale}/sectors/${sector.slug}`}
+                  title={t(`${sector.key}.title`)}
+                  description={t(`${sector.key}.description`)}
+                  exploreLabel={exploreLabel}
+                />
+              </motion.div>
+            ))}
+          </div>
 
-                <div className="relative z-10 flex flex-col h-full">
-                  {/* Icon */}
-                  <div className="mb-6 text-white/80 group-hover:text-white transition-colors duration-300">
-                    <div className="w-12 h-12 rounded-lg border border-white/20 flex items-center justify-center bg-white/5">
-                      {ICONS[sector.icon] || ICONS.government}
-                    </div>
-                  </div>
-
-                  {/* Title */}
-                  <h3 className={cn(
-                    "text-xl md:text-2xl font-bold text-white mb-4 tracking-tight transition-colors break-words",
-                    sector.key === 'ai' ? 'group-hover:text-[#34d399]' : 'group-hover:text-[#38bdf8]'
-                  )}>
-                    {t(`${sector.key}.title`)}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="mt-2 text-white/70 font-medium line-clamp-3">
-                    {t(`${sector.key}.description`)}
-                  </p>
-
-                  {/* Arrow */}
-                  <div className={cn(
-                    "mt-auto pt-6 flex items-center font-semibold opacity-80 group-hover:opacity-100 transition-opacity",
-                    sector.key === 'ai' ? 'text-[#34d399]' : 'text-[#38bdf8]'
-                  )}>
-                    <span className="text-sm">{tCommon('learnMore')}</span>
-                    <svg
-                      className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </div>
-                </div>
-              </a>
-              ) : (
-              <Link
-                href={`/sectors/${sector.slug}`}
-                className={cn(
-                  'group relative block h-full p-8 md:p-10 rounded-2xl overflow-hidden',
-                  'bg-surface-card border border-white/8',
-                  'hover:border-white/10 hover-lift shadow-xl',
-                  'transition-all duration-500'
-                )}
-              >
-                {/* Background Graphic */}
-                {SECTOR_BACKGROUNDS[sector.key]}
-
-                {/* Hover gradient overlay */}
-                <div className="absolute inset-0 bg-linear-to-br from-[#38bdf8]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
-                <div className="relative z-10 flex flex-col h-full">
-                  {/* Icon */}
-                  <div className="mb-6 text-white/80 group-hover:text-white transition-colors duration-300">
-                    <div className="w-12 h-12 rounded-lg border border-white/20 flex items-center justify-center bg-white/5">
-                      {ICONS[sector.icon] || ICONS.government}
-                    </div>
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4 tracking-tight group-hover:text-[#38bdf8] transition-colors break-words">
-                    {t(`${sector.key}.title`)}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="mt-2 text-white/70 font-medium line-clamp-3">
-                    {t(`${sector.key}.description`)}
-                  </p>
-
-                  {/* Arrow */}
-                  <div className="mt-auto pt-6 flex items-center text-[#38bdf8] font-semibold opacity-80 group-hover:opacity-100 transition-opacity">
-                    <span className="text-sm">{tCommon('learnMore')}</span>
-                    <svg
-                      className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </div>
-                </div>
-              </Link>
-              )}
-            </motion.div>
-          ))}
-        </div>
+          {/* Row 3: full-width banner */}
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-5">
+            {wideRow.map((sector) => (
+              <motion.div key={sector.key} variants={item} className={colSpan(sector.size)}>
+                <SectorCard
+                  sector={sector}
+                  href={`/${locale}/sectors/${sector.slug}`}
+                  title={t(`${sector.key}.title`)}
+                  description={t(`${sector.key}.description`)}
+                  exploreLabel={exploreLabel}
+                />
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
+
+      {/* Card-level hover border (scoped to .sector-card to avoid global side-effects) */}
+      <style jsx>{`
+        section :global(.sector-card:hover) {
+          border-color: var(--accent);
+          box-shadow: var(--shadow-md);
+        }
+      `}</style>
     </section>
   );
 }

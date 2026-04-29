@@ -18,6 +18,8 @@ const SECTOR_STATS: Record<string, string[]> = {
   cyberResilience: ['threats', 'detection', 'containment'],
   portsLogistics: ['cargo', 'disruption', 'threats'],
   aiFusion: ['data', 'accuracy', 'latency'],
+  aviation: ['fleet', 'availability', 'safety'],
+  modernAgriculture: ['yield', 'irrigation', 'sustainability'],
 };
 
 // Sector-specific images for side layout
