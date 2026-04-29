@@ -1852,8 +1852,44 @@
 
   "homepageHero": {
     "eyebrow": "Hybrid Mobility Holdings",
-    "title": "Africa's Infrastructure Layer",
-    "subtitle": "Three platforms. One technology backbone. Secured end-to-end by post-quantum authentication."
+    "title": "Secure. Operate. Finance.",
+    "subtitle": "HC-1 unifies sovereign security, operational intelligence, and infrastructure finance across Africa."
+  },
+
+  "divisions": {
+    "eyebrow": "Three divisions, one architecture",
+    "heading": "Built on a shared HCS-U7 backbone",
+    "subheading": "HC-1 operates three integrated divisions — every product runs on the same post-quantum authentication core.",
+    "authors": {
+      "iaSolution": "by IA-SOLUTION",
+      "benoitBogaerts": "by Benoît Bogaerts"
+    },
+    "secure": {
+      "title": "Hybrid Secure",
+      "subtitle": "Cognitive authentication, post-quantum cryptography, biometric access control and autonomous threat detection."
+    },
+    "operate": {
+      "title": "Hybrid Operate",
+      "subtitle": "AI-powered property operations, talent intelligence, and enterprise network integration across South Africa."
+    },
+    "finance": {
+      "title": "Hybrid Finance",
+      "subtitle": "Structured access to development finance, infrastructure project verification, and DFI capital mobilisation."
+    }
+  },
+
+  "backbone": {
+    "label": "Infrastructure Layer",
+    "titlePrefix": "Every division runs on",
+    "titleHighlight": "HCS-U7",
+    "description": "Post-quantum cryptography (NIST FIPS 203/204), cognitive biometric authentication, and autonomous threat detection — protected by 3 French patents.",
+    "stats": {
+      "latency": "Authentication latency",
+      "antiSpoofing": "Anti-spoofing detection",
+      "apps": "Biometric guard apps",
+      "patents": "French patents (FR)"
+    },
+    "cta": "Explore HCS-U7 →"
   },
 
   "agentOSPage": {

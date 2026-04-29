@@ -5,3 +5,5 @@ export { OperatingModel } from './OperatingModel';
 export { TrustSignals } from './TrustSignals';
 export { CTASection } from './CTASection';
 export { DivisionsSection } from './DivisionsSection';
+export { DivisionGrid } from './DivisionGrid';
+export { BackboneSection } from './BackboneSection';

@@ -1852,8 +1852,44 @@
 
   "homepageHero": {
     "eyebrow": "Hybrid Mobility Holdings",
-    "title": "La Couche d'Infrastructure de l'Afrique",
-    "subtitle": "Trois plateformes. Un socle technologique. Sécurisé de bout en bout par authentification post-quantique."
+    "title": "Sécuriser. Opérer. Financer.",
+    "subtitle": "HC-1 unifie sécurité souveraine, intelligence opérationnelle et financement d'infrastructure à travers l'Afrique."
+  },
+
+  "divisions": {
+    "eyebrow": "Trois divisions, une architecture",
+    "heading": "Construites sur un socle HCS-U7 partagé",
+    "subheading": "HC-1 opère trois divisions intégrées — chaque produit fonctionne sur le même cœur d'authentification post-quantique.",
+    "authors": {
+      "iaSolution": "par IA-SOLUTION",
+      "benoitBogaerts": "par Benoît Bogaerts"
+    },
+    "secure": {
+      "title": "Hybrid Secure",
+      "subtitle": "Authentification cognitive, cryptographie post-quantique, contrôle d'accès biométrique et détection autonome de menaces."
+    },
+    "operate": {
+      "title": "Hybrid Operate",
+      "subtitle": "Opérations immobilières pilotées par IA, intelligence des talents et intégration de réseaux d'entreprise en Afrique du Sud."
+    },
+    "finance": {
+      "title": "Hybrid Finance",
+      "subtitle": "Accès structuré au financement du développement, vérification de projets d'infrastructure et mobilisation de capitaux DFI."
+    }
+  },
+
+  "backbone": {
+    "label": "Couche Infrastructure",
+    "titlePrefix": "Chaque division s'appuie sur",
+    "titleHighlight": "HCS-U7",
+    "description": "Cryptographie post-quantique (NIST FIPS 203/204), authentification biométrique cognitive et détection autonome de menaces — protégée par 3 brevets français.",
+    "stats": {
+      "latency": "Latence d'authentification",
+      "antiSpoofing": "Détection anti-spoofing",
+      "apps": "Applications de garde biométriques",
+      "patents": "Brevets français (FR)"
+    },
+    "cta": "Explorer HCS-U7 →"
   },
 
   "agentOSPage": {

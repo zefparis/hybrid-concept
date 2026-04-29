@@ -1852,8 +1852,44 @@
 
   "homepageHero": {
     "eyebrow": "Hybrid Mobility Holdings",
-    "title": "A Camada de Infraestrutura de África",
-    "subtitle": "Três plataformas. Um backbone tecnológico. Seguro de ponta a ponta por autenticação pós-quântica."
+    "title": "Proteger. Operar. Financiar.",
+    "subtitle": "A HC-1 unifica segurança soberana, inteligência operacional e financiamento de infraestrutura em toda a África."
+  },
+
+  "divisions": {
+    "eyebrow": "Três divisões, uma arquitetura",
+    "heading": "Construídas sobre um backbone HCS-U7 partilhado",
+    "subheading": "A HC-1 opera três divisões integradas — cada produto funciona no mesmo núcleo de autenticação pós-quântica.",
+    "authors": {
+      "iaSolution": "pela IA-SOLUTION",
+      "benoitBogaerts": "por Benoît Bogaerts"
+    },
+    "secure": {
+      "title": "Hybrid Secure",
+      "subtitle": "Autenticação cognitiva, criptografia pós-quântica, controlo de acesso biométrico e deteção autónoma de ameaças."
+    },
+    "operate": {
+      "title": "Hybrid Operate",
+      "subtitle": "Operações imobiliárias com IA, inteligência de talentos e integração de redes empresariais na África do Sul."
+    },
+    "finance": {
+      "title": "Hybrid Finance",
+      "subtitle": "Acesso estruturado a financiamento de desenvolvimento, verificação de projetos de infraestrutura e mobilização de capital DFI."
+    }
+  },
+
+  "backbone": {
+    "label": "Camada de Infraestrutura",
+    "titlePrefix": "Cada divisão funciona sobre",
+    "titleHighlight": "HCS-U7",
+    "description": "Criptografia pós-quântica (NIST FIPS 203/204), autenticação biométrica cognitiva e deteção autónoma de ameaças — protegida por 3 patentes francesas.",
+    "stats": {
+      "latency": "Latência de autenticação",
+      "antiSpoofing": "Deteção anti-spoofing",
+      "apps": "Aplicações de guarda biométrica",
+      "patents": "Patentes francesas (FR)"
+    },
+    "cta": "Explorar HCS-U7 →"
   },
 
   "agentOSPage": {

@@ -1,9 +1,10 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import {
-  WhatWeDo,
+  SectorGrid,
   TrustSignals,
   CTASection,
-  DivisionsSection,
+  DivisionGrid,
+  BackboneSection,
 } from '@/components/sections';
 
 type Props = {
@@ -42,8 +43,9 @@ export default async function HomePage({ params }: Props) {
           </p>
         </div>
       </section>
-      <DivisionsSection />
-      <WhatWeDo />
+      <DivisionGrid />
+      <BackboneSection />
+      <SectorGrid />
       <TrustSignals />
       <CTASection />
     </>
