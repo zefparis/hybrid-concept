@@ -29,7 +29,8 @@ export function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-0 text-(--text-primary)"
+            className="flex items-center gap-0 text-(--text-primary) min-w-0 shrink"
+            aria-label="Hybrid Mobility Holdings"
           >
             <span
               style={{
@@ -44,7 +45,9 @@ export function Header() {
             >
               HMH
             </span>
+            {/* Sub-brand: hidden on mobile to prevent wrapping; visible on sm+ */}
             <span
+              className="hidden sm:inline-block whitespace-nowrap"
               style={{
                 fontWeight: 300,
                 fontSize: '0.6rem',
