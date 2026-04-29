@@ -11,7 +11,7 @@ import {
 } from '@/components/sections/sector';
 
 export const metadata: Metadata = {
-  title: 'Critical Infrastructure | HC-1',
+  title: 'Critical Infrastructure | HMH',
   description: 'Protection of essential services and national assets.',
 };
 

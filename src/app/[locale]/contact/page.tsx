@@ -1,11 +1,10 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { Hero } from '@/components/sections';
 
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Connect with HC-1 to discuss your security, integration, and operational continuity requirements.',
+    'Connect with HMH to discuss your security, integration, and operational continuity requirements.',
 };
 
 type Props = {
@@ -18,13 +17,6 @@ export default async function ContactPage({ params }: Props) {
 
   return (
     <>
-      <Hero
-        title="Contact Us"
-        tagline="Get in Touch"
-        description="Connect with our team to discuss how HC-1 can address your strategic security and integration requirements."
-        variant="page"
-      />
-
       <section className="py-20 md:py-32">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -136,7 +128,7 @@ export default async function ContactPage({ params }: Props) {
                     htmlFor="consent"
                     className="text-sm text-foreground-muted"
                   >
-                    I consent to HC-1 processing my data in accordance with the
+                    I consent to HMH processing my data in accordance with the
                     Privacy Policy.
                   </label>
                 </div>

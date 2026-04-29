@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
+import { BRAND } from '@/lib/brand';
 
 /**
  * Site footer with navigation sections and legal links
@@ -17,6 +18,12 @@ export function Footer() {
     { href: `/${locale}/contact`, label: tNav('contact') },
   ];
 
+  const productLinks = [
+    { href: `/${locale}/products/hcs-u7`, label: 'HCS-U7' },
+    { href: `/${locale}/products/hv-guard`, label: 'HV-GUARD' },
+    { href: `/${locale}/products/shadow-mode`, label: 'Shadow Mode' },
+  ];
+
   const legalLinks = [
     { href: `/${locale}/legal`, label: t('legal') },
     { href: `/${locale}/privacy`, label: t('privacy') },
@@ -28,7 +35,7 @@ export function Footer() {
     <footer className="border-t border-border bg-surface">
       <div className="container py-16">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link href={`/${locale}`} className="inline-flex items-center gap-0">
@@ -43,7 +50,7 @@ export function Footer() {
                   backgroundClip: 'text',
                 }}
               >
-                HMH
+                {BRAND.name}
               </span>
               <span
                 style={{
@@ -58,7 +65,7 @@ export function Footer() {
                   paddingBottom: '2px',
                 }}
               >
-                Hybrid Mobility Holdings
+                {BRAND.fullName}
               </span>
             </Link>
             <p className="mt-4 text-sm text-foreground-secondary max-w-sm">
@@ -77,6 +84,25 @@ export function Footer() {
                 </svg>
               </a>
             </div>
+          </div>
+
+          {/* Products Links */}
+          <div>
+            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">
+              Products
+            </h3>
+            <ul className="mt-4 space-y-3">
+              {productLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-foreground-secondary hover:text-foreground transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Company Links */}
@@ -122,7 +148,7 @@ export function Footer() {
         <div className="mt-16 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-foreground-muted">
-              {t('copyright')}
+              {BRAND.copyright}
             </p>
           </div>
         </div>

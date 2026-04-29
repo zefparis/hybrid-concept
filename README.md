@@ -1,430 +1,358 @@
-# HC-1 | Hybrid Concepts
+# Hybrid Concept — Technical Debt Audit & Rebuild Brief
 
-**Strategic Command & Integration Authority**
+> **Status:** This document replaces the previous marketing-style README. It is an honest technical audit of the codebase as it currently stands, intended as a **brief for a complete rebuild** from a clean slate.
 
-> HC-1 anticipates and secures systems upstream to prevent disruption, reduce operational risk, eliminate the cost and inefficiency of reactive response, and protect and maximize revenue through assured continuity and operational efficiency.
-
-Enterprise-grade institutional website built with Next.js 14+, delivering sovereign security, systems integration, and operational continuity solutions.
-
-**Design inspiration:** Palantir, Stripe, Linear — calm authority, dark minimalism, premium visual effects.
-
-## Tech Stack
-
-- **Framework:** Next.js 16+ (App Router)
-- **Language:** TypeScript (strict mode)
-- **Styling:** Tailwind CSS v4 + CSS Custom Properties
-- **Animations:** Framer Motion (subtle, scroll-triggered)
-- **i18n:** next-intl (EN, FR, PT)
-- **Icons:** Lucide React
-- **Utilities:** class-variance-authority (CVA)
-- **Fonts:** Geist Sans & Geist Mono (next/font)
-- **Deployment:** Vercel (recommended)
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18.17+
-- npm 9+
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/zefparis/hybrid-concept.git
-cd hybrid-concept
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) to view the site.
-
-## Project Structure
-
-```
-src/
-├── app/
-│   ├── [locale]/           # i18n dynamic routing
-│   │   ├── layout.tsx      # Locale layout with NextIntlClientProvider
-│   │   └── page.tsx        # Homepage
-│   ├── globals.css         # Global styles + design tokens
-│   └── layout.tsx          # Root layout (fonts, html/body)
-├── components/
-│   ├── layout/             # Header, Footer
-│   ├── sections/           # Hero, SectorGrid, WhatWeDo, OperatingModel, TrustSignals, CTASection
-│   └── ui/                 # Button, LanguageSwitcher
-├── i18n/
-│   ├── config.ts           # Locale configuration (en, fr, pt)
-│   ├── request.ts          # Server-side i18n setup
-│   └── locales/
-│       ├── en.json         # English translations
-│       ├── fr.json         # French translations
-│       └── pt.json         # Portuguese translations
-├── lib/
-│   ├── constants.ts        # Navigation, sectors, capabilities data
-│   └── utils.ts            # Utility functions (cn, formatDate, etc.)
-├── middleware.ts           # i18n routing middleware
-└── types/
-    └── index.ts            # TypeScript interfaces
-```
-
-## Homepage Sections
-
-| Section | Component | Description |
-|---------|-----------|-------------|
-| **Hero** | `Hero.tsx` | Full-screen with background image, gradient overlays, core statement, CTA |
-| **What We Do** | `WhatWeDo.tsx` | 3 pillars: Plan, Integrate, Assure with geometric icons (translated) |
-| **Sectors** | `SectorGrid.tsx` | 6 sector cards with hover effects and navigation (translated) |
-| **Operating Model** | `OperatingModel.tsx` | Flow diagram: Anticipate → Assure → Continuity → Revenue (translated) |
-| **Trust Signals** | `TrustSignals.tsx` | 5 governance items: sovereignty, zero-trust, SLA, traceability, compliance (translated) |
-| **CTA** | `CTASection.tsx` | Final call-to-action (translated) |
-
-## Design System
-
-### Colors (Dark Theme)
-
-```css
-/* Base */
---background: #0a0a0a;
---surface: #141414;
---surface-elevated: #1a1a1a;
---surface-hover: #1f1f1f;
-
-/* Accent */
---accent: #2563eb;
---accent-hover: #3b82f6;
---accent-muted: #1e40af;
-
-/* Foreground (text) */
---foreground: #f5f5f5;
---foreground-secondary: #a3a3a3;
---foreground-muted: #737373;
-
-/* Borders */
---border: rgba(255, 255, 255, 0.1);
---border-strong: rgba(255, 255, 255, 0.15);
-
-/* Shadows */
---shadow-glow-sm: 0 0 20px rgba(37, 99, 235, 0.3);
---shadow-glow-md: 0 0 40px rgba(37, 99, 235, 0.4);
---shadow-elevated: 0 4px 20px rgba(0, 0, 0, 0.7);
-```
-
-### Typography Scale
-
-| Token | Size | Usage |
-|-------|------|-------|
-| `display-lg` | 4rem (64px) | Hero title desktop |
-| `display-md` | 3rem (48px) | Hero title mobile, section headings |
-| `display-sm` | 2.25rem (36px) | Section headings mobile |
-| `heading-lg` | 1.75rem (28px) | Card titles |
-| `heading-md` | 1.25rem (20px) | Subheadings |
-| `body-lg` | 1.125rem (18px) | Lead paragraphs |
-| `body` | 1rem (16px) | Body text |
-| `body-sm` | 0.875rem (14px) | Small text |
-| `caption` | 0.75rem (12px) | Labels, captions |
-
-### Premium CSS Utilities
-
-```css
-/* Glass morphism */
-.glass { background: rgba(20, 20, 20, 0.8); backdrop-filter: blur(8px); }
-.glass-elevated { background: rgba(26, 26, 26, 0.9); backdrop-filter: blur(12px); }
-
-/* Hover effects */
-.hover-lift { transition: all 0.3s; }
-.hover-lift:hover { transform: translateY(-4px); box-shadow: var(--shadow-elevated); }
-
-/* Grid pattern background */
-.grid-pattern { background-image: linear-gradient(...); background-size: 50px 50px; }
-
-/* Animated border (gradient on hover) */
-.border-animated::before { /* gradient border effect */ }
-
-/* Accent line (bottom border animation) */
-.accent-line-bottom::after { /* animated bottom line */ }
-
-/* Text gradients */
-.text-gradient { /* foreground gradient */ }
-.text-gradient-accent { /* accent gradient */ }
-```
-
-### Animation Patterns
-
-```typescript
-// Container with stagger
-const container = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.2 }
-  }
-};
-
-// Item fade in + slide up
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
-  }
-};
-```
-
-### Spacing (8px base)
-
-Uses a consistent 8px grid system with predefined spacing tokens.
-
-## Scripts
-
-```bash
-npm run dev      # Start development server
-npm run build    # Build for production
-npm run start    # Start production server
-npm run lint     # Run ESLint
-```
-
-## Site Structure
-
-All routes are prefixed with locale (`/en`, `/fr`, `/pt`):
-
-```
-/[locale]                   # Homepage (57 static pages generated)
-├── /about                  # About HC-1
-├── /sectors                # Sectors index
-│   ├── /government-national-programs
-│   ├── /critical-infrastructure
-│   ├── /energy-mining
-│   ├── /ports-borders-logistics
-│   ├── /cyber-resilience
-│   └── /ai-fusion-intelligence
-├── /capabilities           # Capabilities index
-│   ├── /hybrid-vector
-│   ├── /hybrid-nexus
-│   ├── /hybrid-axis
-│   ├── /hybrid-cyber
-│   ├── /hybrid-iris
-│   └── /centers-of-excellence
-├── /insights               # Thought leadership
-└── /contact                # Contact form
-```
-
-**Example URLs:**
-- `/en` or `/` → English homepage (default)
-- `/fr/about` → French about page
-- `/pt/sectors/energy-mining` → Portuguese energy sector page
-
-## Data Constants
-
-All content is centralized in `src/lib/constants.ts`:
-
-- **SERVICES** — Plan, Integrate, Assure
-- **SECTORS** — 6 sectors with metadata
-- **CAPABILITIES** — 6 capabilities with features
-- **OPERATING_STEPS** — Anticipate, Assure, Continuity, Revenue
-- **TRUST_SIGNALS** — 5 governance signals
-- **HOMEPAGE_CONTENT** — Hero, sections content
-
-## Performance Targets
-
-- **Lighthouse Score:** >90 (all categories)
-- **Core Web Vitals:** Pass
-- **Accessibility:** WCAG 2.1 AA
-- **Reduced Motion:** Respects `prefers-reduced-motion`
-
-## Conventions
-
-### Code Style
-
-- ESLint + Prettier
-- TypeScript strict mode
-- Conventional Commits
-- Component names: PascalCase
-- Files: kebab-case (except components)
-- Constants: SCREAMING_SNAKE_CASE
-
-### Component Pattern
-
-```tsx
-'use client';
-
-import { useRef } from 'react';
-import { motion, useInView, useReducedMotion } from 'framer-motion';
-import { cn } from '@/lib/utils';
-
-interface ComponentNameProps {
-  heading?: string;
-}
-
-export function ComponentName({ heading }: ComponentNameProps) {
-  const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
-  const prefersReducedMotion = useReducedMotion();
-
-  return (
-    <section ref={sectionRef} className={cn("py-20 px-6", "md:py-32 md:px-12")}>
-      {/* content */}
-    </section>
-  );
-}
-```
-
-### Commits
-
-```
-feat: add new feature
-fix: bug fix
-docs: documentation changes
-style: formatting, no code change
-refactor: code restructuring
-test: adding tests
-chore: maintenance
-```
-
-## Deployment
-
-### Vercel (Recommended)
-
-```bash
-# Install Vercel CLI
-npm i -g vercel
-
-# Deploy
-vercel
-```
-
-### Environment Variables
-
-```env
-# Optional - for future CMS integration
-NEXT_PUBLIC_SITE_URL=https://hc-1.com
-```
-
-## Internationalization (i18n)
-
-The site supports 3 languages with automatic routing:
-
-| Locale | Language | URL |
-|--------|----------|-----|
-| `en` | English (default) | `/en` |
-| `fr` | Français | `/fr` |
-| `pt` | Português | `/pt` |
-
-### Translation Files
-
-Located in `src/i18n/locales/`:
-- `en.json` — English translations
-- `fr.json` — French translations  
-- `pt.json` — Portuguese translations
-
-### Using Translations in Components
-
-```tsx
-'use client';
-import { useTranslations } from 'next-intl';
-
-export function MyComponent() {
-  const t = useTranslations('hero');
-  return <h1>{t('title')}</h1>;
-}
-```
-
-### Language Switcher
-
-The `LanguageSwitcher` component in the Header allows users to switch languages without page reload.
-
-## Development Status
-
-### Phase 1 ✅ Complete — Homepage Structure
-- [x] Hero section with core statement
-- [x] What We Do section (Plan, Integrate, Assure)
-- [x] Sector Grid with 6 sectors
-- [x] Operating Model flow diagram
-- [x] Trust Signals section
-
-### Phase 2 ✅ Complete — Premium Visual Transformation
-- [x] Tailwind v4 theme configuration (colors, typography, shadows)
-- [x] Premium CSS utilities (glass, grid-pattern, hover-lift, accent-line-bottom)
-- [x] Button component with CVA variants and glow effects
-- [x] Hero with grid-pattern background, glow orb, text-gradient
-- [x] Cards with hover-lift, gradient overlays, animated borders
-- [x] Lucide icons integration
-
-### Phase 3 ✅ Complete — Internationalization (i18n)
-- [x] next-intl integration with App Router
-- [x] 3 languages: English, French, Portuguese
-- [x] Locale-based routing (`/en`, `/fr`, `/pt`)
-- [x] LanguageSwitcher component in Header (desktop + mobile)
-- [x] All homepage sections use translations
-- [x] Header and Footer navigation translated
-- [x] SEO metadata per locale with hreflang
-- [x] All pages migrated to `[locale]` folder structure
-- [x] Static generation for 57 pages (3 locales × 19 routes)
-
-### Phase 4 ✅ Complete — Visual Enhancements
-- [x] Hero background image with overlay system
-- [x] Optimized overlay opacity for image visibility
-- [x] Mobile-responsive language switcher
-- [x] Translated CTASection component
-
-### Phase 5 ✅ Complete — Sector Pages Architecture
-- [x] Complete sector page architecture with 8 reusable components
-- [x] SectorHero: 60vh hero with stats, breadcrumb, background image
-- [x] SectorOverview: 3-column challenge overview with icons
-- [x] RiskLandscape: 2-column risk analysis (production + revenue)
-- [x] ApproachSection: Tabbed HC-1 approach with outcomes
-- [x] ValueProposition: 3 metric cards with hover effects
-- [x] UseCases: 3 operational scenarios with revenue impact
-- [x] CapabilitiesIntegration: Grid of 6 capabilities with links
-- [x] SectorCTA: Final call-to-action with 2 buttons
-- [x] Institutional tone with quantified metrics
-- [x] Premium animations and responsive design
-
-### Phase 6 ✅ Complete — All 6 Sector Pages Created
-- [x] Energy & Mining (`/sectors/energy-mining`) - Full EN/FR/PT
-- [x] Government & National Programs (`/sectors/government-national-programs`) - EN complete, FR/PT partial
-- [x] Critical Infrastructure (`/sectors/critical-infrastructure`) - EN complete
-- [x] Cyber Resilience (`/sectors/cyber-resilience`) - EN complete
-- [x] Ports, Borders & Logistics (`/sectors/ports-borders-logistics`) - EN complete
-- [x] AI Fusion & Intelligence (`/sectors/ai-fusion-intelligence`) - EN complete
-- [x] All pages use same 8-component architecture
-- [x] ~955 lines of English translations added
-- [x] TypeScript compiles without errors
-- [x] All pages accessible and functional
-
-### Phase 7 ✅ Complete — Full Site Translation System
-- [x] English translations: All pages complete
-- [x] French translations: All pages complete
-- [x] Portuguese translations: All pages complete
-- [x] About page: Full translation (hero, mission, values)
-- [x] Sectors index page: Full translation
-- [x] Capabilities index page: Full translation
-- [x] Capabilities detail pages: Full translation with helper function
-- [x] Insights page: Full translation (articles, categories)
-- [x] Translation helper system for dynamic content
-- [x] All 6 sector pages: Complete EN/FR/PT translations
-
-### Translation System Architecture
-- **Helper Functions:** `getTranslatedCapabilities()` for dynamic capability translations
-- **Translation Files:** ~1200+ lines per language (en.json, fr.json, pt.json)
-- **Coverage:** 100% of user-facing content translated
-- **Structure:** Organized by page/section namespaces for maintainability
-
-### Future Enhancements
-- [ ] Sanity CMS integration for Insights
-- [ ] Plausible Analytics
-- [ ] Contact form backend
-- [ ] Search functionality
-
-## License
-
-Proprietary - HC-1 | Hybrid Concepts
+**Repo:** `zefparis/hybrid-concept`
+**Stack:** Next.js 16 (App Router) · React 19 · TypeScript 5 · Tailwind CSS v4 · next-intl 4 · Framer Motion 12 · Lucide React
+**Footprint:** ~600 KB source (excluding `node_modules`/`.next`) · 26 client components · ~6 300 lines of i18n JSON across 3 locales
 
 ---
 
-Built with precision for those who protect what matters.
+## 1. Executive Summary
+
+The application **works** (TypeScript compiles, pages render, i18n routes correctly), but it is the result of **7 stacked phases of additive development** without any consolidation pass. Symptoms:
+
+- **3 conflicting brand identities** coexist in a single codebase (HMH, HC-1, Hybrid Concepts).
+- **~40% of the components are dead code** (orphan exports never imported by any page).
+- **~30% of the i18n keys are stale** (point to removed sections or carry legacy duplicates).
+- **Brittle global typography** in `globals.css` silently breaks every `text-white` on `<h1>` because of an unscoped `-webkit-text-fill-color: transparent`.
+- **Two parallel routing strategies** for `/sectors/*` (dynamic `[slug]` vs hardcoded folders) overlap and duplicate work.
+- **Two sources of truth** for sector data (`lib/constants.ts` SECTORS array + i18n JSON `sectors.*` namespace) drift apart.
+- The README in repo (now this document) was **outdated** — documented colors, sizes, and structure that no longer match `globals.css` or `src/`.
+
+A targeted refactor is technically possible but the cumulative drag is high. **A clean rebuild on a fresh Next.js 16 scaffold is recommended.** This document inventories what to keep, what to rewrite, and what to discard.
+
+---
+
+## 2. Brand Identity Conflict (must resolve first)
+
+| Source | Brand value |
+|---|---|
+| `package.json` `name` | `temp-next` |
+| `README.md` (old) headline | `HC-1 \| Hybrid Concepts` |
+| `src/lib/constants.ts` `SITE_METADATA.siteName` | `HMH \| Hybrid Mobility Holdings` |
+| `src/lib/constants.ts` `SITE_METADATA.siteUrl` | `https://hmh-africa.com` |
+| `src/components/layout/Header.tsx` logo | `HMH` + "Hybrid Mobility Holdings" |
+| `src/app/[locale]/layout.tsx` titles | `HMH \| Hybrid Mobility Holdings — …` |
+| `src/i18n/locales/*.json` | mixes "Hybrid Concepts", "HC-1", "HMH" |
+| Sector pages content | "HC-1 unifies sovereign security…" |
+| Production URL | `hybridconc.com` (per browser address bar) |
+
+**Action for rebuild:** Pick **one** brand (recommended: HMH | Hybrid Mobility Holdings, since the live URL and Header agree on it). Define it once, in one constant. Everything else inherits.
+
+---
+
+## 3. Dead Code Inventory
+
+### 3.1 Components exported but never imported
+
+| File | Lines | Status |
+|---|---:|---|
+| `src/components/sections/Hero.tsx` | 243 | Generic full-screen hero. Homepage uses an **inline** hero in `app/[locale]/page.tsx` instead. Other pages don't import it. **Dead.** |
+| `src/components/sections/WhatWeDo.tsx` | 175 | "Plan / Integrate / Assure" pillars. Removed from homepage during pivot to Divisions. **Dead.** |
+| `src/components/sections/OperatingModel.tsx` | 202 | "Anticipate -> Assure -> Continuity -> Revenue" flow. **Dead.** |
+| `src/components/sections/DivisionsSection.tsx` | 252 | Older Divisions UI superseded by `DivisionGrid.tsx` (193 L). Both still exported from `sections/index.ts`. **Dead.** |
+| `src/components/ui/VideoTransition.tsx` | 50 | Used **only** by the dead `DivisionsSection.tsx`. Transitively dead. |
+| `src/components/divisions/AECGatewayPage.tsx` | 296 | Bespoke AEC division page. No corresponding route. **Verify before delete.** |
+| `src/components/divisions/AgentOSPage.tsx` | 292 | Bespoke AgentOS division page. No corresponding route. **Verify before delete.** |
+
+> Dead client code still ships in the bundle if exported through a barrel (`index.ts`). Removing the dead exports alone does not strip them from the build until imports are cleaned upstream.
+
+### 3.2 Sector page architecture (`src/components/sections/sector/`)
+
+8 reusable components designed for full-bleed sector pages:
+
+| Component | Lines | Status |
+|---|---:|---|
+| `SectorHero.tsx` | 146 | Used by all sector pages. **Keep.** |
+| `SectorCTA.tsx` | 50 | Used by all sector pages. **Keep.** |
+| `SectorOverview.tsx` | 204 | Used by `/sectors/[slug]` template only. |
+| `RiskLandscape.tsx` | 183 | Used by `/sectors/[slug]` template only. |
+| `ApproachSection.tsx` | 143 | Used by `/sectors/[slug]` template only. |
+| `ValueProposition.tsx` | 199 | Used by `/sectors/[slug]` template only. |
+| `UseCases.tsx` | 215 | Used by `/sectors/[slug]` template only. |
+| `index.ts` exports `CapabilitiesIntegration` | — | **Component file does not exist** (broken export). |
+
+The new sector stub pages (`aviation/`, `modern-agriculture/`) only use `SectorHero` + `SectorCTA`. The 5 heavy `sector/*` components are only consumed by the `[slug]` dynamic route, which itself is in conflict with the hardcoded folders (see section 4).
+
+### 3.3 Stale i18n namespaces
+
+Each of `en.json`, `fr.json`, `pt.json` is **2 089 lines / ~100–110 KB**. Of those, an estimated 25–35% are stale:
+
+- `whatWeDo.*` (≈50 keys × 3 locales) — section deleted from homepage.
+- `operatingModel.*` (≈30 keys × 3 locales) — section deleted from homepage.
+- `sectors.{government,infrastructure,energy,ports,cyber,ai}` — kept "for backward compat" alongside the new `sectors.{1..6}` namespace. **Same data twice**, in three languages.
+- `homepageHero.coreStatement` — referenced once, by a dead Hero component path.
+- Legacy keys for `WhatWeDo`/`OperatingModel` still consumed by their dead components, but those components are themselves unreachable.
+
+### 3.4 Constants (`src/lib/constants.ts`, 652 lines, 22 KB)
+
+| Export | Status |
+|---|---|
+| `SITE_METADATA` | Used. **Keep**, but reconcile brand. |
+| `NAVIGATION` | Partially used (mobile nav references it, desktop hardcodes a subset). |
+| `FOOTER_LINKS` | Used by Footer. **Keep.** |
+| `SECTORS` (6 sectors with rich metadata) | Drives `[slug]/page.tsx` dynamic route. **Conflicts** with `i18n/locales/*.json sectors` namespace (double source of truth) and with the new bento `SectorGrid` which uses **different slugs** (`aviation`, `modern-agriculture`). |
+| `CAPABILITIES` (6 entries × deep metadata) | Used by `[slug]` capability pages and `BackboneSection`. **Keep, simplify.** |
+| `OPERATING_STEPS` | Dead — only `OperatingModel.tsx` consumed it. |
+| `TRUST_SIGNALS` | Used by `TrustSignals` section. **Keep.** |
+| `SERVICES` (Plan/Integrate/Assure) | Dead — only `WhatWeDo.tsx` consumed it. |
+| `HOMEPAGE_CONTENT` | Largely dead — replaced by the inline hero + new sections. Some leftover. |
+
+---
+
+## 4. Routing Conflicts
+
+```
+src/app/[locale]/sectors/
+├── [slug]/page.tsx                          ← dynamic, generateStaticParams from SECTORS
+├── aec-gateway/                             ← division masquerading as a sector
+├── agentos/                                 ← division masquerading as a sector
+├── ai-fusion-intelligence/                  ← static, also in SECTORS -> emitted by both
+├── aviation/                                ← static, NOT in SECTORS
+├── critical-infrastructure/                 ← static, also in SECTORS -> emitted by both
+├── cyber-resilience/                        ← static, also in SECTORS -> emitted by both
+├── energy-mining/                           ← static, also in SECTORS -> emitted by both
+├── government-national-programs/            ← static, also in SECTORS -> emitted by both
+├── modern-agriculture/                      ← static, NOT in SECTORS
+└── ports-borders-logistics/                 ← static, also in SECTORS -> emitted by both
+```
+
+**Issues**:
+
+1. **Hardcoded folders override `[slug]`** at request time, but `generateStaticParams` in `[slug]/page.tsx` still emits the same paths -> potential build warning, redundant work.
+2. **`/sectors/aec-gateway` and `/sectors/agentos` are divisions, not sectors.** They live under the wrong URL hierarchy.
+3. The homepage `SectorGrid` links to slugs that mix both worlds (`aviation`, `modern-agriculture` -> static; `cyber-resilience`, `energy-mining` -> both static and dynamic).
+4. No clear policy: should sectors be **data-driven** (constants + dynamic route) or **content-driven** (one folder per sector with hand-crafted JSX)?
+
+---
+
+## 5. Styling System Issues
+
+### 5.1 `globals.css` — root cause of the visual regressions
+
+Located at `src/app/globals.css`, ~700 lines / 17 KB. Contains:
+
+- Design tokens (CSS custom properties) — correct.
+- Container utility — fine.
+- Body/html base — fine.
+- **Brittle global typography** — caused all the recent debugging:
+  - `h1 { background: linear-gradient(...); -webkit-text-fill-color: transparent; }` forced **every** `<h1>` site-wide to render as a gradient with transparent text fill. In WebKit/Blink, `-webkit-text-fill-color` overrides `color`, so utility classes like `text-white` were silently neutralized.
+  - `h2 { color: #F8FAFC }`, `h3 { color: #CBD5E1 }`, `p { color: var(--foreground-secondary) }` — hardcoded colors competing with utility classes.
+  - `h1..h6 { font-size: ... }` per-tag rules competing with `text-4xl`, `text-display-lg`.
+
+**Already mitigated** in the current state: those rules were stripped from the typography block. But the lesson stands — **typography must be utility-driven**, not tag-driven.
+
+- `.text-gradient`, `.text-gradient-accent` (lines 297–309) -> **opt-in** decorative utilities. Keep.
+- `.glass`, `.hover-lift`, `.grid-pattern`, `.accent-line-bottom`, `.border-animated` -> premium utilities. Some used, some orphan. Audit before keeping.
+
+### 5.2 README–code drift on the design system
+
+The previous README documented colors that **do not match `globals.css`**:
+
+| README (old) | Actual `globals.css` |
+|---|---|
+| `--accent: #2563eb` (blue) | `#00C2FF` (cyan) |
+| `--background: #0a0a0a` | `#0B1120` (slate) |
+| `--surface: #141414` | `#131c2e` |
+| `--foreground-secondary: #a3a3a3` | `#94A3B8` (slate-400) |
+| `--foreground-muted: #737373` (darker) | `#CBD5E1` (slate-300, **lighter** than secondary) |
+| Typography tokens `text-display-lg = 4rem` | Defined in Tailwind config; partly overridden by tag rules. |
+
+The naming inversion of `foreground-muted` (which is brighter than `foreground-secondary`) is itself a footgun for any developer reading the names.
+
+### 5.3 Other CSS observations
+
+- `text-base` already 1rem; many components additionally specify inline `style={{ fontSize: '14px' }}` instead of `text-sm`. Inconsistent.
+- `text-display-*` Tailwind utilities are referenced in code but not all defined in the actual Tailwind v4 theme block — partial.
+- Inline `style` objects with hex colors litter components even where CSS variables exist (`#0B1120` vs `var(--background)`).
+- ~26 files marked `'use client'` — essentially the entire UI is client-rendered. No deliberate server/client boundary. Hurts initial paint and bundle size.
+
+---
+
+## 6. i18n Architecture
+
+**Stack:** `next-intl@^4.7.0` with locale prefix routing (`/en`, `/fr`, `/pt`), `setRequestLocale` per page, `getMessages` per layout.
+
+**Status:**
+
+- 3 locale files of **identical structure** (good) and **identical line count** (2 089) -> key parity is preserved.
+- Static generation works (`generateStaticParams` returns `[en, fr, pt]`).
+- `LanguageSwitcher` swaps prefixes correctly.
+
+**Pain points:**
+
+- File size (100+ KB per locale) loaded on every page -> no namespace splitting.
+- Several namespaces are dead (section 3.3).
+- Some keys are duplicated across namespaces (`sectors.aviation.hero.title` and `sectors.2.title` carry the same string).
+- Sector content is split between `lib/constants.ts` (slugs, icons, capabilities relations, metadata) and `i18n/locales/*.json` (titles, descriptions, content). No clear contract.
+- Some sector pages render content that doesn't exist in non-`en` locales -> silent fallback to key string.
+
+---
+
+## 7. Component Inventory (size by lines)
+
+### Top 15 largest source files
+
+```
+src/lib/constants.ts                                  652 L   22 KB
+src/components/sections/SectorGrid.tsx                325 L   10 KB
+src/components/divisions/AECGatewayPage.tsx           296 L   12 KB
+src/components/divisions/AgentOSPage.tsx              292 L   12 KB
+src/components/sections/DivisionsSection.tsx          252 L    8 KB    (dead)
+src/components/sections/Hero.tsx                      243 L    8 KB    (dead)
+src/types/index.ts                                    242 L    6 KB
+src/components/sections/sector/SectorOverview.tsx     204 L   12 KB
+src/components/sections/OperatingModel.tsx            202 L   11 KB    (dead)
+src/components/sections/sector/ValueProposition.tsx   199 L   11 KB
+src/components/sections/DivisionGrid.tsx              193 L    7 KB
+src/components/sections/sector/RiskLandscape.tsx      183 L    9 KB
+src/components/sections/WhatWeDo.tsx                  175 L    7 KB    (dead)
+src/components/sections/sector/SectorHero.tsx         146 L    6 KB
+src/components/sections/sector/ApproachSection.tsx    143 L    7 KB
+```
+
+### Layout & UI primitives
+
+| File | Status |
+|---|---|
+| `components/layout/Header.tsx` | Working. Brand sub-label hidden < 640 px. Mobile menu functional. |
+| `components/layout/Footer.tsx` | Functional. Reads `FOOTER_LINKS` from constants. |
+| `components/ui/Button.tsx` | CVA-based variants. Used. |
+| `components/ui/LanguageSwitcher.tsx` | Functional. |
+| `components/ui/FlagIcon.tsx` | Used by LanguageSwitcher. |
+| `components/ui/HCSWidgetScript.tsx` | Loads external HCS widget. **Effect on bundle and CSP unclear.** |
+| `components/ui/VideoTransition.tsx` | Dead (only consumed by dead `DivisionsSection.tsx`). |
+
+### Homepage sections (current `app/[locale]/page.tsx`)
+
+```
+<Hero inline />              ← inline JSX, NY skyline image
+<DivisionGrid />             ← 3 divisions: HCS, AEC Gateway, AgentOS
+<BackboneSection />          ← stats + CTA to /capabilities/hybrid-vector
+<SectorGrid />               ← bento, 6 sectors
+<TrustSignals />             ← 5 governance signals
+<CTASection />               ← final CTA
+```
+
+This is the only page that has been redesigned in the recent pass. The other pages (`about`, `contact`, `insights`, `legal`, `privacy`, `security`, `terms`, sector pages, capability pages) are from earlier phases and **have not been audited visually**.
+
+---
+
+## 8. Recommended Rebuild Plan
+
+If you decide to start over from a fresh Next.js 16 scaffold, here is a concise brief.
+
+### 8.1 Strict scope (one brand, one source of truth)
+
+- Decide brand: **HMH | Hybrid Mobility Holdings** (matches live URL & Header).
+- One constant `BRAND` exported from `src/lib/brand.ts` with all metadata. Everything imports from there. No string literals of the brand name elsewhere.
+
+### 8.2 Foundation rules
+
+1. **Tailwind utility-first**, no tag-based color/size CSS rules. `globals.css` contains only:
+   - CSS custom properties (design tokens)
+   - Body/html base
+   - Container utility
+   - Opt-in decorative classes (`.glass`, `.text-gradient`, `.hover-lift`)
+2. **Never** use `-webkit-text-fill-color: transparent` in a tag selector. Only on `.text-gradient` opt-in classes.
+3. **Server components by default**; mark client only when interactive (`useState`, `useEffect`, `framer-motion`, `useTranslations` is fine in server with `getTranslations`).
+4. **Color token renaming** to remove the `secondary > muted` confusion: `--text-primary` (white), `--text-secondary` (slate-300), `--text-tertiary` (slate-400), `--text-disabled` (slate-500).
+5. Single typography scale defined in Tailwind v4 `@theme` block. No tag-based font sizing.
+
+### 8.3 Routing
+
+- **One strategy** for sectors: data-driven dynamic route `[locale]/sectors/[slug]` with `generateStaticParams` from a single `SECTORS` constant. **Delete all hardcoded sector folders.**
+- Divisions live under their own URL space: `/divisions/aec-gateway`, `/divisions/agentos`, `/divisions/hcs-u7` (or under the homepage anchor only).
+- Capabilities under `/capabilities/[slug]`.
+- Legal/privacy/terms under `/legal/*` (one section, not 3 sibling folders).
+
+### 8.4 Data contract
+
+- Single `SECTORS` constant: `{ slug, icon, accentColor, gridSize, capabilityIds, gradientImage }`.
+- All copy lives in `i18n/locales/*.json` keyed by slug: `sectors[slug].title`, `sectors[slug].description`, `sectors[slug].hero.lead`, `sectors[slug].stats.{key}`, `sectors[slug].cta.*`.
+- One renderer per page type. No bespoke per-sector JSX.
+
+### 8.5 i18n
+
+- Split per page namespace: `home.json`, `sectors.json`, `capabilities.json`, `about.json`, `legal.json`, `nav.json`. Lazy-load per route.
+- Reset to a minimal viable set of keys; port content over deliberately, not by copy-paste.
+- Establish a TypeScript type for translation keys (e.g. via `next-intl`'s typed messages) so dead keys are caught at compile time.
+
+### 8.6 Components to keep verbatim
+
+- `Header.tsx` (with the mobile fix already applied).
+- `Footer.tsx`.
+- `Button.tsx`, `LanguageSwitcher.tsx`, `FlagIcon.tsx`.
+- `BackboneSection.tsx` (already utility-driven).
+- `TrustSignals.tsx` (small, focused).
+- `CTASection.tsx`.
+
+### 8.7 Components to rebuild
+
+- Hero (homepage): unify the inline JSX into a clean `<HomepageHero />` server component. Use a darker/lighter image or an SVG illustration to remove the contrast battle entirely.
+- `DivisionGrid` + `BackboneSection` + `SectorGrid` -> keep the layout patterns, but rebuild as **server components** receiving translated content via `getTranslations`. Drop client-side framer-motion in favor of CSS scroll-driven animations or a single tiny client wrapper.
+- Sector pages: one shared `<SectorPage />` template fed by data + i18n; the 5 heavy sub-sections (Overview, Risk, Approach, Value, UseCases) must be auditable in 1 file each, not 200+ lines.
+
+### 8.8 Components to delete
+
+- `Hero.tsx`, `WhatWeDo.tsx`, `OperatingModel.tsx`, `DivisionsSection.tsx`, `VideoTransition.tsx`.
+- `divisions/AECGatewayPage.tsx`, `divisions/AgentOSPage.tsx` (after content extraction).
+- `[locale]/sectors/[slug]/page.tsx` OR all hardcoded sector folders — pick one.
+- All stale i18n namespaces (`whatWeDo`, `operatingModel`, `sectors.{government,infrastructure,energy,ports,cyber,ai}` legacy keys).
+
+### 8.9 Tooling
+
+- Add ESLint rules `no-unused-exports` and `no-deprecated`.
+- Add a `scripts/check-i18n.ts` that diffs key sets across `en/fr/pt` and warns on dead keys.
+- Adopt a brand-name lint: a Husky pre-commit grep blocking commits that mix HMH/HC-1/Hybrid Concepts unless explicitly whitelisted.
+- Lighthouse CI in PRs targeting Performance >= 90 / Accessibility >= 95.
+
+---
+
+## 9. Quick Wins Available Without a Rebuild
+
+If a full rebuild is deferred, the following can be done in the current codebase to stop the bleeding (each is small and reversible):
+
+1. **Delete dead components** (`Hero.tsx`, `WhatWeDo.tsx`, `OperatingModel.tsx`, `DivisionsSection.tsx`, `VideoTransition.tsx`) and their exports in `sections/index.ts`.
+2. **Delete the broken export** of `CapabilitiesIntegration` in `sections/sector/index.ts`.
+3. **Fix `package.json` name** (`temp-next` -> `hybrid-concept` or `hmh-website`).
+4. **Reconcile brand** in `SITE_METADATA` and layout titles to a single value.
+5. **Remove duplicate i18n keys** introduced for backward compat (legacy sector slugs).
+6. **Decide** between dynamic `[slug]` and hardcoded folders for sectors. Delete the loser.
+7. **Move divisions out of `/sectors/`** to `/divisions/`.
+
+Each of these is a self-contained PR.
+
+---
+
+## 10. Current Working Setup (for reference until rebuild)
+
+```bash
+# install
+npm install
+
+# dev
+npm run dev          # http://localhost:3000
+
+# typecheck
+npx tsc --noEmit -p tsconfig.json   # currently exits 0
+
+# lint
+npm run lint         # passes with 2 minor warnings in SectorHero (break-words -> wrap-break-word)
+
+# build
+npm run build
+```
+
+Locales: `en` (default), `fr`, `pt` — prefix routing, no rewrite. Middleware in `src/middleware.ts` redirects `/` to `/en`.
+
+---
+
+## 11. License & Ownership
+
+Proprietary — Hybrid Mobility Holdings. All third-party assets (icons via Lucide, fonts via next/font, NY skyline image in `public/images/`) under their respective licenses; verify before any external publication.
+
+---
+
+*Document generated as a rebuild brief. Treat the previous marketing-style README as obsolete.*

@@ -1,11 +1,10 @@
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
-import { Hero } from '@/components/sections';
 
 export const metadata: Metadata = {
   title: 'Legal Notices',
   description:
-    'Legal notices, terms of use, and privacy policy for Hybrid Concept.',
+    'Legal notices, terms of use, and privacy policy for Hybrid Mobility Holdings.',
 };
 
 type Props = {
@@ -19,13 +18,6 @@ export default async function LegalPage({ params }: Props) {
 
   return (
     <>
-      <Hero
-        title={t('hero.title')}
-        tagline={t('hero.tagline')}
-        description={t('hero.description')}
-        variant="page"
-      />
-
       <section className="py-20 md:py-32">
         <div className="container max-w-4xl">
           <div className="prose prose-invert max-w-none">
@@ -36,7 +28,7 @@ export default async function LegalPage({ params }: Props) {
                 {t('company.title')}
               </h2>
               <div className="space-y-2 text-foreground-secondary">
-                <p><strong>{t('company.name')}:</strong> Hybrid Concept</p>
+                <p><strong>{t('company.name')}:</strong> Hybrid Mobility Holdings</p>
                 <p><strong>{t('company.address')}:</strong> 114 West Street c/o Katherine and West 6th Floor, Suite 43 Sandton 2196, South Africa</p>
                 <p><strong>{t('company.email')}:</strong> <a href="mailto:info@hybridconc.com" className="text-accent hover:text-accent-hover">info@hybridconc.com</a></p>
                 <p><strong>{t('company.phone')}:</strong> <a href="tel:+27112455900" className="text-accent hover:text-accent-hover">+27-11 245 5900</a></p>

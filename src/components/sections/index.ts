@@ -1,9 +1,6 @@
-export { Hero } from './Hero';
+export { HomepageHero } from './HomepageHero';
+export { ProductsSection } from './ProductsSection';
+export { BackboneSection } from './BackboneSection';
 export { SectorGrid } from './SectorGrid';
-export { WhatWeDo } from './WhatWeDo';
-export { OperatingModel } from './OperatingModel';
 export { TrustSignals } from './TrustSignals';
 export { CTASection } from './CTASection';
-export { DivisionsSection } from './DivisionsSection';
-export { DivisionGrid } from './DivisionGrid';
-export { BackboneSection } from './BackboneSection';

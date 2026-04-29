@@ -1,13 +1,12 @@
 {
   "common": {
-    "companyName": "HC-1 | Hybrid Concepts",
+    "companyName": "HMH | Hybrid Mobility Holdings",
     "tagline": "Autoridade de Comando Estratégico e Integração",
     "exploreCTA": "Explorar Capacidades",
     "learnMore": "Saiba mais",
     "contactUs": "Contacte-nos",
     "scroll": "Rolar"
   },
-
   "nav": {
     "home": "Início",
     "about": "Sobre",
@@ -16,35 +15,38 @@
     "insights": "Análises",
     "contact": "Contacto"
   },
-
   "hero": {
-    "title": "Hybrid Concepts",
-    "subtitle": "Autoridade de Comando Estratégico e Integração",
-    "coreStatement": "A Hybrid Concepts antecipa e protege sistemas a montante para prevenir perturbações, reduzir riscos operacionais, eliminar custos e ineficiências de respostas reativas, e proteger e maximizar receitas através de continuidade garantida e eficiência operacional."
+    "subtitle": "A HMH implementa tecnologia soberana de segurança e inteligência nos setores mais críticos de África.",
+    "ctaPrimary": "Descobrir os nossos produtos",
+    "ctaSecondary": "Contacte-nos"
   },
-
-  "whatWeDo": {
-    "heading": "O Que Fazemos",
-    "plan": {
-      "title": "Planear",
-      "description": "Arquitetura estratégica e antecipação de riscos a montante para prevenir perturbações operacionais."
+  "products": {
+    "eyebrow": "OS NOSSOS PRODUTOS",
+    "heading": "Tecnologia construída para proteger o que importa",
+    "description": "Quatro produtos de nível soberano — desenvolvidos e patenteados em França, implementados em África através da HMH.",
+    "discover": "Descobrir",
+    "hcsU7": {
+      "title": "HCS-U7",
+      "subtitle": "Plataforma de autenticação cognitiva",
+      "description": "Criptografia pós-quântica (NIST FIPS 203/204) combinada com testes neuropsicológicos e deteção autónoma de ameaças."
     },
-    "integrate": {
-      "title": "Integrar",
-      "description": "Integração de sistemas soberanos com arquitetura zero-trust e rastreabilidade completa."
+    "hvGuard": {
+      "title": "HV-GUARD",
+      "subtitle": "Suite de acesso biométrico",
+      "description": "10 aplicações especializadas cobrindo educação, ambiente profissional, pagamentos, assinaturas, controlo de acesso e muito mais."
     },
-    "assure": {
-      "title": "Assegurar",
-      "description": "Monitorização contínua, governação baseada em SLA e continuidade de missão crítica."
+    "shadowMode": {
+      "title": "Shadow Mode",
+      "subtitle": "Inteligência passiva de ameaças",
+      "description": "Monitorização de domínios em tempo real, mapeamento de ameaças e relatórios PDF automatizados — sem integração necessária."
+    },
+    "droneAntiSpoofing": {
+      "title": "Drone Anti-Spoofing",
+      "subtitle": "Soberania GPS",
+      "description": "Consenso bizantino multi-sensor para navegação autónoma — patente FR FR2515560, validada pós-DGA."
     }
   },
-
   "sectors": {
-    "eyebrow": "Setores",
-    "heading": "Onde a HC-1 opera",
-    "subheading": "Seis setores, uma plataforma integrada",
-    "description": "Da infraestrutura soberana à agricultura de precisão — seis setores, uma plataforma integrada.",
-    "explore": "Explorar",
     "1": {
       "title": "Governo e Programas Nacionais",
       "description": "Infraestrutura soberana e sistemas de segurança nacional."
@@ -69,44 +71,34 @@
       "title": "Agricultura Moderna",
       "description": "Soluções tecnológicas para uma agricultura sustentável e de alto desempenho."
     },
-    "government": {
-      "title": "Governo e Programas Nacionais",
-      "description": "Infraestrutura soberana e sistemas de segurança nacional."
-    },
-    "infrastructure": {
-      "title": "Aviação",
-      "description": "Soluções aeronáuticas e serviços de aviação de ponta."
-    },
-    "energy": {
-      "title": "Energia e Mineração",
-      "description": "Continuidade de produção e proteção de receitas."
-    },
-    "ports": {
-      "title": "Portos, Fronteiras e Logística",
-      "description": "Corredores seguros e integridade da cadeia de abastecimento."
-    },
-    "cyber": {
-      "title": "Resiliência Cibernética",
-      "description": "Arquitetura zero-trust e prevenção de ameaças."
-    },
-    "ai": {
-      "title": "Agricultura Moderna",
-      "description": "Soluções tecnológicas para uma agricultura sustentável e de alto desempenho."
-    },
+    "eyebrow": "Setores",
+    "heading": "Onde a HMH opera",
+    "subheading": "Seis setores, uma plataforma integrada",
+    "description": "Da infraestrutura soberana à agricultura de precisão — seis setores, uma plataforma integrada.",
+    "explore": "Explorar",
     "aviation": {
       "hero": {
         "title": "Aviação",
         "subtitle": "Operações Aeronáuticas e Segurança",
-        "lead": "A HC-1 protege operações aeronáuticas com autenticação cognitiva, anti-spoofing de drones e comunicações pós-quânticas em frotas, aeroportos e corredores aéreos."
+        "lead": "A HMH protege operações aeronáuticas com autenticação cognitiva, anti-spoofing de drones e comunicações pós-quânticas em frotas, aeroportos e corredores aéreos."
       },
       "stats": {
-        "fleet":        { "value": "100%", "label": "operações de frota seguras" },
-        "availability": { "value": "<3ms", "label": "latência de autenticação no cockpit" },
-        "safety":       { "value": "0",    "label": "intrusões por spoofing detetadas" }
+        "fleet": {
+          "value": "100%",
+          "label": "operações de frota seguras"
+        },
+        "availability": {
+          "value": "<3ms",
+          "label": "latência de autenticação no cockpit"
+        },
+        "safety": {
+          "value": "0",
+          "label": "intrusões por spoofing detetadas"
+        }
       },
       "cta": {
         "heading": "Proteja as suas operações aeronáuticas",
-        "description": "Fale com a nossa equipa para implementar o backbone de segurança de aviação da HC-1 na sua frota e operações em solo.",
+        "description": "Fale com a nossa equipa para implementar o backbone de segurança de aviação da HMH na sua frota e operações em solo.",
         "primary": "Solicitar um briefing",
         "secondary": "Todos os setores"
       }
@@ -115,12 +107,21 @@
       "hero": {
         "title": "Agricultura Moderna",
         "subtitle": "Agricultura de Precisão e Segurança Alimentar",
-        "lead": "A HC-1 viabiliza uma agricultura sustentável e tecnológica — desde inteligência de campo via satélite a redes cooperativas seguras e cadeias agrícolas rastreáveis."
+        "lead": "A HMH viabiliza uma agricultura sustentável e tecnológica — desde inteligência de campo via satélite a redes cooperativas seguras e cadeias agrícolas rastreáveis."
       },
       "stats": {
-        "yield":         { "value": "+30%",  "label": "aumento médio de produtividade" },
-        "irrigation":    { "value": "-40%",  "label": "redução de consumo de água" },
-        "sustainability":{ "value": "12",    "label": "fileiras agrícolas africanas cobertas" }
+        "yield": {
+          "value": "+30%",
+          "label": "aumento médio de produtividade"
+        },
+        "irrigation": {
+          "value": "-40%",
+          "label": "redução de consumo de água"
+        },
+        "sustainability": {
+          "value": "12",
+          "label": "fileiras agrícolas africanas cobertas"
+        }
       },
       "cta": {
         "heading": "Modernize as suas operações agrícolas",
@@ -133,7 +134,7 @@
       "hero": {
         "title": "Energia e Mineração",
         "subtitle": "Proteção de Sistemas de Receitas Nacionais",
-        "lead": "A HC-1 protege a continuidade de produção, protege corredores de exportação e fortalece receitas nacionais através de integração de sistemas a montante e garantia operacional."
+        "lead": "A HMH protege a continuidade de produção, protege corredores de exportação e fortalece receitas nacionais através de integração de sistemas a montante e garantia operacional."
       },
       "stats": {
         "gdp": {
@@ -215,8 +216,8 @@
         }
       },
       "approach": {
-        "heading": "Abordagem HC-1: Integração a Montante",
-        "intro": "A HC-1 não opera como respondedora de incidentes. A HC-1 arquiteta, integra e governa sistemas de missão crítica na fase de planeamento—antecipando vetores de perturbação, eliminando pontos únicos de falha e assegurando continuidade através de infraestrutura soberana zero-trust.",
+        "heading": "Abordagem HMH: Integração a Montante",
+        "intro": "A HMH não opera como respondedora de incidentes. A HMH arquiteta, integra e governa sistemas de missão crítica na fase de planeamento—antecipando vetores de perturbação, eliminando pontos únicos de falha e assegurando continuidade através de infraestrutura soberana zero-trust.",
         "architecture": {
           "title": "Arquitetura e Planeamento",
           "description": "Mapear dependências de produção, modelar cenários de perturbação, projetar arquiteturas de redundância, estabelecer governação soberana de dados.",
@@ -258,34 +259,33 @@
         "heading": "Cenários Operacionais",
         "offshore": {
           "title": "Plataforma Offshore — Operações sem GPS",
-          "description": "Uma plataforma petrolífera offshore perde conectividade GPS devido a interferência. A navegação autónoma CORTEX-U7 da HC-1 mantém operações de navios de abastecimento, prevenindo paragem de produção de 14 dias. Receita protegida: $42M."
+          "description": "Uma plataforma petrolífera offshore perde conectividade GPS devido a interferência. A navegação autónoma CORTEX-U7 da HMH mantém operações de navios de abastecimento, prevenindo paragem de produção de 14 dias. Receita protegida: $42M."
         },
         "mining": {
           "title": "Corredor de Exportação Mineira — Congestionamento Portuário",
-          "description": "Uma mina de cobre enfrenta congestionamento portuário de 21 dias. A monitorização de corredores logísticos da HC-1 prevê atraso, redireciona carregamentos via porto secundário. Penalidades contratuais evitadas. Receita protegida: $18M."
+          "description": "Uma mina de cobre enfrenta congestionamento portuário de 21 dias. A monitorização de corredores logísticos da HMH prevê atraso, redireciona carregamentos via porto secundário. Penalidades contratuais evitadas. Receita protegida: $18M."
         },
         "pipeline": {
           "title": "Rede de Oleodutos — Tentativa de Intrusão Cibernética",
-          "description": "Sistema SCADA visado por grupo APT. O SOC da HC-1 deteta movimento lateral, isola segmento afetado, mantém fluxo do oleoduto. Paragem evitada: 60+ dias. Receita protegida: $250M+."
+          "description": "Sistema SCADA visado por grupo APT. O SOC da HMH deteta movimento lateral, isola segmento afetado, mantém fluxo do oleoduto. Paragem evitada: 60+ dias. Receita protegida: $250M+."
         }
       },
       "capabilities": {
         "heading": "Capacidades Integradas",
-        "intro": "A HC-1 entrega soluções de energia e mineração através de implementação coordenada de capacidades especializadas:"
+        "intro": "A HMH entrega soluções de energia e mineração através de implementação coordenada de capacidades especializadas:"
       },
       "cta": {
         "heading": "Proteger Sistemas de Receitas Nacionais",
-        "description": "A HC-1 trabalha com governos, empresas estatais e operadores multinacionais para antecipar perturbações, assegurar continuidade e proteger receitas em operações de energia e mineração.",
+        "description": "A HMH trabalha com governos, empresas estatais e operadores multinacionais para antecipar perturbações, assegurar continuidade e proteger receitas em operações de energia e mineração.",
         "primary": "Discutir Suas Operações",
         "secondary": "Explorar Todas as Capacidades"
       }
     },
-
     "governmentPrograms": {
       "hero": {
         "title": "Governo e Programas Nacionais",
         "subtitle": "Proteção de Infraestruturas Soberanas",
-        "lead": "A HC-1 protege infraestruturas nacionais, protege dados soberanos e assegura continuidade de operações governamentais através de arquitetura zero-trust e integração de sistemas mission-critical."
+        "lead": "A HMH protege infraestruturas nacionais, protege dados soberanos e assegura continuidade de operações governamentais através de arquitetura zero-trust e integração de sistemas mission-critical."
       },
       "stats": {
         "systems": {
@@ -367,8 +367,8 @@
         }
       },
       "approach": {
-        "heading": "Abordagem HC-1: Soberano por Design",
-        "intro": "A HC-1 arquiteta infraestrutura governamental com soberania de dados, princípios zero-trust e continuidade assegurada na fundação—não como reflexão tardia.",
+        "heading": "Abordagem HMH: Soberano por Design",
+        "intro": "A HMH arquiteta infraestrutura governamental com soberania de dados, princípios zero-trust e continuidade assegurada na fundação—não como reflexão tardia.",
         "architecture": {
           "title": "Arquitetura Soberana",
           "description": "Projetar sistemas com controlos de residência de dados, eliminar dependências estrangeiras, estabelecer linhas de base de segurança nacional.",
@@ -410,34 +410,33 @@
         "heading": "Cenários Operacionais",
         "election": {
           "title": "Infraestrutura Eleitoral Nacional",
-          "description": "Sistemas eleitorais enfrentam campanha cibernética coordenada. Arquitetura zero-trust da HC-1 previne movimento lateral, mantém integridade da base de dados de eleitores, assegura segurança de transmissão de resultados. Processo democrático protegido."
+          "description": "Sistemas eleitorais enfrentam campanha cibernética coordenada. Arquitetura zero-trust da HMH previne movimento lateral, mantém integridade da base de dados de eleitores, assegura segurança de transmissão de resultados. Processo democrático protegido."
         },
         "emergency": {
           "title": "Coordenação de Serviços de Emergência",
-          "description": "Desastre natural perturba comunicações regionais. Infraestrutura de comando redundante da HC-1 mantém coordenação inter-agências, permite alocação de recursos, rastreia resposta de emergência. Vidas salvas."
+          "description": "Desastre natural perturba comunicações regionais. Infraestrutura de comando redundante da HMH mantém coordenação inter-agências, permite alocação de recursos, rastreia resposta de emergência. Vidas salvas."
         },
         "border": {
           "title": "Operações de Segurança Fronteiriça",
-          "description": "Sistemas de controlo fronteiriço detetam operação de contrabando. Vigilância integrada e fusão de inteligência da HC-1 permitem coordenação em tempo real entre alfândegas, imigração e forças da ordem. Ameaça interditada."
+          "description": "Sistemas de controlo fronteiriço detetam operação de contrabando. Vigilância integrada e fusão de inteligência da HMH permitem coordenação em tempo real entre alfândegas, imigração e forças da ordem. Ameaça interditada."
         }
       },
       "capabilities": {
         "heading": "Capacidades Integradas",
-        "intro": "A HC-1 fornece soluções governamentais através da implementação coordenada de capacidades especializadas:"
+        "intro": "A HMH fornece soluções governamentais através da implementação coordenada de capacidades especializadas:"
       },
       "cta": {
         "heading": "Proteger Infraestruturas Nacionais",
-        "description": "A HC-1 trabalha com governos, agências de defesa e organizações de segurança nacional para arquitetar infraestruturas soberanas, seguras e asseguradas.",
+        "description": "A HMH trabalha com governos, agências de defesa e organizações de segurança nacional para arquitetar infraestruturas soberanas, seguras e asseguradas.",
         "primary": "Discutir os Seus Requisitos",
         "secondary": "Explorar Todas as Capacidades"
       }
     },
-
     "criticalInfra": {
       "hero": {
         "title": "Infraestruturas Críticas",
         "subtitle": "Proteção de Serviços Essenciais",
-        "lead": "A HC-1 protege infraestruturas de água, energia, telecomunicações, saúde e transporte através de modelação de risco upstream, integração de sistemas e garantia operacional."
+        "lead": "A HMH protege infraestruturas de água, energia, telecomunicações, saúde e transporte através de modelação de risco upstream, integração de sistemas e garantia operacional."
       },
       "stats": {
         "services": {
@@ -455,7 +454,7 @@
       },
       "overview": {
         "heading": "O Desafio",
-        "intro": "Perturbações de infraestruturas críticas cascateiam através de setores, impactando milhões de cidadãos e criando risco sistémico. Modelos de segurança tradicionais são reativos—HC-1 previne perturbações upstream.",
+        "intro": "Perturbações de infraestruturas críticas cascateiam através de setores, impactando milhões de cidadãos e criando risco sistémico. Modelos de segurança tradicionais são reativos—HMH previne perturbações upstream.",
         "dependency": {
           "title": "Interdependências",
           "points": [
@@ -519,8 +518,8 @@
         }
       },
       "approach": {
-        "heading": "Abordagem HC-1: Resiliência por Arquitetura",
-        "intro": "A HC-1 projeta infraestruturas críticas para resiliência—antecipando modos de falha, eliminando pontos únicos de falha e assegurando continuidade através de redundância e monitorização em tempo real.",
+        "heading": "Abordagem HMH: Resiliência por Arquitetura",
+        "intro": "A HMH projeta infraestruturas críticas para resiliência—antecipando modos de falha, eliminando pontos únicos de falha e assegurando continuidade através de redundância e monitorização em tempo real.",
         "modeling": {
           "title": "Mapeamento de Dependências",
           "description": "Modelar interdependências inter-setoriais, identificar caminhos de falha em cascata, quantificar impacto de perturbação.",
@@ -562,29 +561,28 @@
         "heading": "Cenários Operacionais",
         "power": {
           "title": "Rede Elétrica — Intrusão Cibernética",
-          "description": "SCADA de subestação visado por APT. Micro-segmentação da HC-1 isola sistema comprometido, mantém estabilidade da rede, coordena resposta de emergência. 2.5M residentes protegidos de apagão."
+          "description": "SCADA de subestação visado por APT. Micro-segmentação da HMH isola sistema comprometido, mantém estabilidade da rede, coordena resposta de emergência. 2.5M residentes protegidos de apagão."
         },
         "water": {
           "title": "Tratamento de Água — Segurança Química",
-          "description": "Sistema de controlo industrial manipulado para alterar dosagem química. Deteção de anomalias da HC-1 aciona alerta, override de segurança automatizado previne contaminação. Crise de saúde pública evitada."
+          "description": "Sistema de controlo industrial manipulado para alterar dosagem química. Deteção de anomalias da HMH aciona alerta, override de segurança automatizado previne contaminação. Crise de saúde pública evitada."
         },
         "telecom": {
           "title": "Telecomunicações — Falha de Infraestrutura",
-          "description": "Corte de fibra perturba conectividade regional. Roteamento redundante da HC-1 redireciona automaticamente tráfego, mantém acesso a serviços de emergência. Zero perturbação de serviço para hospitais, polícia."
+          "description": "Corte de fibra perturba conectividade regional. Roteamento redundante da HMH redireciona automaticamente tráfego, mantém acesso a serviços de emergência. Zero perturbação de serviço para hospitais, polícia."
         }
       },
       "capabilities": {
         "heading": "Capacidades Integradas",
-        "intro": "A HC-1 fornece soluções de infraestruturas críticas através da implementação coordenada de capacidades especializadas:"
+        "intro": "A HMH fornece soluções de infraestruturas críticas através da implementação coordenada de capacidades especializadas:"
       },
       "cta": {
         "heading": "Proteger Serviços Essenciais",
-        "description": "A HC-1 trabalha com operadores de infraestruturas, reguladores e serviços de emergência para antecipar perturbações e assegurar continuidade de serviços essenciais.",
+        "description": "A HMH trabalha com operadores de infraestruturas, reguladores e serviços de emergência para antecipar perturbações e assegurar continuidade de serviços essenciais.",
         "primary": "Discutir a Sua Infraestrutura",
         "secondary": "Explorar Todas as Capacidades"
       }
     },
-
     "cyberResilience": {
       "hero": {
         "title": "HCS-U7 Cibersegurança Cognitiva",
@@ -768,12 +766,11 @@
         "secondary": "Explorar a Tecnologia"
       }
     },
-
     "portsLogistics": {
       "hero": {
         "title": "Portos, Fronteiras e Logística",
         "subtitle": "Corredores Seguros e Integridade da Cadeia de Abastecimento",
-        "lead": "A HC-1 protege corredores comerciais, operações portuárias e logística transfronteiriça através de vigilância integrada, fusão de inteligência e resposta coordenada."
+        "lead": "A HMH protege corredores comerciais, operações portuárias e logística transfronteiriça através de vigilância integrada, fusão de inteligência e resposta coordenada."
       },
       "stats": {
         "cargo": {
@@ -855,8 +852,8 @@
         }
       },
       "approach": {
-        "heading": "Abordagem HC-1: Corredores Integrados",
-        "intro": "A HC-1 integra segurança física, defesa cibernética e fusão de inteligência para criar corredores comerciais seguros, visíveis e eficientes.",
+        "heading": "Abordagem HMH: Corredores Integrados",
+        "intro": "A HMH integra segurança física, defesa cibernética e fusão de inteligência para criar corredores comerciais seguros, visíveis e eficientes.",
         "surveillance": {
           "title": "Vigilância Integrada",
           "description": "Analytics de vídeo impulsionadas por IA, fusão de sensores, deteção automatizada de ameaças através de perímetro e zonas de carga.",
@@ -906,26 +903,25 @@
         },
         "cyber": {
           "title": "Ataque Cibernético — Operações Portuárias",
-          "description": "Sistema de gestão portuária visado por ransomware. Defesa cibernética da HC-1 isola ataque, mantém operações de gruas via sistemas de backup, restaura primário em 6 horas. Zero atraso de carga."
+          "description": "Sistema de gestão portuária visado por ransomware. Defesa cibernética da HMH isola ataque, mantém operações de gruas via sistemas de backup, restaura primário em 6 horas. Zero atraso de carga."
         }
       },
       "capabilities": {
         "heading": "Capacidades Integradas",
-        "intro": "A HC-1 fornece soluções de portos e logística através da implementação coordenada de capacidades especializadas:"
+        "intro": "A HMH fornece soluções de portos e logística através da implementação coordenada de capacidades especializadas:"
       },
       "cta": {
         "heading": "Proteger Corredores Comerciais",
-        "description": "A HC-1 trabalha com autoridades portuárias, agências alfandegárias e operadores logísticos para proteger corredores comerciais e manter integridade da cadeia de abastecimento.",
+        "description": "A HMH trabalha com autoridades portuárias, agências alfandegárias e operadores logísticos para proteger corredores comerciais e manter integridade da cadeia de abastecimento.",
         "primary": "Discutir o Seu Corredor",
         "secondary": "Explorar Todas as Capacidades"
       }
     },
-
     "aiFusion": {
       "hero": {
         "title": "Fusão IA e Inteligência",
         "subtitle": "Inteligência Decisional e Sistemas Preditivos",
-        "lead": "A HC-1 fornece inteligência de qualidade decisional através de fusão IA, analytics preditiva e sistemas autónomos—transformando dados em vantagem operacional."
+        "lead": "A HMH fornece inteligência de qualidade decisional através de fusão IA, analytics preditiva e sistemas autónomos—transformando dados em vantagem operacional."
       },
       "stats": {
         "data": {
@@ -943,7 +939,7 @@
       },
       "overview": {
         "heading": "O Desafio",
-        "intro": "Organizações afogam-se em dados mas carecem de inteligência acionável. Analytics tradicional é retrospetiva. A HC-1 funde dados multi-fonte com IA para fornecer inteligência preditiva de qualidade decisional em tempo real.",
+        "intro": "Organizações afogam-se em dados mas carecem de inteligência acionável. Analytics tradicional é retrospetiva. A HMH funde dados multi-fonte com IA para fornecer inteligência preditiva de qualidade decisional em tempo real.",
         "dataVolume": {
           "title": "Desafio do Volume de Dados",
           "points": [
@@ -1007,8 +1003,8 @@
         }
       },
       "approach": {
-        "heading": "Abordagem HC-1: Fusão IA Explicável",
-        "intro": "A HC-1 funde dados estruturados e não estruturados de múltiplas fontes, aplica modelos IA explicáveis e fornece inteligência acionável com pontuações de confiança e raciocínio.",
+        "heading": "Abordagem HMH: Fusão IA Explicável",
+        "intro": "A HMH funde dados estruturados e não estruturados de múltiplas fontes, aplica modelos IA explicáveis e fornece inteligência acionável com pontuações de confiança e raciocínio.",
         "fusion": {
           "title": "Fusão Multi-Fonte",
           "description": "Ingerir dados de sensores, telemetria de rede, OSINT, SIGINT, bases de dados estruturadas. Normalizar, correlacionar, enriquecer.",
@@ -1058,42 +1054,21 @@
         },
         "autonomous": {
           "title": "Navegação Autónoma — Sem GPS",
-          "description": "Enxame de drones perde GPS em ambiente contestado. CORTEX-U7 da HC-1 usa posicionamento astronómico e fusão de sensores para manter navegação. Missão completada com sucesso."
+          "description": "Enxame de drones perde GPS em ambiente contestado. CORTEX-U7 da HMH usa posicionamento astronómico e fusão de sensores para manter navegação. Missão completada com sucesso."
         }
       },
       "capabilities": {
         "heading": "Capacidades Integradas",
-        "intro": "A HC-1 fornece fusão IA e inteligência através da implementação coordenada de capacidades especializadas:"
+        "intro": "A HMH fornece fusão IA e inteligência através da implementação coordenada de capacidades especializadas:"
       },
       "cta": {
         "heading": "Transformar Dados em Inteligência",
-        "description": "A HC-1 trabalha com agências de defesa, organizações de inteligência e empresas para implementar fusão IA e analytics preditiva para vantagem operacional.",
+        "description": "A HMH trabalha com agências de defesa, organizações de inteligência e empresas para implementar fusão IA e analytics preditiva para vantagem operacional.",
         "primary": "Discutir as Suas Necessidades de Inteligência",
         "secondary": "Explorar Todas as Capacidades"
       }
     }
   },
-
-  "operatingModel": {
-    "heading": "Modelo Operacional",
-    "anticipate": {
-      "label": "Antecipar",
-      "description": "Identificar e modelar riscos a montante"
-    },
-    "assure": {
-      "label": "Assegurar",
-      "description": "Arquitetar e integrar sistemas seguros"
-    },
-    "continuity": {
-      "label": "Continuidade",
-      "description": "Monitorizar e manter disponibilidade operacional"
-    },
-    "revenue": {
-      "label": "Receita",
-      "description": "Proteger e maximizar resultados financeiros"
-    }
-  },
-
   "trustSignals": {
     "heading": "Governação e Confiança",
     "sovereignty": {
@@ -1117,13 +1092,11 @@
       "description": "Adesão a padrões internacionais de segurança"
     }
   },
-
   "cta": {
     "heading": "Pronto para Proteger as Suas Operações?",
-    "description": "Vamos discutir como a HC-1 pode proteger e otimizar os seus sistemas críticos.",
+    "description": "Vamos discutir como a HMH pode proteger e otimizar os seus sistemas críticos.",
     "button": "Entre em Contacto"
   },
-
   "sectorsPage": {
     "hero": {
       "title": "Setores que Servimos",
@@ -1132,25 +1105,6 @@
     },
     "gridTitle": "As Nossas Áreas de Foco"
   },
-
-  "capabilitiesPage": {
-    "hero": {
-      "title": "As Nossas Capacidades",
-      "tagline": "Tecnologia e Experiência",
-      "description": "A HC-1 fornece um conjunto abrangente de capacidades projetadas para abordar todo o espectro de desafios de segurança, integração e operacionais."
-    }
-  },
-
-  "capabilityDetail": {
-    "keyFeatures": "Funcionalidades Principais",
-    "useCases": "Casos de Uso",
-    "integratesWith": "Integra-se Com",
-    "integratesDescription": "integra-se perfeitamente com outras capacidades HC-1 para fornecer soluções abrangentes.",
-    "learnMore": "Saiba Mais Sobre",
-    "learnMoreDescription": "Conecte-se com a nossa equipa para discutir como esta capacidade pode atender aos seus requisitos específicos.",
-    "requestInfo": "Solicitar Informações"
-  },
-
   "insightsPage": {
     "hero": {
       "title": "Análises & Perspetivas",
@@ -1195,133 +1149,15 @@
       }
     }
   },
-
-  "capabilities": {
-    "hybridVector": {
-      "name": "HC-1 | Hybrid Vector",
-      "tagline": "Avaliação Estratégica de Ameaças",
-      "description": "O Hybrid Vector oferece capacidades abrangentes de modelagem de ameaças e avaliação de riscos, permitindo que as organizações antecipem e se preparem para ameaças emergentes.",
-      "features": {
-        "threatModeling": {
-          "title": "Modelagem de Ameaças",
-          "description": "Análise avançada do cenário de ameaças e planeamento de cenários"
-        },
-        "riskQuantification": {
-          "title": "Quantificação de Riscos",
-          "description": "Pontuação e priorização de riscos baseadas em dados"
-        },
-        "strategicForecasting": {
-          "title": "Previsão Estratégica",
-          "description": "Inteligência preditiva para planeamento a longo prazo"
-        }
-      }
-    },
-    "hybridNexus": {
-      "name": "HC-1 | Hybrid Nexus",
-      "tagline": "Plataforma de Integração de Sistemas",
-      "description": "O Hybrid Nexus é a nossa plataforma de integração empresarial, conectando sistemas díspares num tecido operacional unificado.",
-      "features": {
-        "apiGateway": {
-          "title": "Gateway de API",
-          "description": "Gestão e orquestração de API segura e escalável"
-        },
-        "dataFabric": {
-          "title": "Tecido de Dados",
-          "description": "Camada de dados unificada entre sistemas legados e modernos"
-        },
-        "workflowEngine": {
-          "title": "Motor de Workflow",
-          "description": "Orquestração automatizada de processos e gestão de eventos"
-        }
-      }
-    },
-    "hybridAxis": {
-      "name": "HC-1 | Hybrid Axis",
-      "tagline": "Infraestrutura de Comando e Controlo",
-      "description": "O Hybrid Axis fornece a espinha dorsal de comando e controlo para operações coordenadas em ambientes distribuídos.",
-      "features": {
-        "operationalDashboard": {
-          "title": "Painel Operacional",
-          "description": "Consciência situacional em tempo real e interface de comando"
-        },
-        "resourceOrchestration": {
-          "title": "Orquestração de Recursos",
-          "description": "Alocação dinâmica e coordenação de ativos"
-        },
-        "communicationHub": {
-          "title": "Hub de Comunicação",
-          "description": "Infraestrutura de comunicações segura e resiliente"
-        }
-      }
-    },
-    "hybridCyber": {
-      "name": "HC-1 | Hybrid Cyber",
-      "tagline": "Plataforma de Defesa Cibernética",
-      "description": "O Hybrid Cyber oferece capacidades abrangentes de defesa cibernética, desde a deteção de ameaças até à resposta a incidentes.",
-      "features": {
-        "threatDetection": {
-          "title": "Deteção de Ameaças",
-          "description": "Deteção e análise de ameaças alimentadas por IA"
-        },
-        "incidentResponse": {
-          "title": "Resposta a Incidentes",
-          "description": "Gestão automatizada e orquestrada de incidentes"
-        },
-        "threatIntelligence": {
-          "title": "Inteligência de Ameaças",
-          "description": "Feeds e análise de inteligência de ameaças globais"
-        }
-      }
-    },
-    "hybridIris": {
-      "name": "HC-1 | Hybrid Iris",
-      "tagline": "Vigilância e Consciência Situacional",
-      "description": "O Hybrid Iris fornece capacidades abrangentes de vigilância e consciência situacional nos domínios físico e digital.",
-      "features": {
-        "sensorFusion": {
-          "title": "Fusão de Sensores",
-          "description": "Integração e correlação de sensores multi-fonte"
-        },
-        "patternRecognition": {
-          "title": "Reconhecimento de Padrões",
-          "description": "Deteção de anomalias e padrões impulsionada por IA"
-        },
-        "geospatialIntelligence": {
-          "title": "Inteligência Geoespacial",
-          "description": "Inteligência e mapeamento baseados em localização"
-        }
-      }
-    },
-    "centersOfExcellence": {
-      "name": "Centros de Excelência",
-      "tagline": "Experiência Regional e Formação",
-      "description": "Os nossos Centros de Excelência fornecem experiência regional, formação e suporte para garantir a implementação e operação bem-sucedidas das soluções HC-1.",
-      "features": {
-        "trainingPrograms": {
-          "title": "Programas de Formação",
-          "description": "Currículos abrangentes de certificação e formação"
-        },
-        "regionalSupport": {
-          "title": "Suporte Regional",
-          "description": "Experiência local e capacidades de suporte 24/7"
-        },
-        "researchDevelopment": {
-          "title": "Investigação e Desenvolvimento",
-          "description": "Inovação contínua e desenvolvimento de capacidades"
-        }
-      }
-    }
-  },
-
   "about": {
     "hero": {
-      "title": "Sobre a Hybrid Concepts",
+      "title": "Sobre a Hybrid Mobility Holdings",
       "tagline": "Autoridade de Comando Estratégico e Integração",
       "description": "Somos o parceiro de confiança de governos e empresas que navegam em cenários de segurança complexos. A nossa missão é arquitetar sistemas resilientes que protegem nações e permitem o progresso."
     },
     "mission": {
       "heading": "A Nossa Missão",
-      "intro": "A HC-1 existe para proteger os sistemas dos quais as sociedades dependem. Combinamos profunda experiência de domínio com tecnologia avançada para fornecer soluções de segurança abrangentes e pragmáticas.",
+      "intro": "A HMH existe para proteger os sistemas dos quais as sociedades dependem. Combinamos profunda experiência de domínio com tecnologia avançada para fornecer soluções de segurança abrangentes e pragmáticas.",
       "approach": "A nossa abordagem está enraizada na compreensão—compreender as ameaças que os nossos clientes enfrentam, as restrições sob as quais operam e os resultados que precisam alcançar.",
       "sovereign": {
         "title": "Soberano por Design",
@@ -1356,7 +1192,6 @@
       }
     }
   },
-
   "legal": {
     "hero": {
       "title": "Avisos Legais",
@@ -1473,7 +1308,6 @@
     },
     "updated": "Última atualização"
   },
-
   "privacyPage": {
     "hero": {
       "title": "Política de Privacidade",
@@ -1628,7 +1462,6 @@
     },
     "updated": "Última atualização"
   },
-
   "termsPage": {
     "hero": {
       "title": "Termos de Uso",
@@ -1754,7 +1587,6 @@
     },
     "updated": "Última atualização"
   },
-
   "securityPage": {
     "hero": {
       "title": "Segurança",
@@ -1895,10 +1727,9 @@
     },
     "updated": "Última atualização"
   },
-
   "footer": {
     "tagline": "Construído com precisão para quem protege o que importa.",
-    "copyright": "© 2025 HC-1 | Hybrid Concepts. Todos os direitos reservados.",
+    "copyright": "© 2025 HMH | Hybrid Mobility Holdings. Todos os direitos reservados.",
     "company": "Empresa",
     "legal": "Legal",
     "aboutUs": "Sobre Nós",
@@ -1908,40 +1739,10 @@
     "terms": "Termos de Serviço",
     "security": "Segurança"
   },
-
   "metadata": {
-    "title": "HC-1 | Autoridade de Comando Estratégico e Integração",
-    "description": "A HC-1 antecipa e protege sistemas a montante para prevenir perturbações, reduzir riscos operacionais e proteger receitas."
+    "title": "HMH | Autoridade de Comando Estratégico e Integração",
+    "description": "A HMH antecipa e protege sistemas a montante para prevenir perturbações, reduzir riscos operacionais e proteger receitas."
   },
-
-  "homepageHero": {
-    "eyebrow": "Hybrid Mobility Holdings",
-    "title": "Proteger. Operar. Financiar.",
-    "subtitle": "A HC-1 unifica segurança soberana, inteligência operacional e financiamento de infraestrutura em toda a África."
-  },
-
-  "divisions": {
-    "eyebrow": "Três divisões, uma arquitetura",
-    "heading": "Construídas sobre um backbone HCS-U7 partilhado",
-    "subheading": "A HC-1 opera três divisões integradas — cada produto funciona no mesmo núcleo de autenticação pós-quântica.",
-    "authors": {
-      "iaSolution": "pela IA-SOLUTION",
-      "benoitBogaerts": "por Benoît Bogaerts"
-    },
-    "secure": {
-      "title": "Hybrid Secure",
-      "subtitle": "Autenticação cognitiva, criptografia pós-quântica, controlo de acesso biométrico e deteção autónoma de ameaças."
-    },
-    "operate": {
-      "title": "Hybrid Operate",
-      "subtitle": "Operações imobiliárias com IA, inteligência de talentos e integração de redes empresariais na África do Sul."
-    },
-    "finance": {
-      "title": "Hybrid Finance",
-      "subtitle": "Acesso estruturado a financiamento de desenvolvimento, verificação de projetos de infraestrutura e mobilização de capital DFI."
-    }
-  },
-
   "backbone": {
     "label": "Camada de Infraestrutura",
     "titlePrefix": "Cada divisão funciona sobre",
@@ -1954,135 +1755,5 @@
       "patents": "Patentes francesas (FR)"
     },
     "cta": "Explorar HCS-U7 →"
-  },
-
-  "agentOSPage": {
-    "badge": "HMH PropTech",
-    "tagline": "Da chamada ao fecho.",
-    "description": "Os agentes imobiliários sul-africanos perdem 2 a 3 horas por dia em tarefas administrativas — relatórios manuais, perseguição de documentos de inquilinos e conteúdo social improvisado. O AgentOS automatiza todo o back-office para que se concentre no que gera comissões: visitas e fechos.",
-    "bookDemo": "Agendar uma demo",
-    "learnMore": "Saber mais",
-    "metrics": {
-      "price": { "value": "R 499", "label": "por agente/mês" },
-      "cashPositive": { "value": "Mês 8", "label": "rentabilidade atingida" },
-      "agents": { "value": "50+", "label": "agentes ano 1" },
-      "revenue": { "value": "R 420k", "label": "Receita líquida HMH ano 1" }
-    },
-    "featuresTitle": "Tudo numa única plataforma",
-    "features": {
-      "pipeline": { "title": "Pipeline completo da chamada ao fecho", "desc": "Registe chamadas, acompanhe visitas, gira ofertas — tudo num só lugar." },
-      "verify": { "title": "Verificação de inquilino com um clique", "desc": "Integração TGPDC Verify FLEX para verificações instantâneas." },
-      "reports": { "title": "Relatórios IA semanais para proprietários", "desc": "Auto-elaborados todas as quintas-feiras — sem trabalho manual." },
-      "building": { "title": "Módulo Building Intelligence", "desc": "Registe imóveis e chamadas para construir uma base de dados pesquisável." },
-      "social": { "title": "Motor de conteúdo social", "desc": "Legendas TikTok & Instagram geradas por IA em segundos." },
-      "security": { "title": "Protegido pelo Hybrid Vector HCS-U7", "desc": "Autenticação pós-quântica a proteger cada sessão de agente." }
-    },
-    "beforeAfterTitle": "A sua secretária — antes e depois",
-    "withoutTitle": "Sem AgentOS",
-    "withTitle": "Com AgentOS",
-    "withoutList": [
-      "2–3 horas perdidas diariamente em tarefas administrativas",
-      "Atrasos na verificação manual de inquilinos",
-      "Sem acompanhamento sistemático de leads",
-      "Relatórios de proprietários escritos do zero",
-      "Conteúdo social criado de improviso ou omitido"
-    ],
-    "withList": [
-      "Admin automatizado — foque-se no fecho",
-      "Resultados instantâneos TGPDC Verify FLEX",
-      "Pipeline estruturado com lembretes",
-      "Atualizações semanais para proprietários redigidas por IA",
-      "Legendas sociais geradas em 10 segundos"
-    ],
-    "pricingTitle": "Preços",
-    "pricingSubtitle": "Simples e transparente. Sem taxas de configuração.",
-    "getStarted": "Começar",
-    "tiers": {
-      "solo": {
-        "name": "Agente Solo",
-        "price": "R 499",
-        "period": "/mês",
-        "features": ["Pipeline CRM completo", "Verificação TGPDC", "Relatórios IA semanais", "Motor de conteúdo social"]
-      },
-      "agency": {
-        "name": "Agência",
-        "price": "R 5 000",
-        "period": "/mês",
-        "features": ["Todas as funções Solo", "Dashboard de equipa", "Análises por filial", "Suporte prioritário", "Building Intelligence"]
-      },
-      "franchise": {
-        "name": "Rede Franchise",
-        "price": "Personalizado",
-        "period": "/anual",
-        "features": ["Todas as funções Agência", "Gestão multi-filial", "Opção marca branca", "Gestor de conta dedicado"]
-      }
-    },
-    "stackTitle": "Construído sobre infraestrutura de confiança",
-    "stack": {
-      "affectli": { "name": "Affectli", "role": "Operações de campo e gestão de tarefas" },
-      "tgpdc": { "name": "TGPDC", "role": "Verificação de inquilinos e conformidade" },
-      "hybridVector": { "name": "Hybrid Vector", "role": "Autenticação pós-quântica HCS-U7" },
-      "mobipaid": { "name": "Mobipaid", "role": "Cobrança e reconciliação de pagamentos" }
-    },
-    "ctaTitle": "Pronto para gerir a sua secretária com o AgentOS?",
-    "ctaDesc": "Junte-se à primeira coorte de agentes sul-africanos a automatizar o seu fluxo de trabalho com o AgentOS.",
-    "ctaButton": "Contacte-nos para começar",
-    "metaTitle": "AgentOS — Da Chamada ao Fecho | HMH PropTech",
-    "metaDesc": "AgentOS é a plataforma operacional para agentes imobiliários sul-africanos."
-  },
-
-  "aecGatewayPage": {
-    "badge": "HMH Finanças de Infraestrutura",
-    "tagline": "Powered by HMH · Standard INFRAGATE",
-    "description": "O AEC Gateway conecta projetos de infraestrutura africanos a uma rede de 80+ instituições de financiamento ao desenvolvimento. Da submissão ao fecho financeiro, cada projeto é pontuado, estruturado e correspondido usando a metodologia proprietária INFRAGATE VS/BS.",
-    "requestAccess": "Solicitar acesso à plataforma",
-    "institutionalDemo": "Demo institucional",
-    "metrics": {
-      "fee": { "value": "0,1–0,5%", "label": "taxa de sucesso", "sub": "do fecho financeiro" },
-      "dfi": { "value": "80+", "label": "rede DFI", "sub": "via AADFI" },
-      "sectors": { "value": "12", "label": "setores africanos", "sub": "cobertura pipeline" },
-      "standard": { "value": "VS 1-5", "label": "standard INFRAGATE", "sub": "metodologia proprietária" }
-    },
-    "modulesTitle": "Módulos da plataforma",
-    "modules": {
-      "pipeline": { "title": "Pipeline", "desc": "Gestão completa do pipeline de projetos da submissão ao fecho." },
-      "verify": { "title": "Verificar", "desc": "Verificação de documentos e validação de conformidade." },
-      "dfiMatch": { "title": "DFI Match", "desc": "Correspondência algorítmica às instituições de financiamento certas." },
-      "bsScore": { "title": "Score BS", "desc": "Avaliação de Bankability Score 0–100 para cada projeto." },
-      "kyc": { "title": "KYC/AML", "desc": "Propulsado pela autenticação pós-quântica HCS-U7." },
-      "localContent": { "title": "Conteúdo Local", "desc": "Rastreia conformidade de conteúdo local em 12 países." }
-    },
-    "infragateTitle": "O Standard INFRAGATE",
-    "infragateDesc": "O INFRAGATE é a metodologia de avaliação de projetos proprietária da HMH — um quadro bi-axial que mapeia a viabilidade (VS 1–5) contra a bancabilidade (BS 0–100) para dar a DFIs e promotores de projetos uma linguagem comum para financiamento de infraestrutura.",
-    "infragateChecks": [
-      "Score VS 1–5 mapeia a prontidão do projeto face a critérios DFI",
-      "Score BS 0–100 quantifica a financiabilidade em cada etapa",
-      "Dossier de projeto estandardizado aceite por membros da AADFI",
-      "Análise de lacunas automatizada com etapas de remediação"
-    ],
-    "sectorsCovered": "12 setores africanos cobertos",
-    "africanSectors": ["Energia", "Água", "Transportes", "Infraestrutura Digital", "Saúde", "Educação", "Agricultura", "Mineração", "Habitação", "Parques Industriais", "Infraestrutura Financeira", "Desenvolvimento Social"],
-    "dfiTitle": "Rede DFI",
-    "dfiSubtitle": "Ancorado pela AADFI — conectando projetos a 80+ instituições de financiamento.",
-    "revenueTitle": "Modelo de receitas",
-    "revenue": {
-      "fee": { "title": "Taxa de sucesso de transação", "detail": "0,1–0,5% do valor de fecho financeiro" },
-      "subscription": { "title": "Subscrição de plataforma", "detail": "SaaS por níveis por projeto ativo" },
-      "advisory": { "title": "Consultoria e relatórios", "detail": "Taxa por projeto para suporte de estruturação" },
-      "whitelabel": { "title": "Instâncias marca branca", "detail": "Implementações com marca AEC · ECP" }
-    },
-    "archTitle": "Arquitetura da plataforma",
-    "actors": {
-      "aec": { "name": "AEC/ECP", "role": "Cliente marca", "desc": "Promotores de projetos usando o gateway AEC ou ECP." },
-      "dfi": { "name": "DFIs/Bancos", "role": "Subscritor", "desc": "Instituições de financiamento a aceder ao pipeline de projetos." },
-      "gov": { "name": "Governos", "role": "Portal nacional", "desc": "Entidades soberanas a gerir registos de projetos nacionais." },
-      "advisory": { "name": "Firmas de consultoria", "role": "Parceiro de receitas", "desc": "Consultores de transações a receber honorários em fechos bem-sucedidos." }
-    },
-    "bannerHighlight": "Autenticação HCS-U7",
-    "bannerText": "— cada sessão AEC Gateway é protegida pela autenticação cognitiva pós-quântica da IA-SOLUTION.",
-    "ctaTitle": "Pronto para aceder ao AEC Gateway?",
-    "ctaDesc": "Seja um promotor de projetos, DFI ou firma de consultoria — o AEC Gateway dá-lhe acesso direto aos fluxos de capital de infraestrutura africanos.",
-    "metaTitle": "AEC Gateway — Plataforma de Finanças de Infraestrutura | HMH",
-    "metaDesc": "O AEC Gateway conecta projetos de infraestrutura africanos a 80+ DFIs. Standard INFRAGATE VS/BS."
   }
 }

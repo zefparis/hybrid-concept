@@ -11,7 +11,7 @@ import {
 } from '@/components/sections/sector';
 
 export const metadata: Metadata = {
-  title: 'Government & National Programs | HC-1',
+  title: 'Government & National Programs | HMH',
   description: 'Sovereign infrastructure and national security systems protection.',
 };
 

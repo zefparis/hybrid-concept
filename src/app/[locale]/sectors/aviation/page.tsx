@@ -3,8 +3,8 @@ import { setRequestLocale } from 'next-intl/server';
 import { SectorHero, SectorCTA } from '@/components/sections/sector';
 
 export const metadata: Metadata = {
-  title: 'Aviation | HC-1',
-  description: 'HC-1 secures aviation operations: cognitive authentication, drone anti-spoofing, post-quantum communications.',
+  title: 'Aviation | HMH',
+  description: 'HMH secures aviation operations: cognitive authentication, drone anti-spoofing, post-quantum communications.',
 };
 
 type Props = {

@@ -1,11 +1,10 @@
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
-import { Hero } from '@/components/sections';
 
 export const metadata: Metadata = {
   title: 'Security',
   description:
-    'Security practices, policies, and responsible disclosure information for Hybrid Concept.',
+    'Security practices, policies, and responsible disclosure information for Hybrid Mobility Holdings.',
 };
 
 type Props = {
@@ -19,13 +18,6 @@ export default async function SecurityPage({ params }: Props) {
 
   return (
     <>
-      <Hero
-        title={t('hero.title')}
-        tagline={t('hero.tagline')}
-        description={t('hero.description')}
-        variant="page"
-      />
-
       <section className="py-20 md:py-32">
         <div className="container max-w-4xl">
           <div className="prose prose-invert max-w-none">

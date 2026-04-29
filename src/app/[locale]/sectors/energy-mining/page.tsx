@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: 'Energy & Mining | National Revenue Systems Protection',
   description:
-    'HC-1 protects production continuity, secures export corridors, and strengthens national revenue through upstream systems integration and operational assurance.',
+    'HMH protects production continuity, secures export corridors, and strengthens national revenue through upstream systems integration and operational assurance.',
 };
 
 type Props = {

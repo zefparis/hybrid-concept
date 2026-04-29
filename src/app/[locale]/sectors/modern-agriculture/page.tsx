@@ -3,8 +3,8 @@ import { setRequestLocale } from 'next-intl/server';
 import { SectorHero, SectorCTA } from '@/components/sections/sector';
 
 export const metadata: Metadata = {
-  title: 'Modern Agriculture | HC-1',
-  description: 'HC-1 enables technology-driven, sustainable farming: precision agriculture, traceability and cooperative networks.',
+  title: 'Modern Agriculture | HMH',
+  description: 'HMH enables technology-driven, sustainable farming: precision agriculture, traceability and cooperative networks.',
 };
 
 type Props = {

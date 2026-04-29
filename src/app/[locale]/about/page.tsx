@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
-import { Hero } from '@/components/sections';
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
@@ -20,21 +19,11 @@ export default async function AboutPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   
-  const tHero = await getTranslations({ locale, namespace: 'about.hero' });
   const tMission = await getTranslations({ locale, namespace: 'about.mission' });
   const tValues = await getTranslations({ locale, namespace: 'about.values' });
 
   return (
     <>
-      <Hero
-        title={tHero('title')}
-        tagline={tHero('tagline')}
-        description={tHero('description')}
-        variant="page"
-        backgroundImage="/unnamed.jpg"
-        showCta={false}
-      />
-
       {/* Mission Section */}
       <section className="py-20 md:py-32">
         <div className="container">

@@ -11,7 +11,7 @@ import {
 } from '@/components/sections/sector';
 
 export const metadata: Metadata = {
-  title: 'Ports, Borders & Logistics | HC-1',
+  title: 'Ports, Borders & Logistics | HMH',
   description: 'Secure corridors and supply chain integrity.',
 };
 

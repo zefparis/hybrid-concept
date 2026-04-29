@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
-import { Hero } from '@/components/sections';
 import { Button } from '@/components/ui';
 import { SECTORS } from '@/lib/constants';
 
@@ -44,13 +43,6 @@ export default async function SectorPage({ params }: PageProps) {
 
   return (
     <>
-      <Hero
-        title={sector.title}
-        tagline="Sector Focus"
-        description={sector.longDescription}
-        variant="page"
-      />
-
       {/* Challenges Section */}
       <section className="py-20 md:py-32">
         <div className="container">
