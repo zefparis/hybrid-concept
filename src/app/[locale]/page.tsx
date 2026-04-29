@@ -26,9 +26,10 @@ export default async function HomePage({ params }: Props) {
           backgroundRepeat: 'no-repeat',
         }}
       >
-        {/* Heavy gradient overlay for legibility */}
-        <div className="absolute inset-0 bg-linear-to-b from-background/90 via-background/80 to-background pointer-events-none" />
-        <div className="absolute inset-0 bg-background/40 pointer-events-none" />
+        {/* Light gradient overlay — keeps the skyline visible while preserving legibility (text uses textShadow) */}
+        <div className="absolute inset-0 bg-linear-to-b from-background/30 via-background/15 to-background/60 pointer-events-none" />
+        {/* Vignette behind title only, for contrast without darkening the whole image */}
+        <div className="absolute inset-0 bg-radial from-black/40 via-transparent to-transparent pointer-events-none" />
         {/* Bottom fade into next section */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-background to-transparent pointer-events-none" />
 
