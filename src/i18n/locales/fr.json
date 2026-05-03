@@ -20,6 +20,12 @@
     "ctaPrimary": "Découvrir nos produits",
     "ctaSecondary": "Nous contacter"
   },
+  "cognitiveHero": {
+    "badge": "LIVE",
+    "h1": "Quand l'identité ne suffit plus, prouvez votre humanité.",
+    "sub": "Visage · Voix · Cognition — trois couches biométriques qu'aucun deepfake ni agent IA ne peut vaincre.",
+    "cta": "Explorer la Suite →"
+  },
   "products": {
     "eyebrow": "NOS PRODUITS",
     "heading": "Une technologie conçue pour protéger l'essentiel",

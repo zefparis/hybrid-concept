@@ -1,0 +1,747 @@
+/* ================================================================
+   Cognitive Fragments Hero — Styles
+   ================================================================ */
+
+/* ── Hero container ── */
+.cf-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  max-height: none;
+  background: #04060f;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Compensate for main pt-16 / md:pt-20 — hero fills entire viewport */
+  margin-top: -64px;
+  padding-top: 64px;
+}
+@media (min-width: 768px) {
+  .cf-hero {
+    min-height: min(100vh, 660px);
+    max-height: 100vh;
+    margin-top: -80px;
+    padding-top: 80px;
+  }
+}
+
+/* ── Floating card field ── */
+.cf-field {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* ── Vignette ── */
+.cf-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(ellipse 80% 45% at 50% 50%, transparent 10%, #04060f 100%);
+}
+@media (min-width: 768px) {
+  .cf-vignette {
+    background: radial-gradient(ellipse 60% 52% at 50% 50%, transparent 15%, #04060f 100%);
+  }
+}
+
+/* ── Hero content ── */
+.cf-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 720px;
+  padding: 0 24px;
+}
+
+.cf-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 999px;
+  padding: 5px 14px;
+  margin-bottom: 24px;
+}
+
+.cf-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #52c87a;
+  animation: cf-dot-pulse 2s ease-in-out infinite;
+}
+
+.cf-h1 {
+  font-size: clamp(26px, 7vw, 36px);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #fff;
+  margin: 0 0 18px;
+  letter-spacing: -0.02em;
+}
+@media (min-width: 768px) {
+  .cf-h1 {
+    font-size: clamp(32px, 4.5vw, 52px);
+    margin-bottom: 22px;
+  }
+}
+
+.cf-sub {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.55);
+  margin: 0 0 28px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 768px) {
+  .cf-sub {
+    font-size: 17px;
+    margin-bottom: 32px;
+  }
+}
+
+.cf-cta {
+  display: inline-block;
+  width: 100%;
+  max-width: 320px;
+  padding: 14px 32px;
+  background: #fff;
+  color: #04060f;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+@media (min-width: 768px) {
+  .cf-cta {
+    width: auto;
+    max-width: none;
+  }
+}
+.cf-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(255,255,255,0.12);
+  color: #04060f;
+}
+
+/* ── Tags ── */
+.cf-tags {
+  display: none;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+@media (min-width: 768px) {
+  .cf-tags {
+    display: flex;
+  }
+}
+.cf-tags span {
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 999px;
+  padding: 4px 12px;
+  letter-spacing: 0.02em;
+}
+
+/* ================================================================
+   Card shared styles
+   ================================================================ */
+
+.cf-card {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.cf-card-border {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  padding: 1px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+.cf-card-inner {
+  position: relative;
+  background: rgba(4,6,15,0.82);
+  backdrop-filter: blur(6px);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.cf-clabel {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 767px) {
+  .cf-clabel { font-size: 8px; }
+  .cf-card-inner { padding: 8px 10px; }
+}
+
+.cf-val {
+  font-size: 9px;
+  color: rgba(255,255,255,0.4);
+  font-family: var(--font-geist-mono, 'SF Mono', 'Fira Code', monospace);
+  margin-top: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 767px) {
+  .cf-val { font-size: 8px; }
+}
+.cf-val.cf-big {
+  font-size: 18px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+  margin-top: 2px;
+}
+@media (max-width: 767px) {
+  .cf-val.cf-big { font-size: 15px; }
+}
+.cf-accent {
+  color: rgba(82,200,122,0.9);
+}
+.cf-cat-behavioral .cf-accent {
+  color: rgba(155,93,229,0.9);
+}
+.cf-cat-postquantum .cf-accent {
+  color: rgba(224,165,82,0.9);
+}
+
+/* ── Meter bar ── */
+.cf-meter {
+  height: 3px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+.cf-meter-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: rgba(82,150,224,0.5);
+}
+.cf-cat-behavioral .cf-meter-fill { background: rgba(155,93,229,0.5); }
+.cf-cat-postquantum .cf-meter-fill { background: rgba(224,165,82,0.5); }
+
+/* ================================================================
+   Stroop
+   ================================================================ */
+.cf-stroop-word {
+  font-size: 13px;
+  font-weight: 700;
+  margin-right: 6px;
+  font-family: var(--font-geist-mono, monospace);
+}
+@media (max-width: 767px) {
+  .cf-stroop-word { font-size: 11px; }
+}
+
+/* ================================================================
+   N-Back
+   ================================================================ */
+.cf-seq {
+  display: flex;
+  gap: 6px;
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.6);
+  font-family: var(--font-geist-mono, monospace);
+}
+@media (max-width: 767px) {
+  .cf-seq { font-size: 14px; }
+}
+
+/* ================================================================
+   Reaction time
+   ================================================================ */
+.cf-reaction { text-align: center; }
+.cf-circle-svg {
+  width: 44px;
+  height: 44px;
+  display: block;
+  margin: 0 auto 4px;
+}
+@media (max-width: 767px) {
+  .cf-circle-svg { width: 36px; height: 36px; }
+}
+
+/* ================================================================
+   Pattern recognition
+   ================================================================ */
+.cf-grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  width: 48px;
+  margin-bottom: 4px;
+}
+.cf-grid-cell {
+  width: 14px; height: 14px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.06);
+}
+.cf-grid-cell.cf-on { background: rgba(82,150,224,0.4); }
+.cf-grid-cell.cf-missing { background: rgba(224,165,82,0.3); border: 1px dashed rgba(224,165,82,0.5); }
+@media (max-width: 767px) {
+  .cf-grid-cell { width: 12px; height: 12px; }
+  .cf-grid3 { width: 42px; }
+}
+
+/* ================================================================
+   Digit span
+   ================================================================ */
+.cf-digits {
+  display: flex;
+  gap: 5px;
+  font-size: 18px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.6);
+  font-family: var(--font-geist-mono, monospace);
+}
+@media (max-width: 767px) {
+  .cf-digits { font-size: 15px; }
+}
+.cf-dfade {
+  animation: cf-digit-fade 4.2s ease-in-out infinite;
+  animation-delay: calc(var(--d) * 0.5s);
+}
+
+/* ================================================================
+   Inhibition
+   ================================================================ */
+.cf-gono {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+.cf-go {
+  font-size: 11px;
+  font-weight: 700;
+  color: #52c87a;
+  padding: 2px 8px;
+  background: rgba(82,200,122,0.1);
+  border-radius: 4px;
+}
+.cf-nogo {
+  font-size: 11px;
+  font-weight: 700;
+  color: #e05252;
+  padding: 2px 8px;
+  background: rgba(224,82,82,0.1);
+  border-radius: 4px;
+}
+@media (max-width: 767px) {
+  .cf-go, .cf-nogo { font-size: 9px; }
+}
+
+/* ================================================================
+   Neural / EEG
+   ================================================================ */
+.cf-eeg {
+  display: flex;
+  gap: 2px;
+  align-items: flex-end;
+  height: 28px;
+}
+.cf-eeg-bar {
+  width: 4px;
+  border-radius: 1px;
+  background: rgba(82,150,224,0.5);
+  height: var(--h, 40%);
+}
+@media (max-width: 767px) {
+  .cf-eeg { height: 22px; }
+  .cf-eeg-bar { width: 3px; }
+}
+
+/* ================================================================
+   Verdict gauge
+   ================================================================ */
+.cf-verdict { text-align: center; }
+.cf-gauge-svg {
+  width: 56px;
+  height: 56px;
+  display: block;
+  margin: 0 auto 2px;
+}
+@media (max-width: 767px) {
+  .cf-gauge-svg { width: 46px; height: 46px; }
+}
+.cf-verdict-label {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(82,200,122,0.8);
+  text-transform: uppercase;
+}
+
+/* ================================================================
+   Gyroscope 3D cube
+   ================================================================ */
+.cf-cube-wrap {
+  width: 36px;
+  height: 36px;
+  perspective: 120px;
+  margin-bottom: 4px;
+}
+.cf-cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+.cf-face {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(155,93,229,0.3);
+  background: rgba(155,93,229,0.06);
+}
+.cf-front  { transform: translateZ(18px); }
+.cf-back   { transform: rotateY(180deg) translateZ(18px); }
+.cf-left   { transform: rotateY(-90deg) translateZ(18px); }
+.cf-right  { transform: rotateY(90deg)  translateZ(18px); }
+.cf-top    { transform: rotateX(90deg)  translateZ(18px); }
+.cf-bottom { transform: rotateX(-90deg) translateZ(18px); }
+@media (max-width: 767px) {
+  .cf-cube-wrap { width: 30px; height: 30px; }
+  .cf-face { width: 30px; height: 30px; }
+  .cf-front  { transform: translateZ(15px); }
+  .cf-back   { transform: rotateY(180deg) translateZ(15px); }
+  .cf-left   { transform: rotateY(-90deg) translateZ(15px); }
+  .cf-right  { transform: rotateY(90deg)  translateZ(15px); }
+  .cf-top    { transform: rotateX(90deg)  translateZ(15px); }
+  .cf-bottom { transform: rotateX(-90deg) translateZ(15px); }
+}
+
+/* ================================================================
+   Accelerometer spectrum
+   ================================================================ */
+.cf-spectrum {
+  display: flex;
+  gap: 2px;
+  align-items: flex-end;
+  height: 28px;
+}
+.cf-spec-bar {
+  width: 6px;
+  border-radius: 1px;
+  background: rgba(82,180,224,0.5);
+  height: var(--h, 40%);
+}
+@media (max-width: 767px) {
+  .cf-spectrum { height: 22px; }
+  .cf-spec-bar { width: 5px; }
+}
+
+/* ================================================================
+   Touch map
+   ================================================================ */
+.cf-touch-map {
+  width: 100%;
+  height: 34px;
+  display: block;
+}
+@media (max-width: 767px) {
+  .cf-touch-map { height: 28px; }
+}
+
+/* ================================================================
+   Swipe curve
+   ================================================================ */
+.cf-swipe-svg {
+  width: 100%;
+  height: 30px;
+  display: block;
+}
+@media (max-width: 767px) {
+  .cf-swipe-svg { height: 24px; }
+}
+
+/* ================================================================
+   ML-KEM hex grid
+   ================================================================ */
+.cf-hex-grid {
+  font-size: 8px;
+  line-height: 1.5;
+  color: rgba(224,165,82,0.5);
+  font-family: var(--font-geist-mono, monospace);
+  overflow: hidden;
+  max-height: 42px;
+}
+.cf-hex-row {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 767px) {
+  .cf-hex-grid { font-size: 7px; max-height: 36px; }
+}
+
+/* ================================================================
+   Celestial orbit system
+   ================================================================ */
+.cf-orbit-system {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 4px;
+}
+.cf-sun {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  margin: -3px;
+  border-radius: 50%;
+  background: #e0a552;
+  box-shadow: 0 0 8px rgba(224,165,82,0.5);
+}
+.cf-orbit {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(224,165,82,0.12);
+  border-radius: 50%;
+}
+.cf-orbit1 { inset: 12px; }
+.cf-orbit2 { inset: 2px; }
+.cf-planet {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(155,93,229,0.8);
+  top: -2px;
+  left: 50%;
+  margin-left: -2px;
+}
+.cf-planet2 {
+  background: rgba(82,180,224,0.8);
+}
+@media (max-width: 767px) {
+  .cf-orbit-system { width: 48px; height: 48px; }
+}
+
+/* ================================================================
+   ML-DSA signature
+   ================================================================ */
+.cf-sig {
+  font-size: 7px;
+  line-height: 1.4;
+  color: rgba(155,93,229,0.5);
+  font-family: var(--font-geist-mono, monospace);
+  word-break: break-all;
+  max-height: 30px;
+  overflow: hidden;
+}
+@media (max-width: 767px) {
+  .cf-sig { font-size: 6px; max-height: 24px; }
+}
+
+/* ================================================================
+   Hieroglyphic
+   ================================================================ */
+.cf-hiero-row {
+  font-size: 16px;
+  letter-spacing: 3px;
+  margin-bottom: 4px;
+  color: rgba(224,165,82,0.6);
+}
+@media (max-width: 767px) {
+  .cf-hiero-row { font-size: 13px; letter-spacing: 2px; }
+}
+.cf-hiero-bar {
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.06);
+  overflow: hidden;
+  margin-bottom: 3px;
+}
+.cf-hiero-fill {
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+}
+
+/* ================================================================
+   ANIMATIONS
+   ================================================================ */
+
+/* Blink (used for ?, NO-GO, etc.) */
+.cf-blink {
+  animation: cf-blink 1.5s ease-in-out infinite;
+}
+@keyframes cf-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+
+/* Pulse (meter fill) */
+.cf-pulse {
+  animation: cf-pulse 3s ease-in-out infinite;
+}
+@keyframes cf-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+/* Badge dot pulse */
+@keyframes cf-dot-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(82,200,122,0.5); }
+  50% { opacity: 0.7; box-shadow: 0 0 0 4px rgba(82,200,122,0); }
+}
+
+/* Digit span sequential fade */
+@keyframes cf-digit-fade {
+  0%, 10% { opacity: 0; transform: translateY(4px); }
+  20%, 80% { opacity: 1; transform: translateY(0); }
+  90%, 100% { opacity: 0; transform: translateY(-4px); }
+}
+
+/* Circle SVG stroke animation */
+.cf-circle-anim {
+  animation: cf-circle-draw 2.5s ease-in-out infinite;
+}
+@keyframes cf-circle-draw {
+  0% { stroke-dashoffset: 151; }
+  50% { stroke-dashoffset: 20; }
+  100% { stroke-dashoffset: 151; }
+}
+
+/* Gauge arc animation */
+.cf-gauge-anim {
+  animation: cf-gauge-draw 3s ease-in-out infinite;
+}
+@keyframes cf-gauge-draw {
+  0% { stroke-dashoffset: 201; }
+  50% { stroke-dashoffset: 18; }
+  100% { stroke-dashoffset: 201; }
+}
+
+/* EEG bar pulse (random heights) */
+.cf-eeg-pulse {
+  animation: cf-eeg-beat 1.8s ease-in-out infinite;
+  animation-delay: calc(var(--h, 0) * 10ms);
+}
+@keyframes cf-eeg-beat {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.4); }
+}
+
+/* Spectrum bar pulse */
+.cf-spec-pulse {
+  animation: cf-spec-beat 2s ease-in-out infinite;
+  animation-delay: calc(var(--d, 0) * 120ms);
+}
+@keyframes cf-spec-beat {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.5); }
+}
+
+/* Touch dot pulse */
+.cf-touch-dot {
+  animation: cf-touch-pulse 2.5s ease-in-out infinite;
+}
+@keyframes cf-touch-pulse {
+  0%, 100% { opacity: 0.4; r: 3; }
+  50% { opacity: 0.8; r: 5; }
+}
+
+/* 3D cube spin */
+.cf-cube-spin {
+  animation: cf-cube-rotate 8s linear infinite;
+}
+@keyframes cf-cube-rotate {
+  from { transform: rotateX(15deg) rotateY(0deg); }
+  to   { transform: rotateX(15deg) rotateY(360deg); }
+}
+
+/* Orbit animation */
+.cf-orbit1 {
+  animation: cf-orbit-spin 6s linear infinite;
+}
+.cf-orbit2 {
+  animation: cf-orbit-spin 10s linear infinite reverse;
+}
+@keyframes cf-orbit-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Shimmer for signatures / hex */
+.cf-shimmer {
+  animation: cf-shimmer 4s ease-in-out infinite;
+}
+@keyframes cf-shimmer {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* Lattice pulse */
+.cf-lattice-pulse {
+  animation: cf-lattice 3.5s ease-in-out infinite;
+}
+@keyframes cf-lattice {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); }
+}
+
+/* Gradient slide for hieroglyphic bar */
+.cf-gradient-slide {
+  background: linear-gradient(90deg, rgba(224,165,82,0.6), rgba(155,93,229,0.6), rgba(224,165,82,0.6));
+  background-size: 200% 100%;
+  animation: cf-grad-slide 3s linear infinite;
+}
+@keyframes cf-grad-slide {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
+
+/* ================================================================
+   Reduced motion
+   ================================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .cf-blink,
+  .cf-pulse,
+  .cf-circle-anim,
+  .cf-gauge-anim,
+  .cf-eeg-pulse,
+  .cf-spec-pulse,
+  .cf-touch-dot,
+  .cf-cube-spin,
+  .cf-orbit1,
+  .cf-orbit2,
+  .cf-shimmer,
+  .cf-lattice-pulse,
+  .cf-gradient-slide,
+  .cf-dfade {
+    animation: none !important;
+  }
+}
