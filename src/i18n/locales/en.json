@@ -52,6 +52,63 @@
       "description": "Multi-sensor Byzantine consensus for autonomous navigation — FR patent FR2515560, post-DGA clearance."
     }
   },
+  "guards": {
+    "heading": "One engine. Nine surfaces.",
+    "subheading": "Same post-quantum core. Different deployment surface.",
+    "tier1": { "label": "Deployed · App Store" },
+    "tier2": { "label": "Live demo available" },
+    "tier3": {
+      "label": "Tailored for your sector",
+      "cta": "Discuss your use case →",
+      "badge": "Configure for your sector"
+    },
+    "cta": { "contact": "Talk to us →" },
+    "payguard": {
+      "title": "PayGuard",
+      "subtitle": "Payment Authentication",
+      "description": "Biometric payment confirmation with face, voice and cognitive layers — zero-fraud guarantee."
+    },
+    "edguard": {
+      "title": "EdGuard",
+      "subtitle": "Exam Proctoring",
+      "description": "AI-proof remote exam supervision with continuous identity verification and behavioral analysis."
+    },
+    "accessguard": {
+      "title": "AccessGuard",
+      "subtitle": "Facility Access Control",
+      "description": "Multimodal biometric access for secure buildings, data centers and restricted areas."
+    },
+    "signguard": {
+      "title": "SignGuard",
+      "subtitle": "Document Signing",
+      "description": "Biometric-bound digital signatures with post-quantum integrity and legal compliance."
+    },
+    "workguard": {
+      "title": "WorkGuard",
+      "subtitle": "Workforce Verification",
+      "description": "Continuous identity assurance for remote teams, contractors and field workers."
+    },
+    "palmguard": {
+      "title": "PalmGuard",
+      "subtitle": "Palm Vein Biometrics",
+      "description": "Contactless palm vein recognition with fractal analysis and post-quantum key encapsulation."
+    },
+    "playguard": {
+      "title": "PlayGuard",
+      "subtitle": "Gaming & Events",
+      "description": "Age verification and identity assurance for gaming platforms, casinos and live events."
+    },
+    "siteguard": {
+      "title": "SiteGuard",
+      "subtitle": "Construction & Sites",
+      "description": "Worker identity and safety compliance for construction sites and industrial zones."
+    },
+    "driveguard": {
+      "title": "DriveGuard",
+      "subtitle": "Driver Verification",
+      "description": "Real-time driver identity and alertness verification for fleet and logistics operators."
+    }
+  },
   "sectors": {
     "1": {
       "title": "Government & National Programs",

@@ -52,6 +52,63 @@
       "description": "Consenso bizantino multi-sensor para navegação autónoma — patente FR FR2515560, validada pós-DGA."
     }
   },
+  "guards": {
+    "heading": "Um motor. Nove superfícies.",
+    "subheading": "Mesmo núcleo pós-quântico. Diferentes superfícies de implementação.",
+    "tier1": { "label": "Implementado · App Store" },
+    "tier2": { "label": "Demo ao vivo disponível" },
+    "tier3": {
+      "label": "Configurado para o seu setor",
+      "cta": "Discutir o seu caso →",
+      "badge": "Configurável sob pedido"
+    },
+    "cta": { "contact": "Fale connosco →" },
+    "payguard": {
+      "title": "PayGuard",
+      "subtitle": "Autenticação de Pagamento",
+      "description": "Confirmação biométrica de pagamento com rosto, voz e camadas cognitivas — garantia de zero fraude."
+    },
+    "edguard": {
+      "title": "EdGuard",
+      "subtitle": "Supervisão de Exames",
+      "description": "Supervisão remota de exames à prova de IA com verificação contínua de identidade e análise comportamental."
+    },
+    "accessguard": {
+      "title": "AccessGuard",
+      "subtitle": "Controlo de Acesso",
+      "description": "Acesso biométrico multimodal para edifícios seguros, centros de dados e áreas restritas."
+    },
+    "signguard": {
+      "title": "SignGuard",
+      "subtitle": "Assinatura de Documentos",
+      "description": "Assinaturas digitais vinculadas a biometria com integridade pós-quântica e conformidade legal."
+    },
+    "workguard": {
+      "title": "WorkGuard",
+      "subtitle": "Verificação de Equipas",
+      "description": "Garantia contínua de identidade para equipas remotas, subcontratados e trabalhadores de campo."
+    },
+    "palmguard": {
+      "title": "PalmGuard",
+      "subtitle": "Biometria Palmar",
+      "description": "Reconhecimento venoso palmar sem contacto com análise fractal e encapsulamento de chaves pós-quântico."
+    },
+    "playguard": {
+      "title": "PlayGuard",
+      "subtitle": "Jogos e Eventos",
+      "description": "Verificação de idade e garantia de identidade para plataformas de jogos, casinos e eventos ao vivo."
+    },
+    "siteguard": {
+      "title": "SiteGuard",
+      "subtitle": "Obras e Estaleiros",
+      "description": "Identidade dos trabalhadores e conformidade de segurança para estaleiros e zonas industriais."
+    },
+    "driveguard": {
+      "title": "DriveGuard",
+      "subtitle": "Verificação de Condutores",
+      "description": "Verificação em tempo real da identidade e vigilância dos condutores para frotas e logística."
+    }
+  },
   "sectors": {
     "1": {
       "title": "Governo e Programas Nacionais",
